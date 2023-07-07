@@ -1,0 +1,36 @@
+.localUser-join__name,
+.localUser-join__email,
+.localUser-join__password,
+.localUser-join__password2,
+.localUser-join__phoneNumber,
+.localUser-join__mainAddress {
+  width: 73%;
+  height: 25px;
+  border: none;
+  border-bottom: 1px solid #c2c2c2;
+}
+
+.localUser-join__name,
+.localUser-join__email,
+.localUser-join__password,
+.localUser-join__password2,
+.localUser-join__phoneNumber,
+.localUser-join__mainAddress,
+.localUser-join__subAddress::placeholder {
+  padding-bottom: 10px;
+  box-sizing: border-box;
+}
+
+.localUser-join__name,
+.localUser-join__email,
+.localUser-join__password,
+.localUser-join__password2,
+.localUser-join__phoneNumber,
+.localUser-join__mainAddress:focus {
+  outline: none;
+}
+
+.localUser-join__mainAddress:disabled {
+  background-color: white;
+  cursor: text;
+}
