@@ -1,5 +1,6 @@
 .localUser-join__header {
   width: 100%;
+  margin-bottom: 50px;
 }
 
 .localUser-join__header--closeBtn {
@@ -9,6 +10,8 @@
 .localUser-join__header--btn {
   cursor: pointer;
   font-size: 20px;
+  position: relative;
+  left: 15px;
 }
 
 .localUser-join__form {
