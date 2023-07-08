@@ -48,11 +48,22 @@ const LocalAuthUserJoin = () => {
   const getUserMainAddressInfo = () => setUserAddressInfo((prev) => !prev);
 
   // 입력한 이메일 서버중복검증 확인
-  const checkEmailAuth = () => setEnableEmailAuth((prev) => !prev);
+  const checkEmailAuth = () => {
+    const isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(localAuthUserInput.email); // 정규 표현식을 사용하여 이메일 형식 검사
+    if (isValid) return setEnableEmailAuth((prev) => !prev);
+  };
 
   // 이메일 인증 통과
   const getAuthEmailCode = () => {
     console.log("이메일 인증이 완료 되었습니다.");
+  };
+
+  const test = (e) => {
+    console.log(e);
+  };
+  // 회원가입 정보전송
+  const registerLocalUserAuth = (e) => {
+    console.log("섭밋");
   };
 
   const SHOW = styles[""];
@@ -79,7 +90,7 @@ const LocalAuthUserJoin = () => {
         <Title title="회원가입" className="localUser-join__header--title" />
       </div>
 
-      <form className={styles["localUser-join__form"]}>
+      <form className={styles["localUser-join__form"]} onSubmit={test}>
         <ul className={styles["localUser-join__item"]}>
           <li className={styles["localUser-join__itemList"]}>
             <label>
@@ -89,7 +100,7 @@ const LocalAuthUserJoin = () => {
               type="text"
               placeholder="한글, 영문, 숫자만 입력해 주세요"
               minLength="2"
-              maxLength="52"
+              maxLength="5"
               required={true}
               className="localUser-join__name"
               name="name"
