@@ -106,7 +106,7 @@ label > span {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 80px;
+  margin-top: 50px;
 }
 
 .localUser-join__footer-box {
