@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 // CSS
 import styles from "../../../styles/css/components/Auth/Local/LocalAuthUser.module.css";
@@ -14,23 +14,55 @@ import { AiOutlineClose } from "react-icons/ai";
 const LocalAuthUserJoin = () => {
   const [userAddressInfo, setUserAddressInfo] = useState(false);
   const [enableEmailAuth, setEnableEmailAuth] = useState(false);
-  const [userMainAddress, setUserMainAddress] = useState("");
+  const [localAuthUserInput, setLocalAuthUserInput] = useState({
+    name: "",
+    email: "",
+    emailAuth: "",
+    password: "",
+    password2: "",
+    tel: "",
+    mainAddress: "",
+    subAddress: "",
+  });
 
-  const userAddressInfoUpdate = (type, address) => {
-    if (type === "modal") return setUserAddressInfo((prev) => !prev);
-    if (type === "address") return setUserMainAddress(address);
+  // Input Value Set
+  const getInputValueInfo = (e) => {
+    const { name, value } = e.target;
+    setLocalAuthUserInput((prevInputValues) => ({
+      ...prevInputValues,
+      [name]: value,
+    }));
   };
 
+  // DaumAddress 컴포넌트 활성화, 클릭한 주소정보 Get
+  const userAddressInfoUpdate = (type, address) => {
+    if (type === "modal") return setUserAddressInfo((prev) => !prev);
+    if (type === "address")
+      return setLocalAuthUserInput((prev) => ({
+        ...prev,
+        mainAddress: address,
+      }));
+  };
+
+  // Input의 주소검색 버튼 누를시 DaumAddress 컴포넌트 활성화
   const getUserMainAddressInfo = () => setUserAddressInfo((prev) => !prev);
 
+  // 입력한 이메일 서버중복검증 확인
   const checkEmailAuth = () => setEnableEmailAuth((prev) => !prev);
 
-  const getAuthEmailCode = () => console.log("이메일 인증이 완료 되었습니다.");
+  // 이메일 인증 통과
+  const getAuthEmailCode = () => {
+    console.log("이메일 인증이 완료 되었습니다.");
+  };
+
+  const SHOW = styles[""];
+  const HIDE = styles["localUser-join__itemList-hidden"];
 
   // 이메일 중복확인 후 인증 동적 활성화 렌더링
-  const emailAuth = enableEmailAuth
-    ? styles[""]
-    : styles["localUser-join__itemList-hidden"];
+  const emailAuth = enableEmailAuth ? SHOW : HIDE;
+
+  // 메인주소 입력시, 서브주소 입력 활성화
+  const subEmailStye = localAuthUserInput.mainAddress.length > 1 ? SHOW : HIDE;
 
   return (
     <DefaultModal className="localUser-join">
@@ -57,10 +89,12 @@ const LocalAuthUserJoin = () => {
               type="text"
               placeholder="한글, 영문, 숫자만 입력해 주세요"
               minLength="2"
-              maxLength="5"
+              maxLength="52"
               required={true}
               className="localUser-join__name"
-              name="user-name"
+              name="name"
+              onChange={getInputValueInfo}
+              value={localAuthUserInput.name}
             />
           </li>
           <li className={styles["localUser-join__itemList"]}>
@@ -73,7 +107,9 @@ const LocalAuthUserJoin = () => {
               minLength="3"
               required={true}
               className="localUser-join__email"
-              name="user-email"
+              name="email"
+              onChange={getInputValueInfo}
+              value={localAuthUserInput.email}
             />
             <div
               className={styles["localuser-join__getEmail-btn"]}
@@ -89,7 +125,9 @@ const LocalAuthUserJoin = () => {
               minLength="3"
               required={true}
               className="localUser-join__email"
-              name="user-emailAuth"
+              name="emailAuth"
+              onChange={getInputValueInfo}
+              value={localAuthUserInput.emailAuth}
             />
             <div
               className={styles["localuser-join__checkEmail-auth"]}
@@ -109,7 +147,9 @@ const LocalAuthUserJoin = () => {
               maxLength="20"
               required={true}
               className="localUser-join__password"
-              name="user-password"
+              name="password"
+              onChange={getInputValueInfo}
+              value={localAuthUserInput.password}
             />
           </li>
           <li className={styles["localUser-join__itemList"]}>
@@ -123,7 +163,9 @@ const LocalAuthUserJoin = () => {
               maxLength="20"
               required={true}
               className="localUser-join__password2"
-              name="user-password2"
+              name="password2"
+              onChange={getInputValueInfo}
+              value={localAuthUserInput.password2}
             />
           </li>
           <li className={styles["localUser-join__itemList"]}>
@@ -137,18 +179,20 @@ const LocalAuthUserJoin = () => {
               maxLength="11"
               required={true}
               className="localUser-join__phoneNumber"
-              name="user-phoneNumber"
+              name="tel"
+              onChange={getInputValueInfo}
+              value={localAuthUserInput.tel}
             />
           </li>
           <li className={styles["localUser-join__itemList"]}>
             <label>주소</label>
             <Input
               type="text"
-              className="localUser-join__mainAddress"
-              name="user-mainAddress"
-              value={userMainAddress}
-              disabled={true}
               placeholder="기본 주소를 입력해주세요"
+              className="localUser-join__mainAddress"
+              name="mainAddress"
+              value={localAuthUserInput.mainAddress}
+              disabled={true}
             />
             <div
               onClick={getUserMainAddressInfo}
@@ -157,12 +201,14 @@ const LocalAuthUserJoin = () => {
               주소 검색
             </div>
           </li>
-          <li className={styles["localUser-join__itemList"]}>
+          <li className={styles["localUser-join__itemList"]} id={subEmailStye}>
             <Input
               type="text"
               className="localUser-join__mainAddress"
-              name="user-subAddress"
+              name="subAddress"
               placeholder="상세 주소를 입력해주세요"
+              onChange={getInputValueInfo}
+              value={localAuthUserInput.subAddress}
             />
           </li>
         </ul>
