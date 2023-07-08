@@ -11,9 +11,15 @@ import DaumAddress from "../Address/DaumAddress";
 import Button from "../../../common/Button/Button";
 import { AiOutlineClose } from "react-icons/ai";
 
+// Error MSG
+import { MSG } from "../../../lang/Message";
+
 const LocalAuthUserJoin = () => {
   const [userAddressInfo, setUserAddressInfo] = useState(false);
   const [enableEmailAuth, setEnableEmailAuth] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
+  const [successEmailAuthCode, setSuccessEmailAuthCode] = useState(false);
+
   const [localAuthUserInput, setLocalAuthUserInput] = useState({
     name: "",
     email: "",
@@ -51,19 +57,30 @@ const LocalAuthUserJoin = () => {
   const checkEmailAuth = () => {
     const isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(localAuthUserInput.email); // 정규 표현식을 사용하여 이메일 형식 검사
     if (isValid) return setEnableEmailAuth((prev) => !prev);
+    // 현재 누군가가 이메일을 사용중이라면 EMAIL_ONLY_USED
+    setErrorMessage(MSG.JOIN.EMAIL_FAIL);
   };
 
   // 이메일 인증 통과
   const getAuthEmailCode = () => {
-    console.log("이메일 인증이 완료 되었습니다.");
+    // 만약 인증번호가 불일치 하다면 EMAIL_AUTH_WRONG
+    setSuccessEmailAuthCode(true);
   };
 
-  const test = (e) => {
-    console.log(e);
-  };
   // 회원가입 정보전송
   const registerLocalUserAuth = (e) => {
+    e.preventDefault();
+    if (localAuthUserInput.name.length === 0)
+      return setErrorMessage(MSG.JOIN.NAME_FAIL);
+    if (!successEmailAuthCode) return setErrorMessage(MSG.JOIN.EMAIL_AUTH_FAIL);
+    if (localAuthUserInput.emailAuth.length < 2)
+      return setErrorMessage(MSG.JOIN.EMAIL_AUTH_VALUE);
+    if (localAuthUserInput.password !== localAuthUserInput.password2)
+      return setErrorMessage(MSG.JOIN.PASSWORD_FAIL);
+    if (localAuthUserInput.tel.length < 8)
+      return setErrorMessage(MSG.JOIN.PASSWORD_FAIL);
     console.log("섭밋");
+    // 회원정보 서버로 전송
   };
 
   const SHOW = styles[""];
@@ -77,6 +94,7 @@ const LocalAuthUserJoin = () => {
 
   return (
     <DefaultModal className="localUser-join">
+      {errorMessage}
       {userAddressInfo && (
         <DaumAddress
           userAddressInfo={userAddressInfo}
@@ -90,7 +108,10 @@ const LocalAuthUserJoin = () => {
         <Title title="회원가입" className="localUser-join__header--title" />
       </div>
 
-      <form className={styles["localUser-join__form"]} onSubmit={test}>
+      <form
+        className={styles["localUser-join__form"]}
+        onSubmit={registerLocalUserAuth}
+      >
         <ul className={styles["localUser-join__item"]}>
           <li className={styles["localUser-join__itemList"]}>
             <label>
@@ -134,7 +155,6 @@ const LocalAuthUserJoin = () => {
               type="text"
               placeholder="승인번호를 입력해주세요"
               minLength="3"
-              required={true}
               className="localUser-join__email"
               name="emailAuth"
               onChange={getInputValueInfo}
@@ -223,17 +243,23 @@ const LocalAuthUserJoin = () => {
             />
           </li>
         </ul>
-      </form>
-
-      <div className={styles["localUser-join__footer"]}>
-        <Button title="회원가입" className="localUser-join__footer-btn" />
-        <div className={styles["localUser-join__footer-box"]}>
-          <span className={styles["localUser-join__footer-existingAccount"]}>
-            이미 아이디가 있으신가요?
-          </span>
-          <span className={styles["localUser-join__footer-login"]}>로그인</span>
+        <div className={styles["localUser-join__footer"]}>
+          <Button
+            title="회원가입"
+            className="localUser-join__footer-btn"
+            type="submit"
+            onClick={registerLocalUserAuth}
+          />
+          <div className={styles["localUser-join__footer-box"]}>
+            <span className={styles["localUser-join__footer-existingAccount"]}>
+              이미 아이디가 있으신가요?
+            </span>
+            <span className={styles["localUser-join__footer-login"]}>
+              로그인
+            </span>
+          </div>
         </div>
-      </div>
+      </form>
     </DefaultModal>
   );
 };
