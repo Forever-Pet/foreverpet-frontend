@@ -8,12 +8,9 @@ import DaumPostcode from "react-daum-postcode";
 import { AiOutlineClose } from "react-icons/ai";
 
 const DaumAddress = (props) => {
-  const getUserMainAddressInfo = () => {
-    props.userAddressInfoUpdate("modal");
-  };
+  const getUserMainAddressInfo = () => props.userAddressInfoUpdate("modal");
 
   const completeUserAddress = (e) => {
-    console.log(e);
     props.userAddressInfoUpdate("modal");
     props.userAddressInfoUpdate("address", e.address);
   };
