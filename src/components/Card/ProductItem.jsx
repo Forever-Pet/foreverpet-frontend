@@ -2,15 +2,14 @@ import styles from '../../styles/css/components/Card/ProductItem.module.css'
 import Image from '../../common/Img/Image'
 import item from '../../assets/image 26.svg'
 import { BsHeart, BsFillHeartFill, BsHandbag, BsHandbagFill } from "react-icons/bs";
-import { IconClickHook } from '../../hooks/IconClickHook/IconClickHook'
+import { ClickHook } from '../../hooks/ClickHook/ClickHook'
 
 const ProductItem = (props) => {
-  const [like, handleLike] = IconClickHook(false)
-  const [bag, handleBag] = IconClickHook(false)
+  const [like, handleLike] = ClickHook(false)
+  const [bag, handleBag] = ClickHook(false)
 
   return (
     <>
-    <div className={styles.container}>
       <div className={styles.productItem}>
         <div className={styles.productItem__img}>
           <Image src={item}/>
@@ -27,16 +26,19 @@ const ProductItem = (props) => {
         <div className={styles.productContent}>
           <p className={styles.productContent__brandName}>브랜드명</p>
           <h3 className={styles.productContent__productName}>상품명</h3>
-          <div /*style={{display:'flex', alignItems: 'center'}}*/>
+          <div>
             <span className={ `${styles.productContent__sale} ${styles.productContent__sale__orange}`}>10%</span>
             <span className={styles.productContent__sale}>4,500원</span>
             <span className={styles.productContent__salePrice}>5000원</span>
             </div>
         </div>
-        
       </div>
+
       
-    </div>
+
+      
+      
+   
     </>
   )
 }
