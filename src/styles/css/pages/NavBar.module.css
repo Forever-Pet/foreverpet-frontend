@@ -1,0 +1,27 @@
+/*NavBar.module.css*/
+
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Noto+Sans+KR&display=swap');
+
+.nav {
+position: fixed;
+top: 150px;
+left: 250px;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+
+.tabmenu {
+ margin-left:70px;
+ text-decoration: none;
+ color: #666666;
+ cursor: pointer;
+ font-size: 13px;
+ font-family: 'Noto Sans KR', sans-serif;
+}
+
+.tabmenu1 {
+  color: black;
+  font-weight: 600;
+}

@@ -1,6 +1,11 @@
 import React from 'react';
+import Header from '../components/Header/Header';
+import Footer from '../components/Footer/Footer';
+
 import {useMediaQuery} from 'react-responsive';
-import Layout from './Layout/Layout';
+
+//css
+import styles from '../styles/css/pages/Home.module.css';
 
 //모바일
 export const Mobile = ({children}) => {
@@ -18,14 +23,22 @@ export const PC = ({children}) => {
   return <>{isPc && children}</>
 }
 
+
+
 const Home = () => {
-  return <div>
-    <Layout>
+  return (
+  <div className={styles.home}>
+    <div>
+    <Header></Header>
+    </div>
     <Mobile>mobile</Mobile>
     <PC>pc</PC>
-    </Layout>
-    
+    <div>
+    <Footer/>
     </div>
+    
+  </div>
+  );
 };
 
 export default Home;

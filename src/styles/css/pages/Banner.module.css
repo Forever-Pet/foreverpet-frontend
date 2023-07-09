@@ -1,0 +1,35 @@
+/*Banner.module.css*/
+
+.nav {
+  position: fixed;
+  top: 145px;
+  right: 31px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  }
+
+  .icon {
+    margin-left:19px;
+    text-decoration: none;
+    color: #666666;
+    cursor: pointer;
+    font-size: 25px;
+    font-family: 'Noto Sans KR', sans-serif;
+   }
+  
+  .icon1 {
+    position: fixed;
+    right: 131px;
+    top: 150px;
+    color: #dddddd;
+    cursor: pointer;
+  }
+
+   .search {
+    width: 200px;
+    height: 27px;
+    border-radius: 15px;
+    border : 1px solid #dddddd;
+   }
+
