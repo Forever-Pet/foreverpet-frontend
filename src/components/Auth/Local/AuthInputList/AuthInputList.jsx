@@ -1,6 +1,7 @@
 // CSS
 import styles from "../../../../styles/css/components/Auth/Local/LocalAuthUser.module.css";
 
+// Components
 import Input from "../../../../common/Input/Input";
 
 const AuthInputList = (props) => {
