@@ -11,8 +11,8 @@ div {
 .base {
   width: 90%;
   margin: 50px auto;
-  max-width: 1000px;
   position: relative;
+  max-width: 1280px;
 }
 
 .container {
@@ -39,6 +39,7 @@ div {
   top: 80px;
   right: 0;
   width: 250px;
+  z-index: 100;
 }
 
 .selectDrop__list {
