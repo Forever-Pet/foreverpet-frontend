@@ -108,7 +108,7 @@ const LocalAuthUserJoin = () => {
           userAddressInfoUpdate={userAddressInfoUpdate}
         />
       )}
-      <LocalAuthUserHeader />
+      <LocalAuthUserHeader title="회원가입" />
 
       <form
         className={styles["localUser-join__form"]}
