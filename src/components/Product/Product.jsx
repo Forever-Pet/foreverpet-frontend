@@ -19,10 +19,13 @@ const ListItem = ({value, onClick, isChecked}) => {
 const Product = (props) => {
 
   const [click, checkClick] = ClickHook(false)
+
   const [selectedValue, setSelectedValue] = useState('베스트');
-  
+
   const handleItemClick = (value) => {
     setSelectedValue(value);
+    //필터api호출
+    checkClick()
   };
 
   return <>
