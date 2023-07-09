@@ -1,12 +1,10 @@
-import LocalAuthUserJoin from "../components/Auth/Local/LocalAuthUserJoin";
-// import LocalAuthUserLogin from "../components/Auth/Local/LocalAuthUserLogin";
-import DaumAddress from "../components/Auth/Address/DaumAddress";
+import JoinLoginTestView from "../JoinLoginTestView";
 
 const Home = () => {
   return (
     <div>
       ㅎㅇㅎㅇ
-      <LocalAuthUserJoin />
+      <JoinLoginTestView />
     </div>
   );
 };
