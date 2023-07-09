@@ -1,5 +1,9 @@
-.localUser-join__header--title {
+.localUser-auth__header--title,
+.localUser-login__sns-title {
+  font-weight: bold;
+}
+
+.localUser-auth__header--title {
   text-align: center;
   font-size: 23px;
-  font-weight: bold;
 }

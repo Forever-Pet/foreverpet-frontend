@@ -12,6 +12,16 @@
 .localUser-join {
   width: 530px;
   height: 640px;
+}
+
+.localUser-login,
+.localUser-login {
+  width: 480px;
+  height: 550px;
+}
+
+.localUser-join,
+.localUser-login {
   background-color: white;
   padding: 20px 40px;
   box-sizing: border-box;
