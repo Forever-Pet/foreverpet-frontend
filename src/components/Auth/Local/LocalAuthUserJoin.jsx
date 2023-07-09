@@ -1,15 +1,17 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
+// Event Debounce
+import { debounce } from "lodash";
 
 // CSS
 import styles from "../../../styles/css/components/Auth/Local/LocalAuthUser.module.css";
 
 // Components
 import DefaultModal from "../../../common/Modal/DefaultModal";
-import Input from "../../../common/Input/Input";
-import Title from "../../../common/Title/Title";
 import DaumAddress from "../Address/DaumAddress";
 import Button from "../../../common/Button/Button";
-import { AiOutlineClose } from "react-icons/ai";
+import LocalAuthUserHeader from "./HeaderTitle/LocalAuthUserHeader";
+import AuthInputList from "./AuthInputList/AuthInputList";
 
 // Error MSG
 import { MSG } from "../../../lang/Message";
@@ -19,7 +21,6 @@ const LocalAuthUserJoin = () => {
   const [enableEmailAuth, setEnableEmailAuth] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const [successEmailAuthCode, setSuccessEmailAuthCode] = useState(false);
-
   const [localAuthUserInput, setLocalAuthUserInput] = useState({
     name: "",
     email: "",
@@ -31,14 +32,19 @@ const LocalAuthUserJoin = () => {
     subAddress: "",
   });
 
-  // Input Value Set
-  const getInputValueInfo = (e) => {
+  // Debounce Func
+  const debounceInputValueFunc = (e) => {
     const { name, value } = e.target;
+    // Input Value Set
     setLocalAuthUserInput((prevInputValues) => ({
       ...prevInputValues,
       [name]: value,
     }));
+    return setErrorMessage("");
   };
+
+  // Debounce Set
+  const getInputValueInfo = debounce(debounceInputValueFunc, 300);
 
   // DaumAddress 컴포넌트 활성화, 클릭한 주소정보 Get
   const userAddressInfoUpdate = (type, address) => {
@@ -63,6 +69,8 @@ const LocalAuthUserJoin = () => {
 
   // 이메일 인증 통과
   const getAuthEmailCode = () => {
+    if (localAuthUserInput.emailAuth.length === 0)
+      return setErrorMessage(MSG.JOIN.EMAIL_AUTH_VALUE);
     // 만약 인증번호가 불일치 하다면 EMAIL_AUTH_WRONG
     setSuccessEmailAuthCode(true);
   };
@@ -73,7 +81,7 @@ const LocalAuthUserJoin = () => {
     if (localAuthUserInput.name.length === 0)
       return setErrorMessage(MSG.JOIN.NAME_FAIL);
     if (!successEmailAuthCode) return setErrorMessage(MSG.JOIN.EMAIL_AUTH_FAIL);
-    if (localAuthUserInput.emailAuth.length < 2)
+    if (localAuthUserInput.emailAuth.length === 0)
       return setErrorMessage(MSG.JOIN.EMAIL_AUTH_VALUE);
     if (localAuthUserInput.password !== localAuthUserInput.password2)
       return setErrorMessage(MSG.JOIN.PASSWORD_FAIL);
@@ -94,155 +102,28 @@ const LocalAuthUserJoin = () => {
 
   return (
     <DefaultModal className="localUser-join">
-      {errorMessage}
       {userAddressInfo && (
         <DaumAddress
           userAddressInfo={userAddressInfo}
           userAddressInfoUpdate={userAddressInfoUpdate}
         />
       )}
-      <div className={styles["localUser-join__header"]}>
-        <div className={styles["localUser-join__header--closeBtn"]}>
-          <AiOutlineClose className={styles["localUser-join__header--btn"]} />
-        </div>
-        <Title title="회원가입" className="localUser-join__header--title" />
-      </div>
+      <LocalAuthUserHeader />
 
       <form
         className={styles["localUser-join__form"]}
         onSubmit={registerLocalUserAuth}
       >
-        <ul className={styles["localUser-join__item"]}>
-          <li className={styles["localUser-join__itemList"]}>
-            <label>
-              이름 <span>*</span>
-            </label>
-            <Input
-              type="text"
-              placeholder="한글, 영문, 숫자만 입력해 주세요"
-              minLength="2"
-              maxLength="5"
-              required={true}
-              className="localUser-join__name"
-              name="name"
-              onChange={getInputValueInfo}
-              value={localAuthUserInput.name}
-            />
-          </li>
-          <li className={styles["localUser-join__itemList"]}>
-            <label>
-              이메일 주소 <span>*</span>
-            </label>
-            <Input
-              type="email"
-              placeholder="이메일 주소를 입력해 주세요."
-              minLength="3"
-              required={true}
-              className="localUser-join__email"
-              name="email"
-              onChange={getInputValueInfo}
-              value={localAuthUserInput.email}
-            />
-            <div
-              className={styles["localuser-join__getEmail-btn"]}
-              onClick={checkEmailAuth}
-            >
-              중복확인
-            </div>
-          </li>
-          <li className={styles["localUser-join__itemList"]} id={emailAuth}>
-            <Input
-              type="text"
-              placeholder="승인번호를 입력해주세요"
-              minLength="3"
-              className="localUser-join__email"
-              name="emailAuth"
-              onChange={getInputValueInfo}
-              value={localAuthUserInput.emailAuth}
-            />
-            <div
-              className={styles["localuser-join__checkEmail-auth"]}
-              onClick={getAuthEmailCode}
-            >
-              승인번호 확인
-            </div>
-          </li>
-          <li className={styles["localUser-join__itemList"]}>
-            <label>
-              비밀번호 <span>*</span>
-            </label>
-            <Input
-              type="password"
-              placeholder="비밀번호를 입력해 주세요 (영문, 숫자 사용10~20자)"
-              minLength="10"
-              maxLength="20"
-              required={true}
-              className="localUser-join__password"
-              name="password"
-              onChange={getInputValueInfo}
-              value={localAuthUserInput.password}
-            />
-          </li>
-          <li className={styles["localUser-join__itemList"]}>
-            <label>
-              비밀번호 확인 <span>*</span>
-            </label>
-            <Input
-              type="password"
-              placeholder="비밀번호를 재입력해 주세요"
-              minLength="10"
-              maxLength="20"
-              required={true}
-              className="localUser-join__password2"
-              name="password2"
-              onChange={getInputValueInfo}
-              value={localAuthUserInput.password2}
-            />
-          </li>
-          <li className={styles["localUser-join__itemList"]}>
-            <label>
-              휴대폰 번호 <span>*</span>
-            </label>
-            <Input
-              type="tel"
-              placeholder="휴대폰 번호를 '-' 없이 입력해 주세요"
-              minLength="8"
-              maxLength="11"
-              required={true}
-              className="localUser-join__phoneNumber"
-              name="tel"
-              onChange={getInputValueInfo}
-              value={localAuthUserInput.tel}
-            />
-          </li>
-          <li className={styles["localUser-join__itemList"]}>
-            <label>주소</label>
-            <Input
-              type="text"
-              placeholder="기본 주소를 입력해주세요"
-              className="localUser-join__mainAddress"
-              name="mainAddress"
-              value={localAuthUserInput.mainAddress}
-              disabled={true}
-            />
-            <div
-              onClick={getUserMainAddressInfo}
-              className={styles["localuser-join__mainAddress-btn"]}
-            >
-              주소 검색
-            </div>
-          </li>
-          <li className={styles["localUser-join__itemList"]} id={subEmailStye}>
-            <Input
-              type="text"
-              className="localUser-join__mainAddress"
-              name="subAddress"
-              placeholder="상세 주소를 입력해주세요"
-              onChange={getInputValueInfo}
-              value={localAuthUserInput.subAddress}
-            />
-          </li>
-        </ul>
+        <AuthInputList
+          emailAuth={emailAuth}
+          subEmailStye={subEmailStye}
+          localAuthUserInput={localAuthUserInput}
+          getAuthEmailCode={getAuthEmailCode}
+          checkEmailAuth={checkEmailAuth}
+          getUserMainAddressInfo={getUserMainAddressInfo}
+          getInputValueInfo={getInputValueInfo}
+        />
+        {errorMessage && <span>{errorMessage}</span>}
         <div className={styles["localUser-join__footer"]}>
           <Button
             title="회원가입"
