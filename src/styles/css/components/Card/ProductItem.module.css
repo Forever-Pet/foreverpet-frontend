@@ -1,15 +1,14 @@
-.container {
+/*.container {
   display: grid;
   grid-template-columns: repeat(4,minmax(0,1fr));
   grid-column-gap: 8px;
   grid-row-gap: 24px;
   row-gap: 28px;
-}
+} 겉 div로 추가 해서 필요한 열 만큼 repeat 4 부분을 바꿔주면 됩니다 본인 페이지 css에서 
+적용해주세요 */
 
 .productItem {
   width: 100%;
-  /*white-space:nowrap; 줄바꿈 방지
-  모바일 사이즈 정해지면 풀기*/
 }
 
 .productItem__img img {
@@ -37,7 +36,7 @@
 }
 
 .productItem__img__button__heart {
-  top:50%;
+  top:55%;
   right: 10px;
 }
 .productItem__img__button__heart__fill {
