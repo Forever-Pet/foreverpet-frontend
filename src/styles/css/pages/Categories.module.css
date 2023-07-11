@@ -1,23 +1,50 @@
 /*categories.module.css*/
+
+/*font*/
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Noto+Sans+KR&display=swap');
 
 .nav {
-position: fixed;
-top: 70px;
-right: 30px;
+  position: fixed;
+  top: 70px;
+  right: 120px;
   display: flex;
   justify-content: center;
   align-items: center;
-  
 }
-
 
 .tabmenu {
  margin-left:25px;
  text-decoration: none;
  color: #666666;
  cursor: pointer;
- font-size: 12px;
+ font-size: 13px;
  font-family: 'Noto Sans KR', sans-serif;
 }
 
+.tabmenu:hover {
+   color: #000;
+}
+
+@media screen and (max-width: 768px) {
+  .nav {
+    position: fixed;
+    top: 46px;
+    right: 101px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  .tabmenu {
+   margin-left:13px;
+   text-decoration: none;
+   color: #666666;
+   cursor: pointer;
+   font-size: 10px;
+   font-family: 'Noto Sans KR', sans-serif;
+  }
+  
+  .tabmenu:hover {
+     color: #000;
+  }
+}

@@ -1,9 +1,13 @@
 /*Banner.module.css*/
 
+/*font*/
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Noto+Sans+KR&display=swap');
+
 .nav {
-  position: fixed;
-  top: 145px;
-  right: 31px;
+  position: relative;
+  top: 26px;
+  right: 121px;
+  float: right;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -20,7 +24,7 @@
   
   .icon1 {
     position: fixed;
-    right: 131px;
+    right: 223px;
     top: 150px;
     color: #dddddd;
     cursor: pointer;
@@ -32,4 +36,38 @@
     border-radius: 15px;
     border : 1px solid #dddddd;
    }
-
+   @media screen and (max-width: 768px) {
+    .nav {
+      position: relative;
+      top: -54px;
+      right: 24px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      }
+    
+      .icon {
+        margin-left:11px;
+        text-decoration: none;
+        color: #666666;
+        cursor: pointer;
+        font-size: 13px;
+        font-family: 'Noto Sans KR', sans-serif;
+       }
+      
+      .icon1 {
+        position: fixed;
+        right: 73px;
+        top: 51px;
+        color: #666666;
+        cursor: pointer;
+      }
+    
+       .search {
+        display: none;
+        width: 200px;
+        height: 27px;
+        border-radius: 15px;
+        border : 1px solid #dddddd;
+       }
+   }

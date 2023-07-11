@@ -1,5 +1,9 @@
 /*Footer.module.css*/
 
+/*font*/
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Noto+Sans+KR&display=swap');
+
 .footer {
   position: fixed;
   left: 0;
@@ -15,9 +19,8 @@
   align-items: center;
   justify-content: center;
   color: #666666;
-  padding-top: 37px;
   padding-bottom: 10px;
- font-size: 14px;
+ font-size: 13px;
  font-family: 'Noto Sans KR', sans-serif;
  border-bottom: 1px solid #ddd;
 }
@@ -27,12 +30,11 @@
 }
 
 .logo {
-    position: fixed;
-    bottom: 45px;
-    left: 254px;
+    width: 81px;
     font-family: 'Nanum Pen Script', cursive;
     font-size: 32px;
     margin: 0 auto;
+    color: #008e61;
 }
 
 .desccontainer {
@@ -42,4 +44,48 @@
    color: #666666;
    padding-top: 13px;
    font-family: 'Noto Sans KR', sans-serif;
+}
+
+@media screen and (max-width: 768px) {
+  .footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 110px;
+    margin-top: auto;
+   /*background-color: #ddd; */
+  }
+  
+  .contents {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666666;
+    padding-bottom: 10px;
+   font-size: 13px;
+   font-family: 'Noto Sans KR', sans-serif;
+   border-bottom: 1px solid #ddd;
+  }
+  
+  .contents > div {
+    padding-left: 15px;
+  }
+  
+  .logo {
+      width: 81px;
+      font-family: 'Nanum Pen Script', cursive;
+      font-size: 27px;
+      margin: 0 auto;
+      color: #008e61;
+  }
+  
+  .desccontainer {
+     display: flex;
+     justify-content: center;
+     font-size: 10px;
+     color: #666666;
+     padding-top: 11px;
+     font-family: 'Noto Sans KR', sans-serif;
+  }
 }

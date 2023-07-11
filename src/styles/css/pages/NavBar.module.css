@@ -1,27 +1,153 @@
 /*NavBar.module.css*/
 
+/*font*/
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Noto+Sans+KR&display=swap');
 
+/*nav 메뉴*/
 .nav {
-position: fixed;
-top: 150px;
-left: 250px;
-display: flex;
-justify-content: center;
-align-items: center;
+  position: relative;
+  left: -267px;
+  top: 54px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
 
 .tabmenu {
  margin-left:70px;
  text-decoration: none;
  color: #666666;
  cursor: pointer;
- font-size: 13px;
+ font-size: 15px;
  font-family: 'Noto Sans KR', sans-serif;
 }
 
 .tabmenu1 {
-  color: black;
+  color: #008e61;
   font-weight: 600;
+}
+
+/*햄버거버튼 css*/
+.icon {
+  font-size: 25px;
+  padding-right: 5px;
+  position: fixed;
+  left: 255px;
+}
+
+/*nav 서브 리스트 */
+.nav_list {
+  position: absolute;
+  top: 32px;
+  left: 525px;
+  width: 130px;
+  height: 345px;
+  line-height: 35px;
+  padding-left: 10px;
+  border: 1px solid #ddd;
+}
+
+.nav_list_item {
+  position: absolute;
+  left: 53px;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  margin-top: -44px;
+  color: black;
+  font-size: 14px;
+  transform: scale(1.0); /* 이미지 확대 */
+  transition: transform .5s; /* 시간 설정 */
+}
+
+.nav_list_item:hover {
+  color: #666666;
+  transform: scale(1.1);   /* 이미지 확대 */
+    transition: transform .5s;  /* 시간 설정 */
+}
+
+/*nav_list 이미지 */
+.img1 {
+  width: 35px;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 10px;
+  padding-top: 5px;
+ 
+}
+
+
+/*모바일*/
+@media screen and (max-width: 768px) {
+  .nav {
+    position: relative;
+    left: -77px;
+    top: 51px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .tabmenu {
+   margin-left:38px;
+   text-decoration: none;
+   color: #666666;
+   cursor: pointer;
+   font-size: 15px;
+   font-family: 'Noto Sans KR', sans-serif;
+  }
+  
+  .tabmenu1 {
+    color: #008e61;
+    font-weight: 600;
+  }
+  
+  /*햄버거버튼 css*/
+  .icon {
+    font-size: 25px;
+    padding-right: 5px;
+    position: fixed;
+    left: 7px;
+    top: 134px;
+  }
+  
+  /*nav 서브 리스트 */
+  .nav_list {
+    position: absolute;
+    top: 32px;
+    left: 88px;
+    width: 296px;
+    height: 307px;
+    line-height: 35px;
+    padding-left: 10px;
+    border: 1px solid #ddd;
+  }
+  
+  .nav_list_item {
+    position: absolute;
+    left: 53px;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    margin-top: -44px;
+    color: black;
+    font-size: 12px;
+    transform: scale(1.0); /* 이미지 확대 */
+    transition: transform .5s; /* 시간 설정 */
+  }
+  
+  .nav_list_item:hover {
+    color: #666666;
+    transform: scale(1.1);   /* 이미지 확대 */
+      transition: transform .5s;  /* 시간 설정 */
+  }
+  
+  /*nav_list 이미지 */
+  .img1 {
+    width: 29px;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 10px;
+    padding-top: 5px;
+  }
+  
 }
