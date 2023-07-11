@@ -5,6 +5,7 @@ import { ClickHook } from '../../hooks/ClickHook/ClickHook'
 import { useState } from 'react';
 import { BiCheck } from "react-icons/bi";
 
+//필터 카테고리 컴포넌트 부분
 const ListItem = ({value, onClick, isChecked}) => {
   return (
     <li className={styles.selectDrop__list__option} style={{color: isChecked ? 'black':'gray'}} onClick={onClick}>
@@ -22,7 +23,7 @@ const Product = (props) => {
 
   const [selectedValue, setSelectedValue] = useState('베스트');
 
-  const handleItemClick = (value) => {
+  const handleItemClick = (value) => { //클릭한 필터로 보이게 설정
     setSelectedValue(value);
     //필터api호출
     checkClick()
