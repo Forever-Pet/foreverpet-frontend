@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
 //css
-import styles from '../../styles/css/pages/Banner.module.css';
+import styles from '../../styles/css/pages/NavBarBox.module.css';
 
 //icon
 import { BiUser ,BiBasket } from "react-icons/bi";
@@ -15,7 +15,7 @@ import { GoSearch} from "react-icons/go";
 
 
 //헤더 - 상품검색,마이페이지,장바구니
-const Banner = () => {
+const NavBarBox = () => {
   const [search , setSearch] = useState("");
   const onChange = (e) => {
     setSearch(e.target.value)
@@ -44,4 +44,4 @@ const Banner = () => {
   );
 };
 
-export default Banner;
+export default NavBarBox;

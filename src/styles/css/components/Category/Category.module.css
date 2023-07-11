@@ -1,0 +1,37 @@
+/*Category.module.css*/
+
+.category {
+  width: 1230px;
+  height: 600px;
+  margin: 0 auto;
+  padding-top: 50px;
+}
+
+.category_ul {
+  display: flex;
+  line-height: 23px;
+  margin-left: -50px;
+  /* gap: 10px 5px; */
+}
+
+.category_item {
+  text-align: center;
+  margin: 0 auto;
+  width: 78px;
+  list-style-type : none;
+ 
+}
+
+.category_link {
+  text-decoration: none;
+  color: #666666;
+  font-size: 14px;
+}
+
+.category_img {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto;
+  text-align: center;
+  border-radius: 50%;
+}

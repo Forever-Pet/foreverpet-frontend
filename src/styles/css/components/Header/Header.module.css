@@ -10,8 +10,8 @@
   left: 0;
   top: 0;
   width: 100%;
-  height: 180px;
-  /*background-color: #f0eeee;*/
+  height: 202px;
+  background-color: #fff;
 }
 
 .contents {
@@ -65,15 +65,15 @@ p{
 /*모바일*/
 @media screen and (max-width: 768px) {
   .header {
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 180px;
-    /*background-color: #f0eeee;*/
-  }
-  
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 202px;
+    background-color: #fff;
+}
+
   .logo {
     position: relative;
     font-family: 'Nanum Pen Script', cursive;

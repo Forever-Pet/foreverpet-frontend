@@ -1,6 +1,6 @@
 import { useState } from "react";
-import Banner from "./Banner";
-import Categories from "./Categories";
+import NavBarBox from "./NavBarBox";
+import TopMenu from "./TopMenu";
 import NavBar from "./NavBar";
 
 // CSS
@@ -36,9 +36,9 @@ const Header = (props) => {
         </div>
         
       </div>
-      <Categories/>
+      <TopMenu/>
       <NavBar/>
-       <Banner/>
+       <NavBarBox/>
     </header>
     </>
    

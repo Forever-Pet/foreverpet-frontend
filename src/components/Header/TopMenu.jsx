@@ -2,10 +2,10 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 //css
-import styles from '../../styles/css/pages/Categories.module.css';
+import styles from '../../styles/css/pages/TopMenu.module.css';
 
 //헤더 상단
-const Categories = () => {
+const TopMenu = () => {
   return (
     <div>
       <nav className={styles.nav}>
@@ -34,4 +34,4 @@ const Categories = () => {
   );
 };
 
-export default Categories;
+export default TopMenu;
