@@ -3,10 +3,11 @@
 /*font*/
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Noto+Sans+KR&display=swap');
 
+/*마이페이지&장바구니 아이콘*/
 .nav {
   position: relative;
-  top: 26px;
-  right: 121px;
+  top: -17px;
+  right: 124px;
   float: right;
   display: flex;
   justify-content: center;
@@ -22,14 +23,16 @@
     font-family: 'Noto Sans KR', sans-serif;
    }
   
+   /*검색 아이콘*/
   .icon1 {
     position: fixed;
     right: 223px;
-    top: 150px;
+    top: 166px;
     color: #dddddd;
     cursor: pointer;
   }
 
+  /*검색창*/
    .search {
     width: 200px;
     height: 27px;
@@ -37,15 +40,16 @@
     border : 1px solid #dddddd;
    }
    @media screen and (max-width: 768px) {
+    /*마이페이지&장바구니 아이콘*/
     .nav {
       position: relative;
-      top: -54px;
+      top: -132px;
       right: 24px;
       display: flex;
       justify-content: center;
       align-items: center;
       }
-    
+      
       .icon {
         margin-left:11px;
         text-decoration: none;
@@ -54,11 +58,12 @@
         font-size: 13px;
         font-family: 'Noto Sans KR', sans-serif;
        }
-      
+
+      /*검색 아이콘*/
       .icon1 {
         position: fixed;
         right: 73px;
-        top: 51px;
+        top: 49px;
         color: #666666;
         cursor: pointer;
       }

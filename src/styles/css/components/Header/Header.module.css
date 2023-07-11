@@ -6,6 +6,7 @@
 
 .header {
   position: fixed;
+  z-index: 1;
   left: 0;
   top: 0;
   width: 100%;
@@ -16,11 +17,13 @@
 .contents {
   display: flex;
   width: 95%;
-  max-width: 1100px;
+  height: 110px;
+  max-width: 1195px;
   margin: 0 auto;
   padding-top: 45px;
   align-items: center;
   justify-content: space-between;
+  border-bottom: 2px solid #918D8C;
 }
 
 .logo {
@@ -54,8 +57,23 @@ p{
   cursor: pointer;
 }
 
+/*헤더 검정 줄*/
+.headerline {
+  /* width: 1230px; */
+  /* border-top: 2px solid #918D8C; */
+}
 /*모바일*/
 @media screen and (max-width: 768px) {
+  .header {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 180px;
+    /*background-color: #f0eeee;*/
+  }
+  
   .logo {
     position: relative;
     font-family: 'Nanum Pen Script', cursive;

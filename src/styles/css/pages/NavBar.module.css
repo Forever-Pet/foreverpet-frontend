@@ -6,8 +6,8 @@
 /*nav 메뉴*/
 .nav {
   position: relative;
-  left: -267px;
-  top: 54px;
+ right: 370px;
+  top: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -32,19 +32,20 @@
   font-size: 25px;
   padding-right: 5px;
   position: fixed;
-  left: 255px;
+  left:141px;
 }
 
 /*nav 서브 리스트 */
 .nav_list {
   position: absolute;
   top: 32px;
-  left: 525px;
-  width: 130px;
+  left: 512px;
+  width: 174px;
   height: 345px;
   line-height: 35px;
   padding-left: 10px;
   border: 1px solid #ddd;
+  background-color: #fff;
 }
 
 .nav_list_item {
@@ -79,10 +80,11 @@
 
 /*모바일*/
 @media screen and (max-width: 768px) {
+  /*nav 메뉴*/
   .nav {
     position: relative;
-    left: -77px;
-    top: 51px;
+    left: -73px;
+    top: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -106,20 +108,21 @@
     font-size: 25px;
     padding-right: 5px;
     position: fixed;
-    left: 7px;
-    top: 134px;
+    left: 11px;
+    top: 166px;
   }
   
   /*nav 서브 리스트 */
   .nav_list {
     position: absolute;
     top: 32px;
-    left: 88px;
-    width: 296px;
+    left: 86px;
+    width: 134px;
     height: 307px;
     line-height: 35px;
     padding-left: 10px;
     border: 1px solid #ddd;
+    background-color: #fff;
   }
   
   .nav_list_item {

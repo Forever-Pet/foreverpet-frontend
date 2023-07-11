@@ -34,10 +34,11 @@ const Header = (props) => {
         <div className={styles.logo}>
            포에버펫
         </div>
+        
       </div>
-        <Categories/>
-        <NavBar/>
-        <Banner/>
+      <Categories/>
+      <NavBar/>
+       <Banner/>
     </header>
     </>
    
