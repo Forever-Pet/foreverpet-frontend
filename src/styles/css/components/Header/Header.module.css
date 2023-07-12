@@ -41,6 +41,7 @@
   background-color: #008e61;
 }
 
+ /*베너 텍스트*/
 p{
   text-align: center;
   margin: 0 auto;
@@ -57,11 +58,7 @@ p{
   cursor: pointer;
 }
 
-/*헤더 검정 줄*/
-.headerline {
-  /* width: 1230px; */
-  /* border-top: 2px solid #918D8C; */
-}
+
 /*모바일*/
 @media screen and (max-width: 768px) {
   .header {

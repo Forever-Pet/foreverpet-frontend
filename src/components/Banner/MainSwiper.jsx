@@ -6,6 +6,7 @@ import { Carousel } from 'react-responsive-carousel';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import styles from "../../styles/css/components/Banner/MainSlides.module.css";
 
+//슬라이드 이미지
 const renderSlides = imageData.map(image => (
   <div key={image.alt}>
     <img src={image.src} alt={image.alt}/>

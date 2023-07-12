@@ -6,8 +6,7 @@ import Category from '../components/Navigation/Category/Category';
 
 //css
 import styles from '../styles/css/pages/Home.module.css';
-
-
+import BestItem from '../components/Home/BestItem';
 
 const Home = () => {
   return (
@@ -15,6 +14,7 @@ const Home = () => {
     <Header/>
     <MainSwiper/>
     <Category/>
+    <BestItem/>
     <Footer/>
   </div>
   );

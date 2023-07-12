@@ -1,4 +1,15 @@
 /*MainSlides.module.css*/
 .slides {
-  max-width: 1200px;margin: 0 auto;margin-top: 123px;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-top: 123px;
+}
+
+/*모바일*/
+@media screen and (max-width: 768px) {
+  .slides {
+     max-width: 460px;
+     margin: 0 auto;
+     margin-top: 123px;
+  }
 }

@@ -9,6 +9,21 @@ const Category = () => {
   return (
     <div className={styles.category}>
       <ul className={styles.category_ul}>
+
+      <li className={styles.category_item}>
+      <NavLink to="/login" className={styles.category_link}> 
+      <img className={styles.category_img} alt='food' src='img/img-1-1.jpeg'/>
+        회원혜택 
+      </NavLink>
+      </li>
+
+      {/* <li className={styles.category_item}>
+      <NavLink to="/login" className={styles.category_link}> 
+      <img className={styles.category_img} alt='food' src='img/img-11-1.jpeg'/>
+        포에버365 
+      </NavLink>
+      </li> */}
+
       <li className={styles.category_item}>
       <NavLink to="/login" className={styles.category_link}> 
       <img className={styles.category_img} alt='food' src='img/img-4-1.jpeg'/>

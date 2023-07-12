@@ -1,0 +1,41 @@
+/*BestItem.module.css*/
+
+.bestitem {
+  position: relative;
+  width: 1230px;
+  height: 500px;
+  background-color: #008e61;
+  margin: 0 auto;
+}
+
+.header_text {
+ position: absolute;
+ color: #333;
+}
+
+.bestitem_el {
+  position: relative;
+  display: block;
+ 
+}
+
+.img {
+  width: 280px;
+  height: 280px;
+}
+
+.bestitem_co {
+
+}
+
+.bestitem_co1 {
+
+}
+
+.bestitem_co2 {
+
+}
+
+.bestitem_co3 {
+
+}
