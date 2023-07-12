@@ -1,0 +1,59 @@
+.localUser-login__email {
+  margin-bottom: 20px;
+}
+
+.localUser-login__email,
+.localUser-login__password {
+  width: 80%;
+  height: 40px;
+}
+
+.localUser-join__name,
+.localUser-join__email,
+.localUser-join__password,
+.localUser-join__password2,
+.localUser-join__phoneNumber,
+.localUser-join__mainAddress {
+  width: 73%;
+  height: 25px;
+}
+
+.localUser-login__email,
+.localUser-login__password,
+.localUser-join__name,
+.localUser-join__email,
+.localUser-join__password,
+.localUser-join__password2,
+.localUser-join__phoneNumber,
+.localUser-join__mainAddress {
+  border: none;
+  border-bottom: 1px solid #c2c2c2;
+}
+
+.localUser-login__email,
+.localUser-login__password,
+.localUser-join__name,
+.localUser-join__email,
+.localUser-join__password,
+.localUser-join__password2,
+.localUser-join__phoneNumber,
+.localUser-join__mainAddress,
+.localUser-join__subAddress::placeholder {
+  padding-bottom: 10px;
+  box-sizing: border-box;
+}
+.localUser-login__email,
+.localUser-login__password,
+.localUser-join__name,
+.localUser-join__email,
+.localUser-join__password,
+.localUser-join__password2,
+.localUser-join__phoneNumber,
+.localUser-join__mainAddress:focus {
+  outline: none;
+}
+
+.localUser-join__mainAddress:disabled {
+  background-color: white;
+  cursor: text;
+}

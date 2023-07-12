@@ -1,5 +1,12 @@
+import JoinLoginTestView from "../JoinLoginTestView";
+
 const Home = () => {
-  return <div>루트 페이지 입니다.</div>;
+  return (
+    <div>
+      ㅎㅇㅎㅇ
+      <JoinLoginTestView />
+    </div>
+  );
 };
 
 export default Home;
