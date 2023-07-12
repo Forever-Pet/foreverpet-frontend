@@ -1,10 +1,11 @@
 // CSS
-import classes from "../../styles/css/commons/Button.module.css"
+import classes from "../../styles/css/commons/Button.module.css";
 
 const Button = (props) => {
   return (
     <button
       onClick={props.onClick}
+      type={props.type}
       id={classes[props.id || ""]}
       className={classes[props.className || ""]}
     >
@@ -13,5 +14,4 @@ const Button = (props) => {
   );
 };
 
-
-export default Button
+export default Button;
