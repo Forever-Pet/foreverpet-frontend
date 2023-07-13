@@ -1,33 +1,14 @@
 import styles from '../../styles/css/components/Product/Product.module.css'
 import ProductItem from '../../components/Card/ProductItem'
 import { MdArrowDropDown, MdArrowDropUp } from "react-icons/md";
-import { ClickHook } from '../../hooks/ClickHook/ClickHook'
+import { UseClickHook } from '../../hooks/ClickHook/UseClickHook'
+import ProductFilter from './ProductFilter';
 import { useState } from 'react';
-import { BiCheck } from "react-icons/bi";
-
-//필터 카테고리 컴포넌트 부분
-const ListItem = ({value, onClick, isChecked}) => {
-  return (
-    <li className={styles.selectDrop__list__option} style={{color: isChecked ? 'black':'gray'}} onClick={onClick}>
-      {isChecked && 
-      <BiCheck className={styles.selectDrop__list__option__check}/>
-      }
-      {value}
-    </li>
-  )
-}
+import DefaultModal from '../../common/Modal/DefaultModal'
 
 const Product = (props) => {
-
-  const [click, checkClick] = ClickHook(false)
-
+  const [click, checkClick] = UseClickHook(false)
   const [selectedValue, setSelectedValue] = useState('베스트');
-
-  const handleItemClick = (value) => { //클릭한 필터로 보이게 설정
-    setSelectedValue(value);
-    //필터api호출
-    checkClick()
-  };
 
   return <>
   <div className={styles.base}>
@@ -44,11 +25,7 @@ const Product = (props) => {
     </div>
 
     {click &&  <div className={styles.selectDrop__cont}>
-      <ul className={styles.selectDrop__list}>
-        <ListItem value="베스트" isChecked={selectedValue === "베스트"} onClick={() => handleItemClick("베스트")}/>
-
-        <ListItem value="최신순" isChecked={selectedValue === "최신순"} onClick={() => handleItemClick("최신순")}/>
-      </ul>
+     <ProductFilter selectedValue={selectedValue} setSelectedValue={setSelectedValue} checkClick={checkClick}></ProductFilter>
     </div> }
 
     <div className={styles.container}>
@@ -56,6 +33,12 @@ const Product = (props) => {
     </div>
 
   </div>
+
+
+      <DefaultModal className='localUser-login'>
+          <span>dd</span>
+      </DefaultModal>
+
   
   </>
 }
