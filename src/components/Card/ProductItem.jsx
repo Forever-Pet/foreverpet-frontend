@@ -2,13 +2,13 @@ import styles from '../../styles/css/components/Card/ProductItem.module.css'
 import Image from '../../common/Img/Image'
 import item from '../../assets/image 26.svg'
 import { BsHeart, BsFillHeartFill, BsHandbag, BsHandbagFill } from "react-icons/bs";
-import { handleWishBag } from '../../hooks/ClickHook/handleWishBag'
+import { UsehandleWishBag } from '../../hooks/ClickHook/UsehandleWishBag'
 
 
 const ProductItem = (props) => {
 
-  const [IsWishlist, handleWishlist] = handleWishBag()
-  const [IsBaglist, handleBaglist] = handleWishBag()
+  const [IsWishlist, handleWishlist] = UsehandleWishBag()
+  const [IsBaglist, handleBaglist] = UsehandleWishBag()
 
   return (
     <>
