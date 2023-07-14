@@ -1,13 +1,13 @@
 // CSS
-import classes from "../../styles/css/commons/Button.module.css";
+import styles from "../../styles/css/commons/Button.module.css";
 
 const Button = (props) => {
   return (
     <button
       onClick={props.onClick}
       type={props.type}
-      id={classes[props.id || ""]}
-      className={classes[props.className || ""]}
+      id={styles[props.id || ""]}
+      className={styles[props.className || ""]}
     >
       {props.title}
     </button>
