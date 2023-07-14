@@ -6,6 +6,9 @@ import LocalAuthUserHeader from "./HeaderTitle/LocalAuthUserHeader";
 import Input from "../../../common/Input/Input";
 import Button from "../../../common/Button/Button";
 import Title from "../../../common/Title/Title";
+import KakaoAuthUserAccount from "../Kakao/KakaoAuthUserAccount";
+import NaverAuthUserAccount from "../Naver/NaverAuthUserAccount";
+import GoogleAuthUserAccount from "../Google/GoogleAuthUserAccount";
 
 const LocalAuthUserLogin = () => {
   return (
@@ -40,9 +43,9 @@ const LocalAuthUserLogin = () => {
           className="localUser-login__sns-title"
         />
         <div className={styles["localUser-login_sns"]}>
-          <span>카카오</span>
-          <span>네이버</span>
-          <span>구글</span>
+          <KakaoAuthUserAccount />
+          <NaverAuthUserAccount />
+          <GoogleAuthUserAccount />
         </div>
       </div>
     </>
