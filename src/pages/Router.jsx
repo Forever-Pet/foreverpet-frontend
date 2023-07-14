@@ -3,19 +3,22 @@ import { useState } from "react";
 
 // Pages
 import Home from "./Home";
+import Login from "./User/Login";
+import Join from "./User/Join";
 import PageNotFound from "./PageNotFound/PageNotFound";
 import FeedProduct from "./Product/FeedProduct";
 
 const Router = () => {
   const [isInLogged, setisInLogged] = useState(true);
+
   return (
     <>
       {isInLogged ? (
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/product/feed" element={<FeedProduct />}/>
-          <Route />
-          <Route />
+          <Route path="/product/feed" element={<FeedProduct />} />
+          <Route path="/user/login" element={<Login />} />
+          <Route path="/user/join" element={<Join />} />
           <Route />
           <Route path="/*" element={<PageNotFound />} />
         </Routes>
