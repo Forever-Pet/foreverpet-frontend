@@ -1,9 +1,10 @@
-.localUser-join__footer-btn {
-  width: 70%;
+.localUser-join__footer-btn,
+.localUser-login__footer-btn {
+  width: 100%;
 }
 
 .localUser-login__footer-btn {
-  width: 80%;
+  max-width: 800px;
 }
 
 .localUser-login__footer-btn,

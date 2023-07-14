@@ -2,7 +2,6 @@
 import styles from "../../../styles/css/components/Auth/Local/LocalAuthUser.module.css";
 
 // Components
-import DefaultModal from "../../../common/Modal/DefaultModal";
 import LocalAuthUserHeader from "./HeaderTitle/LocalAuthUserHeader";
 import Input from "../../../common/Input/Input";
 import Button from "../../../common/Button/Button";
@@ -10,7 +9,7 @@ import Title from "../../../common/Title/Title";
 
 const LocalAuthUserLogin = () => {
   return (
-    <DefaultModal className="localUser-login">
+    <>
       <LocalAuthUserHeader title="로그인" />
       <form className={styles["localUser-login__form"]}>
         <Input
@@ -46,7 +45,7 @@ const LocalAuthUserLogin = () => {
           <span>구글</span>
         </div>
       </div>
-    </DefaultModal>
+    </>
   );
 };
 

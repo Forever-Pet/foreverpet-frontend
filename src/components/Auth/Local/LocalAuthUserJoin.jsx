@@ -7,7 +7,6 @@ import { debounce } from "lodash";
 import styles from "../../../styles/css/components/Auth/Local/LocalAuthUser.module.css";
 
 // Components
-import DefaultModal from "../../../common/Modal/DefaultModal";
 import DaumAddress from "../Address/DaumAddress";
 import Button from "../../../common/Button/Button";
 import LocalAuthUserHeader from "./HeaderTitle/LocalAuthUserHeader";
@@ -101,7 +100,7 @@ const LocalAuthUserJoin = () => {
   const subEmailStye = localAuthUserInput.mainAddress.length > 1 ? SHOW : HIDE;
 
   return (
-    <DefaultModal className="localUser-join">
+    <>
       {userAddressInfo && (
         <DaumAddress
           userAddressInfo={userAddressInfo}
@@ -141,7 +140,7 @@ const LocalAuthUserJoin = () => {
           </div>
         </div>
       </form>
-    </DefaultModal>
+    </>
   );
 };
 
