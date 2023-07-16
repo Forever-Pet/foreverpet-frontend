@@ -37,7 +37,7 @@
   color: white;
 }
 
-@media (max-width: 1530px) {
+@media (max-width: 1730px) {
   .product-detail__btn--cart,
   .product-detail__btn--payment {
     width: 100%;

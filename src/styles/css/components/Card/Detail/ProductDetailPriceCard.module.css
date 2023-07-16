@@ -1,4 +1,4 @@
-@media (max-width: 1530px) {
+@media (max-width: 1730px) {
   .product-detail__wrap {
     width: 100%;
   }
@@ -8,7 +8,7 @@
   }
 }
 
-@media (min-width: 1529px) {
+@media (min-width: 1731px) {
   .product-detail__wrap {
     width: 420px;
   }

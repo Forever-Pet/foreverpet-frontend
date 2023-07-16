@@ -37,7 +37,7 @@
   right: 0;
 }
 
-@media screen and (max-width: 1530px) {
+@media screen and (max-width: 1730px) {
   .product-detail__view-container {
     display: flex;
     width: 100%;
