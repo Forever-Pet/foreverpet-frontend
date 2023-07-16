@@ -1,0 +1,23 @@
+.productContent {
+  width: 100%;
+}
+
+.productContent p {
+  margin: 0;
+}
+
+.productContent__sale {
+  font-weight: 700;
+  font-size: 18px;
+  margin-right: 5px;
+}
+
+.productContent__sale__orange {
+  color: rgb(255 107 0);
+  margin-right: 3px;
+}
+
+.productContent__salePrice {
+  color: rgb(110 110 110);
+  text-decoration:line-through;
+}

@@ -1,0 +1,14 @@
+p {
+  margin: 0;
+}
+.product-content {
+  display: flex;
+  margin-top: 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+.bag-btn {
+  margin-top: 34px;
+  text-align: center;
+}

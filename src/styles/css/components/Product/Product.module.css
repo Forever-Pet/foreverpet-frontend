@@ -1,4 +1,4 @@
-h3, h2, p, ul{
+h3, h2, ul{
   margin: 0px;
   padding: 0px;
   list-style: none;
@@ -15,13 +15,6 @@ div {
   max-width: 1280px;
 }
 
-.container {
-  display: grid;
-  grid-template-columns: repeat(4,minmax(0,1fr));
-  grid-column-gap: 8px;
-  grid-row-gap: 24px;
-  row-gap: 28px;
-}
 
 .filterBox {
   display: flex;
