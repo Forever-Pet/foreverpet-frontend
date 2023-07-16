@@ -1,5 +1,5 @@
 // CSS
-import styles from "../../../styles/css/components/Card/Detail/ProductDetail.module.css";
+import styles from "../../../styles/css/components/Card/Detail/ProductDetailPriceCard.module.css";
 
 // Icons
 import { BsHeart, BsFillHeartFill, BsShare } from "react-icons/bs";
