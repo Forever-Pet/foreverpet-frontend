@@ -5,6 +5,9 @@ import { debounce } from "lodash";
 // CSS
 import styles from "../../../styles/css/components/Auth/Local/LocalAuthUser.module.css";
 
+// Hooks
+import usePathMove from "../../../hooks/usePathMove";
+
 // Components
 import LocalAuthUserHeader from "./HeaderTitle/LocalAuthUserHeader";
 import Input from "../../../common/Input/Input";
@@ -15,6 +18,8 @@ import NaverAuthUserAccount from "../Naver/NaverAuthUserAccount";
 import GoogleAuthUserAccount from "../Google/GoogleAuthUserAccount";
 
 const LocalAuthUserLogin = () => {
+  const pathMove = usePathMove();
+
   const [authUserLoginInput, setAuthUserLoginInput] = useState({
     email: "",
     password: "",
@@ -43,6 +48,9 @@ const LocalAuthUserLogin = () => {
     // 로그인 정보 백엔드로 API 통신
   };
 
+  // 회원가입 경로로 이동함수
+  const joinPathMoveBtn = () => pathMove("/user/join");
+
   return (
     <>
       <LocalAuthUserHeader title="로그인" />
@@ -70,7 +78,7 @@ const LocalAuthUserLogin = () => {
             <label htmlFor="save-acocunt">아이디 저장</label>
           </div>
           <div className={styles["localUser-login__recovery-section"]}>
-            <span>회원가입</span>
+            <span onClick={joinPathMoveBtn}>회원가입</span>
             <span>아이디 / 비밀번호 찾기</span>
           </div>
         </div>
