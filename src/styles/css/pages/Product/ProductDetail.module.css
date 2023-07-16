@@ -1,0 +1,54 @@
+.header {
+  width: 100%;
+  height: 200px;
+  background-color: tomato;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+}
+
+.product-detail__view-wrap {
+  width: 100%;
+  height: 2000px;
+}
+
+.test {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.product-detail__view-container {
+  width: 50%;
+  max-width: 1000px;
+  display: flex;
+}
+
+.product-detail__view--information {
+  width: 100%;
+  max-width: 600px;
+}
+
+.product-detail__view--PriceCard {
+  position: fixed;
+  left: 60%;
+  right: 0;
+}
+
+@media screen and (max-width: 1530px) {
+  .product-detail__view-container {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+  .product-detail__view--PriceCard {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+}

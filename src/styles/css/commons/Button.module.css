@@ -36,3 +36,11 @@
   background-color: black;
   color: white;
 }
+
+@media (max-width: 1530px) {
+  .product-detail__btn--cart,
+  .product-detail__btn--payment {
+    width: 100%;
+    margin-top: 10px;
+  }
+}
