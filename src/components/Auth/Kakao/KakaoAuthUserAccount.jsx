@@ -2,9 +2,16 @@
 import styles from "../../../styles/css/components/Auth/SNS/SNS.module.css";
 
 const KakaoAuthUserAccount = () => {
-  const kakaoFunc = () => console.log("카카오 로그인 인증");
+  const CLIENT_ID = "a6bfe93b460dd365f9951854df478ab9";
+  const REDIRECT_URL = "http://localhost:5173/oauth/kakaoCallback";
+  const URL = `https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=${CLIENT_ID}&redirect_uri=${REDIRECT_URL}&response_type=code`;
 
-  return <div className={styles["kakao-login-icon"]} onClick={kakaoFunc}></div>;
+  return (
+    <div
+      className={styles["kakao-login-icon"]}
+      onClick={() => (window.location.href = URL)}
+    ></div>
+  );
 };
 
 export default KakaoAuthUserAccount;

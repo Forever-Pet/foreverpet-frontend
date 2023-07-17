@@ -8,6 +8,7 @@ import Join from "./User/Join";
 import PageNotFound from "./PageNotFound/PageNotFound";
 import FeedProduct from "./Product/FeedProduct";
 import ProductDetail from "./Product/ProductDetail";
+import KakaoCallback from "../components/Auth/Kakao/KakaoCallback";
 
 const Router = () => {
   const [isInLogged, setisInLogged] = useState(true);
@@ -21,6 +22,7 @@ const Router = () => {
           <Route path="/user/login" element={<Login />} />
           <Route path="/user/join" element={<Join />} />
           <Route path="/test" element={<ProductDetail />} />
+          <Route path="/oauth/kakaoCallback" element={<KakaoCallback />} />
           <Route path="/*" element={<PageNotFound />} />
         </Routes>
       ) : (
