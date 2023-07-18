@@ -11,6 +11,7 @@ const ProductDetailInformation = (props) => {
   return (
     <div className={styles["product-detail__information"]}>
       <Image src={img} alt="" className="product-detail__information-img" />
+
       <div className={styles["product-detail__title"]}>
         <Title title="상품 상세정보" />
       </div>
