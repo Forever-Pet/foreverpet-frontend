@@ -12,7 +12,6 @@ import { removeCart } from '../../store/Slice/CartSlice';
 
 const ProductItem = (props) => {
   const cartData = useSelector((state) => { return state.cart.cartItem })
-  console.log(cartData)
   const dispatch = useDispatch()
 
   const [IsWishlist, handleWishlist] = UsehandleWishBag()
@@ -47,7 +46,7 @@ const ProductItem = (props) => {
     const i = cartData.findIndex((a) => { return a.id == id })
     if (i == -1) { //데이터 없으면 열어서 데이터 담음
       handleAddToCart()
-    } else { //있으면 리스트에서 삭제시킴(아이콘 해제 시켜야 하니)
+    } else { //있으면 리스트에서 삭제시킴(아이콘 해제)
       dispatch(removeCart(id))
     }
   }
