@@ -14,34 +14,31 @@
   height: 2000px;
 }
 
-.test {
-  width: 100%;
-  display: flex;
-  justify-content: space-around;
-}
-
 .product-detail__view-container {
-  width: 50%;
-  max-width: 1000px;
-  display: flex;
+  position: relative;
 }
 
 .product-detail__view--information {
-  width: 100%;
-  max-width: 600px;
+  width: 400px;
+  position: absolute;
+  left: calc(50% - 400px);
 }
 
 .product-detail__view--PriceCard {
   position: fixed;
-  left: 60%;
-  right: 0;
+  right: calc(50% - 500px);
 }
 
-@media screen and (max-width: 1730px) {
-  .product-detail__view-container {
+@media screen and (max-width: 1024px) {
+  .product-detail__view--information {
+    width: 100vw;
+    position: absolute;
+    left: 0;
+    right: 0;
     display: flex;
-    width: 100%;
     justify-content: center;
+    padding: 0 30px;
+    box-sizing: border-box;
   }
   .product-detail__view--PriceCard {
     position: fixed;
