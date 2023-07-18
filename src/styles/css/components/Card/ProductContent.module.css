@@ -6,6 +6,10 @@
   margin: 0;
 }
 
+.productContent h3 {
+  font-weight: 500;
+}
+
 .productContent__sale {
   font-weight: 700;
   font-size: 18px;

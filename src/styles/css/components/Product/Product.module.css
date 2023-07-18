@@ -4,13 +4,28 @@ h3, h2, ul{
   list-style: none;
 }
 
+h1 {
+  margin-top: 0px;
+}
+
 div {
   box-sizing: border-box;
 }
 
+.header {
+  height: 150px;
+  margin: auto;
+  max-width: 1280px;
+}
+.header--icon {
+  float: right;
+  font-size: 30px;
+  cursor: pointer;
+  margin-top: 100px;
+}
 .base {
   width: 90%;
-  margin: 50px auto;
+  margin: 0px auto 0px auto;
   position: relative;
   max-width: 1280px;
 }
@@ -32,7 +47,7 @@ div {
   top: 80px;
   right: 0;
   width: 250px;
-  z-index: 100;
+  z-index: 10;
 }
 
 

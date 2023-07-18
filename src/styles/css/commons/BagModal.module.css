@@ -3,12 +3,12 @@ p {
 }
 .product-content {
   display: flex;
-  margin-top: 20px;
+  margin-top: 5px;
   align-items: center;
 }
 
 .product-content__img {
-  width: 100px;
+  width: 50%;
   margin-right: 10px;
 }
 .product-content__text {
