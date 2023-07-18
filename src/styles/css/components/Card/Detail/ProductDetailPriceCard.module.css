@@ -1,4 +1,4 @@
-@media (max-width: 1730px) {
+@media (max-width: 1024px) {
   .product-detail__wrap {
     width: 100%;
   }
@@ -8,15 +8,11 @@
   }
 }
 
-@media (min-width: 1731px) {
-  .product-detail__wrap {
-    width: 420px;
-  }
-}
-
 .product-detail__wrap {
+  min-width: 400px;
+  max-width: 500px;
   background-color: white;
-  padding: 1px 10px 30px 10px;
+  padding: 1px 30px 30px 30px;
   border-radius: 7px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
