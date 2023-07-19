@@ -17,7 +17,7 @@ const CarModal = () => {
           cartData.map((d) => {
             return (
               <div key={d.id} className={styles['cart-container__insideBg']}>
-                <IoMdClose onClick={() => dispatch(removeCart(d.id))} className={styles['cart-container__insideBg--icon']}></IoMdClose>
+                <IoMdClose onClick={() => dispatch(removeCart(d))} className={styles['cart-container__insideBg--icon']}></IoMdClose>
                 <div className={styles['cart-container__insideBg--content']}>
                   <div className={styles['cart-container__insideBg--content__img']}>
                     <Image src={testImg} className="bagModal-img"></Image>
