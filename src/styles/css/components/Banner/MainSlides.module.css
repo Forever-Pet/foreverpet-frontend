@@ -1,8 +1,22 @@
 /*MainSlides.module.css*/
-.slides {
+
+/* pc */
+@media screen and (min-width:1024px)  {
+  .slides {
     max-width: 1200px;
     margin: 0 auto;
     margin-top: 123px;
+}
+}
+
+/*테블릿*/
+@media screen and (min-width:768px) and (max-width:1023px) {
+  .slides {
+    position: relative;
+    top: 138px;
+    max-width: 950px;
+    margin: 0 auto;
+}
 }
 
 /*모바일*/
@@ -10,6 +24,6 @@
   .slides {
      max-width: 460px;
      margin: 0 auto;
-     margin-top: 123px;
+     margin-top: 93px;
   }
 }

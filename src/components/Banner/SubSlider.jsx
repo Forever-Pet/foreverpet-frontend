@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Health = () => {
+const SubSlider = () => {
   return (
     <div>
       
@@ -8,4 +8,4 @@ const Health = () => {
   );
 };
 
-export default Health;
+export default SubSlider;

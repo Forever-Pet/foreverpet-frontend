@@ -3,10 +3,12 @@
 /*font*/
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Noto+Sans+KR&display=swap');
 
-/*마이페이지&장바구니 아이콘*/
-.nav {
+/* pc */
+@media screen and (min-width:1024px)  {
+  /*마이페이지&장바구니 아이콘*/
+.navbar_box {
   position: relative;
-  top: -17px;
+  top: 5px;
   right: 124px;
   float: right;
   display: flex;
@@ -14,7 +16,7 @@
   align-items: center;
   }
 
-  .icon {
+  .navbar_box_icon {
     margin-left:19px;
     text-decoration: none;
     color: #666666;
@@ -31,6 +33,36 @@
     color: #dddddd;
     cursor: pointer;
   }
+}
+/*테블릿*/
+@media screen and (min-width:768px) and (max-width:1023px) {
+   /*마이페이지&장바구니 아이콘*/
+.navbar_box {
+  position: relative;
+  top: -14px;
+  right: 29px;
+  float: right;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  }
+
+  .navbar_box_icon {
+    margin-left:19px;
+    text-decoration: none;
+    color: #666666;
+    cursor: pointer;
+    font-size: 25px;
+    font-family: 'Noto Sans KR', sans-serif;
+   }
+  
+   /*검색 아이콘*/
+  .icon1 {
+    position: absolute;
+    right: 102px;
+    color: #dddddd;
+    cursor: pointer;
+  }
 
   /*검색창*/
    .search {
@@ -39,18 +71,21 @@
     border-radius: 15px;
     border : 1px solid #dddddd;
    }
-   @media screen and (max-width: 768px) {
+}
+
+/*모바일*/
+@media screen and (max-width: 767px) {
     /*마이페이지&장바구니 아이콘*/
-    .nav {
+    .navbar_box {
       position: relative;
-      top: -132px;
-      right: 24px;
+      top: -97px;
+      left: 195px;
       display: flex;
       justify-content: center;
       align-items: center;
       }
       
-      .icon {
+      .navbar_box_icon {
         margin-left:11px;
         text-decoration: none;
         color: #666666;

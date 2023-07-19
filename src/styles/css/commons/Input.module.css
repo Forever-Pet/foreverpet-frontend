@@ -1,0 +1,37 @@
+/*Input.module.css*/
+
+
+/* pc */
+@media screen and (min-width:1024px)  {
+  /*검색창*/
+.searchInput {
+  width: 200px;
+  height: 27px;
+  border-radius: 15px;
+  border : 1px solid #dddddd;
+ }
+}
+
+/*테블릿*/
+@media screen and (min-width:768px) and (max-width:1023px) {
+  /*검색창*/
+  .searchInput {
+    width: 200px;
+    height: 27px;
+    border-radius: 15px;
+    border : 1px solid #dddddd;
+   }
+}
+
+
+/*모바일*/
+@media screen and (max-width: 767px) {
+  /*검색창*/
+  .searchInput {
+    display: none;
+    width: 200px;
+    height: 27px;
+    border-radius: 15px;
+    border : 1px solid #dddddd;
+   }
+}

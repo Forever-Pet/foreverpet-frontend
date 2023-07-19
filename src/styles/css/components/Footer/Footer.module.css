@@ -5,6 +5,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Noto+Sans+KR&display=swap');
 
 .footer {
+  z-index: 20;
   position: fixed;
   left: 0;
   bottom: 0;

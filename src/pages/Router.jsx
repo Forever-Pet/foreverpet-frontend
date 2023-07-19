@@ -8,6 +8,8 @@ import Login from "./Login/Login";
 import Join from "./Login/Join";
 import Order from "./Order/Order";
 import Customer from "./Service/Customer";
+import BestItem from "../components/Home/BestItem";
+import BestData from "../components/Card/BestData";
 
 const Router = () => {
   const [isInLogged, setisInLogged] = useState(true);
@@ -20,7 +22,7 @@ const Router = () => {
           <Route path="/login" element={<Login/>}/>
           <Route path="/order" element={<Order/>}/>
           <Route path="/customer" element={<Customer/>}/>
-          <Route />
+          
           <Route />
           <Route />
           <Route path="/*" element={<PageNotFound />} />

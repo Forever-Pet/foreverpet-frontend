@@ -1,23 +1,23 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import BestData from '../Card/BestData';
+import NewItemData from '../Card/NewItemData';
 
 //css
-import styles from '../../styles/css/components/Home/BestItem.module.css';
+import styles from '../../styles/css/components/Home/NewItem.module.css';
 
 //icon
 import { BsCart } from "react-icons/bs";
 import { VscHeart } from "react-icons/vsc";
 
-//메인 홈 - 베스트 아이템 
-const BestItem = (props) => {
+//메인 홈 - 신상품 아이템 
+const NewItem = () => {
   return (
     <div className={styles.bestitem}>
       <div className={styles.header_text}>
-        <h2>지금 핫한 이 상품 어때요?</h2>
+        <h2>두근 두근 설레는 신상품</h2>
       </div>
       <div className={styles.product}>
-        {BestData.map((props,index) => {
+        {NewItemData.map((props,index) => {
           return (
             <Link className={styles.product_link}  key={index}>
                <div className={styles.product_img}>
@@ -31,7 +31,7 @@ const BestItem = (props) => {
                  <p className={styles.productinfo_1_2}>{props.price}원</p>
                </div>
                <div className={styles.productinfo_2}>
-                  <p>{props.best}</p>
+                  <p>{props.new}</p>
                   <p className={styles.productinfo_2_2}>{props.sale}</p>
                  
                   <div className={styles.productinfo_icon}>
@@ -44,8 +44,7 @@ const BestItem = (props) => {
         })}
       </div>
     </div>
-    
   );
 };
 
-export default BestItem;
+export default NewItem;
