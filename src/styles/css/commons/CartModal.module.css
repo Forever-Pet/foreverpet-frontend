@@ -93,3 +93,16 @@
 .cart-container__insideBg--bottomContent__left span{
   margin: 0px 20px;
 }
+
+.empty-modal {
+  width: 330px;
+  height: 100px;
+  background: white;
+  border-radius: 8px;
+  margin-top: 12px;
+  position: relative;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

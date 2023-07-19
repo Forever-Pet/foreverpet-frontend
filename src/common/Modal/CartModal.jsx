@@ -14,35 +14,39 @@ const CarModal = () => {
       <div className={styles['cart-container']}>
         <p>장바구니</p>
         {
-          cartData.map((d) => {
-            return (
-              <div key={d.id} className={styles['cart-container__insideBg']}>
-                <IoMdClose onClick={() => dispatch(removeCart(d))} className={styles['cart-container__insideBg--icon']}></IoMdClose>
-                <div className={styles['cart-container__insideBg--content']}>
-                  <div className={styles['cart-container__insideBg--content__img']}>
-                    <Image src={testImg} className="bagModal-img"></Image>
+          cartData.length == 0 ?
+            <div className={styles['empty-modal']}>
+              장바구니가 비었습니다.
+            </div> :
+            cartData.map((d) => {
+              return (
+                <div key={d.id} className={styles['cart-container__insideBg']}>
+                  <IoMdClose onClick={() => dispatch(removeCart(d))} className={styles['cart-container__insideBg--icon']}></IoMdClose>
+                  <div className={styles['cart-container__insideBg--content']}>
+                    <div className={styles['cart-container__insideBg--content__img']}>
+                      <Image src={testImg} className="bagModal-img"></Image>
+                    </div>
+                    <div className={styles['cart-container__insideBg--content__text']}>
+                      <p>{d.brand}</p>
+                      <h3>{d.productName}</h3>
+                    </div>
                   </div>
-                  <div className={styles['cart-container__insideBg--content__text']}>
-                    <p>{d.brand}</p>
-                    <h3>{d.productName}</h3>
+                  <div className={styles['cart-container__insideBg--bottomContent']}>
+                    <div className={styles['cart-container__insideBg--bottomContent__left']}>
+                      <button onClick={() => {
+                        dispatch(decrease(d))
+                      }}>-</button>
+                      <span>{d.count}</span>
+                      <button onClick={() => {
+                        dispatch(increase(d))
+                      }}>+</button>
+                    </div>
+                    <div></div>
+                    <span style={{ fontSize: '20px' }}>{d.price}원</span>
                   </div>
                 </div>
-                <div className={styles['cart-container__insideBg--bottomContent']}>
-                  <div className={styles['cart-container__insideBg--bottomContent__left']}>
-                    <button onClick={() => {
-                      dispatch(decrease(d))
-                    }}>-</button>
-                    <span>{d.count}</span>
-                    <button onClick={() => {
-                      dispatch(increase(d))
-                    }}>+</button>
-                  </div>
-                  <div></div>
-                  <span style={{ fontSize: '20px' }}>{d.price}원</span>
-                </div>
-              </div>
-            )
-          })
+              )
+            })
         }
 
 

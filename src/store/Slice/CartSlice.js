@@ -10,7 +10,7 @@ const CartSlice = createSlice({
     putIn(state, action) {
       const i = state.cartItem.findIndex((a) => { return a.id === action.payload.id })
       if (i === -1) { //중복아니면
-        state.cartItem.push(action.payload)
+        state.cartItem = [...state.cartItem, action.payload]
         const updatedItems = state.cartItem.map((obj) => {
           if (obj.count == undefined) {
             return { ...obj, count: 1 }
