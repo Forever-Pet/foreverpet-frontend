@@ -1,3 +1,8 @@
 .product-detail__information-img {
   margin-top: 100px;
 }
+
+.order-list__image {
+  width: 85px;
+  height: 85px;
+}
