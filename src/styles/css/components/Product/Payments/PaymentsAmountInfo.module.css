@@ -1,0 +1,57 @@
+.payment-amount__info {
+  max-width: 370px;
+  height: 350px;
+  background-color: #fbfbfb;
+  border: 1px solid #e4e4e4;
+  padding: 36px 32px;
+  box-sizing: border-box;
+}
+
+.payment-amount__info--text {
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 25px;
+}
+
+.payment-amount__card,
+.payment-amount__card--totalAmount {
+  display: flex;
+  justify-content: space-between;
+}
+
+.payment-amount__card {
+  border-bottom: 1px solid #e4e4e4;
+  padding-bottom: 25px;
+  box-sizing: border-box;
+}
+
+.payment-amount__card--totalAmount {
+  align-items: center;
+  margin-top: 35px;
+}
+
+.payment-amount__card--amount,
+.payment-amount__card--desc {
+  height: 90px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.payment-amount__card--amount,
+.payment-amount__card--totalAmount div:first-child,
+.payment-amount__card--totalAmount div:last-child {
+  font-weight: bold;
+}
+
+.payment-amount__card--amount {
+  text-align: end;
+}
+
+.payment-amount__card--totalAmount div:first-child {
+  font-size: 18px;
+}
+
+.payment-amount__card--totalAmount div:last-child {
+  font-size: 27px;
+}
