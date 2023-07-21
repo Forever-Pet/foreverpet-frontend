@@ -1,6 +1,9 @@
 // CSS
 import styles from '../../styles/css/components/Product/Payments/PaymentsAmountInfo.module.css';
 
+// Utils
+import { addPriceAmount } from '../../utils/addPriceComma';
+
 // Compoennts
 import Title from '../../common/Title/Title';
 
@@ -13,8 +16,6 @@ const data = {
 
 const PaymentsAmountInfo = (props) => {
   const { totalAmount, deliveryPrice, couponSale } = data;
-  // 금액 콤마 추가 함수
-  const addCommaAmount = (amount) => amount.toLocaleString('ko-KR');
 
   return (
     <div className={styles['payment-amount__info']}>
@@ -28,14 +29,14 @@ const PaymentsAmountInfo = (props) => {
           <div>쿠폰 할인</div>
         </div>
         <div className={styles['payment-amount__card--amount']}>
-          <div>{addCommaAmount(totalAmount)} 원</div>
-          <div>{addCommaAmount(deliveryPrice)} 원</div>
-          <div>-{addCommaAmount(couponSale)} 원</div>
+          <div>{addPriceAmount(totalAmount)} 원</div>
+          <div>{addPriceAmount(deliveryPrice)} 원</div>
+          <div>-{addPriceAmount(couponSale)} 원</div>
         </div>
       </div>
       <div className={styles['payment-amount__card--totalAmount']}>
         <div>최종 결제금액</div>
-        <div>{addCommaAmount(totalAmount)}원 </div>
+        <div>{addPriceAmount(totalAmount)}원 </div>
       </div>
     </div>
   );
