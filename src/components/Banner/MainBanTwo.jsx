@@ -20,13 +20,13 @@ const MainBanTwoData = [
    },
 ];
 
-const MainBanTwo = () => {
+const MainBanTwo = (props) => {
   return (
     <div className={styles.bantwo}>
        <div className={styles.bantwo_eve} >
           {MainBanTwoData.map((props ,index) => {
             return (
-            <div className={styles.bantwo_pro} ket={index}>
+            <div className={styles.bantwo_pro} key={index}>
               <div className={styles.bantwo_img}>
                   <img src={props.src} alt='' className={styles.bantwo_img_1} />
               </div>

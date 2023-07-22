@@ -1,56 +1,57 @@
-/* MainBanTwo.module.css */
+/*EveBan.module.css*/
 
 /*font*/
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Noto+Sans+KR&display=swap');
 
-.bantwo {
-  display: flex ;
+.eveban {
+  display: flex;
   justify-content: center;
   width: 1230px;
-  height: 370px;
+  height: 470px;
   margin: 0 auto;
 }
 
-.bantwo_eve {
+.eveban_eve {
   display: flex;
   max-width: 100%;
   margin-top: 40px;
-  height: 195px;
-
+  height: 238px;
 } 
 
-.bantwo_pro {
+.eveban_pro {
   display: flex;
   margin-right: 41px;
+  background-color: #D8EBD5;
+  border-radius: 19px;
 }
-.bantwo_img {
+.eveban_img {
   z-index: 10;
   height: 195px;
 }
 
-.bantwo_img_1 {
-  width: 337px;
-  height: 195px;
+.eveban_img_1 {
+  width: 200px;
+  height: 200px;
+  padding-top: 20px;
   border-radius: 19px;
 }
 
-.bantwo_info {
+.eveban_info {
   position: relative;
   display: flex;
   flex-direction: column;
   width: 300px;
   margin-left: -42px;
-  background-color: whitesmoke;
   border-radius: 19px;
+  background-color: #D8EBD5;
   font-family: 'Noto Sans KR', sans-serif;
 }
 
 .info1 {
   position: absolute;
-  top: 57px;
+  /* top: 57px; */
   right: 20px;
-  font-size: 11px;
-  color: crimson;
+  font-size: 20px;
   font-weight: 700;
 }
 
@@ -61,10 +62,13 @@
   font-size: 24px;
 }
 
+.eveban_info_h {
+  font-size: 20px;
+
+  font-weight: 700;
+}
+
 .info3 {
-  position: absolute;
-  top: 118px;
-  right: 20px;
-  font-size: 26px;
+  font-size: 11px;
   font-weight: 700;
 }

@@ -13,6 +13,7 @@
     left: 0;
     top: 0;
     width: 100%;
+    max-width: 1200px;
     height: 202px;
     background-color: #fff;
     /* overflow:hidden; */
@@ -36,33 +37,6 @@
     margin: 0 auto;
     color: #008e61;
   }
-  
-  /* 상단 베너 */
-  .banner {
-    position: fixed;
-    width: 100%;
-    height: 39px;
-    background-color: #008e61;
-  } 
-  
-   /*베너 텍스트*/
-   .banner_text{
-    text-align: center;
-    margin: 0 auto;
-    color: white;
-    padding-top: 10px;
-    font-size: 13px;
-    font-family: 'Noto Sans KR', sans-serif;
-  }
-  
-  .icon {
-    position: fixed;
-    right: 30px;
-    top: 11px;
-    cursor: pointer;
-    z-index: 10;
-  }
-
 } 
 
 /*테블릿*/
@@ -96,30 +70,7 @@
     color: #008e61;
   }
   
-  /*상단 베너*/
-  .banner {
-    position: fixed;
-    width: 100%;
-    height: 39px;
-    background-color: #008e61;
-  }
   
-   /*베너 텍스트*/
-  .banner_text{
-    text-align: center;
-    margin: 0 auto;
-    color: white;
-    padding-top: 10px;
-    font-size: 13px;
-    font-family: 'Noto Sans KR', sans-serif;
-  }
-  
-  .icon {
-    position: fixed;
-    right: 30px;
-    top: 11px;
-    cursor: pointer;
-  }
 } 
 
 /*모바일*/
@@ -150,28 +101,5 @@
     padding-bottom: 30px;
     border-bottom: 2px solid #918D8C;
   }
-  /*상단 베너*/
-  .banner {
-    /* position: fixed; */
-    width: 100%;
-    height: 39px;
-    background-color: #008e61;
-  }
-  /*베너 텍스트*/
-  .banner_text{
-    text-align: center;
-    margin: 0 auto;
-    color: white;
-    padding-top: 10px;
-    font-size: 11px;
-    font-family: 'Noto Sans KR', sans-serif;
-  }
-
-  /*베너 아이콘*/
-  .icon {
-    position: fixed;
-    right: 30px;
-    top: 14px;
-    cursor: pointer;
-  }
+  
 }

@@ -11,6 +11,7 @@ import MainBanTwo from '../components/Banner/MainBanTwo';
 //css
 import styles from '../styles/css/pages/Home.module.css';
 import NewItem from '../components/Home/NewItem';
+import EveBan from '../components/Banner/EveBan';
 
 const Home = () => {
   return (
@@ -21,6 +22,7 @@ const Home = () => {
     <BestItem bestData={BestData}/>
     <MainBanTwo/>
     <NewItem/>
+    <EveBan/>
     {/* <SubSlider carouselData={CarouselData}/> */}
     <Footer/>
   </div>

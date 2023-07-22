@@ -2,17 +2,20 @@
 
 /*font*/
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Noto+Sans+KR&display=swap');
-
+/* pc */
+@media screen and (min-width:1024px)  {
 .nav {
-  position: fixed;
+  position:absolute;
   top: 46px;
   right: 116px;
+  max-width: 1195px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .tabmenu {
+  max-width: 1195px;
  margin-left:25px;
  text-decoration: none;
  color: #666666;
@@ -20,14 +23,40 @@
  font-size: 13px;
  font-family: 'Noto Sans KR', sans-serif;
 }
-
 .tabmenu:hover {
    color: #000;
 }
+}
 
+/*테블릿*/
+@media screen and (min-width:768px) and (max-width:1023px) {
+  .nav {
+    position:absolute;
+    top: 46px;
+    right: 116px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .tabmenu {
+   margin-left:25px;
+   text-decoration: none;
+   color: #666666;
+   cursor: pointer;
+   font-size: 13px;
+   font-family: 'Noto Sans KR', sans-serif;
+  }
+  
+  .tabmenu:hover {
+     color: #000;
+  }
+}
+
+/* 모바일 */
 @media screen and (max-width: 767px) {
   .nav {
-    position: fixed;
+    position:absolute;
     top: 46px;
     right: 101px;
     display: flex;
