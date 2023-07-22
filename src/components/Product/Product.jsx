@@ -14,9 +14,10 @@ const Product = (props) => {
   const [bagClick, setBagClick] = UseClickHook(false)
   const [selectedValue, setSelectedValue] = useState('베스트');
   const data = [
-    { id: 0, productName: '껌', img: testImg, brand: '브랜드임', price: '4,500' },
-    { id: 1, productName: '사료', img: testImg, brand: '사료 브랜드임', price: '5,000' }
+    { id: 0, productName: '껌', img: testImg, brand: '브랜드임', price: 4500 },
+    { id: 1, productName: '사료', img: testImg, brand: '사료 브랜드임', price: 5000 }
   ]
+
   const cartData = useSelector((state) => { return state.cart.cartItem })
 
   return <>

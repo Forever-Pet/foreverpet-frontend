@@ -2,55 +2,33 @@ import styles from '../../styles/css/components/Card/ProductItem.module.css'
 import Image from '../../common/Img/Image'
 import { BsHeart, BsFillHeartFill, BsHandbag, BsHandbagFill } from "react-icons/bs";
 import { UsehandleWishBag } from '../../hooks/ClickHook/UsehandleWishBag'
+import { UseCartHook } from '../../hooks/ClickHook/UseCartHook'
 import BagModal from '../../common/Modal/BagModal'
-import { useState } from 'react';
 import InsideBag from '../../common/Modal/InsideBag';
 import ProductContent from './ProductContent'
-import { useDispatch, useSelector } from 'react-redux';
-import { removeCart } from '../../store/Slice/CartSlice';
+import { useSelector } from 'react-redux';
 
 
 const ProductItem = (props) => {
   const cartData = useSelector((state) => { return state.cart.cartItem })
-  const dispatch = useDispatch()
 
   const [IsWishlist, handleWishlist] = UsehandleWishBag()
+  const [
+    ckBag,
+    setid,
+    isModalOpen,
+    isNextModalOpen,
+    id,
+    title,
+    handleCloseModal,
+    handleContinue,
+    leftbtn,
+    rightbtn,
+    handleCloseNextModal
+  ] = UseCartHook()
 
-  const [isModalOpen, setIsModalOpen] = useState(false)
-  const [isNextModalOpen, setIsNextModalOpen] = useState(false);
-  const [id, setid] = useState('')
 
-  //장바구니 클릭시 상품값 배열로 들어가고 모달 오픈
-  const handleAddToCart = () => {
-    setIsModalOpen((prev) => !prev);
-  };
-
-  //첫번째 모달 닫는 함수
-  const handleCloseModal = () => {
-    setIsModalOpen((prev) => !prev);
-  };
-
-  //장바구니에 담으면 첫번째 모달 닫고 두번째 모달 오픈
-  const handleContinue = () => {
-    setIsModalOpen((prev) => !prev);
-    setIsNextModalOpen((prev) => !prev);
-  };
-
-  //두번째 모달과 첫번째 모달 둘다 닫음
-  const handleCloseNextModal = () => {
-    setIsNextModalOpen((prev) => !prev);
-  };
-
-  //아이콘 클릭시 모달 열고 데이터 담을 수 있게 하는 함수
-  const ckBag = (id) => {
-    const i = cartData.findIndex((a) => { return a.id == id })
-    if (i == -1) { //데이터 없으면 열어서 데이터 담음
-      handleAddToCart()
-    } else { //있으면 리스트에서 삭제시킴(아이콘 해제)
-      dispatch(removeCart(id))
-    }
-  }
-
+  //아이콘 체크 여부, 데이터 들어 있으면 색상 변경, 아니면 빈 아이콘
   const iconCk = (id) => {
     const i = cartData.findIndex((a) => { return a.id == id })
     if (i == -1) {
@@ -93,16 +71,20 @@ const ProductItem = (props) => {
 
       {isModalOpen &&
         <BagModal isOpen={isModalOpen}
-          id={id}
-          data={props.data}
+          title={title}
+          data={props.data[id]}
           onClose={handleCloseModal}
-          onContinue={handleContinue} />
+          onContinue={handleContinue}
+          leftBtn={leftbtn}
+          rightBtn={rightbtn}
+        />
       }
       {
         isNextModalOpen &&
         <InsideBag onClose={handleCloseNextModal}
         ></InsideBag>
       }
+
     </>
   )
 }

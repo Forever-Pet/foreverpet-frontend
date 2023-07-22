@@ -38,10 +38,19 @@ p {
 .bag-btn {
   margin-top: 34px;
   text-align: center;
+  display: flex;
+  justify-content: center;
 }
 
 .bag-closeBtn {
   font-size: 30px;
   float: right;
   cursor: pointer;
+}
+
+.duplicate-alert {
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+  margin-bottom: 70px;
 }

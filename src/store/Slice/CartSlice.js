@@ -19,7 +19,7 @@ const CartSlice = createSlice({
           }
         })
         state.cartItem = updatedItems
-      } else { //중복이면 
+      } else { //중복이면
         state.cartItem[i].count++;
       }
     },

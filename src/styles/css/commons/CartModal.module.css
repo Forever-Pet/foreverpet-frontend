@@ -106,3 +106,18 @@
   justify-content: center;
   align-items: center;
 }
+
+
+@media screen and (max-width : 768px) { 
+  .cart-container { 
+    width: 100%;
+  } 
+  .empty-modal {
+    width: 100%;
+  }
+
+  .cart-container__insideBg {
+    width: 100%;
+    height: 100%;
+  }
+}

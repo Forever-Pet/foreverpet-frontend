@@ -11,4 +11,6 @@ p {
 .bag-btn {
   margin-top: 34px;
   text-align: center;
+  display: flex;
+  justify-content: center;
 }

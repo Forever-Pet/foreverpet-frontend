@@ -19,6 +19,7 @@ const CarModal = () => {
               장바구니가 비었습니다.
             </div> :
             cartData.map((d) => {
+              const formattedPrice = (d.price * d.count).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
               return (
                 <div key={d.id} className={styles['cart-container__insideBg']}>
                   <IoMdClose onClick={() => dispatch(removeCart(d))} className={styles['cart-container__insideBg--icon']}></IoMdClose>
@@ -42,7 +43,7 @@ const CarModal = () => {
                       }}>+</button>
                     </div>
                     <div></div>
-                    <span style={{ fontSize: '20px' }}>{d.price}원</span>
+                    <span style={{ fontSize: '20px' }}>{formattedPrice}원</span>
                   </div>
                 </div>
               )
