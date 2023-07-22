@@ -1,5 +1,4 @@
 import styles from '../../styles/css/commons/CartModal.module.css'
-import testImg from '../../assets/image 26.svg'
 import { IoMdClose } from "react-icons/io";
 import Image from '../Img/Image';
 import { useDispatch, useSelector } from 'react-redux';
@@ -25,7 +24,7 @@ const CarModal = () => {
                   <IoMdClose onClick={() => dispatch(removeCart(d))} className={styles['cart-container__insideBg--icon']}></IoMdClose>
                   <div className={styles['cart-container__insideBg--content']}>
                     <div className={styles['cart-container__insideBg--content__img']}>
-                      <Image src={testImg} className="bagModal-img"></Image>
+                      <Image src={d.img} className="bagModal-img"></Image>
                     </div>
                     <div className={styles['cart-container__insideBg--content__text']}>
                       <p>{d.brand}</p>
