@@ -2,6 +2,17 @@
   margin-bottom: 20px;
 }
 
+.delivery-input__name,
+.delivery-input__mainAddress,
+.delivery-input__subAddress,
+.delivery-input__tel,
+.owner-input__owner,
+.owner-input__tel,
+.owner-input__email {
+  width: 420px;
+  height: 35px;
+}
+
 .localUser-login__email,
 .localUser-login__password {
   width: 100%;
@@ -19,6 +30,13 @@
   height: 25px;
 }
 
+.delivery-input__name,
+.delivery-input__mainAddress,
+.delivery-input__subAddress,
+.delivery-input__tel,
+.owner-input__owner,
+.owner-input__tel,
+.owner-input__email,
 .localUser-login__email,
 .localUser-login__password,
 .localUser-join__name,
@@ -43,6 +61,14 @@
   padding-bottom: 10px;
   box-sizing: border-box;
 }
+
+.delivery-input__name,
+.delivery-input__mainAddress,
+.delivery-input__subAddress,
+.delivery-input__tel,
+.owner-input__owner,
+.owner-input__tel,
+.owner-input__email,
 .localUser-login__email,
 .localUser-login__password,
 .localUser-join__name,
@@ -54,7 +80,12 @@
   outline: none;
 }
 
+.delivery-input__mainAddress,
 .localUser-join__mainAddress:disabled {
   background-color: white;
   cursor: text;
+}
+.delivery-input__mainAddress,
+.localUser-join__mainAddress:hover {
+  cursor: auto;
 }
