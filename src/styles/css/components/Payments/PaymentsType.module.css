@@ -1,0 +1,22 @@
+.payments-type__text {
+  text-align: center;
+}
+
+.payments-type__list {
+  text-align: center;
+  transform: translateY(50px);
+}
+
+.payments-type__kakaopay {
+  padding: 10px 20px;
+  box-sizing: border-box;
+  border-radius: 3px;
+  border: 1px solid black;
+  transition: background-color 0.3s;
+  cursor: pointer;
+}
+
+.payments-type__kakaopay:hover {
+  background-color: #b9b9b9;
+  background-color: rgba(185, 185, 185, 0.3);
+}
