@@ -1,0 +1,7 @@
+.payments-orderlist__header {
+  border-bottom: 1px solid black;
+  padding: 20px 0;
+  box-sizing: border-box;
+  font-size: 18px;
+  font-weight: bold;
+}
