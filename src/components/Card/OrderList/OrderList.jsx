@@ -25,6 +25,11 @@ const data = [
 ];
 
 const OrderList = (props) => {
+  // 일정 글자수 이상일 경우 자르기
+  const productNameSlice = (name) => {
+    const result = name.slice(0, 35);
+    return `${result}...`;
+  };
   return (
     <ul>
       {data?.map((productItem, _) => {
@@ -37,7 +42,9 @@ const OrderList = (props) => {
             />
             <span className={styles["order-list__item--middle"]}>
               <span className={styles["order-list__item--name"]}>
-                {productItem.name}
+                {productItem.name.length > 40
+                  ? productNameSlice(productItem.name)
+                  : productItem.name}
               </span>
               <span className={styles["order-list__item--quantity"]}>
                 {productItem.quantity}개

@@ -2,19 +2,20 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 10px;
 }
 
-.order-list__item span {
+.order-list__item span:last-child {
   font-weight: bold;
 }
 
 .order-list__item--middle {
-  width: 70%;
+  width: 65%;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 .order-list__item--name {
-  color: red;
+  font-size: 14px;
 }
