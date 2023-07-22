@@ -3,8 +3,6 @@ import Image from '../../common/Img/Image'
 import { BsHeart, BsFillHeartFill, BsHandbag, BsHandbagFill } from "react-icons/bs";
 import { UsehandleWishBag } from '../../hooks/ClickHook/UsehandleWishBag'
 import { UseCartHook } from '../../hooks/ClickHook/UseCartHook'
-import BagModal from '../../common/Modal/BagModal'
-import InsideBag from '../../common/Modal/InsideBag';
 import ProductContent from './ProductContent'
 import { useSelector } from 'react-redux';
 
@@ -13,19 +11,7 @@ const ProductItem = (props) => {
   const cartData = useSelector((state) => { return state.cart.cartItem })
 
   const [IsWishlist, handleWishlist] = UsehandleWishBag()
-  const [
-    ckBag,
-    setid,
-    isModalOpen,
-    isNextModalOpen,
-    id,
-    title,
-    handleCloseModal,
-    handleContinue,
-    leftbtn,
-    rightbtn,
-    handleCloseNextModal
-  ] = UseCartHook()
+  const { ckBag } = UseCartHook()
 
 
   //아이콘 체크 여부, 데이터 들어 있으면 색상 변경, 아니면 빈 아이콘
@@ -52,10 +38,9 @@ const ProductItem = (props) => {
                     {IsWishlist(d.id) ? (<BsFillHeartFill className={`${styles.productItem__img__button__icon} ${styles.productItem__img__button__heart__fill}`} />) : (<BsHeart className={styles.productItem__img__button__icon} />)}
                   </div>
 
-                  <div onClick={() => {
-                    ckBag(d.id)
-                    setid(d.id)
-                  }}
+                  <div onClick={() =>
+                    ckBag(d)
+                  }
                     className={`${styles.productItem__img__button} ${styles.productItem__img__button__bag}`}>
                     {iconCk(d.id) ?
                       (<BsHandbagFill className={styles.productItem__img__button__icon} />) : (<BsHandbag className={styles.productItem__img__button__icon} />)
@@ -68,23 +53,6 @@ const ProductItem = (props) => {
           })
         }
       </div>
-
-      {isModalOpen &&
-        <BagModal isOpen={isModalOpen}
-          title={title}
-          data={props.data[id]}
-          onClose={handleCloseModal}
-          onContinue={handleContinue}
-          leftBtn={leftbtn}
-          rightBtn={rightbtn}
-        />
-      }
-      {
-        isNextModalOpen &&
-        <InsideBag onClose={handleCloseNextModal}
-        ></InsideBag>
-      }
-
     </>
   )
 }

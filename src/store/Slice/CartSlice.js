@@ -38,7 +38,8 @@ const CartSlice = createSlice({
       if (state.cartItem[i].count !== 1) {
         state.cartItem[i].count--;
       }
-    }
+    },
+
 
   }
 })
