@@ -11,7 +11,6 @@ import MainBanTwo from '../components/Banner/MainBanTwo';
 //css
 import styles from '../styles/css/pages/Home.module.css';
 import NewItem from '../components/Home/NewItem';
-import EveBan from '../components/Banner/EveBan';
 
 const Home = () => {
   return (
@@ -22,7 +21,10 @@ const Home = () => {
     <BestItem bestData={BestData}/>
     <MainBanTwo/>
     <NewItem/>
-    <EveBan/>
+    <div className={styles.home_ban}>
+      <img src='img/eveban1.jpg' alt='' className={styles.home_ban_img}/>
+      <img src='img/eveban2.jpg' alt='' className={styles.home_ban_img}/>
+    </div>
     {/* <SubSlider carouselData={CarouselData}/> */}
     <Footer/>
   </div>

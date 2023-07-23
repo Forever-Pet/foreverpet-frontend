@@ -9,6 +9,18 @@
   .main {
     min-height: calc(100vh - 180px);
   }
+
+  .home_ban {
+    height: 370px;
+    max-width: 100%;
+    margin-top: 40px;
+    margin: 0 97px;
+  }
+
+  .home_ban_img {
+    max-width: 595px;
+    margin: 0 10px;
+  }
 }
 
 /*테블릿*/
@@ -20,6 +32,14 @@
   .main {
     min-height: calc(100vh - 180px);
   }
+
+  .home_ban {
+
+  }
+
+  .home_ban_img {
+    
+  }
 }
 
 /*모바일*/
@@ -30,5 +50,13 @@
   
   .main {
     min-height: calc(100vh - 180px);
+  }
+
+  .home_ban {
+
+  }
+
+  .home_ban_img {
+    
   }
 }
