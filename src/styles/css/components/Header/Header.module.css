@@ -8,15 +8,14 @@
 /* pc */
 @media screen and (min-width:1024px)  {
   .header {
-    position: fixed;
     z-index: 30;
-    left: 0;
-    top: 0;
+    position: relative;
+    margin: 0 auto;
+    top: -93px;
     width: 100%;
     max-width: 1200px;
     height: 202px;
     background-color: #fff;
-    /* overflow:hidden; */
   }
   
   .contents {
@@ -42,13 +41,14 @@
 /*테블릿*/
 @media screen and (min-width:768px) and (max-width:1023px) {
     .header {
-    position: fixed;
-    z-index: 30;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 202px;
-    background-color: #fff;
+      z-index: 30;
+      position: relative;
+      margin: 0 auto;
+      top: -93px;
+      width: 100%;
+      max-width: 1200px;
+      height: 202px;
+      background-color: #fff;
   }
   
   .contents {
