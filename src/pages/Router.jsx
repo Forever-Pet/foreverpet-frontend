@@ -33,7 +33,6 @@ const Router = () => {
           <Route path="/product/detail/:id" element={<ProductDetail />} />
           <Route path="/payments" element={<Payments />} />
           <Route path="/*" element={<PageNotFound />} />
-          <Route path="/hi" element={<PaymentsType />} />
         </Routes>
       ) : (
         <Routes>
