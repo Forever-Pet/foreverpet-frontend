@@ -89,3 +89,32 @@
 .localUser-join__mainAddress:hover {
   cursor: auto;
 }
+
+input[type="checkbox"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #b9b9b9;
+  cursor: pointer;
+}
+
+input[type="checkbox"]::after {
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  content: "";
+  display: none;
+  height: 40%;
+  left: 40%;
+  position: relative;
+  top: 20%;
+  transform: rotate(45deg);
+  width: 15%;
+}
+input[type="checkbox"]:checked {
+  background: #505bf0;
+}
+input[type="checkbox"]:checked::after {
+  display: block;
+}
