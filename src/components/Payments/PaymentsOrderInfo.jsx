@@ -2,11 +2,11 @@
 import OrderList from "../Card/OrderList/OrderList";
 import PaymentsInputHeader from "./PaymentsInputHeader/PaymentsInputHeader";
 
-const PaymentsOrderInfo = () => {
+const PaymentsOrderInfo = (props) => {
   return (
     <>
       <PaymentsInputHeader title="주문상품" />
-      <OrderList />
+      <OrderList dummyOrderListData={props.dummyOrderListData} />
     </>
   );
 };
