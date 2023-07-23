@@ -5,6 +5,7 @@ import { useState } from "react";
 import Home from "./Home";
 import PageNotFound from "./PageNotFound/PageNotFound";
 import FeedProduct from "./Product/FeedProduct";
+import OrderHistory from "./Member/OrderHistory"
 
 const Router = () => {
   const [isInLogged, setisInLogged] = useState(true);
@@ -13,9 +14,8 @@ const Router = () => {
       {isInLogged ? (
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/product/feed" element={<FeedProduct />}/>
-          <Route />
-          <Route />
+          <Route path="/product/feed" element={<FeedProduct />} />
+          <Route path="/member/orderhistory" element={<OrderHistory />} />
           <Route />
           <Route path="/*" element={<PageNotFound />} />
         </Routes>
