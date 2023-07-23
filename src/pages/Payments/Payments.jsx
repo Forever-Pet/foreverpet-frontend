@@ -19,7 +19,7 @@ const dummyOrderListData = [
     id: 1,
     imageUrl:
       "https://www.bohori.com/web/product/medium/202304/8c40e60df9ad25fdd15c40f72b779ede.jpg",
-    name: "채식 애견껌 스틱형 120g (12개임)-오리지널 맛 (초록색) 맛있어요 !대박임 !",
+    name: "채식 애견껌 스틱 150g (50개입)-복숭아 맛",
     quantity: 3,
     defaultAmount: 4500,
   },
@@ -112,6 +112,7 @@ const Payments = () => {
           <PaymentsFinal
             paymentsFinalAmount={paymentsFinalAmount}
             paymentReinfo={paymentReinfo}
+            dummyOrderListData={dummyOrderListData}
           />
         </div>
       </div>

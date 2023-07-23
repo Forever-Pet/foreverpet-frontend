@@ -38,8 +38,56 @@ const PaymentsFinal = (props) => {
     if (!paymentInputAgree.paymentAgree || !paymentInputAgree.privacyAgree)
       return alert("필수란에 동의를 체크해 주세요.");
 
+    const productsName = props.dummyOrderListData[0].name;
+    const productLength = props.dummyOrderListData.length;
+    const slice = productsName.slice(0, 10);
+
+    const sliceProductsName = `${slice}... 외 ${productLength - 1}개`;
+    const defualtProductsName = `${productsName} 외 ${productLength - 1} 개`;
+
     // 결제 API 전송
-    console.log("결제 api");
+    if (productsName.length > 7) {
+      return impPayment(sliceProductsName);
+    } else {
+      return impPayment(defualtProductsName);
+    }
+  };
+
+  const impPayment = (productsName) => {
+    const { ownerName, ownerTel, ownerEmail, deliveryMainAddress } =
+      props.paymentReinfo;
+
+    const { IMP } = window;
+    IMP.init("imp32173444");
+
+    // 결제 데이터
+    const impPaymentData = {
+      pg: "kakaopay", // PG사
+      pay_method: "card", // 결제수단
+      merchant_uid: `Forever-Pet_${new Date().getTime()}`, // 주문번호
+      amount: props.paymentsFinalAmount, // 결제금액
+      name: productsName, // 주문명
+      buyer_name: ownerName, // 구매자 이름
+      buyer_tel: ownerTel, // 구매자 전화번호
+      buyer_email: ownerEmail, // 구매자 이메일
+      buyer_addr: deliveryMainAddress, // 구매자 주소
+    };
+
+    // 결제 창
+    IMP.request_pay(impPaymentData, impCallback);
+  };
+
+  // 결제 콜백
+  const impCallback = (response) => {
+    const { success, merchant_uid, error_msg } = response;
+
+    if (success) {
+      alert("결제 성공");
+      console.log(success);
+      console.log(merchant_uid);
+    } else {
+      alert(`결제 실패: ${error_msg}`);
+    }
   };
 
   // 체크박스 활성 여부
