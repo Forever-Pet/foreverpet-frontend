@@ -28,3 +28,15 @@
   font-weight: bold;
   padding-bottom: 30px;
 }
+
+@media screen and (max-width: 930px) {
+  .payments-info {
+    width: 100%;
+    left: 0;
+    right: 0;
+    font-size: 13px;
+  }
+  .payments-info-amount {
+    display: none;
+  }
+}

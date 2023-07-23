@@ -24,7 +24,7 @@
 }
 
 .patments-final__price {
-  width: 450px;
+  max-width: 450px;
   text-align: center;
   padding: 13px 0px;
   background-color: black;

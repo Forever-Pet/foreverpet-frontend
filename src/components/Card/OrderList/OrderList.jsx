@@ -31,20 +31,25 @@ const OrderList = (props) => {
               className="order-list__image"
               alt=""
             />
-            <span className={styles["order-list__item--middle"]}>
-              <span className={styles["order-list__item--name"]}>
-                {productItem.name.length > 40
-                  ? productNameSlice(productItem.name)
-                  : productItem.name}
+
+            <div className={styles["order-list__item--test"]}>
+              <span className={styles["order-list__item--middle"]}>
+                <span className={styles["order-list__item--name"]}>
+                  {productItem.name.length > 40
+                    ? productNameSlice(productItem.name)
+                    : productItem.name}
+                </span>
+                <span className={styles["order-list__item--quantity"]}>
+                  {productItem.quantity}개
+                </span>
               </span>
-              <span className={styles["order-list__item--quantity"]}>
-                {productItem.quantity}개
+              <span className={styles["order-list__item--amount"]}>
+                {addPriceComma(
+                  productItem.defaultAmount * productItem.quantity
+                )}
+                원
               </span>
-            </span>
-            <span>
-              {addPriceComma(productItem.defaultAmount * productItem.quantity)}
-              원
-            </span>
+            </div>
           </li>
         );
       })}

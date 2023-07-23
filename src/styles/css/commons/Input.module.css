@@ -13,6 +13,18 @@
   height: 35px;
 }
 
+@media screen and (max-width: 930px) {
+  .delivery-input__name,
+  .delivery-input__mainAddress,
+  .delivery-input__subAddress,
+  .delivery-input__tel,
+  .owner-input__owner,
+  .owner-input__tel,
+  .owner-input__email {
+    width: 100%;
+  }
+}
+
 .localUser-login__email,
 .localUser-login__password {
   width: 100%;

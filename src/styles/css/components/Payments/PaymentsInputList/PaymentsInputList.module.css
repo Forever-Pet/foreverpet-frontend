@@ -25,3 +25,14 @@
   display: flex;
   justify-content: end;
 }
+
+@media screen and (max-width: 930px) {
+  .delivery-input__list,
+  .owner-input__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    margin-bottom: 20px;
+  }
+}
