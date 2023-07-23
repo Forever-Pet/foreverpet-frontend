@@ -15,8 +15,8 @@ const OwnerInputList = (props) => {
           type="text"
           placeholder="한글, 영문, 숫자만 입력해 주세요"
           className="owner-input__owner"
-          onChange={props.getOwnerInputValue}
-          value={props.ownerInputValue.ownerName}
+          onChange={props.updatePaymentInfo}
+          value={props.paymentReinfo.ownerName}
           required={true}
           minLength="5"
           name="ownerName"
@@ -30,8 +30,8 @@ const OwnerInputList = (props) => {
           type="text"
           placeholder="휴대폰 번호를 입력 해주세요 "
           className="owner-input__tel"
-          onChange={props.getOwnerInputValue}
-          value={props.ownerInputValue.ownerTel}
+          onChange={props.updatePaymentInfo}
+          value={props.paymentReinfo.ownerTel}
           required={true}
           minLength="7"
           name="ownerTel"
@@ -43,8 +43,8 @@ const OwnerInputList = (props) => {
           type="email"
           placeholder="이메일을 입력해주세요"
           className="owner-input__email"
-          onChange={props.getOwnerInputValue}
-          value={props.ownerInputValue.ownerEmail}
+          onChange={props.updatePaymentInfo}
+          value={props.paymentReinfo.ownerEmail}
           maxLength="30"
           name="ownerEmail"
         />
