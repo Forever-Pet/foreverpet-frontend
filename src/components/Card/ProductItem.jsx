@@ -5,6 +5,7 @@ import { UsehandleWishBag } from '../../hooks/ClickHook/UsehandleWishBag'
 import { UseCartHook } from '../../hooks/ClickHook/UseCartHook'
 import ProductContent from './ProductContent'
 import { useSelector } from 'react-redux';
+import BagModal from '../../common/Modal/BagModal';
 
 
 const ProductItem = (props) => {
@@ -53,6 +54,7 @@ const ProductItem = (props) => {
           })
         }
       </div>
+      <BagModal />
     </>
   )
 }

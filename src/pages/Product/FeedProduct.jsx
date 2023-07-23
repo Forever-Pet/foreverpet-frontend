@@ -6,7 +6,6 @@ const FeedProduct = () => {
     <div>
       <Product />
     </div>
-    <BagModal></BagModal>
   </>
 };
 
