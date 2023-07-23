@@ -1,10 +1,10 @@
 .payments-type__text {
   text-align: center;
+  margin-bottom: 30px;
 }
 
 .payments-type__list {
   text-align: center;
-  transform: translateY(50px);
 }
 
 .payments-type__kakaopay {
