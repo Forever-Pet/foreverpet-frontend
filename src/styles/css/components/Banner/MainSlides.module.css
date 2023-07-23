@@ -3,9 +3,11 @@
 /* pc */
 @media screen and (min-width:1024px)  {
   .slides {
+    position: relative;
+    top: -87px;
     max-width: 1200px;
     margin: 0 auto;
-    margin-top: 123px;
+   
 }
 }
 
@@ -13,7 +15,7 @@
 @media screen and (min-width:768px) and (max-width:1023px) {
   .slides {
     position: relative;
-    top: 138px;
+    top: -97px;
     max-width: 950px;
     margin: 0 auto;
 }
