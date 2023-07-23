@@ -27,9 +27,8 @@
   
    /*검색 아이콘*/
   .icon1 {
-    position: fixed;
-    right: 223px;
-    top: 166px;
+    position: absolute;
+    right: 101px;
     color: #dddddd;
     cursor: pointer;
   }
@@ -79,7 +78,7 @@
     .navbar_box {
       position: relative;
       top: -97px;
-      left: 195px;
+      left: 190px;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -96,9 +95,6 @@
 
       /*검색 아이콘*/
       .icon1 {
-        position: fixed;
-        right: 73px;
-        top: 49px;
         color: #666666;
         cursor: pointer;
       }

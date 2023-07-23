@@ -56,9 +56,9 @@
 /* 모바일 */
 @media screen and (max-width: 767px) {
   .nav {
-    position:absolute;
-    top: 46px;
-    right: 101px;
+    position: absolute;
+    top: 12px;
+    right: 87px;
     display: flex;
     justify-content: center;
     align-items: center;
