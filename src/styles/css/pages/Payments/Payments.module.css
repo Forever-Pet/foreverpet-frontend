@@ -1,5 +1,6 @@
 .payments-wrap {
   position: relative;
+  width: 100%;
 }
 .payments-info,
 .payments-info-amount {
@@ -9,13 +10,17 @@
 .payments-info {
   width: 600px;
   position: absolute;
-  right: calc(50% - 50px);
+  left: calc(50% - 460px);
   font-size: 13px;
+}
+
+.payments-info__list {
+  margin-bottom: 50px;
 }
 .payments-info-amount {
   width: 300px;
   position: absolute;
-  left: calc(50% + 90px);
+  right: calc(50% - 470px);
   font-size: 14px;
 }
 .payments-text {

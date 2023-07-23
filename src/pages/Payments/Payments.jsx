@@ -27,16 +27,16 @@ const Payments = () => {
         <div className={styles["payments-text"]}>
           <Title title="주문결제" />
         </div>
-        <div>
+        <div className={styles["payments-info__list"]}>
           <PaymentsOrderInfo />
         </div>
-        <div>
+        <div className={styles["payments-info__list"]}>
           <PaymentsOwnerInfo />
         </div>
-        <div>
+        <div className={styles["payments-info__list"]}>
           <PaymentsDeliveryInfo />
         </div>
-        <div>
+        <div className={styles["payments-info__list"]}>
           <PaymentsType />
         </div>
       </div>
