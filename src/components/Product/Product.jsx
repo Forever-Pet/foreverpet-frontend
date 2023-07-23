@@ -8,10 +8,10 @@ import { LiaShoppingBagSolid } from "react-icons/lia";
 import CartModal from '../../common/Modal/CartModal';
 import testImg from '../../assets/image 26.svg'
 import { useSelector } from 'react-redux';
+import TemporaryHeader from '../Header/TemporaryHeader';
 
 const Product = (props) => {
   const [click, checkClick] = UseClickHook(false)
-  const [bagClick, setBagClick] = UseClickHook(false)
   const [selectedValue, setSelectedValue] = useState('베스트');
   const data = [
     { id: 0, productName: '껌', img: testImg, brand: '브랜드임', price: 4500 },
@@ -21,18 +21,7 @@ const Product = (props) => {
   const cartData = useSelector((state) => { return state.cart.cartItem })
 
   return <>
-    <div className={styles.header}>
-      <div className={styles['header--icon']}>
-        <LiaShoppingBagSolid onClick={setBagClick}></LiaShoppingBagSolid>
-        {
-          cartData.length > 0 ? <div className={styles['alert-count']}>{cartData.length}</div> : ''
-        }
-      </div>
-      <div style={{ clear: 'both' }}></div>
-    </div>
-    {
-      bagClick ? <CartModal /> : ''
-    }
+    <TemporaryHeader></TemporaryHeader>
 
     <div className={styles.base}>
       <div>
