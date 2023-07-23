@@ -15,8 +15,8 @@ const DeliveryInputList = (props) => {
           type="text"
           placeholder="한글, 영문, 숫자만 입력해 주세요"
           className="delivery-input__name"
-          onChange={props.getDeliveryInputValue}
-          value={props.deliveryInputValue.deliveryName}
+          onChange={props.updatePaymentInfo}
+          value={props.paymentReinfo.deliveryName}
           required={true}
           minLength="5"
           name="deliveryName"
@@ -29,14 +29,14 @@ const DeliveryInputList = (props) => {
         <Input
           type="text"
           className="delivery-input__mainAddress"
-          onChange={props.getDeliveryInputValue}
-          value={props.deliveryInputValue.deliveryMainAddress}
+          onChange={props.updatePaymentInfo}
+          value={props.paymentReinfo.deliveryMainAddress}
           required={true}
           name="deliveryMainAddress"
           disabled={true}
         />
         <div
-          //   onClick={props.getUserMainAddressInfo}
+          onClick={props.getUserMainAddressInfo}
           className={styles["delivery-input__mainAddress-btn"]}
         >
           주소 검색
@@ -46,8 +46,8 @@ const DeliveryInputList = (props) => {
         <Input
           type="text"
           className="delivery-input__subAddress"
-          onChange={props.getDeliveryInputValue}
-          value={props.deliveryInputValue.deliverySubAddress}
+          onChange={props.updatePaymentInfo}
+          value={props.paymentReinfo.deliverySubAddress}
           required={true}
           placeholder="상세 주소를 입력해주세요"
           name="deliverySubAddress"
@@ -61,8 +61,8 @@ const DeliveryInputList = (props) => {
           type="tel"
           placeholder="휴대폰 번호를 입력해 주세요"
           className="delivery-input__tel"
-          onChange={props.getDeliveryInputValue}
-          value={props.deliveryInputValue.deliveryTel}
+          onChange={props.updatePaymentInfo}
+          value={props.paymentReinfo.deliveryTel}
           required={true}
           minLength="7"
           name="deliveryTel"

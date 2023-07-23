@@ -4,31 +4,31 @@ import { useState } from "react";
 // Components
 import PaymentsInputHeader from "./PaymentsInputHeader/PaymentsInputHeader";
 import DeliveryInputList from "./PaymentsInputList/DeliveryInputList";
+import DaumAddress from "../Auth/Address/DaumAddress";
 
-const PaymentsDeliveryInfo = () => {
-  const [deliveryInputValue, setDeliveryInputValue] = useState({
-    deliveryName: "",
-    deliveryMainAddress: "",
-    deliverySubAddress: "",
-    deliveryTel: "",
-  });
+const PaymentsDeliveryInfo = (props) => {
+  const [userAddressInfo, setUserAddressInfo] = useState(false);
 
-  // 배송지 정보 입력값 업데이트 함수
-  const getDeliveryInputValue = (e) => {
-    const { name, value } = e.target;
-    setDeliveryInputValue((prevDeliveryInput) => ({
-      ...prevDeliveryInput,
-      [name]: value,
-    }));
+  // DaumAddress 컴포넌트 활성화, 클릭한 주소정보 Get
+  const userAddressInfoUpdate = (type, address) => {
+    if (type === "modal") return setUserAddressInfo((prev) => !prev);
+    if (type === "address") return props.updatePaymentInfo(address);
   };
+
+  // Input의 주소검색 버튼 누를시 DaumAddress 컴포넌트 활성화
+  const getUserMainAddressInfo = () => setUserAddressInfo((prev) => !prev);
 
   return (
     <>
+      <DaumAddress
+        userAddressInfo={userAddressInfo}
+        userAddressInfoUpdate={userAddressInfoUpdate}
+      />
       <PaymentsInputHeader title="배송지 정보" />
-
       <DeliveryInputList
-        getDeliveryInputValue={getDeliveryInputValue}
-        deliveryInputValue={deliveryInputValue}
+        paymentReinfo={props.paymentReinfo}
+        updatePaymentInfo={props.updatePaymentInfo}
+        getUserMainAddressInfo={getUserMainAddressInfo}
       />
     </>
   );
