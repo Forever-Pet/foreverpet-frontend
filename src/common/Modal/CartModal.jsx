@@ -24,7 +24,7 @@ const CarModal = () => {
                   <IoMdClose onClick={() => dispatch(removeCart(d))} className={styles['cart-container__insideBg--icon']}></IoMdClose>
                   <div className={styles['cart-container__insideBg--content']}>
                     <div className={styles['cart-container__insideBg--content__img']}>
-                      <Image src={d.img} className="bagModal-img"></Image>
+                      <Image src={d.img} className="img-100"></Image>
                     </div>
                     <div className={styles['cart-container__insideBg--content__text']}>
                       <p>{d.brand}</p>
