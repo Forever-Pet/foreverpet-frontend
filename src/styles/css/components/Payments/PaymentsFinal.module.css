@@ -1,0 +1,36 @@
+.payments-final,
+.patments-final__btn {
+  margin-top: 70px;
+}
+
+.payments-final {
+  padding-top: 30px;
+  box-sizing: border-box;
+  border-top: 1.8px solid black;
+}
+
+.payments-checkbox {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.payments-checkbox__required-text {
+  font-weight: bold;
+}
+
+.payments-checkbox__label {
+  padding-left: 30px;
+}
+
+.patments-final__price {
+  width: 450px;
+  text-align: center;
+  padding: 13px 0px;
+  background-color: black;
+  color: white;
+  font-size: 17px;
+  border-radius: 5px;
+  margin: 50px auto 0 auto;
+  cursor: pointer;
+}
