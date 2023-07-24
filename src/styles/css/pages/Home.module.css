@@ -11,10 +11,12 @@
   }
 
   .home_ban {
+    display: flex;
     height: 370px;
-    max-width: 100%;
+    width: 100%;
+    max-width: 1190px;
     margin-top: 40px;
-    margin: 0 97px;
+    margin: 0 auto;
   }
 
   .home_ban_img {
@@ -34,11 +36,18 @@
   }
 
   .home_ban {
-
+    display: flex;
+    height: 370px;
+    width: 100%;
+    max-width: 1190px;
+    margin-top: 40px;
+    margin: 0 auto;
   }
 
+
   .home_ban_img {
-    
+    max-width: 595px;
+    margin: 0 10px;
   }
 }
 
@@ -53,10 +62,17 @@
   }
 
   .home_ban {
-
+    display: flex;
+    height: 370px;
+    width: 100%;
+    max-width: 1190px;
+    margin-top: 40px;
+    margin: 0 auto;
   }
 
+
   .home_ban_img {
-    
+    max-width: 595px;
+    margin: 0 10px;
   }
 }

@@ -25,10 +25,10 @@
 
 .product {
   display: grid;
-  grid-template-columns: 230px 230px 230px;
+  grid-template-columns: 230px 230px 230px 230px 230px;
   max-width: 1230px;
   width: 56%;
-  margin: 0 auto;
+  margin: 0 42px;
 }
 
 .product_link {
@@ -110,7 +110,7 @@
   
   .product {
     display: grid;
-    grid-template-columns: 230px 230px 230px;
+    grid-template-columns: 230px 230px 230px 230px 230px;
     max-width: 1230px;
     width: 56%;
     margin: 0 auto;
@@ -195,7 +195,7 @@
   
   .product {
     display: grid;
-    grid-template-columns: 230px 230px 230px;
+    grid-template-columns: 230px 230px 230px 230px 230px;
     max-width: 1230px;
     width: 56%;
     margin: 0 auto;

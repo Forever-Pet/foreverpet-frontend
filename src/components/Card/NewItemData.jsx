@@ -28,6 +28,25 @@ const NewItemData = [
     price : "18,000",
     new : "NEW"
     // sale : "SALE"
-   }
+   },
+   {
+    id : 3, 
+    src : 'img/newitem2.jpg',
+    title : "해피데이 패드 중형 (50P)",
+    percent : "5" ,
+    price : "14,630",
+    new : "NEW",
+    sale : "SALE",
+
+   },
+   {
+    id : 4, 
+    src : 'img/newitem2.jpg',
+    title : "해피데이 패드 중형 (50P)",
+    percent : "5" ,
+    price : "14,630",
+    new : "NEW",
+    sale : "SALE",
+   },
 ]
 export default NewItemData ;
