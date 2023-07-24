@@ -6,7 +6,7 @@
 @media screen and (min-width:1024px)  {
 .top_menu {
   position:absolute;
-  top: 46px;
+  top: 55px;
   right: 116px;
   max-width: 1195px;
   display: flex;
@@ -57,7 +57,7 @@
 @media screen and (max-width: 767px) {
   .top_menu  {
     position: absolute;
-    top: 12px;
+    top: 31px;
     right: 87px;
     display: flex;
     justify-content: center;

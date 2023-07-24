@@ -7,13 +7,12 @@
 @media screen and (min-width:1024px)  {
   /*마이페이지&장바구니 아이콘*/
 .navbar_box {
-  position: relative;
-  top: 5px;
-  right: 124px;
-  float: right;
+  position:absolute;
+  right: 33px;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 5px;
   }
 
   .navbar_box_icon {
@@ -38,13 +37,12 @@
 @media screen and (min-width:768px) and (max-width:1023px) {
    /*마이페이지&장바구니 아이콘*/
 .navbar_box {
-  position: relative;
-  top: -14px;
+  position: absolute;
   right: 29px;
-  float: right;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 5px;
   }
 
   .navbar_box_icon {
@@ -78,11 +76,12 @@
     /*마이페이지&장바구니 아이콘*/
     .navbar_box {
       position: relative;
-      top: -97px;
       left: 190px;
+      top: -85px;
       display: flex;
       justify-content: center;
       align-items: center;
+      margin-top: 5px;
       }
       
       .navbar_box_icon {
