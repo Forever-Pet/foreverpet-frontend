@@ -9,6 +9,7 @@ import KakaoCallback from "../components/Auth/Kakao/KakaoCallback";
 import FeedProduct from "./Product/FeedProduct";
 import ProductDetail from "./Product/ProductDetail";
 import Payments from "./Payments/Payments";
+import Modify from "./Member/Modify";
 import PageNotFound from "./PageNotFound/PageNotFound";
 
 // Test
@@ -32,6 +33,7 @@ const Router = () => {
           <Route path="/product/feed" element={<FeedProduct />} />
           <Route path="/product/detail/:id" element={<ProductDetail />} />
           <Route path="/payments" element={<Payments />} />
+          <Route path="/member/modify" element={<Modify />} />
           <Route path="/*" element={<PageNotFound />} />
         </Routes>
       ) : (
