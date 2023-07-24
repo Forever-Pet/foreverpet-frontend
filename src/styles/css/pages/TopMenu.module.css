@@ -4,7 +4,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Noto+Sans+KR&display=swap');
 /* pc */
 @media screen and (min-width:1024px)  {
-.nav {
+.top_menu {
   position:absolute;
   top: 46px;
   right: 116px;
@@ -14,7 +14,7 @@
   align-items: center;
 }
 
-.tabmenu {
+.top_menu_prd {
   max-width: 1195px;
  margin-left:25px;
  text-decoration: none;
@@ -23,14 +23,14 @@
  font-size: 13px;
  font-family: 'Noto Sans KR', sans-serif;
 }
-.tabmenu:hover {
+.top_menu_prd:hover {
    color: #000;
 }
 }
 
 /*테블릿*/
 @media screen and (min-width:768px) and (max-width:1023px) {
-  .nav {
+  .top_menu {
     position:absolute;
     top: 46px;
     right: 116px;
@@ -39,7 +39,7 @@
     align-items: center;
   }
   
-  .tabmenu {
+  .top_menu_prd {
    margin-left:25px;
    text-decoration: none;
    color: #666666;
@@ -48,14 +48,14 @@
    font-family: 'Noto Sans KR', sans-serif;
   }
   
-  .tabmenu:hover {
+  .top_menu_prd:hover {
      color: #000;
   }
 }
 
 /* 모바일 */
 @media screen and (max-width: 767px) {
-  .nav {
+  .top_menu  {
     position: absolute;
     top: 12px;
     right: 87px;
@@ -64,7 +64,7 @@
     align-items: center;
     
   }
-  .tabmenu {
+  .top_menu_prd {
    margin-left:13px;
    text-decoration: none;
    color: #666666;
@@ -73,7 +73,32 @@
    font-family: 'Noto Sans KR', sans-serif;
   }
   
-  .tabmenu:hover {
+  .top_menu_prd:hover {
+     color: #000;
+  }
+}
+
+/*가로모드 모바일 디바이스*/
+@media screen and (min-width: 576px) {
+  .top_menu  {
+    position: absolute;
+    top: 12px;
+    right: 87px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  .top_menu_prd {
+   margin-left:13px;
+   text-decoration: none;
+   color: #666666;
+   cursor: pointer;
+   font-size: 10px;
+   font-family: 'Noto Sans KR', sans-serif;
+  }
+  
+  .top_menu_prd:hover {
      color: #000;
   }
 }

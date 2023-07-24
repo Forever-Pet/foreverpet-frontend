@@ -5,8 +5,7 @@ import styles from "../../styles/css/components/Footer/Footer.module.css"
 const Footer = (props) => {
   return (//<footer className={classes[props.className || ""]}> 
   <footer className={styles.footer}>
-  
-    <h2 className={styles.logo}>
+    <h2 className={styles.fot_logo}>
       포에버펫
     </h2>
       <div className={styles.contents}>

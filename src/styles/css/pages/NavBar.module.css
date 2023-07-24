@@ -233,3 +233,80 @@
 }
   
 }
+
+/*가로모드 모바일 디바이스*/
+@media screen and (min-width: 576px) {
+  /*nav 메뉴*/
+  .nav {
+    position: relative;
+    left: -67px;
+    top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .tabmenu {
+   margin-left:38px;
+   text-decoration: none;
+   color: #666666;
+   cursor: pointer;
+   font-size: 15px;
+   font-family: 'Noto Sans KR', sans-serif;
+  }
+  
+  .tabmenu1 {
+    color: #008e61;
+    font-weight: 600;
+    display: flex;
+  }
+  
+  /*햄버거버튼 css*/
+  .icon {
+
+    font-size: 25px;
+    padding-right: 5px;
+
+  }
+  
+ /*nav 서브 리스트 */
+.nav_list {
+  position: absolute;
+  top: 40px;
+  left: 103px;
+  width: 174px;
+  height: 342px;
+  line-height: 35px;
+  padding-left: 10px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+}
+
+.nav_list_item {
+  color: black;
+  font-size: 12px;
+  margin-top: 3px;
+  transform: scale(1.0); /* 이미지 확대 */
+  transition: transform .5s; /* 시간 설정 */
+}
+
+.nav_list_item:hover {
+  color: #666666;
+  transform: scale(1.1);   /* 이미지 확대 */
+    transition: transform .5s;  /* 시간 설정 */
+}
+
+.listItem_name {
+  position: absolute;
+  left: 46px;
+  top: 6px;
+}
+
+/*nav_list 이미지 */
+.nav_list_img  {
+  width: 30px;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 10px;
+  padding-top: 5px;
+}
+}

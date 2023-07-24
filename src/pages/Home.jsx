@@ -14,9 +14,6 @@ import Snack from '../components/Navigation/Category/Snack';
 //css
 import styles from '../styles/css/pages/Home.module.css';
 
-
-
-
 const Home = () => {
   return (
   <div className={styles.home}>

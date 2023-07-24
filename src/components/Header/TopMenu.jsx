@@ -25,14 +25,14 @@ const TopMenu = () => {
   return (
     <div>
       {/* 메뉴 객체 따로 만들기 , 컴포넌트 생성 */}
-      <nav className={styles.nav}>
-          {TopMenuArr.map((tap , index) => {
+      <nav className={styles.top_menu}>
+          {TopMenuArr.map((props , index) => {
             return(
               <div 
               key={index} 
-              className={styles.tabmenu} 
+              className={styles.top_menu_prd} 
               onClick={() => selectTopHandler(index)}>
-              {tap.name}
+              {props.name}
               </div>
             )
           })}

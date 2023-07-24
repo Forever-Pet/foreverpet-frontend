@@ -33,6 +33,7 @@
     cursor: pointer;
   }
 }
+
 /*테블릿*/
 @media screen and (min-width:768px) and (max-width:1023px) {
    /*마이페이지&장바구니 아이콘*/
@@ -106,4 +107,40 @@
         border-radius: 15px;
         border : 1px solid #dddddd;
        }
-   }
+}
+
+/*가로모드 모바일 디바이스*/
+@media screen and (min-width: 576px) {
+   /*마이페이지&장바구니 아이콘*/
+   .navbar_box {
+    position: relative;
+    top: -97px;
+    left: 190px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    }
+    
+    .navbar_box_icon {
+      margin-left:11px;
+      text-decoration: none;
+      color: #666666;
+      cursor: pointer;
+      font-size: 13px;
+      font-family: 'Noto Sans KR', sans-serif;
+     }
+
+    /*검색 아이콘*/
+    .icon1 {
+      color: #666666;
+      cursor: pointer;
+    }
+  
+     .search {
+      display: none;
+      width: 200px;
+      height: 27px;
+      border-radius: 15px;
+      border : 1px solid #dddddd;
+     }
+}
