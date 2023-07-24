@@ -3,6 +3,7 @@ import DefaultModal from './DefaultModal';
 import Button from '../Button/Button'
 import { useDispatch, useSelector } from 'react-redux';
 import { secondModalClose } from '../../store/Slice/ModalSlice';
+import { cartIsOpen } from '../../store/Slice/CartSlice';
 const InsideBag = () => {
   const modalState = useSelector((state) => { return state.modal.modalState })
   const dispatch = useDispatch()
@@ -16,9 +17,10 @@ const InsideBag = () => {
         </div>
         <div className={styles['bag-btn']}>
           <Button onClick={() => dispatch(secondModalClose())} className='bag-detail-btn' title={'취소'} />
-          <Button onClick={() => dispatch(secondModalClose())
-            //링크이동 코드 필요
-          } className='bag-inside-btn' title={'확인하기'} />
+          <Button onClick={() => {
+            dispatch(secondModalClose())
+            dispatch(cartIsOpen(true))
+          }} className='bag-inside-btn' title={'확인하기'} />
         </div>
 
       </DefaultModal>

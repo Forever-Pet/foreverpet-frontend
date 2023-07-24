@@ -3,6 +3,7 @@ import { IoMdClose } from "react-icons/io";
 import Image from '../Img/Image';
 import { useDispatch, useSelector } from 'react-redux';
 import { removeCart, increase, decrease } from '../../store/Slice/CartSlice';
+import Button from '../Button/Button';
 
 const CarModal = () => {
   const cartData = useSelector((state) => { return state.cart.cartItem })
@@ -49,6 +50,9 @@ const CarModal = () => {
             })
         }
 
+        {
+          cartData.length > 0 ? <Button className="cart-pay-btn" title={"결제하기"}></Button> : ''
+        }
 
 
       </div>
