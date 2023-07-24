@@ -122,12 +122,12 @@
   }
 }
 
-/*가로모드 모바일 디바이스*/
+/*가로모드 모바일 디바이스
 @media screen and (min-width: 576px) {
   .category {
     width: 600px;
     height: 200px;
-    /* margin: 0 auto; */
+    /* margin: 0 auto; 
     padding-top: 13px;
   }
   
@@ -162,3 +162,4 @@
     border-radius: 50%;
   }
 }
+*/

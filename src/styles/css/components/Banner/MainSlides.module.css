@@ -30,7 +30,7 @@
   }
 }
 
-/*가로모드 모바일 디바이스*/
+/*가로모드 모바일 디바이스
 @media screen and (min-width: 576px) {
   .slides {
     max-width: 460px;
@@ -38,3 +38,4 @@
     margin-top: 93px;
  }
 }
+*/

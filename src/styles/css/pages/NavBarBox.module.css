@@ -109,9 +109,9 @@
        }
 }
 
-/*가로모드 모바일 디바이스*/
+/*가로모드 모바일 디바이스
 @media screen and (min-width: 576px) {
-   /*마이페이지&장바구니 아이콘*/
+   /*마이페이지&장바구니 아이콘
    .navbar_box {
     position: relative;
     top: -97px;
@@ -130,7 +130,7 @@
       font-family: 'Noto Sans KR', sans-serif;
      }
 
-    /*검색 아이콘*/
+    /*검색 아이콘
     .icon1 {
       color: #666666;
       cursor: pointer;
@@ -144,3 +144,4 @@
       border : 1px solid #dddddd;
      }
 }
+*/
