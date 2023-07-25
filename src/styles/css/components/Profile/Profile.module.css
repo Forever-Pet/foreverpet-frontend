@@ -1,6 +1,6 @@
 .container {
   margin: auto;
-  width: 80%;
+  width: 90%;
 }
 
 div {
@@ -10,6 +10,10 @@ div {
 .flex-box__top {
   display: flex;
   align-items: baseline;
+}
+
+.flex-box__top__profilePadding {
+  padding-right: 30px;
 }
 
 .flex-box {
@@ -88,9 +92,6 @@ div {
 @media screen and (max-width : 1100px) {
   .flex-box__title {
     width: 60%;
-  }
-  .container {
-    width: 90%;
   }
 }
 

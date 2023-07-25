@@ -1,5 +1,5 @@
 import { LiaShoppingBagSolid } from "react-icons/lia";
-import CartModal from '../../common/Modal/CartModal';
+import CartModal from '../../components/Cart/CartModal';
 import { useDispatch, useSelector } from "react-redux";
 import styles from '../../styles/css/components/Header/TemporaryHeader.module.css'
 import { cartIsOpen } from "../../store/Slice/CartSlice";

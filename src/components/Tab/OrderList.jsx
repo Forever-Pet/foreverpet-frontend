@@ -16,8 +16,8 @@ const OrderList = () => {
           <tbody>
             {
               data.map((d) => {
-                return <>
-                  <tr>
+                return (
+                  <tr key={d.id}>
                     <td>
                       <Image src={testImg} className="img-100" />
                     </td>
@@ -26,7 +26,8 @@ const OrderList = () => {
                     <td className={styles['cart-table__width']}>{d.price}원</td>
                     <td>{d.state}</td>
                   </tr>
-                </>
+
+                )
               })
             }
           </tbody>

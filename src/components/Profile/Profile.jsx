@@ -8,10 +8,10 @@ const Profile = (props) => {
 
   return <>
     <TemporaryHeader></TemporaryHeader>
-    <div className={styles['container']}>
+    <div className={styles['container']} style={{ maxWidth: '1300px' }}>
       <div className={styles['setWidth-100']} >
         <div className={styles['flex-box__top']}>
-          <div className={styles['setWidth-50']}>
+          <div className={styles['flex-box__top__profilePadding']}>
             <h2>마이페이지</h2>
             <div className={styles['leftTitle__user-box']}>
               <div className={styles['leftTitle__user-box__padding']}>

@@ -5,7 +5,7 @@ import { UseClickHook } from '../../hooks/ClickHook/UseClickHook'
 import ProductFilter from './ProductFilter';
 import { useState } from 'react';
 import { LiaShoppingBagSolid } from "react-icons/lia";
-import CartModal from '../../common/Modal/CartModal';
+import CartModal from '../../components/Cart/CartModal';
 import testImg from '../../assets/image 26.svg'
 import { useSelector } from 'react-redux';
 import TemporaryHeader from '../Header/TemporaryHeader';

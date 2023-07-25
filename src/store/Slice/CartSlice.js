@@ -42,7 +42,7 @@ const CartSlice = createSlice({
     },
 
     cartIsOpen(state, action) {
-      if (action.payload == true) {
+      if (action.payload) {
         state.cartOpen = true
       } else {
         state.cartOpen = !state.cartOpen

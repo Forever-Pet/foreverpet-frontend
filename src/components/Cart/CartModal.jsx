@@ -1,9 +1,9 @@
-import styles from '../../styles/css/commons/CartModal.module.css'
+import styles from '../../styles/css/components/Cart/CartModal.module.css'
 import { IoMdClose } from "react-icons/io";
-import Image from '../Img/Image';
+import Image from '../../common/Img/Image';
 import { useDispatch, useSelector } from 'react-redux';
 import { removeCart, increase, decrease } from '../../store/Slice/CartSlice';
-import Button from '../Button/Button';
+import Button from '../../common/Button/Button';
 
 const CarModal = () => {
   const cartData = useSelector((state) => { return state.cart.cartItem })
