@@ -12,7 +12,7 @@ import { VscHeart } from "react-icons/vsc";
 //메인 홈 - 신상품 아이템 
 const NewItem = () => {
   return (
-    <div className={styles.bestitem}>
+    <div className={styles.newitem}>
       <div className={styles.header_text}>
         <h2>두근 두근 설레는 신상품</h2>
       </div>

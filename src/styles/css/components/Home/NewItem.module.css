@@ -5,7 +5,7 @@
 
 /* pc */
 @media screen and (min-width:1024px)  {
-  .bestitem {
+  .newitem {
   position: relative;
   width: 1230px;
   height: 500px;
@@ -90,18 +90,15 @@
 
 /*테블릿*/
 @media screen and (min-width:768px) and (max-width:1023px) {
-  .bestitem {
+  .newitem {
     position: relative;
     width: 1230px;
-    height: 500px;
-    /* background-color: #008e61; */
-    margin: 0 auto;
+    height: 800px;
   }
   
   .header_text {
     position: relative;
     width: 1100px;
-    margin: 0 auto;
     font-size: 18px;
     font-weight: bold;
     text-align: center;
@@ -110,9 +107,9 @@
   
   .product {
     display: grid;
-    grid-template-columns: 230px 230px 230px 230px 230px;
+    grid-template-columns: 230px 230px 230px;
     max-width: 1230px;
-    width: 56%;
+    width: 65%;
     margin: 0 auto;
   }
   
@@ -175,7 +172,7 @@
 
 /*모바일*/
 @media screen and (max-width: 767px) {
-  .bestitem {
+  .newitem {
     position: relative;
     width: 1230px;
     height: 500px;
