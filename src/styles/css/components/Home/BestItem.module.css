@@ -93,15 +93,13 @@
   .bestitem {
     position: relative;
     width: 1230px;
-    height: 500px;
-    /* background-color: #008e61; */
+    height: 720px;
     margin: 0 auto;
   }
   
   .header_text {
     position: relative;
     width: 1100px;
-    margin: 0 auto;
     font-size: 18px;
     font-weight: bold;
     text-align: center;
@@ -110,9 +108,9 @@
   
   .product {
     display: grid;
-    grid-template-columns:230px 230px 230px 230px 230px;
+    grid-template-columns:230px 230px 230px;
     max-width: 1230px;
-    width: 56%;
+    width: 69%;
     margin: 0 auto;
   }
   
