@@ -38,10 +38,10 @@
     /* 상단 베너 */
  .banner {
   position: relative;
-  left: 35px;
+  left: 20px;
   top: 13px;
-  width: 100%;
-  max-width: 1190px;
+  width: 96%;
+ 
   height: 37px;
   background-color: #008e61;
 } 
@@ -71,8 +71,8 @@
     /* 상단 베너 */
  .banner {
   position: relative;
-  left: 14px;
-  width: 100%;
+  left: 12px;
+  width: 95%;
   height: 28px;
   background-color: #008e61;
 } 
