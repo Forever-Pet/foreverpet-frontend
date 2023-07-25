@@ -1,15 +1,15 @@
 // CSS
-import styles from "../../../styles/css/pages/Member/ModifyMemberInfo/MoidfyMember.module.css";
+import styles from "../../../styles/css/pages/Member/ModifyMemberInfo/ModifyMember.module.css";
 
-// Components
+// // Components
 import PaymentsInputHeader from "../../../components/Payments/PaymentsInputHeader/PaymentsInputHeader";
-import DeliveryInputList from "../../../components/Payments/PaymentsInputList/DeliveryInputList";
+import DeliveryRegisterInputList from "./ModifyInputList/DeliveryRegisterInputList";
 
 const DeliveryRegister = () => {
   return (
     <div>
       <PaymentsInputHeader />
-      <DeliveryInputList />
+      <DeliveryRegisterInputList />
     </div>
   );
 };

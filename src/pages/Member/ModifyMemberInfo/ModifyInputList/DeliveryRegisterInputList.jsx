@@ -4,8 +4,8 @@ import styles from "../../../../styles/css/pages/Member/ModifyMemberInfo/ModifyI
 // Components
 import Input from "../../../../common/Input/Input";
 
-const DeliveryInputList = () => {
+const DeliveryRegisterInputList = () => {
   return <div></div>;
 };
 
-export default DeliveryInputList;
+export default DeliveryRegisterInputList;

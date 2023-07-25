@@ -1,5 +1,5 @@
 // CSS
-import styles from "../../../styles/css/pages/Member/ModifyMemberInfo/MoidfyMember.module.css";
+import styles from "../../../styles/css/pages/Member/ModifyMemberInfo/ModifyMember.module.css";
 
 // Components
 import PaymentsInputHeader from "../../../components/Payments/PaymentsInputHeader/PaymentsInputHeader";
