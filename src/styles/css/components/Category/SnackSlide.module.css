@@ -173,30 +173,29 @@
 
 /*모바일*/
 @media screen and (max-width: 767px) {
-  .snack_Slide {
+  .snack_Slide{
     position: relative;
     width: 1230px;
-    height: 500px;
+    height: 800px;
     /* background-color: #008e61; */
     margin: 0 auto;
   }
-
+  
   .snack_Slide_hea {
     position: relative;
     width: 1100px;
-    margin: 0 auto;
     font-size: 18px;
     font-weight: bold;
     text-align: center;
-    color: #333; 
+    color: #333;
   }
   
-  .snack_Slide_prd{
+  .snack_Slide_prd {
     display: grid;
-    grid-template-columns: 230px 230px 230px 230px 230px;
+    grid-template-columns: 230px 230px 230px;
     max-width: 1230px;
-    width: 56%;
-    /* margin: 0 auto; */
+    width: 69%;
+    margin: 0 auto;
   }
   
   .product_link {
