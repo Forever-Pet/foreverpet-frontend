@@ -1,5 +1,4 @@
 /*Home.module.css*/
-
 /* pc */
 @media screen and (min-width:1024px)  {
   .home {
@@ -12,15 +11,15 @@
 
   .home_ban {
     display: flex;
-    height: 370px;
-    width: 100%;
+    align-items: center;
+    height: 350px;
     max-width: 1190px;
-    margin-top: 40px;
     margin: 0 auto;
   }
 
   .home_ban_img {
-    max-width: 595px;
+    width: 1190px;
+    height: 300px;
     margin: 0 10px;
   }
 }
@@ -37,16 +36,17 @@
 
   .home_ban {
     display: flex;
+    align-items: center;
     height: 370px;
-    width: 83%;
+    /* width: 83%; */
     max-width: 1190px;
     margin: 0 auto;
   }
 
 
   .home_ban_img {
-    max-width: 400px;
-    height: 261px;
+    width: 1190px;
+    height: 250px;
     margin: 0 10px;
   }
 }
@@ -63,6 +63,7 @@
 
   .home_ban {
     display: flex;
+  
     height: 370px;
     width: 83%;
     max-width: 1190px;
@@ -70,8 +71,8 @@
   }
   
   .home_ban_img {
-    max-width: 400px;
-    height: 261px;
+    width: 1190px;
+    height: 150px;
     margin: 0 10px;
   }
 }
