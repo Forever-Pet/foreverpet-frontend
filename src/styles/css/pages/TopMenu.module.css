@@ -5,13 +5,9 @@
 /* pc */
 @media screen and (min-width:1024px)  {
 .top_menu {
-  position:absolute;
-  top: 55px;
-  right: 116px;
-  max-width: 1195px;
   display: flex;
-  justify-content: center;
   align-items: center;
+  float: right;
 }
 
 .top_menu_prd {
@@ -31,12 +27,9 @@
 /*테블릿*/
 @media screen and (min-width:768px) and (max-width:1023px) {
   .top_menu {
-    position:absolute;
-    top: 46px;
-    right: 116px;
     display: flex;
-    justify-content: center;
     align-items: center;
+    float: right;
   }
   
   .top_menu_prd {
@@ -55,15 +48,12 @@
 
 /* 모바일 */
 @media screen and (max-width: 767px) {
-  .top_menu  {
-    position: absolute;
-    top: 31px;
-    right: 87px;
+  .top_menu {
     display: flex;
-    justify-content: center;
     align-items: center;
-    
+    float: right;
   }
+
   .top_menu_prd {
    margin-left:13px;
    text-decoration: none;

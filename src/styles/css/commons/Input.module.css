@@ -28,7 +28,7 @@
 @media screen and (max-width: 767px) {
   /*검색창*/
   .searchInput {
-    display: none;
+    display: block;
     width: 200px;
     height: 27px;
     border-radius: 15px;

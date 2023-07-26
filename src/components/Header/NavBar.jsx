@@ -16,8 +16,12 @@ import Event from '../../pages/NavBar/Event';
 //css 
 import styles from '../../styles/css/pages/NavBar.module.css';
 
+
 //icon
 import { RxTextAlignJustify } from "react-icons/rx";
+import { BiUser ,BiBasket } from "react-icons/bi";
+import { GoSearch} from "react-icons/go";
+import Input from '../../common/Input/Input';
 
 //
 const NavListArr = () => { 
@@ -89,6 +93,24 @@ const NavBar = () => {
         )
        })}
       </nav>
+
+      <div className={styles.navbar_box}>
+      <div>
+        <Input type="text" placeholder="우리 댕냥 알러지 없는 사료" className="searchInput" >
+         <GoSearch className={styles.icon1} />
+        </Input>
+      </div>
+      <div>
+        <NavLink to="/mypage" className={styles.navbar_box_icon}>
+          <BiUser/>
+        </NavLink>
+      </div>
+      <div>
+        <NavLink to="/order" className={styles.navbar_box_icon}>
+          <BiBasket/> 
+        </NavLink>
+      </div>
+      </div>
     </div>
   );
 };

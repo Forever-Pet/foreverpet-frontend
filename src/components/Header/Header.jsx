@@ -1,4 +1,4 @@
-import NavBarBox from "./NavBarBox";
+
 import TopMenu from "./TopMenu";
 import NavBar from "./NavBar";
 
@@ -14,12 +14,12 @@ const Header = (props) => {
   return (
     <header className={styles.header}>
       <HeaderBan/>
-      <div className={styles.contents}>
-        <div className={styles.logo}>포에버펫</div>
-      </div>
       <TopMenu />
+      <div className={styles.logo}>
+        <div className={styles.logo_text}>포에버펫</div>
+      </div>
       <NavBar />
-      <NavBarBox />
+
     </header>
   );
 };

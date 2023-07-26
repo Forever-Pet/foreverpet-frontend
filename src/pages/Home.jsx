@@ -16,7 +16,7 @@ import styles from '../styles/css/pages/Home.module.css';
 
 const Home = () => {
   return (
-  <div className={styles.home}>
+  <div>
     <Header/>
     <MainSwiper/>
     <Category categoryItem={CartegoryItem} />
