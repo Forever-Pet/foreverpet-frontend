@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export const handleWishBag = () => {
+export const UsehandleWishBag = () => {
   const [wishlist, setWishlist] = useState([]);
 
   const handleToggleList = (productId) => {

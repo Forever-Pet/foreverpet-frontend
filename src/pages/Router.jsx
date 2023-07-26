@@ -7,9 +7,11 @@ import Login from "./User/Login";
 import Join from "./User/Join";
 import KakaoCallback from "../components/Auth/Kakao/KakaoCallback";
 import FeedProduct from "./Product/FeedProduct";
+
 import ProductDetail from "./Product/ProductDetail";
 import Payments from "./Payments/Payments";
 import Modify from "./Member/Modify";
+import OrderHistory from "./Member/OrderHistory";
 import PageNotFound from "./PageNotFound/PageNotFound";
 
 // Test
@@ -34,6 +36,7 @@ const Router = () => {
           <Route path="/product/detail/:id" element={<ProductDetail />} />
           <Route path="/payments" element={<Payments />} />
           <Route path="/member/modify" element={<Modify />} />
+          <Route path="/member/orderhistory" element={<OrderHistory />} />
           <Route path="/*" element={<PageNotFound />} />
         </Routes>
       ) : (

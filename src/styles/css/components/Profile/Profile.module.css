@@ -1,0 +1,112 @@
+.container {
+  margin: auto;
+  width: 90%;
+}
+
+div {
+  box-sizing: border-box;
+}
+
+.flex-box__top {
+  display: flex;
+  align-items: baseline;
+}
+
+.flex-box__top__profilePadding {
+  padding-right: 30px;
+}
+
+.flex-box {
+  display: flex;
+  align-items: center;
+}
+
+.setWidth-100 {
+  width: 100%;
+}
+
+.setWidth-50 {
+  width: 50%;
+} 
+.setCursor {
+  cursor: pointer;
+}
+
+.leftTitle__user-box {
+  margin: 30px 0px;
+  width: 282px;
+  background: #FBFBFB;
+  border-radius: 8px;
+}
+
+.leftTitle__user-box__padding {
+  padding: 30px 30px 0px;
+}
+
+.leftTitle__user-box__userIconBox {
+  width: 50%;
+  height: 90px;
+  position: relative;
+}
+
+.leftTitle__user-box__userIconBox--icon {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  font-size: 85px;
+  background: #D9D9D9;
+  border-radius: 50%;
+}
+
+.point-cupon-box {
+  display: flex;
+  margin-top: 30px;
+}
+.point-cupon-box__width {
+  width: 50%;
+}
+
+.point-cupon-box__marginTop {
+  margin-top: 10px;
+}
+
+.button-box {
+  width: 70%;
+}
+
+.button-box__text {
+  padding: 20px 0px;
+  margin: 0px 30px;
+}
+
+.button-box__iconDiv {
+  width: 50%;
+}
+.button-box__icon {
+  float: right;
+  margin-right: 30px;
+}
+
+@media screen and (max-width : 1100px) {
+  .flex-box__title {
+    width: 60%;
+  }
+}
+
+@media screen and (max-width : 768px) {
+  .flex-box__top  {
+   display: block;
+  }
+
+  .flex-box__title {
+    margin-bottom: 30px;
+  }
+}
+
+@media screen and (max-width : 500px) {
+  .container {
+    width: 95%;
+  }
+}
