@@ -1,0 +1,44 @@
+.order-list__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.order-list__item span:last-child {
+  font-weight: bold;
+}
+
+.order-list__item--test {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.order-list__item--middle {
+  width: 65%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.order-list__item--name {
+  font-size: 14px;
+}
+
+@media screen and (max-width: 930px) {
+  .order-list__item--middle,
+  .order-list__item--test {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .order-list__item--middle {
+    padding: 0px 20px;
+    box-sizing: border-box;
+  }
+  .order-list__item--amount {
+    color: green;
+  }
+}

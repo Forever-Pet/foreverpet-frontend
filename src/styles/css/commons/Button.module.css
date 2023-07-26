@@ -1,11 +1,14 @@
-.localUser-join__footer-btn {
-  width: 70%;
+.modify-membere__btn,
+.localUser-join__footer-btn,
+.localUser-login__footer-btn {
+  width: 100%;
 }
 
 .localUser-login__footer-btn {
-  width: 80%;
+  max-width: 800px;
 }
 
+.modify-membere__btn,
 .localUser-login__footer-btn,
 .localUser-join__footer-btn {
   height: 40px;
@@ -16,11 +19,43 @@
   font-size: 15px;
 }
 
+.product-detail__btn--cart,
+.product-detail__btn--payment {
+  height: 45px;
+  border: 1px solid #4e4e4e;
+  border-radius: 5px;
+  box-shadow: 0 4px 2px #e9e9e9;
+  cursor: pointer;
+}
+
+.product-detail__btn--cart {
+  width: 100px;
+  background-color: white;
+  color: black;
+}
+.product-detail__btn--payment {
+  width: 230px;
+  background-color: black;
+  color: white;
+}
+
+@media (max-width: 1024px) {
+  .product-detail__btn--cart,
+  .product-detail__btn--payment {
+    width: 100%;
+    margin-top: 10px;
+  }
+}
+
+.modify-membere__btn {
+  max-width: 400px;
+}
+
 .bag-detail-btn {
   width: 140px;
   height: 48px;
   background: white;
-  border: #B9B9B9 solid 1px;
+  border: #b9b9b9 solid 1px;
   border-radius: 5px;
   color: #666666;
   font-weight: 500;

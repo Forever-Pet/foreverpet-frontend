@@ -1,7 +1,8 @@
 // CSS
+import { forwardRef } from "react";
 import styles from "../../styles/css/commons/Input.module.css";
 
-const Input = (props) => {
+const Input = forwardRef((props, ref) => {
   return (
     <input
       type={props.type}
@@ -15,8 +16,9 @@ const Input = (props) => {
       onChange={props.onChange}
       required={props.required ? props.required : false}
       disabled={props.disabled ? props.disabled : false}
+      ref={ref}
     />
   );
-};
+});
 
 export default Input;

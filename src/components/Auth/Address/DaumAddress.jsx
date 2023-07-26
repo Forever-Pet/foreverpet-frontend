@@ -10,15 +10,21 @@ import { AiOutlineClose } from "react-icons/ai";
 const DaumAddress = (props) => {
   const getUserMainAddressInfo = () => props.userAddressInfoUpdate("modal");
 
-  const completeUserAddress = (e) => {
+  const completeUserAddress = (event) => {
+    const e = {
+      target: {
+        name: "deliveryMainAddress",
+        value: event.address,
+      },
+    };
     props.userAddressInfoUpdate("modal");
-    props.userAddressInfoUpdate("address", e.address);
+    props.userAddressInfoUpdate("address", e);
   };
 
   // DaumPostcode Style
   const postStyleCode = {
+    maxWidth: "700px",
     height: "500px",
-    width: "700px",
   };
 
   return (

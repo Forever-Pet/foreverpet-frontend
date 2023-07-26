@@ -9,7 +9,8 @@
 }
 
 .daum-address__cancle {
-  width: 700px;
+  width: 100%;
+  max-width: 700px;
   height: 45px;
   display: flex;
   justify-content: end;

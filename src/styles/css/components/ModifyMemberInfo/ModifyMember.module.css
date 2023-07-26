@@ -1,0 +1,9 @@
+.delivery-register,
+.password-change {
+  max-width: 700px;
+}
+
+.modify-member__btn-box {
+  text-align: center;
+  margin-top: 50px;
+}

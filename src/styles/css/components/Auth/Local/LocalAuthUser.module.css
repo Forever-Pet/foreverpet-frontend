@@ -1,33 +1,50 @@
 .localUser-auth__header {
-  width: 100%;
+  padding-top: 20px;
+  box-sizing: border-box;
   margin-bottom: 50px;
 }
 
 .localUser-auth__header--closeBtn {
+  width: 100%;
+  max-width: 80%;
   text-align: end;
+}
+
+@media screen and (min-width: 900px) {
+  .localUser-auth__header--closeBtn {
+    width: 100%;
+    max-width: 75%;
+    text-align: end;
+  }
 }
 
 .localUser-auth__header--btn {
   cursor: pointer;
   font-size: 20px;
   position: relative;
-  left: 15px;
+  left: 50px;
 }
 
 .localUser-join__form {
   width: 100%;
+  padding: 0 30px;
+  box-sizing: border-box;
 }
 
 .localUser-join__item {
+  width: 100%;
+  max-width: 1200px;
+
+  margin: 0 auto;
   list-style: none;
   padding: 0;
 }
 
 .localUser-join__itemList {
-  position: relative;
+  max-width: 600px;
+  margin: 0 auto;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
 }
 #localUser-join__itemList-hidden {
   display: none;
@@ -35,20 +52,14 @@
 
 .localUser-join__item > li {
   margin-top: 20px;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-}
-
-element.style {
-  display: flex;
-  justify-content: end;
+  position: relative;
 }
 
 .localUser-join__item label {
   font-size: 14px;
   color: #1f1f1f;
   font-weight: bold;
+  margin-bottom: 15px;
 }
 
 .localUser-join__itemList:nth-child(2) {
@@ -86,16 +97,19 @@ element.style {
 }
 
 .localuser-join__mainAddress-btn,
-.localuser-join__getEmail-btn {
-  left: 375px;
-  bottom: 10px;
+.localuser-join__getEmail-btn,
+.localuser-join__checkEmail-auth {
   padding: 5px 10px;
+  right: 5px;
+}
+
+.localuser-join__mainAddress-btn,
+.localuser-join__getEmail-btn {
+  top: 20px;
 }
 
 .localuser-join__checkEmail-auth {
-  left: 360px;
   bottom: 10px;
-  padding: 5px 10px;
 }
 
 label > span {
@@ -106,7 +120,8 @@ label > span {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 50px;
+  margin: 50px auto 0 auto;
+  max-width: 600px;
 }
 
 .localUser-join__footer-box {
@@ -126,15 +141,17 @@ label > span {
 }
 
 .localUser-login__form {
-  width: 100%;
+  width: 70%;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 }
 
 .localUser-login__bottom-section {
-  width: 80%;
+  width: 100%;
+  max-width: 800px;
   display: flex;
   justify-content: space-between;
   align-items: center;

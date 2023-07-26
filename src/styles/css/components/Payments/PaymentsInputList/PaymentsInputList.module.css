@@ -1,0 +1,38 @@
+.owner-input__list,
+.delivery-input__list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.delivery-input__mainAddress-btn {
+  position: absolute;
+  background-color: white;
+  border: 1px solid #999999;
+  box-sizing: border-box;
+  font-size: 12px;
+  border-radius: 2px;
+  color: #333333;
+  cursor: pointer;
+  padding: 5px 10px;
+  right: 5px;
+  top: 5px;
+}
+
+.delivery-input__list:nth-child(3) {
+  display: flex;
+  justify-content: end;
+}
+
+@media screen and (max-width: 930px) {
+  .delivery-input__list,
+  .owner-input__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    margin-bottom: 20px;
+  }
+}

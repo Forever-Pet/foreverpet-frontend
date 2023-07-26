@@ -6,8 +6,10 @@ import { debounce } from "lodash";
 // CSS
 import styles from "../../../styles/css/components/Auth/Local/LocalAuthUser.module.css";
 
+// Hooks
+import usePathMove from "../../../hooks/usePathMove";
+
 // Components
-import DefaultModal from "../../../common/Modal/DefaultModal";
 import DaumAddress from "../Address/DaumAddress";
 import Button from "../../../common/Button/Button";
 import LocalAuthUserHeader from "./HeaderTitle/LocalAuthUserHeader";
@@ -17,6 +19,7 @@ import AuthInputList from "./AuthInputList/AuthInputList";
 import { MSG } from "../../../lang/Message";
 
 const LocalAuthUserJoin = () => {
+  const pathMove = usePathMove();
   const [userAddressInfo, setUserAddressInfo] = useState(false);
   const [enableEmailAuth, setEnableEmailAuth] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
@@ -91,6 +94,9 @@ const LocalAuthUserJoin = () => {
     // 회원정보 서버로 전송
   };
 
+  // 로그인 경로로 이동함수
+  const loginPathMoveBtn = () => pathMove("/user/login");
+
   const SHOW = styles[""];
   const HIDE = styles["localUser-join__itemList-hidden"];
 
@@ -101,7 +107,7 @@ const LocalAuthUserJoin = () => {
   const subEmailStye = localAuthUserInput.mainAddress.length > 1 ? SHOW : HIDE;
 
   return (
-    <DefaultModal className="localUser-join">
+    <>
       {userAddressInfo && (
         <DaumAddress
           userAddressInfo={userAddressInfo}
@@ -135,13 +141,16 @@ const LocalAuthUserJoin = () => {
             <span className={styles["localUser-join__footer-existingAccount"]}>
               이미 아이디가 있으신가요?
             </span>
-            <span className={styles["localUser-join__footer-login"]}>
+            <span
+              className={styles["localUser-join__footer-login"]}
+              onClick={loginPathMoveBtn}
+            >
               로그인
             </span>
           </div>
         </div>
       </form>
-    </DefaultModal>
+    </>
   );
 };
 
