@@ -1,0 +1,27 @@
+.modify-password__list,
+.delivery-register__list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.delivery-register__list:nth-child(3) {
+  margin-top: 30px;
+}
+
+.delivery-register__mainAddress-btn {
+  position: absolute;
+  background-color: white;
+  border: 1px solid #999999;
+  box-sizing: border-box;
+  font-size: 12px;
+  border-radius: 2px;
+  color: #333333;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 5px 10px;
+  right: 5px;
+  top: 20px;
+}
