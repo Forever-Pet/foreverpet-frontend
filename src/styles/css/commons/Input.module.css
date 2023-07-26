@@ -2,6 +2,10 @@
   margin-bottom: 20px;
 }
 
+.delivery-register__input--address,
+.delivery-register__input,
+.modify-password__current,
+.modify-password_new,
 .delivery-input__name,
 .delivery-input__mainAddress,
 .delivery-input__subAddress,
@@ -11,6 +15,16 @@
 .owner-input__email {
   width: 420px;
   height: 35px;
+}
+
+@media screen and (max-width: 768px) {
+  .modify-password__current,
+  .modify-password_new,
+  .delivery-register__input--address,
+  .delivery-register__input {
+    width: 100%;
+    margin-top: 10px;
+  }
 }
 
 @media screen and (max-width: 930px) {
@@ -42,6 +56,10 @@
   height: 25px;
 }
 
+.delivery-register__input--address,
+.delivery-register__input,
+.modify-password__current,
+.modify-password_new,
 .delivery-input__name,
 .delivery-input__mainAddress,
 .delivery-input__subAddress,
@@ -61,6 +79,10 @@
   border-bottom: 1px solid #c2c2c2;
 }
 
+.delivery-register__input--address,
+.delivery-register__input,
+.modify-password__current,
+.modify-password_new,
 .localUser-login__email,
 .localUser-login__password,
 .localUser-join__name,
@@ -74,6 +96,10 @@
   box-sizing: border-box;
 }
 
+.delivery-register__input--address,
+.delivery-register__input,
+.modify-password__current,
+.modify-password_new,
 .delivery-input__name,
 .delivery-input__mainAddress,
 .delivery-input__subAddress,
@@ -92,11 +118,14 @@
   outline: none;
 }
 
+.delivery-register__input--address,
 .delivery-input__mainAddress,
 .localUser-join__mainAddress:disabled {
   background-color: white;
   cursor: text;
 }
+
+.delivery-register__input--address,
 .delivery-input__mainAddress,
 .localUser-join__mainAddress:hover {
   cursor: auto;
