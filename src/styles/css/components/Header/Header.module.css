@@ -1,7 +1,7 @@
 /*Header.module.css*/
 
 /*font*/
-@import url('../../../font/font.module.css');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Noto+Sans+KR&display=swap');
 
 /* pc */
 @media screen and (min-width:1024px)  {
@@ -28,7 +28,7 @@
   
   .logo_text {
     font-family: 'Nanum Pen Script', cursive;
-    font-size: 45px;
+    font-size: 47px;
     margin: 0 auto;
     color: #008e61;
   }
@@ -59,7 +59,7 @@
   
   .logo_text {
     font-family: 'Nanum Pen Script', cursive;
-    font-size: 45px;
+    font-size: 47px;
     margin: 0 auto;
     color: #008e61;
   }
@@ -89,7 +89,7 @@
 
 .logo_text {
   font-family: 'Nanum Pen Script', cursive;
-  font-size: 45px;
+  font-size: 43px;
   margin: 0 auto;
   color: #008e61;
 }
@@ -118,7 +118,7 @@
 
 .logo_text {
   font-family: 'Nanum Pen Script', cursive;
-  font-size: 45px;
+  font-size: 43px;
   margin: 0 auto;
   color: #008e61;
 }

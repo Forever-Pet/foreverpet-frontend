@@ -9,7 +9,6 @@
   position: relative;
   width: 1230px;
   height: 500px;
-  /* background-color: #008e61; */
   margin: 0 auto;
 }
 
@@ -33,7 +32,6 @@
 
 .product_link {
   height: 340px;
-  /* background-color: #fff; */
   text-decoration: none;
   color: #000;
   font-family: 'Noto Sans KR', sans-serif;
@@ -115,7 +113,6 @@
   
   .product_link {
     height: 340px;
-    /* background-color: #fff; */
     text-decoration: none;
     color: #000;
     font-family: 'Noto Sans KR', sans-serif;
@@ -197,7 +194,6 @@
   
   .product_link {
     height: 340px;
-    /* background-color: #fff; */
     text-decoration: none;
     color: #000;
     font-family: 'Noto Sans KR', sans-serif;

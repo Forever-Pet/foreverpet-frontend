@@ -1,7 +1,7 @@
 /*NavBar.module.css*/
 
 /*font*/
-@import url('../../font/font.module.css');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Noto+Sans+KR&display=swap');
 
 /* pc */
 @media screen and (min-width:1024px)  {
@@ -16,6 +16,7 @@
   justify-content: center;
   align-items: center;
   margin-top: 8px;
+  margin-left: -31px;
 }
 
 .tabmenu {
@@ -43,7 +44,7 @@
 /*nav 서브 리스트 */
 .nav_list {
   position: absolute;
-  top: 32px;
+  top: 42px;
   width: 174px;
   height: 375px;
   line-height: 35px;
@@ -70,6 +71,8 @@
   position: absolute;
   left: 46px;
   top: 6px;
+  text-decoration: none;
+  color: black;
 }
 
 /*nav_list 이미지 */
@@ -126,10 +129,11 @@
     justify-content: center;
     align-items: center;
     margin-top: 8px;
+    margin-left: -31px;
   }
   
   .tabmenu {
-    margin-left: 50px;
+    margin-left:34px;
    text-decoration: none;
    color: #666666;
    cursor: pointer;
@@ -152,8 +156,7 @@
   /*nav 서브 리스트 */
 .nav_list {
   position: absolute;
-  top: 35px;
-  left: 52px;
+  top: 42px;
   width: 174px;
   height: 375px;
   line-height: 35px;
@@ -180,6 +183,8 @@
   position: absolute;
   left: 46px;
   top: 6px;
+  text-decoration: none;
+  color: black;
 }
 
 /*nav_list 이미지 */
@@ -237,6 +242,7 @@
    justify-content: center;
    align-items: center;
    margin-top: 8px;
+   margin-left: -24px;
  }
 
 .tabmenu {
@@ -265,7 +271,7 @@
 /*nav 서브 리스트 */
 .nav_list {
   position: absolute;
-  top: 32px;
+  top: 42px;
   width: 174px;
   height: 375px;
   line-height: 35px;
@@ -292,6 +298,8 @@
   position: absolute;
   left: 46px;
   top: 6px;
+  text-decoration: none;
+  color: black;
 }
 
 /*nav_list 이미지 */
@@ -348,6 +356,7 @@
    justify-content: center;
    align-items: center;
    margin-top: 8px;
+   margin-left: -24px;
  }
 
 .tabmenu {
@@ -376,7 +385,7 @@ display: none;
 /*nav 서브 리스트 */
 .nav_list {
   position: absolute;
-  top: 32px;
+  top: 42px;
   width: 174px;
   height: 375px;
   line-height: 35px;
@@ -403,6 +412,8 @@ display: none;
   position: absolute;
   left: 46px;
   top: 6px;
+  text-decoration: none;
+  color: black;
 }
 
 /*nav_list 이미지 */

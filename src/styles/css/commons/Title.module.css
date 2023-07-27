@@ -1,5 +1,6 @@
 /* Tiile.module.css */
 
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Noto+Sans+KR&display=swap');
 /*상단 베너*/
 .banner_text {
   position: fixed;

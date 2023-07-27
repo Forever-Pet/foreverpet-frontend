@@ -13,7 +13,7 @@ import { GoSearch} from "react-icons/go";
 const NavListArr = () => { 
   const [currentTab , setTab] = useState(0);
   const navListArr = [
-    {name : '사료' , src : 'img/img-4-1.jpeg', url: 'category/feed' },
+    {name : '사료' , src : 'img/img-4-1.jpeg', url: 'navigation/feed' },
     {name : '간식' , src : 'img/img-5-1.jpeg', url: 'category/snack'},
     {name : '패션' , src : 'img/img-6-1.jpeg', url: 'category/fashion'},
     {name : '장난감' , src : 'img/img-2-1.jpeg', url: 'category/toy'},
@@ -30,7 +30,7 @@ const NavListArr = () => {
        {navListArr.map((props , index) => {
         return(
           <div key={index} className={styles.nav_list_item} onClick={() => selectNavHandler(index)}>
-            <div className={styles.listItem_name}>{props.name}</div>
+            <Link to={props.url} className={styles.listItem_name}>{props.name}</Link>
             <img src={props.src} alt='' className={styles.nav_list_img}/>
           </div>
         )
