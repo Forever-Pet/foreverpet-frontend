@@ -72,19 +72,6 @@
   justify-content: space-between;
 }
 
-.cart-container__insideBg--bottomContent button {
-  border-radius: 50%;
-  background: white;
-  border: 1px solid #B9B9B9;
-  width: 30px;
-  height: 30px;
-  font-size: 30px;
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .cart-container__insideBg--bottomContent__left{
   display: flex;
   align-items: center;

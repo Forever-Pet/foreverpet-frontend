@@ -34,13 +34,13 @@ const CarModal = () => {
                   </div>
                   <div className={styles['cart-container__insideBg--bottomContent']}>
                     <div className={styles['cart-container__insideBg--bottomContent__left']}>
-                      <button onClick={() => {
+                      <Button className="cart-btn-count" onClick={() => {
                         dispatch(decrease(d))
-                      }}>-</button>
+                      }} title="-"></Button>
                       <span>{d.count}</span>
-                      <button onClick={() => {
+                      <Button className="cart-btn-count" onClick={() => {
                         dispatch(increase(d))
-                      }}>+</button>
+                      }} title="+"></Button>
                     </div>
                     <div></div>
                     <span style={{ fontSize: '20px' }}>{formattedPrice}원</span>
