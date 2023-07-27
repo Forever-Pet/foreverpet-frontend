@@ -81,7 +81,7 @@ const NavBar = () => {
       </nav>
 
       <div className={styles.navbar_box}>
-      <div>
+      <div className={styles.navbar_box_input}>
         <Input type="text" placeholder="우리 댕냥 알러지 없는 사료" className="searchInput" />
          <GoSearch className={styles.icon1}/>
       </div>
