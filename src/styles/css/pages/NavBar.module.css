@@ -118,7 +118,7 @@
   }
   
   .tabmenu {
-   margin-left:70px;
+    margin-left: 50px;
    text-decoration: none;
    color: #666666;
    cursor: pointer;
@@ -142,7 +142,7 @@
 .nav_list {
   position: absolute;
   top: 35px;
-  left: 72px;
+  left: 52px;
   width: 174px;
   height: 375px;
   line-height: 35px;
@@ -221,6 +221,111 @@
 }
 
 .tabmenu {
+ display: none;
+ margin-left: 50px;
+ text-decoration: none;
+ color: #666666;
+ cursor: pointer;
+ font-size: 15px;
+ font-family: 'Noto Sans KR', sans-serif;
+}
+
+.tabmenu1 {
+  display: flex;
+  color: #008e61;
+  font-weight: 600;
+}
+
+/*햄버거버튼 css*/
+.icon {
+  font-size: 25px;
+  padding-right: 5px;
+ 
+}
+
+/*nav 서브 리스트 */
+.nav_list {
+  position: absolute;
+  top: 32px;
+  width: 174px;
+  height: 375px;
+  line-height: 35px;
+  padding-left: 10px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+}
+
+.nav_list_item {
+  color: black;
+  font-size: 14px;
+  margin-top: 3px;
+  transform: scale(1.0); /* 이미지 확대 */
+  transition: transform .5s; /* 시간 설정 */
+}
+
+.nav_list_item:hover {
+  color: #666666;
+  transform: scale(1.1);   /* 이미지 확대 */
+    transition: transform .5s;  /* 시간 설정 */
+}
+
+.listItem_name {
+  position: absolute;
+  left: 46px;
+  top: 6px;
+}
+
+/*nav_list 이미지 */
+.nav_list_img  {
+  width: 35px;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 10px;
+  padding-top: 5px;
+}
+
+.navbar_box {
+  float: right;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5px;
+  }
+
+  .navbar_box_icon {
+    margin-left:19px;
+    text-decoration: none;
+    color: #666666;
+    cursor: pointer;
+    font-size: 23px;
+    font-family: 'Noto Sans KR', sans-serif;
+   }
+  
+    /*검색 아이콘*/
+    .icon1 {
+      position: absolute;
+      top: 170px;
+      right: 100px;
+      font-size: 23px;
+      color: #dddddd;
+      cursor: pointer;
+    }
+}
+
+/* 아이폰 SE  */
+@media screen and (max-width : 576px) {
+   /*nav 메뉴*/
+.nav {
+  position: relative;
+  float: left;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.tabmenu {
+display: none;
  margin-left:34px;
  text-decoration: none;
  color: #666666;
@@ -296,15 +401,17 @@
     text-decoration: none;
     color: #666666;
     cursor: pointer;
-    font-size: 25px;
+    font-size: 23px;
     font-family: 'Noto Sans KR', sans-serif;
    }
   
     /*검색 아이콘*/
   .icon1 {
-    font-size: 25px;
+    position: absolute;
+    top: 170px;
+    right: 100px;
+    font-size: 23px;
     color: #dddddd;
     cursor: pointer;
   }
 }
-
