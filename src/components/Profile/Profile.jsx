@@ -36,11 +36,12 @@ const Profile = (props) => {
                 </div>
                 {
                   userData.map((d) => {
+                    const formattedPoint = (d.point).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
                     return (
                       <div key={d.id} className={styles['point-cupon-box']}>
                         <div className={styles['point-cupon-box__width']}>
                           <span>포인트</span>
-                          <h3 className={styles['point-cupon-box__marginTop']}>{d.point}원</h3>
+                          <h3 className={styles['point-cupon-box__marginTop']}>{formattedPoint}원</h3>
                         </div>
                         <div className={styles['point-cupon-box__width']}>
                           <span>쿠폰</span>

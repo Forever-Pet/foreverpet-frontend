@@ -1,6 +1,7 @@
 import styles from '../../styles/css/components/Card/ProductContent.module.css'
 
 const ProductContent = (props) => {
+  const formattedPrice = (props.data.price).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 
   return <>
     {
@@ -9,7 +10,7 @@ const ProductContent = (props) => {
         <h3 className={styles.productContent__productName}>{props.data.productName}</h3>
         <div>
           <span className={`${styles.productContent__sale} ${styles.productContent__sale__orange}`}>할인율</span>
-          <span className={styles.productContent__sale}>{props.data.price}원</span>
+          <span className={styles.productContent__sale}>{formattedPrice}원</span>
           {/* <span className={styles.productContent__salePrice}>할인가</span> */}
         </div>
       </div>
