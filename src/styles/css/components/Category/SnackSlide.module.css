@@ -1,7 +1,7 @@
 /*BestItem.module.css*/
 
 /*font*/
-@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Noto+Sans+KR&display=swap');
+@import url('../../../font/font.module.css');
 
 /* pc */
 @media screen and (min-width:1024px)  {

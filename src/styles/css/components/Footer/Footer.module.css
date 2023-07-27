@@ -1,8 +1,6 @@
 /*Footer.module.css*/
 
-/*font  따로 정리하기 구글링 하셈*/
-@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Noto+Sans+KR&display=swap');
+@import url('../../../font/font.module.css');
 
 .footer {
   z-index: 20;

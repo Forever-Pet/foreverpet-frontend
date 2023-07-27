@@ -1,8 +1,7 @@
 /*Header.module.css*/
 
 /*font*/
-@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Noto+Sans+KR&display=swap');
+@import url('../../../font/font.module.css');
 
 /* pc */
 @media screen and (min-width:1024px)  {
@@ -21,7 +20,7 @@
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding-top: 45px;
+    padding-top: 15px;
     align-items: center;
     justify-content: space-between;
     border-bottom: 2px solid #918D8C;
@@ -52,7 +51,7 @@
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding-top: 30px;
+    padding-top: 15px;
     align-items: center;
     justify-content: space-between;
     border-bottom: 2px solid #918D8C;

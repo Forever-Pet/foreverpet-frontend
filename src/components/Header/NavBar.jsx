@@ -10,8 +10,6 @@ import { RxTextAlignJustify } from "react-icons/rx";
 import { BiUser ,BiBasket } from "react-icons/bi";
 import { GoSearch} from "react-icons/go";
 
-
-
 const NavListArr = () => { 
   const [currentTab , setTab] = useState(0);
   const navListArr = [
@@ -31,10 +29,7 @@ const NavListArr = () => {
      <div className={styles.nav_list}>
        {navListArr.map((props , index) => {
         return(
-          <div 
-            key={index}
-            className={styles.nav_list_item}
-            onClick={() => selectNavHandler(index)}>
+          <div key={index} className={styles.nav_list_item} onClick={() => selectNavHandler(index)}>
             <div className={styles.listItem_name}>{props.name}</div>
             <img src={props.src} alt='' className={styles.nav_list_img}/>
           </div>
@@ -69,11 +64,7 @@ const NavBar = () => {
       </div>
       {navList.map((tap , index) => {
         return(
-          <div 
-            key={index}
-            className={styles.tabmenu}
-            onClick={() => NavHandler(index)}
-          >
+          <div key={index} className={styles.tabmenu} onClick={() => NavHandler(index)} >
             {tap.name}
           </div>
         )

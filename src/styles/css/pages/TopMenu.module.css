@@ -1,7 +1,8 @@
 /*TopMenu.module.css*/
 
 /*font*/
-@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Noto+Sans+KR&display=swap');
+@import url('../../font/font.module.css');
+
 /* pc */
 @media screen and (min-width:1024px)  {
 .top_menu {
@@ -68,28 +69,3 @@
   }
 }
 
-/*가로모드 모바일 디바이스
-@media screen and (min-width: 576px) {
-  .top_menu  {
-    position: absolute;
-    top: 12px;
-    right: 87px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-  }
-  .top_menu_prd {
-   margin-left:13px;
-   text-decoration: none;
-   color: #666666;
-   cursor: pointer;
-   font-size: 10px;
-   font-family: 'Noto Sans KR', sans-serif;
-  }
-  
-  .top_menu_prd:hover {
-     color: #000;
-  }
-}
-*/

@@ -1,6 +1,5 @@
 /*Input.module.css*/
 
-
 /* pc */
 @media screen and (min-width:1024px)  {
   /*검색창*/
@@ -26,7 +25,6 @@
   
 
 }
-
 
 /*모바일*/
 @media screen and (max-width: 767px) {

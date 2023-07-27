@@ -22,7 +22,6 @@ const Router = () => {
           <Route path="/login" element={<Login/>}/>
           <Route path="/order" element={<Order/>}/>
           <Route path="/customer" element={<Customer/>}/>
-          
           <Route />
           <Route />
           <Route path="/*" element={<PageNotFound />} />
