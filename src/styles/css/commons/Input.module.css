@@ -5,9 +5,10 @@
   /*검색창*/
 .searchInput {
   width: 200px;
-  height: 27px;
-  border-radius: 15px;
-  border : 1px solid #dddddd;
+  height: 30px;
+  font-size: 11px;
+  border-radius: 10px;
+  border: 1px solid #008e61;
  }
 
 }
@@ -17,23 +18,21 @@
   /*검색창*/
   .searchInput {
     width: 200px;
-    height: 27px;
-    border-radius: 15px;
-    border : 1px solid #dddddd;
+    height: 30px;
+    font-size: 11px;
+    border-radius: 10px;
+    border: 1px solid #008e61;
    }
- 
-  
-
 }
 
 /*모바일*/
 @media screen and (max-width: 767px) {
   /*검색창*/
   .searchInput {
-    display: block;
     width: 200px;
-    height: 27px;
-    border-radius: 15px;
-    border : 1px solid #dddddd;
+    height: 30px;
+    font-size: 11px;
+    border-radius: 10px;
+    border: 1px solid #008e61;
    }
 }

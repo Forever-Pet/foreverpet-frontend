@@ -23,7 +23,7 @@ const NavListArr = () => {
   ];
   const selectNavHandler = (index) => {
     setTab(index);
-  }
+  };
 
   return ( 
      <div className={styles.nav_list}>
@@ -56,8 +56,8 @@ const NavBar = () => {
   }
 
   return (
-    <div>
-      <nav className={styles.nav} >
+    <div className={styles.navbar_h}>
+      <nav className={styles.navbar_pro}>
       <div className={`${styles.tabmenu} ${styles.tabmenu1}`} onClick = {() => {setList(!list)}} >
          <RxTextAlignJustify className={styles.icon}/>
          {list && <NavListArr/>}

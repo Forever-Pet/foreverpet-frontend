@@ -5,8 +5,11 @@
 
 /* pc */
 @media screen and (min-width:1024px)  {
-  /*nav 메뉴*/
-.nav {
+  /*navbar 메뉴*/
+.navbar_h {
+  padding-top: 3px;
+}
+.navbar_pro {
   position: relative;
   float: left;
   display: flex;
@@ -105,7 +108,7 @@
     top: 3px;
     right: 16px;
     font-size: 25px;
-    color: #dddddd;
+    color: #008e61;
     cursor: pointer;
   }
 
@@ -113,7 +116,10 @@
 
 /*테블릿*/
 @media screen and (min-width:768px) and (max-width:1023px) {
-  .nav {
+  .navbar_h {
+    padding-top: 3px;
+  }
+  .navbar_pro {
     position: relative;
     float: left;
     display: flex;
@@ -212,7 +218,7 @@
    top: 3px;
    right: 16px;
    font-size: 25px;
-   color: #dddddd;
+   color: #008e61;
    cursor: pointer;
  }
 
@@ -220,15 +226,18 @@
 
 /*모바일*/
 @media screen and (max-width: 767px) {
+  .navbar_h {
+    padding-top: 3px;
+  }
    /*nav 메뉴*/
-.nav {
-  position: relative;
-  float: left;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 8px;
-}
+ .navbar_pro {
+   position: relative;
+   float: left;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin-top: 8px;
+ }
 
 .tabmenu {
  display: none;
@@ -321,22 +330,25 @@
    top: 3px;
    right: 16px;
    font-size: 25px;
-   color: #dddddd;
+   color: #008e61;
    cursor: pointer;
  }
 }
 
 /* 아이폰 SE  */
 @media screen and (max-width : 576px) {
+  .navbar_h {
+    padding-top: 3px;
+  }
    /*nav 메뉴*/
-.nav {
-  position: relative;
-  float: left;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 8px;
-}
+ .navbar_pro {
+   position: relative;
+   float: left;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin-top: 8px;
+ }
 
 .tabmenu {
 display: none;
@@ -429,7 +441,7 @@ display: none;
    top: 3px;
    right: 16px;
    font-size: 25px;
-   color: #dddddd;
+   color: #008e61;
    cursor: pointer;
  }
 }
