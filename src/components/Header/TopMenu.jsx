@@ -9,10 +9,10 @@ const TopMenu = () => {
   const [currentTab , setTab] = useState(0);
   
   const TopMenuArr = [
-    {name: '회원가입' , url: 'login/join'},
-    {name: '로그인' , url: 'login/login'},
-    {name: '주문내역' , url: 'login/logout'},
-    {name: '고객센터' , url: 'login/customer'},
+    {name: '회원가입' , url: '/user/join'},
+    {name: '로그인' , url: '/user/login'},
+    {name: '주문내역' , url: '/member/order'},
+    {name: '고객센터' , url: '/member/modify'},
   ];
 
    const selectTopHandler = (index) => {

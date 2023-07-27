@@ -13,13 +13,13 @@ import { GoSearch} from "react-icons/go";
 const NavListArr = () => { 
   const [currentTab , setTab] = useState(0);
   const navListArr = [
-    {name : '사료' , src : 'img/img-4-1.jpeg', url: 'navigation/feed' },
-    {name : '간식' , src : 'img/img-5-1.jpeg', url: 'category/snack'},
-    {name : '패션' , src : 'img/img-6-1.jpeg', url: 'category/fashion'},
-    {name : '장난감' , src : 'img/img-2-1.jpeg', url: 'category/toy'},
-    {name : '목욕/위생' , src : 'img/img-7-1.jpeg',url: 'category/bath'},
-    {name : '건강보조제' , src : 'img/img-11-1.jpeg', url: 'category/health'},
-    {name : '산책/외출' , src : 'img/img-8-1.jpeg', url: 'category/walk'},
+    {name : '사료' , src : 'img/img-4-1.jpeg', url: '/product/feed' },
+    {name : '간식' , src : 'img/img-5-1.jpeg', url: '/product/snack'},
+    {name : '패션' , src : 'img/img-6-1.jpeg', url: '/product/fashion'},
+    {name : '장난감' , src : 'img/img-2-1.jpeg', url: '/product/toy'},
+    {name : '목욕/위생' , src : 'img/img-7-1.jpeg',url: '/product/bath'},
+    {name : '건강보조제' , src : 'img/img-11-1.jpeg', url: '/product/health'},
+    {name : '산책/외출' , src : 'img/img-8-1.jpeg', url: '/product/walk'},
   ];
   const selectNavHandler = (index) => {
     setTab(index);
@@ -77,12 +77,12 @@ const NavBar = () => {
          <GoSearch className={styles.icon1}/>
       </div>
       <div>
-        <Link to="/mypage" className={styles.navbar_box_icon}>
+        <Link to="/member/modify" className={styles.navbar_box_icon}>
           <BiUser/>
         </Link>
       </div>
       <div>
-        <Link to="/order" className={styles.navbar_box_icon}>
+        <Link to="/member/order" className={styles.navbar_box_icon}>
           <BiBasket/> 
         </Link>
       </div>
