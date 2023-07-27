@@ -1,3 +1,5 @@
+import { CopyToClipboard } from "react-copy-to-clipboard";
+
 // CSS
 import styles from "../../../styles/css/components/Card/Detail/ProductDetailPriceCard.module.css";
 
@@ -25,7 +27,12 @@ const ProductDetailPriceCard = (props) => {
         <li className={styles["product-detail__brandName"]}>
           <span>{card.brandName} </span>
           <div className={styles["product-detail__icon"]}>
-            <BsShare className={styles["product-detail__share"]} />
+            <CopyToClipboard
+              text={window.location.href}
+              onCopy={() => alert("링크 복사완료 !")}
+            >
+              <BsShare className={styles["product-detail__share"]} />
+            </CopyToClipboard>
             <BsHeart className={styles["product-detail__heart"]} />
           </div>
         </li>
