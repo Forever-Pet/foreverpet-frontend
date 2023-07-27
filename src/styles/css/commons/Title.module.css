@@ -7,3 +7,14 @@
   text-align: center;
   font-size: 23px;
 }
+
+.product-title {
+  font-size: 30px;
+  margin-bottom: 37px;
+  font-weight: 600;
+}
+
+.mypage-title {
+  font-size: 30px;
+  font-weight: 600;
+}

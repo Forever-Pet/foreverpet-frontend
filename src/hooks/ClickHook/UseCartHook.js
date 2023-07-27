@@ -11,8 +11,8 @@ export const UseCartHook = () => {
       dispatch(openModal({
         data: data
       }))
-      
-    } else { //있으면 리스트에서 삭제시킴(아이콘 해제)
+
+    } else { //있으면 중복 모달 띄우기
       dispatch(openModal({
         title: "이미 있는 상품입니다.",
         rightBtn: "담기",
