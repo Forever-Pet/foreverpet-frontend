@@ -19,7 +19,6 @@ const Header = (props) => {
         <div className={styles.logo_text}>포에버펫</div>
       </div>
       <NavBar />
-
     </header>
   );
 };

@@ -1,40 +1,27 @@
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
-
-//categories
-import Feed from '../Navigation/Category/Feed';
-import Snack from '../Navigation/Category/Snack';
-import Fashion from '../Navigation/Category/Fashion';
-import Toy from '../Navigation/Category/Toy';
-import Bath from '../Navigation/Category/Bath';
-import Health from '../Navigation/Category/Health';
-import Walk from '../Navigation/Category/Walk';
-import Exhibitions from '../../pages/NavBar/Exhibitions';
-import Event from '../../pages/NavBar/Event';
-
+import { Link } from 'react-router-dom';
+import Input from '../../common/Input/Input';
 
 //css 
 import styles from '../../styles/css/pages/NavBar.module.css';
-
 
 //icon
 import { RxTextAlignJustify } from "react-icons/rx";
 import { BiUser ,BiBasket } from "react-icons/bi";
 import { GoSearch} from "react-icons/go";
-import Input from '../../common/Input/Input';
 
-//
+
+
 const NavListArr = () => { 
   const [currentTab , setTab] = useState(0);
-
   const navListArr = [
-    {name : '사료' , src : 'img/img-4-1.jpeg', content: <Feed/> },
-    {name : '간식' , src : 'img/img-5-1.jpeg', content: <Snack />},
-    {name : '패션' , src : 'img/img-6-1.jpeg', content: <Fashion/>},
-    {name : '장난감' , src : 'img/img-2-1.jpeg', content: <Toy/>},
-    {name : '목욕/위생' , src : 'img/img-7-1.jpeg', content: <Bath/>},
-    {name : '건강보조제' , src : 'img/img-11-1.jpeg', content: <Health/>},
-    {name : '산책/외출' , src : 'img/img-8-1.jpeg', content: <Walk/>},
+    {name : '사료' , src : 'img/img-4-1.jpeg', url: 'category/feed' },
+    {name : '간식' , src : 'img/img-5-1.jpeg', url: 'category/snack'},
+    {name : '패션' , src : 'img/img-6-1.jpeg', url: 'category/fashion'},
+    {name : '장난감' , src : 'img/img-2-1.jpeg', url: 'category/toy'},
+    {name : '목욕/위생' , src : 'img/img-7-1.jpeg',url: 'category/bath'},
+    {name : '건강보조제' , src : 'img/img-11-1.jpeg', url: 'category/health'},
+    {name : '산책/외출' , src : 'img/img-8-1.jpeg', url: 'category/walk'},
   ];
   const selectNavHandler = (index) => {
     setTab(index);
@@ -59,15 +46,14 @@ const NavListArr = () => {
 }
 
 
-//네비바 
 const NavBar = () => {
   const [list, setList] =useState(false);
   const [currentNav , setNav] = useState(0);
 
   const navList = [
     {name: '전체 카테고리'},
-    {name: '기획전' , content: <Exhibitions/>},
-    {name: '이벤트' , content: <Event/>}
+    {name: '기획전' ,  url: 'category/exhibitions'},
+    {name: '이벤트' ,  url: 'category/event'}
   ]
   
   const NavHandler = (index) => {
@@ -96,19 +82,18 @@ const NavBar = () => {
 
       <div className={styles.navbar_box}>
       <div>
-        <Input type="text" placeholder="우리 댕냥 알러지 없는 사료" className="searchInput" >
-         <GoSearch className={styles.icon1} />
-        </Input>
+        <Input type="text" placeholder="우리 댕냥 알러지 없는 사료" className="searchInput" />
+         <GoSearch className={styles.icon1}/>
       </div>
       <div>
-        <NavLink to="/mypage" className={styles.navbar_box_icon}>
+        <Link to="/mypage" className={styles.navbar_box_icon}>
           <BiUser/>
-        </NavLink>
+        </Link>
       </div>
       <div>
-        <NavLink to="/order" className={styles.navbar_box_icon}>
+        <Link to="/order" className={styles.navbar_box_icon}>
           <BiBasket/> 
-        </NavLink>
+        </Link>
       </div>
       </div>
     </div>

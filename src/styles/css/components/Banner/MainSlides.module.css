@@ -4,7 +4,6 @@
 @media screen and (min-width:1024px)  {
   .slides {
     position: relative;
-    top: -57px;
     max-width: 1200px;
     margin: 0 auto;
    
@@ -15,8 +14,7 @@
 @media screen and (min-width:768px) and (max-width:1023px) {
   .slides {
     position: relative;
-    top: -57px;
-    max-width: 950px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 }
@@ -24,18 +22,10 @@
 /*모바일*/
 @media screen and (max-width: 768px) {
   .slides {
-     max-width: 460px;
+    position: relative;
+    max-width: 1200px;
      margin: 0 auto;
      margin-top: 93px;
   }
 }
 
-/*가로모드 모바일 디바이스
-@media screen and (min-width: 576px) {
-  .slides {
-    max-width: 460px;
-    margin: 0 auto;
-    margin-top: 93px;
- }
-}
-*/
