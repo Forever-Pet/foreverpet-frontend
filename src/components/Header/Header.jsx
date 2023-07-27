@@ -7,14 +7,17 @@ import HeaderBan from "../Banner/HeaderBan";
 
 const Header = (props) => {
   return (
+    <>
+     <HeaderBan/>
     <header className={styles.header}>
-      <HeaderBan/>
       <TopMenu />
       <div className={styles.logo}>
         <div className={styles.logo_text}>포에버펫</div>
       </div>
       <NavBar />
     </header>
+    </>
+   
   );
 };
 
