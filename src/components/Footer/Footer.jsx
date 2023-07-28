@@ -5,10 +5,10 @@ import styles from "../../styles/css/components/Footer/Footer.module.css"
 const Footer = (props) => {
   return (//<footer className={classes[props.className || ""]}> 
   <footer className={styles.footer}>
-    <h2 className={styles.fot_logo}>
+    <h2 className={styles.footer_logo}>
       포에버펫
     </h2>
-      <div className={styles.contents}>
+      <div className={styles.footer_contents}>
         <div>포에버펫 소개</div>
         <div>공지사항</div>
         <div>고객센터</div>
@@ -16,7 +16,7 @@ const Footer = (props) => {
         <div>개인정보처리방침</div>
       </div>
 
-    <div className={styles.desccontainer}>
+    <div className={styles.footer_desccontainer}>
          COPYRIGHT © 2023 포에버펫 . ALL RIGHTS RESERVED.
     </div>
 </footer>

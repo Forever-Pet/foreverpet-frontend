@@ -13,7 +13,7 @@
   background-color: #fff;
 }
 
-.contents {
+.footer_contents {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -24,11 +24,11 @@
  border-bottom: 1px solid #ddd;
 }
 
-.contents > div {
+.footer_contents > div {
   padding-left: 15px;
 }
 
-.fot_logo {
+.footer_logo {
     width: 81px;
     font-family: 'Nanum Pen Script', cursive;
     font-size: 32px;
@@ -36,7 +36,7 @@
     color: #008e61;
 }
 
-.desccontainer {
+.footer_desccontainer {
    display: flex;
    justify-content: center;
    font-size: 12px;
@@ -58,7 +58,7 @@
    background-color: #fff;
   }
   
-  .contents {
+  .footer_contents {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -69,11 +69,11 @@
    border-bottom: 1px solid #ddd;
   }
   
-  .contents > div {
+  .footer_contents > div {
     padding-left: 15px;
   }
   
-  .fot_logo {
+  .footer_logo {
       width: 81px;
       font-family: 'Nanum Pen Script', cursive;
       font-size: 25px;
@@ -81,7 +81,7 @@
       color: #008e61;
   }
   
-  .desccontainer {
+  .footer_desccontainer {
      display: flex;
      justify-content: center;
      font-size: 5px;
