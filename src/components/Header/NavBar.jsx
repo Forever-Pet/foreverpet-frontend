@@ -13,29 +13,25 @@ import { RxTextAlignJustify } from "react-icons/rx";
 import { BiUser ,BiBasket } from "react-icons/bi";
 import { GoSearch} from "react-icons/go";
 
-/*api 호출*/
-// const [navListArr, setnavListArr] = useState([]);
-// useEffect(() => {
-//   const fetchData = async() => {
-//     const res = await axios.get('');
-//     return res.navListArr;
-//   }
-//   fetchData().then(res => setnavListArr(res));
-// },[]);
-
 //햄버거 버튼 메뉴 리스트
 const NavListArr = () => { 
   const [currentTab , setTab] = useState(0);
   const selectNavHandler = (index) => {
-    setTab(index);
+    setTab(index);  
   };
+  
+  //api호출 
+  const getProducts = async (myCategories) => {
+    const res = await axios.get('http://ec2-3-39-122-241.ap-northeast-2.compute.amazonaws.com/products');
+    return res.data.filter(item=>item.categories == myCategories); 
+  }
 
   return ( 
      <div className={styles.nav_list}>
        {NavListData.map((props , index) => {
         return(
           <div key={index} className={styles.nav_list_item} onClick={() => selectNavHandler(index)}>
-            <Link to={props.url} className={styles.listItem_name}>{props.name}</Link>
+            <Link to={props.url} className={styles.listItem_name} state={getProducts(props.categories)}>{props.name}</Link>
             <img src={props.src} alt='' className={styles.nav_list_img}/>
           </div>
         )
