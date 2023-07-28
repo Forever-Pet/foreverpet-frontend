@@ -6,19 +6,14 @@
 /* pc */
 @media screen and (min-width:1024px)  {
 .bantwo {
-  display: flex ;
-  justify-content: center;
-  width: 1230px;
+  position: relative;
+  width: 1200px;
   height: 370px;
   margin: 0 auto;
 }
 
 .bantwo_eve {
   display: flex;
-  max-width: 100%;
-  margin-top: 40px;
-  height: 195px;
-
 } 
 
 .bantwo_pro {
@@ -31,42 +26,36 @@
 }
 
 .bantwo_img_1 {
-  width: 337px;
+  width: 299px;
   height: 195px;
   border-radius: 19px;
 }
 
 .bantwo_info {
-  position: relative;
   display: flex;
   flex-direction: column;
+  align-items: end;
+  justify-content: center;
   width: 300px;
-  margin-left: -42px;
+  height: 195px;
+  /* margin-left: -57px; */
   background-color: whitesmoke;
   border-radius: 19px;
   font-family: 'Noto Sans KR', sans-serif;
+
 }
 
 .info1 {
-  position: absolute;
-  top: 57px;
-  right: 20px;
   font-size: 11px;
   color: crimson;
   font-weight: 700;
 }
 
 .info2 {
-  position: absolute;
-  top: 76px;
-  right: 20px;
   font-size: 24px;
 }
 
 .info3 {
-  position: absolute;
-  top: 118px;
-  right: 20px;
   font-size: 26px;
   font-weight: 700;
 }
@@ -76,20 +65,13 @@
 @media screen and (min-width:768px) and (max-width:1023px) {
   .bantwo {
     position: relative;
-    top: 22px;
-    display: flex;
-    justify-content: center;
-    /* width: 1230px; */
-    max-width: 1190px;
-    height: 337px;
+    width: 1200px;
+    height: 370px;
+    margin: 0 auto;
   }
   
   .bantwo_eve {
     display: flex;
-    width: 92%;
-    margin-top: 40px;
-    height: 195px;
-  
   } 
   
   .bantwo_pro {
@@ -102,43 +84,36 @@
   }
   
   .bantwo_img_1 {
-    width: 241px;
-    height: 200px;
+    width: 299px;
+    height: 195px;
     border-radius: 19px;
   }
   
   .bantwo_info {
-    position: relative;
     display: flex;
     flex-direction: column;
-    width: 256px;
-    margin-left: -51px;
+    align-items: end;
+    justify-content: center;
+    width: 300px;
+    height: 195px;
     background-color: whitesmoke;
     border-radius: 19px;
     font-family: 'Noto Sans KR', sans-serif;
+  
   }
   
   .info1 {
-    position: absolute;
-    top: 57px;
-    right: 20px;
     font-size: 11px;
     color: crimson;
     font-weight: 700;
   }
   
   .info2 {
-    position: absolute;
-    top: 76px;
-    right: 20px;
-    font-size: 21px;
+    font-size: 24px;
   }
   
   .info3 {
-    position: absolute;
-    top: 118px;
-    right: 20px;
-    font-size: 23px;
+    font-size: 26px;
     font-weight: 700;
   }
 }
@@ -147,20 +122,13 @@
 @media screen and (max-width: 767px) {
   .bantwo {
     position: relative;
-    top: 22px;
-    display: flex;
-    justify-content: center;
-    /* width: 1230px; */
-    max-width: 1190px;
-    height: 337px;
+    width: 1200px;
+    height: 370px;
+    margin: 0 auto;
   }
   
   .bantwo_eve {
     display: flex;
-    width: 92%;
-    margin-top: 40px;
-    height: 195px;
-  
   } 
   
   .bantwo_pro {
@@ -173,43 +141,36 @@
   }
   
   .bantwo_img_1 {
-    width: 241px;
-    height: 200px;
+    width: 299px;
+    height: 195px;
     border-radius: 19px;
   }
   
   .bantwo_info {
-    position: relative;
     display: flex;
     flex-direction: column;
-    width: 256px;
-    margin-left: -51px;
+    align-items: end;
+    justify-content: center;
+    width: 300px;
+    height: 195px;
     background-color: whitesmoke;
     border-radius: 19px;
     font-family: 'Noto Sans KR', sans-serif;
+  
   }
   
   .info1 {
-    position: absolute;
-    top: 57px;
-    right: 20px;
     font-size: 11px;
     color: crimson;
     font-weight: 700;
   }
   
   .info2 {
-    position: absolute;
-    top: 76px;
-    right: 20px;
-    font-size: 21px;
+    font-size: 24px;
   }
   
   .info3 {
-    position: absolute;
-    top: 118px;
-    right: 20px;
-    font-size: 23px;
+    font-size: 26px;
     font-weight: 700;
   }
 }

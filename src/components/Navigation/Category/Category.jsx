@@ -12,7 +12,7 @@ const Category = () => {
        <ul className={styles.category_ul}>
          {CartegoryItem.map((props,index) => {
           return (
-            <Link className={styles.category_link}  key={index} >
+            <Link to={props.url} className={styles.category_link}  key={index} >
                <div className={styles.category_item} > 
                   <img src={props.src} alt='' className={styles.category_img} />
                   <div>{props.name}</div>

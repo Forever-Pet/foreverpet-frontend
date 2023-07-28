@@ -21,6 +21,7 @@ const NavListArr = () => {
     {id: '5',name : '건강보조제' , src : 'img/img-11-1.jpeg', url: '/product/health'},
     {id: '6',name : '산책/외출' , src : 'img/img-8-1.jpeg', url: '/product/walk'},
   ];
+  
   console.log('navListArr');
   const selectNavHandler = (index) => {
     setTab(index);
