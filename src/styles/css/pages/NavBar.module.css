@@ -6,10 +6,10 @@
 /* pc */
 @media screen and (min-width:1024px)  {
   /*navbar 메뉴*/
-.navbar_h {
+.nav {
   padding-top: 3px;
 }
-.navbar_pro {
+.nav_menu {
   position: relative;
   float: left;
   display: flex;
@@ -19,7 +19,7 @@
   margin-left: -31px;
 }
 
-.tabmenu {
+.nav_menu_pro {
  margin-left:34px;
  text-decoration: none;
  color: #666666;
@@ -28,14 +28,14 @@
  font-family: 'Noto Sans KR', sans-serif;
 }
 
-.tabmenu1 {
+.nav_menu1 {
   display: flex;
   color: #008e61;
   font-weight: 600;
 }
 
 /*햄버거버튼 css*/
-.icon {
+.nav_menu_icon {
   font-size: 25px;
   padding-right: 5px;
  
@@ -119,10 +119,10 @@
 
 /*테블릿*/
 @media screen and (min-width:768px) and (max-width:1023px) {
-  .navbar_h {
+  .nav {
     padding-top: 3px;
   }
-  .navbar_pro {
+  .nav_menu {
     position: relative;
     float: left;
     display: flex;
@@ -132,7 +132,7 @@
     margin-left: -31px;
   }
   
-  .tabmenu {
+  .nav_menu_pro {
     margin-left:34px;
    text-decoration: none;
    color: #666666;
@@ -141,14 +141,14 @@
    font-family: 'Noto Sans KR', sans-serif;
   }
   
-  .tabmenu1 {
+  .nav_menu1 {
     color: #008e61;
     font-weight: 600;
     display: flex;
   }
   
   /*햄버거버튼 css*/
-  .icon {
+  .nav_menu_icon {
     font-size: 25px;
     padding-right: 5px;
   }
@@ -231,11 +231,11 @@
 
 /*모바일*/
 @media screen and (max-width: 767px) {
-  .navbar_h {
+  .nav {
     padding-top: 3px;
   }
    /*nav 메뉴*/
- .navbar_pro {
+ .nav_menu {
    position: relative;
    float: left;
    display: flex;
@@ -245,7 +245,7 @@
    margin-left: -24px;
  }
 
-.tabmenu {
+.nav_menu_pro {
  display: none;
  margin-left: 50px;
  text-decoration: none;
@@ -255,14 +255,14 @@
  font-family: 'Noto Sans KR', sans-serif;
 }
 
-.tabmenu1 {
+.nav_menu1 {
   display: flex;
   color: #008e61;
   font-weight: 600;
 }
 
 /*햄버거버튼 css*/
-.icon {
+.nav_menu_icon {
   font-size: 25px;
   padding-right: 5px;
  
@@ -345,11 +345,11 @@
 
 /* 아이폰 SE  */
 @media screen and (max-width : 576px) {
-  .navbar_h {
+  .nav {
     padding-top: 3px;
   }
    /*nav 메뉴*/
- .navbar_pro {
+  .nav_menu {
    position: relative;
    float: left;
    display: flex;
@@ -359,7 +359,7 @@
    margin-left: -24px;
  }
 
-.tabmenu {
+.nav_menu_pro {
 display: none;
  margin-left:34px;
  text-decoration: none;
@@ -369,14 +369,14 @@ display: none;
  font-family: 'Noto Sans KR', sans-serif;
 }
 
-.tabmenu1 {
+.nav_menu1 {
   display: flex;
   color: #008e61;
   font-weight: 600;
 }
 
 /*햄버거버튼 css*/
-.icon {
+.nav_menu_pro {
   font-size: 25px;
   padding-right: 5px;
  

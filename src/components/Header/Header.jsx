@@ -11,8 +11,8 @@ const Header = (props) => {
      <HeaderBan/>
     <header className={styles.header}>
       <TopMenu />
-      <div className={styles.logo}>
-        <div className={styles.logo_text}>포에버펫</div>
+      <div className={styles.header_logo}>
+        <div className={styles.header_logo_text}>포에버펫</div>
       </div>
       <NavBar />
     </header>

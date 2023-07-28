@@ -55,15 +55,15 @@ const NavBar = () => {
   }
 
   return (
-    <div className={styles.navbar_h}>
-      <nav className={styles.navbar_pro}>
-      <div className={`${styles.tabmenu} ${styles.tabmenu1}`} onClick = {() => {setList(!list)}} >
-         <RxTextAlignJustify className={styles.icon}/>
+    <div className={styles.nav}>
+      <nav className={styles.nav_menu}>
+      <div className={`${styles.nav_menu_pro} ${styles.nav_menu1}`} onClick = {() => {setList(!list)}} >
+         <RxTextAlignJustify className={styles.nav_menu_icon}/>
          {list && <NavListArr/>}
       </div>
       {NavList.map((tap , index) => {
         return(
-          <div key={index} className={styles.tabmenu} onClick={() => NavHandler(index)} >
+          <div key={index} className={styles.nav_menu_pro} onClick={() => NavHandler(index)} >
             {tap.name}
           </div>
         )
