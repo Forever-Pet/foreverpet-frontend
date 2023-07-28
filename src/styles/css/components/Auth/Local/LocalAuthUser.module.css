@@ -1,0 +1,190 @@
+.localUser-auth__header {
+  padding-top: 20px;
+  box-sizing: border-box;
+  margin-bottom: 50px;
+}
+
+.localUser-auth__header--closeBtn {
+  width: 100%;
+  max-width: 80%;
+  text-align: end;
+}
+
+@media screen and (min-width: 900px) {
+  .localUser-auth__header--closeBtn {
+    width: 100%;
+    max-width: 75%;
+    text-align: end;
+  }
+}
+
+.localUser-auth__header--btn {
+  cursor: pointer;
+  font-size: 20px;
+  position: relative;
+  left: 50px;
+}
+
+.localUser-join__form {
+  width: 100%;
+  padding: 0 30px;
+  box-sizing: border-box;
+}
+
+.localUser-join__item {
+  width: 100%;
+  max-width: 1200px;
+
+  margin: 0 auto;
+  list-style: none;
+  padding: 0;
+}
+
+.localUser-join__itemList {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+#localUser-join__itemList-hidden {
+  display: none;
+}
+
+.localUser-join__item > li {
+  margin-top: 20px;
+  position: relative;
+}
+
+.localUser-join__item label {
+  font-size: 14px;
+  color: #1f1f1f;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.localUser-join__itemList:nth-child(2) {
+  margin-top: 30px;
+}
+
+.localUser-join__itemList:nth-child(3) {
+  display: flex;
+  justify-content: end;
+  margin-top: 30px;
+}
+
+.localUser-join__itemList:nth-child(7) {
+  margin-top: 30px;
+}
+
+.localUser-join__itemList:last-child {
+  margin-top: 20px;
+  display: flex;
+  justify-content: end;
+}
+
+.localuser-join__mainAddress-btn,
+.localuser-join__getEmail-btn,
+.localuser-join__checkEmail-auth {
+  position: absolute;
+  background-color: white;
+  border: 1px solid #999999;
+  box-sizing: border-box;
+  font-size: 12px;
+  border-radius: 2px;
+  color: #333333;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.localuser-join__mainAddress-btn,
+.localuser-join__getEmail-btn,
+.localuser-join__checkEmail-auth {
+  padding: 5px 10px;
+  right: 5px;
+}
+
+.localuser-join__mainAddress-btn,
+.localuser-join__getEmail-btn {
+  top: 20px;
+}
+
+.localuser-join__checkEmail-auth {
+  bottom: 10px;
+}
+
+label > span {
+  color: #ff0000;
+}
+
+.localUser-join__footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 50px auto 0 auto;
+  max-width: 600px;
+}
+
+.localUser-join__footer-box {
+  margin-top: 20px;
+  color: #858585;
+  font-size: 14px;
+}
+
+.localUser-join__footer-existingAccount {
+  margin-right: 13px;
+}
+
+.localUser-join__footer-login {
+  text-decoration: underline;
+  color: #b6b6b6;
+  cursor: pointer;
+}
+
+.localUser-login__form {
+  width: 70%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.localUser-login__bottom-section {
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 15px 0 30px 0;
+}
+
+.localUser-login__save-account {
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+}
+
+.localUser-login__recovery-section {
+  font-size: 11px;
+}
+
+.localUser-login__recovery-section :first-child {
+  margin-right: 15px;
+  cursor: pointer;
+}
+
+.localUser-login__recovery-section:last-child {
+  cursor: pointer;
+}
+
+.localUser-login__sns-list {
+  text-align: center;
+  margin-top: 100px;
+}
+
+.localUser-login_sns {
+  display: flex;
+  justify-content: space-around;
+  width: 200px;
+  margin: 25px auto 0 auto;
+}

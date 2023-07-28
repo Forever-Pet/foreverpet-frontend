@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* Tiile.module.css */
 
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Noto+Sans+KR&display=swap');
@@ -17,4 +18,25 @@
   padding-top: 10px;
   font-size: 13px;
   font-family: 'Noto Sans KR', sans-serif;
+=======
+.localUser-auth__header--title,
+.localUser-login__sns-title {
+  font-weight: bold;
+}
+
+.localUser-auth__header--title {
+  text-align: center;
+  font-size: 23px;
+}
+
+.product-title {
+  font-size: 30px;
+  margin-bottom: 37px;
+  font-weight: 600;
+}
+
+.mypage-title {
+  font-size: 30px;
+  font-weight: 600;
+>>>>>>> 198167de6853f2e796e2b57f7ecd55b5b6f924ee
 }

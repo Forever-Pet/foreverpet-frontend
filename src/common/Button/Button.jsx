@@ -1,17 +1,17 @@
 // CSS
-import classes from "../../styles/css/commons/Button.module.css"
+import styles from "../../styles/css/commons/Button.module.css";
 
 const Button = (props) => {
   return (
     <button
       onClick={props.onClick}
-      id={classes[props.id || ""]}
-      className={classes[props.className || ""]}
+      type={props.type}
+      id={styles[props.id || ""]}
+      className={styles[props.className || ""]}
     >
       {props.title}
     </button>
   );
 };
 
-
-export default Button
+export default Button;

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*Input.module.css*/
 
 /* pc */
@@ -36,3 +37,166 @@
     border: 1px solid #008e61;
    }
 }
+=======
+.localUser-login__email {
+  margin-bottom: 20px;
+}
+
+.delivery-register__input--address,
+.delivery-register__input,
+.modify-password__current,
+.modify-password_new,
+.delivery-input__name,
+.delivery-input__mainAddress,
+.delivery-input__subAddress,
+.delivery-input__tel,
+.owner-input__owner,
+.owner-input__tel,
+.owner-input__email {
+  width: 420px;
+  height: 35px;
+}
+
+@media screen and (max-width: 768px) {
+  .modify-password__current,
+  .modify-password_new,
+  .delivery-register__input--address,
+  .delivery-register__input {
+    width: 100%;
+    margin-top: 10px;
+  }
+}
+
+@media screen and (max-width: 930px) {
+  .delivery-input__name,
+  .delivery-input__mainAddress,
+  .delivery-input__subAddress,
+  .delivery-input__tel,
+  .owner-input__owner,
+  .owner-input__tel,
+  .owner-input__email {
+    width: 100%;
+  }
+}
+
+.localUser-login__email,
+.localUser-login__password {
+  width: 100%;
+  max-width: 800px;
+  height: 40px;
+}
+
+.localUser-join__name,
+.localUser-join__email,
+.localUser-join__password,
+.localUser-join__password2,
+.localUser-join__phoneNumber,
+.localUser-join__mainAddress {
+  width: 100%;
+  height: 25px;
+}
+
+.delivery-register__input--address,
+.delivery-register__input,
+.modify-password__current,
+.modify-password_new,
+.delivery-input__name,
+.delivery-input__mainAddress,
+.delivery-input__subAddress,
+.delivery-input__tel,
+.owner-input__owner,
+.owner-input__tel,
+.owner-input__email,
+.localUser-login__email,
+.localUser-login__password,
+.localUser-join__name,
+.localUser-join__email,
+.localUser-join__password,
+.localUser-join__password2,
+.localUser-join__phoneNumber,
+.localUser-join__mainAddress {
+  border: none;
+  border-bottom: 1px solid #c2c2c2;
+}
+
+.delivery-register__input--address,
+.delivery-register__input,
+.modify-password__current,
+.modify-password_new,
+.localUser-login__email,
+.localUser-login__password,
+.localUser-join__name,
+.localUser-join__email,
+.localUser-join__password,
+.localUser-join__password2,
+.localUser-join__phoneNumber,
+.localUser-join__mainAddress,
+.localUser-join__subAddress::placeholder {
+  padding-bottom: 10px;
+  box-sizing: border-box;
+}
+
+.delivery-register__input--address,
+.delivery-register__input,
+.modify-password__current,
+.modify-password_new,
+.delivery-input__name,
+.delivery-input__mainAddress,
+.delivery-input__subAddress,
+.delivery-input__tel,
+.owner-input__owner,
+.owner-input__tel,
+.owner-input__email,
+.localUser-login__email,
+.localUser-login__password,
+.localUser-join__name,
+.localUser-join__email,
+.localUser-join__password,
+.localUser-join__password2,
+.localUser-join__phoneNumber,
+.localUser-join__mainAddress:focus {
+  outline: none;
+}
+
+.delivery-register__input--address,
+.delivery-input__mainAddress,
+.localUser-join__mainAddress:disabled {
+  background-color: white;
+  cursor: text;
+}
+
+.delivery-register__input--address,
+.delivery-input__mainAddress,
+.localUser-join__mainAddress:hover {
+  cursor: auto;
+}
+
+input[type="checkbox"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #b9b9b9;
+  cursor: pointer;
+}
+
+input[type="checkbox"]::after {
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  content: "";
+  display: none;
+  height: 40%;
+  left: 40%;
+  position: relative;
+  top: 20%;
+  transform: rotate(45deg);
+  width: 15%;
+}
+input[type="checkbox"]:checked {
+  background: #505bf0;
+}
+input[type="checkbox"]:checked::after {
+  display: block;
+}
+>>>>>>> 198167de6853f2e796e2b57f7ecd55b5b6f924ee

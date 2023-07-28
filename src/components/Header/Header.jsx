@@ -5,6 +5,7 @@ import NavBar from "./NavBar";
 import styles from "../../styles/css/components/Header/Header.module.css";
 import HeaderBan from "../Banner/HeaderBan";
 
+
 const Header = (props) => {
   return (
     <>
