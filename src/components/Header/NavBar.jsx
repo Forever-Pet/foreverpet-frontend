@@ -4,6 +4,7 @@ import axios from 'axios';
 import Input from '../../common/Input/Input';
 import NavListData from '../Card/NavListArr';
 import NavList from '../Card/NavList';
+import usePathMove from '../../hooks/usePathMove';
 
 //css 
 import styles from '../../styles/css/pages/NavBar.module.css';
@@ -13,8 +14,10 @@ import { RxTextAlignJustify } from "react-icons/rx";
 import { BiUser ,BiBasket } from "react-icons/bi";
 import { GoSearch} from "react-icons/go";
 
+
 //햄버거 버튼 메뉴 리스트
 const NavListArr = () => { 
+  const pathMove = usePathMove();
   const [currentTab , setTab] = useState(0);
   const selectNavHandler = (index) => {
     setTab(index);  
@@ -23,15 +26,16 @@ const NavListArr = () => {
   //api호출 
   const getProducts = async (myCategories) => {
     const res = await axios.get('http://ec2-3-39-122-241.ap-northeast-2.compute.amazonaws.com/products');
-    return res.data.filter(item=>item.categories == myCategories); 
+    return res.data.filter(item=>item.categories == myCategories);
   }
+
 
   return ( 
      <div className={styles.nav_list}>
        {NavListData.map((props , index) => {
         return(
           <div key={index} className={styles.nav_list_item} onClick={() => selectNavHandler(index)}>
-            <Link to={props.url} className={styles.listItem_name} state={getProducts(props.categories)}>{props.name}</Link>
+            <Link to={props.url} className={styles.listItem_name} onClick={()=>pathMove(props.url, getProducts(props.categories), true)}>{props.name}</Link>
             <img src={props.src} alt='' className={styles.nav_list_img}/>
           </div>
         )
@@ -43,9 +47,11 @@ const NavListArr = () => {
 
 //네비바 햄버거 버튼 옆 메뉴 
 const NavBar = () => {
+ 
   const [list, setList] =useState(false);
   const [currentNav , setNav] = useState(0);
-  
+ 
+
   const NavHandler = (index) => {
     setNav(index);
   }
