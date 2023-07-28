@@ -13,14 +13,15 @@ import { GoSearch} from "react-icons/go";
 const NavListArr = () => { 
   const [currentTab , setTab] = useState(0);
   const navListArr = [
-    {name : '사료' , src : 'img/img-4-1.jpeg', url: '/product/feed' },
-    {name : '간식' , src : 'img/img-5-1.jpeg', url: '/product/snack'},
-    {name : '패션' , src : 'img/img-6-1.jpeg', url: '/product/fashion'},
-    {name : '장난감' , src : 'img/img-2-1.jpeg', url: '/product/toy'},
-    {name : '목욕/위생' , src : 'img/img-7-1.jpeg',url: '/product/bath'},
-    {name : '건강보조제' , src : 'img/img-11-1.jpeg', url: '/product/health'},
-    {name : '산책/외출' , src : 'img/img-8-1.jpeg', url: '/product/walk'},
+    {id: '0',name : '사료' , src : 'img/img-4-1.jpeg', url: '/product/feed' },
+    {id: '1',name : '간식' , src : 'img/img-5-1.jpeg', url: '/product/snack'},
+    {id: '2',name : '패션' , src : 'img/img-6-1.jpeg', url: '/product/fashion'},
+    {id: '3',name : '장난감' , src : 'img/img-2-1.jpeg', url: '/product/toy'},
+    {id: '4',name : '목욕/위생' , src : 'img/img-7-1.jpeg',url: '/product/bath'},
+    {id: '5',name : '건강보조제' , src : 'img/img-11-1.jpeg', url: '/product/health'},
+    {id: '6',name : '산책/외출' , src : 'img/img-8-1.jpeg', url: '/product/walk'},
   ];
+  console.log('navListArr');
   const selectNavHandler = (index) => {
     setTab(index);
   };
@@ -46,9 +47,9 @@ const NavBar = () => {
   const [currentNav , setNav] = useState(0);
 
   const navList = [
-    {name: '전체 카테고리'},
-    {name: '기획전' ,  url: 'category/exhibitions'},
-    {name: '이벤트' ,  url: 'category/event'}
+    {id: '0' ,name: '전체 카테고리'},
+    {id: '1', name: '기획전' ,  url: 'category/exhibitions'},
+    {id: '2', name: '이벤트' ,  url: 'category/event'}
   ]
   
   const NavHandler = (index) => {

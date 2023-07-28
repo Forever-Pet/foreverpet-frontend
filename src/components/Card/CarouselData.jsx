@@ -5,6 +5,7 @@ import { VscHeart } from "react-icons/vsc";
 //SubSlider.jsx data
 const CarouselData = [
    {
+    id: '0',
     title: 'Summer Promotion' , 
     quote: '무더위를 준비하는 자세 쿨 아이템으로 여름준비하기!', 
     percent: '~15', 
@@ -18,6 +19,7 @@ const CarouselData = [
   },
 
   {
+    id: '1',
     title: 'Summer Promotion' , 
     quote: '무더위를 준비하는 자세 쿨 아이템으로 여름준비하기!', 
     percent: '~15', 
@@ -31,6 +33,7 @@ const CarouselData = [
   },
 
   {
+    id: '2',
     title: 'Summer Promotion' , 
     quote: '무더위를 준비하는 자세 쿨 아이템으로 여름준비하기!', 
     percent: '~15', 
@@ -44,6 +47,7 @@ const CarouselData = [
   },
 
   {
+    id: '3',
     title: 'Summer Promotion' , 
     quote: '무더위를 준비하는 자세 쿨 아이템으로 여름준비하기!', 
     percent: '~15', 
@@ -57,6 +61,7 @@ const CarouselData = [
   },
 
   {
+    id: '4',
     title: 'Summer Promotion' , 
     quote: '무더위를 준비하는 자세 쿨 아이템으로 여름준비하기!', 
     percent: '~15', 
@@ -69,7 +74,7 @@ const CarouselData = [
     heart : <VscHeart/>
   },
 
-  {
+  { id: '5',
     title: 'Summer Promotion' , 
     quote: '무더위를 준비하는 자세 쿨 아이템으로 여름준비하기!', 
     percent: '~15', 

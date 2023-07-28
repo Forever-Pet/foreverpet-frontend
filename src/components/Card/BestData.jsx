@@ -20,6 +20,15 @@ const BestData = [
     sale : "SALE"
    },
    {
+    id : 2, 
+    src : 'img/bestitem2.jpg',
+    title : "꼬떼야꼬떼 폼폼 쿨링탑",
+    percent : "10" ,
+    price : "20,800",
+    best : "BEST",
+    sale : "SALE"
+   },
+   {
     id : 3, 
     src : 'img/bestitem2.jpg',
     title : "꼬떼야꼬떼 폼폼 쿨링탑",
@@ -28,23 +37,14 @@ const BestData = [
     best : "BEST",
     sale : "SALE"
    },
-   {
-    id : 4, 
-    src : 'img/bestitem2.jpg',
-    title : "꼬떼야꼬떼 폼폼 쿨링탑",
-    percent : "10" ,
-    price : "20,800",
-    best : "BEST",
-    sale : "SALE"
-   },
-   {
-    id : 5, 
-    src : 'img/bestitem2.jpg',
-    title : "꼬떼야꼬떼 폼폼 쿨링탑",
-    percent : "10" ,
-    price : "20,800",
-    best : "BEST",
-    sale : "SALE"
-   }
+  //  {
+  //   id : 4, 
+  //   src : 'img/bestitem2.jpg',
+  //   title : "꼬떼야꼬떼 폼폼 쿨링탑",
+  //   percent : "10" ,
+  //   price : "20,800",
+  //   best : "BEST",
+  //   sale : "SALE"
+  //  },
 ]
 export default BestData ;

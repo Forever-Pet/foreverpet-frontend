@@ -6,16 +6,14 @@
 /* pc */
 @media screen and (min-width:1024px)  {
   .newitem {
-  position: relative;
-  width: 1230px;
-  height: 500px;
-  margin: 0 auto;
+    position: relative;
+    max-width: 1200px;
+    height: 500px;
+    width: 100%;
+    margin: 0 auto;
 }
 
 .header_text {
-  position: relative;
-  width: 1100px;
-  margin: 0 auto;
   font-size: 18px;
   font-weight: bold;
   text-align: center;
@@ -23,16 +21,14 @@
 }
 
 .product {
-  display: grid;
-  grid-template-columns: 230px 230px 230px 230px 230px;
-  max-width: 1230px;
-  width: 56%;
-  margin: 0 42px;
+  display: flex;
+  justify-content: center;
 }
 
 .product_link {
   height: 340px;
   text-decoration: none;
+  margin-right: 23px;
   color: #000;
   font-family: 'Noto Sans KR', sans-serif;
 }
@@ -90,33 +86,31 @@
 @media screen and (min-width:768px) and (max-width:1023px) {
   .newitem {
     position: relative;
-    width: 1230px;
-    height: 800px;
-  }
-  
-  .header_text {
-    position: relative;
-    width: 1100px;
-    font-size: 18px;
-    font-weight: bold;
-    text-align: center;
-    color: #333;
-  }
-  
-  .product {
-    display: grid;
-    grid-template-columns: 230px 230px 230px;
-    max-width: 1230px;
-    width: 65%;
+    max-width: 1200px;
+    height: 500px;
+    width: 100%;
     margin: 0 auto;
-  }
-  
-  .product_link {
-    height: 340px;
-    text-decoration: none;
-    color: #000;
-    font-family: 'Noto Sans KR', sans-serif;
-  }
+}
+
+.header_text {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  color: #333;
+}
+
+.product {
+  display: flex;
+  justify-content: center;
+}
+
+.product_link {
+  height: 340px;
+  text-decoration: none;
+  margin-right: 23px;
+  color: #000;
+  font-family: 'Noto Sans KR', sans-serif;
+}
   
   .product_img {
     display: flex;
@@ -171,33 +165,32 @@
 @media screen and (max-width: 767px) {
   .newitem {
     position: relative;
-    width: 1230px;
-    height: 800px;
-  }
-  
-  .header_text {
-    position: relative;
-    width: 1100px;
-    font-size: 18px;
-    font-weight: bold;
-    text-align: center;
-    color: #333;
-  }
-  
-  .product {
-    display: grid;
-    grid-template-columns: 230px 230px 230px;
-    max-width: 1230px;
-    width: 65%;
+    max-width: 1200px;
+    height: 500px;
+    width: 100%;
     margin: 0 auto;
-  }
+}
+
+.header_text {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  color: #333;
+}
+
+.product {
+  display: flex;
+  justify-content: center;
+}
+
   
-  .product_link {
-    height: 340px;
-    text-decoration: none;
-    color: #000;
-    font-family: 'Noto Sans KR', sans-serif;
-  }
+.product_link {
+  height: 340px;
+  text-decoration: none;
+  margin-right: 23px;
+  color: #000;
+  font-family: 'Noto Sans KR', sans-serif;
+}
   
   .product_img {
     display: flex;
