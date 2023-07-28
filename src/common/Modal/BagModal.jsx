@@ -22,7 +22,7 @@ const BagModal = () => {
         {
           modalState.title ? <p className={styles['duplicate-alert']}>상품을 추가 등록하시겠습니까?</p> : <div className={styles['product-content']}>
             <div className={styles['product-content__img']}>
-              <Image src={modalState.data.img} className="img-100"></Image>
+              <Image src={modalState.data.productImage} className="img-100"></Image>
             </div>
             <ProductContent data={modalState.data}></ProductContent>
           </div>

@@ -19,16 +19,16 @@ const CarModal = () => {
               장바구니가 비었습니다.
             </div> :
             cartData.map((d) => {
-              const formattedPrice = (d.price * d.count).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+              const formattedPrice = (d.productPrice * d.count).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
               return (
                 <div key={d.id} className={styles['cart-container__insideBg']}>
                   <IoMdClose onClick={() => dispatch(removeCart(d))} className={styles['cart-container__insideBg--icon']}></IoMdClose>
                   <div className={styles['cart-container__insideBg--content']}>
                     <div className={styles['cart-container__insideBg--content__img']}>
-                      <Image src={d.img} className="img-100"></Image>
+                      <Image src={d.productImage} className="img-100"></Image>
                     </div>
                     <div className={styles['cart-container__insideBg--content__text']}>
-                      <p>{d.brand}</p>
+                      <p>{d.brandName}</p>
                       <h3>{d.productName}</h3>
                     </div>
                   </div>
