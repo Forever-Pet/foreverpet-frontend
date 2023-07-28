@@ -6,17 +6,32 @@ import ProductFilter from './ProductFilter';
 import { useState } from 'react';
 import TemporaryHeader from '../Header/TemporaryHeader';
 import Title from '../../common/Title/Title'
+import { useEffect } from 'react';
 
 const Product = (props) => {
   const [click, checkClick] = UseClickHook(false)
   const [selectedValue, setSelectedValue] = useState('베스트');
+  const [title, setTitle] = useState('')
+
+  //test need
+  useEffect(() => {
+    switch (props.data[0].categories) {
+      case SNACK:
+        setTitle('간식')
+      case BITA:
+        setTitle("건강보조제")
+      case FOOD:
+        setTitle('사료')
+    }
+  })
+
 
   return <>
     <TemporaryHeader></TemporaryHeader>
     {
       props.data && <div className={styles.base}>
         <div>
-          <Title className="product-title" title={`${props.data[0].categories}`}></Title>
+          <Title className="product-title" title={title}></Title>
           <div className={styles.filterBox}>
             <span>{props.data.length}개</span>
             <div className={styles.filterBox__filter} onClick={checkClick}>
@@ -30,7 +45,7 @@ const Product = (props) => {
         {click && <div className={styles.selectDrop__cont}>
           <ProductFilter selectedValue={selectedValue} setSelectedValue={setSelectedValue} checkClick={checkClick}></ProductFilter>
         </div>}
-        <ProductItem data={props.data} className='container'></ProductItem>
+        <ProductItem data={props.data} className='container-4columns'></ProductItem>
       </div>
     }
 

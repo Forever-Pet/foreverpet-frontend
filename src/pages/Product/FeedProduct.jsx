@@ -1,9 +1,9 @@
 import Product from '../../components/Product/Product';
-import useGetData from '../../hooks/useGetData';
+import useGetProductData from '../../hooks/useGetProductData';
 
 const FeedProduct = () => {
 
-  const [data] = useGetData('products', 'FOOD')
+  const [data] = useGetProductData('products', 'FOOD')
 
   return <>
     <div>

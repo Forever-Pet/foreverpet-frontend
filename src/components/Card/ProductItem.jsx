@@ -7,8 +7,6 @@ import ProductContent from './ProductContent'
 import { useSelector } from 'react-redux';
 import BagModal from '../../common/Modal/BagModal';
 import usePathMove from '../../hooks/usePathMove';
-import { useNavigate } from 'react-router-dom';
-import { useState } from 'react';
 
 
 
@@ -18,7 +16,6 @@ const ProductItem = (props) => {
 
   const [IsWishlist, handleWishlist] = UsehandleWishBag()
   const { ckBag } = UseCartHook()
-  const [ckIcon, setIcon] = useState('')
 
 
   //아이콘 체크 여부, 데이터 들어 있으면 색상 변경, 아니면 빈 아이콘
@@ -31,7 +28,6 @@ const ProductItem = (props) => {
     }
   }
 
-
   return (
     <>
       <div className={styles[props.className || ""]}>
@@ -39,10 +35,9 @@ const ProductItem = (props) => {
           props.data &&
           props.data.map((d, i) => {
             return (
-
-              <div key={d.id} className={styles.productItem} onClick={() => {
+              <div key={d.id} className={styles.productItem} onClick={() =>
                 move('/product/detail/' + d.id)
-              }}>
+              }>
                 <div className={styles.productItem__img}>
                   <Image src={d.productImage} />
                   <div onClick={(e) => {

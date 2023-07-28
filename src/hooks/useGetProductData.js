@@ -1,7 +1,7 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
 
-const useGetData = (type, category) => {
+const useGetProductData = (type, category) => {
   const [data, setData] = useState(null)
 
   const getData = (type, category) => {
@@ -10,6 +10,9 @@ const useGetData = (type, category) => {
       .then((result) => {
         const found = result.filter(e => e.categories === category)
         setData(found)
+      })
+      .catch(() => {
+        console.log('실패')
       })
   }
 
@@ -20,4 +23,4 @@ const useGetData = (type, category) => {
   return [data, getData]
 }
 
-export default useGetData
+export default useGetProductData
