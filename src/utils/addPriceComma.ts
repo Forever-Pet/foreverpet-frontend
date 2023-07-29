@@ -1,3 +1,3 @@
-const addPriceComma = (amount: number) => amount.toLocaleString("ko-KR");
+const addPriceComma =  (amount: number) => amount?.toLocaleString("ko-KR");
 
 export { addPriceComma };
