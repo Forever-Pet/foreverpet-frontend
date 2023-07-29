@@ -1,8 +1,6 @@
 // CSS
 import styles from "../../styles/css/components/Product/ProductDetailInformation.module.css";
 
-import img from "../../assets/image 26.svg";
-
 // Components
 import Image from "../../common/Img/Image";
 import Title from "../../common/Title/Title";
