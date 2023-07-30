@@ -33,11 +33,13 @@ const LocalAuthUserJoin = () => {
     tel: "",
     mainAddress: "",
     subAddress: "",
+    zonecode: "",
   });
 
   // Debounce Func
   const debounceInputValueFunc = (e) => {
     const { name, value } = e.target;
+
     // Input Value Set
     setLocalAuthUserInput((prevInputValues) => ({
       ...prevInputValues,
@@ -52,11 +54,14 @@ const LocalAuthUserJoin = () => {
   // DaumAddress 컴포넌트 활성화, 클릭한 주소정보 Get
   const userAddressInfoUpdate = (type, address) => {
     if (type === "modal") return setUserAddressInfo((prev) => !prev);
-    if (type === "address")
+    if (type === "address") {
+      const { value, zonecode } = address.target;
       return setLocalAuthUserInput((prev) => ({
         ...prev,
-        mainAddress: address,
+        mainAddress: value,
+        zonecode,
       }));
+    }
   };
 
   // Input의 주소검색 버튼 누를시 DaumAddress 컴포넌트 활성화
