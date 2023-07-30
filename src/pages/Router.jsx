@@ -14,13 +14,6 @@ import Modify from "./Member/Modify";
 import OrderHistory from "./Member/OrderHistory";
 import PageNotFound from "./PageNotFound/PageNotFound";
 
-// Test
-import PaymentsAmountInfo from "../components/Payments/PaymentsAmountInfo"; // 결제 금액 정보창
-import PaymentsOrderInfo from "../components/Payments/PaymentsOrderInfo"; // 결제 주문상품 컴포넌트
-import PaymentsOwnerInfo from "../components/Payments/PaymentsOwnerInfo"; // 결제 주문자 정보 컴포넌트
-import PaymentsDeliveryInfo from "../components/Payments/PaymentsDeliveryInfo"; // 결제 배송지 정보 컴포넌트
-import PaymentsType from "../components/Payments/PaymentsType"; // 결제수단 컴포넌트
-
 const Router = () => {
   const [isInLogged, setisInLogged] = useState(true);
 

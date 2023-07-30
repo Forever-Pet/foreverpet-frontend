@@ -47,10 +47,8 @@ const NavListArr = () => {
 
 //네비바 햄버거 버튼 옆 메뉴 
 const NavBar = () => {
- 
   const [list, setList] =useState(false);
   const [currentNav , setNav] = useState(0);
- 
 
   const NavHandler = (index) => {
     setNav(index);
