@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 // Event Debounce
 import { debounce } from "lodash";
@@ -134,7 +134,9 @@ const LocalAuthUserJoin = () => {
           getUserMainAddressInfo={getUserMainAddressInfo}
           getInputValueInfo={getInputValueInfo}
         />
-        {errorMessage && <span>{errorMessage}</span>}
+        {errorMessage && (
+          <div className={styles["localUser-join__error"]}>{errorMessage}</div>
+        )}
         <div className={styles["localUser-join__footer"]}>
           <Button
             title="회원가입"
