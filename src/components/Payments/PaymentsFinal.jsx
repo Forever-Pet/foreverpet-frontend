@@ -25,8 +25,11 @@ const PaymentsFinal = (props) => {
       ownerTel,
       deliveryName,
       deliveryMainAddress,
+      deliverySubAddress,
+      deliveryZipcode,
       deliveryTel,
     } = props.paymentReinfo;
+
     if (ownerName.trim().length <= 0)
       return alert("보내시는 분에 정보를 입력해 주세요.");
     if (ownerTel.trim().length <= 0)
@@ -56,8 +59,14 @@ const PaymentsFinal = (props) => {
   };
 
   const impPayment = (productsName) => {
-    const { ownerName, ownerTel, ownerEmail, deliveryMainAddress } =
-      props.paymentReinfo;
+    const {
+      ownerName,
+      ownerTel,
+      ownerEmail,
+      deliveryMainAddress,
+      deliverySubAddress,
+      deliveryZipcode,
+    } = props.paymentReinfo;
 
     const { IMP } = window;
     IMP.init("imp32173444");
@@ -68,6 +77,7 @@ const PaymentsFinal = (props) => {
     const date = new Date().getTime();
     const orderName = filterUUID + String(date);
 
+    // address; [city : abc.value , street : add.value , zipcode : acc.value]
     // 결제 데이터
     const impPaymentData = {
       pg: "kakaopay", // PG사
