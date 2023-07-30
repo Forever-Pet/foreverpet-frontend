@@ -7,7 +7,9 @@ const PaymentsProductOrderInfo = (props) => {
   return (
     <>
       <PaymentsInputHeader title="주문상품" />
-      <ProductOrderList dummyOrderListData={props.dummyOrderListData} />
+      <ProductOrderList
+        paymentsProductDetailInfo={props.paymentsProductDetailInfo}
+      />
     </>
   );
 };

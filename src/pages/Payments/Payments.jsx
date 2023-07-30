@@ -1,5 +1,6 @@
 // React Hooks
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 
 // CSS
 import styles from "../../styles/css/pages/Payments/Payments.module.css";
@@ -14,6 +15,7 @@ import PaymentsType from "../../components/Payments/PaymentsType";
 import PaymentsFinal from "../../components/Payments/PaymentsFinal";
 
 const Payments = () => {
+  const { state } = useLocation();
   const [paymentReinfo, setPaymentReInfo] = useState({
     ownerName: "",
     ownerTel: "",
@@ -24,6 +26,8 @@ const Payments = () => {
     deliveryTel: "",
   });
   const [paymentsFinalAmount, setPaymentsFinalAmount] = useState(0);
+  const [paymentsProductDetailInfo, setPaymentsProductDetailInfo] =
+    useState(state);
 
   // 결제정보 (주문자, 배송지) 업데이트
   const updatePaymentInfo = (e) => {
@@ -33,6 +37,8 @@ const Payments = () => {
       [name]: value,
     }));
   };
+
+  useEffect(() => console.log(paymentsProductDetailInfo), []);
 
   // 결제버튼 금액 확인
   const paymentsAmountBtn = (amount) => setPaymentsFinalAmount(amount);
@@ -55,7 +61,9 @@ const Payments = () => {
           <Title title="주문결제" />
         </div>
         <div className={styles["payments-info__list"]}>
-          <PaymentsProductOrderInfo dummyOrderListData={dummyOrderListData} />
+          <PaymentsProductOrderInfo
+            paymentsProductDetailInfo={paymentsProductDetailInfo}
+          />
         </div>
         <div className={styles["payments-info__list"]}>
           <PaymentsOwnerInfo
@@ -76,13 +84,13 @@ const Payments = () => {
           <PaymentsFinal
             paymentsFinalAmount={paymentsFinalAmount}
             paymentReinfo={paymentReinfo}
-            dummyOrderListData={dummyOrderListData}
+            paymentsProductDetailInfo={paymentsProductDetailInfo}
           />
         </div>
       </div>
       <div className={styles["payments-info-amount"]}>
         <PaymentsAmountInfo
-          dummyOrderListData={dummyOrderListData}
+          paymentsProductDetailInfo={paymentsProductDetailInfo}
           paymentsAmountBtn={paymentsAmountBtn}
         />
       </div>

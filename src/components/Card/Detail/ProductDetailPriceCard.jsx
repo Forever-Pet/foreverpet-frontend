@@ -11,11 +11,12 @@ import { BsHeart, BsFillHeartFill, BsShare } from "react-icons/bs";
 // Components
 import Button from "../../../common/Button/Button";
 import { addPriceComma } from "../../../utils/addPriceComma";
-
+import { useEffect } from "react";
 
 const ProductDetailPriceCard = (props) => {
-  const pathMove  = usePathMove();
-  const productItemPayment = () => pathMove('/payments', null)
+  const pathMove = usePathMove();
+  const productItemPayment = () =>
+    pathMove("/payments", props.productDetailData, true);
   return (
     <div className={styles["product-detail__wrap"]}>
       <ul className={styles["product-detail"]}>

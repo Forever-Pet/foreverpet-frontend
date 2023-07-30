@@ -12,7 +12,7 @@ import Title from "../../common/Title/Title";
 
 const PaymentsAmountInfo = (props) => {
   const [productAmountInfo, setProductAmountInfo] = useState(
-    props.dummyOrderListData
+    props.paymentsProductDetailInfo
   );
 
   const [productAmount, setProductAmount] = useState({
@@ -23,20 +23,19 @@ const PaymentsAmountInfo = (props) => {
   });
 
   useEffect(() => {
+    console.log(productAmountInfo);
     // 각각 가정한 배송료와 쿠폰 할인 값
     const deliveryAmount = 0;
     const couponDiscountAmount = 0;
-
-    const productAmount = productAmountInfo.reduce(
-      (total, item) => total + item.quantity * item.defaultAmount,
-      0
-    );
-
+    // const productAmountt = productAmountInfo.reduce(
+    //   (total, item) => total + item.quantity * item.defaultAmount,
+    //   0
+    // );
     // 결제 총금액
-    const totalAmount = productAmount + deliveryAmount - couponDiscountAmount;
-
+    const totalAmount =
+      productAmountInfo.productPrice + deliveryAmount - couponDiscountAmount;
     setProductAmount({
-      productAmount: productAmount,
+      productAmount: productAmountInfo.productPrice,
       productDeliveryAmount: deliveryAmount,
       productCouponAmount: couponDiscountAmount,
       productTotalAmount: totalAmount,
