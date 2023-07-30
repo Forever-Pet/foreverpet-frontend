@@ -1,5 +1,5 @@
 // React Hooks
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 // CSS
 import styles from "../../styles/css/components/Payments/PaymentsFinal.module.css";
@@ -9,6 +9,8 @@ import { addPriceComma } from "../../utils/addPriceComma";
 
 // Components
 import Input from "../../common/Input/Input";
+
+import { v4 as uuidv4 } from "uuid";
 
 const PaymentsFinal = (props) => {
   const [paymentInputAgree, setPaymentInputAgree] = useState({
@@ -60,11 +62,17 @@ const PaymentsFinal = (props) => {
     const { IMP } = window;
     IMP.init("imp32173444");
 
+    const uuid = uuidv4();
+    const regEX = /[a-zA-Z0-9]/g;
+    const filterUUID = uuid.match(regEX).join("");
+    const date = new Date().getTime();
+    const orderName = filterUUID + String(date);
+
     // 결제 데이터
     const impPaymentData = {
       pg: "kakaopay", // PG사
       pay_method: "card", // 결제수단
-      merchant_uid: `Forever-Pet_${new Date().getTime()}`, // 주문번호
+      merchant_uid: orderName, // 주문번호
       amount: props.paymentsFinalAmount, // 결제금액
       name: productsName, // 주문명
       buyer_name: ownerName, // 구매자 이름
