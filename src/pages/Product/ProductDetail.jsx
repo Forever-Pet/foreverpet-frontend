@@ -15,6 +15,7 @@ import { useEffect } from "react";
 const ProductDetail = () => {
   const [productDetailData, setProductDetailData] = useState([])
   const { id } = useParams();
+
   useEffect(() => {
     const API_URL = `http://ec2-3-39-122-241.ap-northeast-2.compute.amazonaws.com/products/${id}`
     const ProductIdServerData = async() => {
@@ -30,6 +31,7 @@ const ProductDetail = () => {
     
     ProductIdServerData()
   }, []);
+  
   return (
     <div className={styles["product-detail__view-wrap"]}>
       <div className={styles["header"]}>헤더임</div>

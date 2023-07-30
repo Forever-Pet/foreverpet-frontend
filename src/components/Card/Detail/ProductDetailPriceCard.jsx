@@ -1,5 +1,7 @@
 import { CopyToClipboard } from "react-copy-to-clipboard";
 
+import usePathMove from "../../../hooks/usePathMove";
+
 // CSS
 import styles from "../../../styles/css/components/Card/Detail/ProductDetailPriceCard.module.css";
 
@@ -12,10 +14,8 @@ import { addPriceComma } from "../../../utils/addPriceComma";
 
 
 const ProductDetailPriceCard = (props) => {
-
-  // 상품결제 함수
-  const productItemPayment = () =>
-    console.log("상품결제 > payments router로 이동");
+  const pathMove  = usePathMove();
+  const productItemPayment = () => pathMove('/payments', null)
   return (
     <div className={styles["product-detail__wrap"]}>
       <ul className={styles["product-detail"]}>

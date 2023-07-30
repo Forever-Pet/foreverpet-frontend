@@ -7,47 +7,11 @@ import styles from "../../styles/css/pages/Payments/Payments.module.css";
 // Components
 import Title from "../../common/Title/Title";
 import PaymentsAmountInfo from "../../components/Payments/PaymentsAmountInfo";
-import PaymentsOrderInfo from "../../components/Payments/PaymentsOrderInfo";
+import PaymentsProductOrderInfo from "../../components/Payments/PaymentsProductOrderInfo";
 import PaymentsOwnerInfo from "../../components/Payments/PaymentsOwnerInfo";
 import PaymentsDeliveryInfo from "../../components/Payments/PaymentsDeliveryInfo";
 import PaymentsType from "../../components/Payments/PaymentsType";
 import PaymentsFinal from "../../components/Payments/PaymentsFinal";
-
-// Dummy data
-const dummyOrderListData = [
-  {
-    id: 1,
-    imageUrl:
-      "https://www.bohori.com/web/product/medium/202304/8c40e60df9ad25fdd15c40f72b779ede.jpg",
-    name: "채식 애견껌 스틱 150g (50개입)-복숭아 맛",
-    quantity: 3,
-    defaultAmount: 4500,
-  },
-  {
-    id: 2,
-    imageUrl:
-      "https://www.bohori.com/web/product/medium/202304/a5eaff3c46627bd4f906aecf541bf549.jpg",
-    name: "채식 애견껌 스틱형 120g (12개입)-과일 맛 (베이지색)",
-    quantity: 4,
-    defaultAmount: 4500,
-  },
-  {
-    id: 3,
-    imageUrl:
-      "https://www.bohori.com/web/product/medium/202304/a5eaff3c46627bd4f906aecf541bf549.jpg",
-    name: "아이디3번",
-    quantity: 4,
-    defaultAmount: 4500,
-  },
-  {
-    id: 4,
-    imageUrl:
-      "https://www.bohori.com/web/product/medium/202304/a5eaff3c46627bd4f906aecf541bf549.jpg",
-    name: "아이디4번",
-    quantity: 10,
-    defaultAmount: 4500,
-  },
-];
 
 const Payments = () => {
   const [paymentReinfo, setPaymentReInfo] = useState({
@@ -91,7 +55,7 @@ const Payments = () => {
           <Title title="주문결제" />
         </div>
         <div className={styles["payments-info__list"]}>
-          <PaymentsOrderInfo dummyOrderListData={dummyOrderListData} />
+          <PaymentsProductOrderInfo dummyOrderListData={dummyOrderListData} />
         </div>
         <div className={styles["payments-info__list"]}>
           <PaymentsOwnerInfo
