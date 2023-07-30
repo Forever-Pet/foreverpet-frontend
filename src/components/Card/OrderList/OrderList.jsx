@@ -21,6 +21,7 @@ const OrderList = (props) => {
     const result = name.slice(0, 35);
     return `${result}...`;
   };
+
   return (
     <ul>
       {productOrderList?.map((productItem, _) => {
