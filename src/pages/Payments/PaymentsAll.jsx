@@ -6,7 +6,7 @@ import styles from "../../styles/css/pages/Payments/Payments.module.css";
 
 // Components
 import Title from "../../common/Title/Title";
-import PaymentsAmountInfo from "../../components/Payments/PaymentsAmountInfo";
+import PaymentsAmountInfoAll from "../../components/Payments/PaymentsAmountInfoAll";
 import PaymentsOrderInfo from "../../components/Payments/PaymentsOrderInfo";
 import PaymentsOwnerInfo from "../../components/Payments/PaymentsOwnerInfo";
 import PaymentsDeliveryInfo from "../../components/Payments/PaymentsDeliveryInfo";
@@ -77,6 +77,7 @@ const PaymentsAll = () => {
     else {
       setPaymentReInfo((prevInfo) => ({
         ...prevInfo,
+        deliveryMainAddress: value,
         deliveryZipcode: zonecode,
       }));
     }
@@ -129,7 +130,7 @@ const PaymentsAll = () => {
         </div>
       </div>
       <div className={styles["payments-info-amount"]}>
-        <PaymentsAmountInfo
+        <PaymentsAmountInfoAll
           dummyOrderListData={dummyOrderListData}
           paymentsAmountBtn={paymentsAmountBtn}
         />
