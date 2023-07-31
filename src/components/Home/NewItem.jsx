@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import NewItemData from '../Card/NewItemData';
+import Image from '../../common/Img/Image';
 
 //css
 import styles from '../../styles/css/components/Home/NewItem.module.css';
@@ -21,7 +22,7 @@ const NewItem = () => {
           return (
             <Link className={styles.product_link}  key={index}>
                <div className={styles.product_img}>
-                <img src={props.src} alt=''/>
+                <Image src={props.img}/>
                </div>
                <div className={styles.productinfo}>
                  <p>{props.title}</p>

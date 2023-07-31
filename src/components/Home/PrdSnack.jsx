@@ -1,9 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Snack from "../Navigation/Category/Snack";
+import Image from "../../common/Img/Image";
 
 //css
 import styles from "../../styles/css/components/Category/SnackSlide.module.css";
+
 
 //icon
 import { BsCart } from "react-icons/bs";
@@ -24,7 +26,7 @@ const PrdSnack = (props) => {
             return (
               <Link className={styles.product_link} key={index}>
                 <div className={styles.product_img}>
-                  <img src={props.src} alt="" />
+                  <Image src={props.img} />
                 </div>
                 <div className={styles.productinfo}>
                   <p>{props.name}</p>
