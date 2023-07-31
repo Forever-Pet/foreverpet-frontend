@@ -29,14 +29,6 @@
     margin: 0 auto;
   }
   
-  .category_img {
-    width: 70px;
-    height: 70px;
-    margin: 0 auto;
-    text-align: center;
-    border-radius: 50%;
-  }
-  
 }
 
 /*테블릿*/

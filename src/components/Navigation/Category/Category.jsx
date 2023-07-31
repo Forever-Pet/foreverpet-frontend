@@ -3,6 +3,7 @@ import { Link} from 'react-router-dom';
 
 // Compoennts
 import CartegoryItem from '../../Card/CartegoryItem';
+import Image from '../../../common/Img/Image';
 
 //css
 import styles from '../../../styles/css/components/Category/Category.module.css';
@@ -16,7 +17,7 @@ const Category = () => {
           return (
             <Link to={props.url} className={styles.category_link}  key={index} >
                <div className={styles.category_item} > 
-                  <img src={props.src} alt='' className={styles.category_img} />
+                  <Image src={props.img} className='category_img' />
                   <div>{props.name}</div>
                </div>
             </Link>
