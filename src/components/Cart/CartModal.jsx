@@ -4,9 +4,12 @@ import Image from '../../common/Img/Image';
 import { useDispatch, useSelector } from 'react-redux';
 import { removeCart, increase, decrease } from '../../store/Slice/CartSlice';
 import Button from '../../common/Button/Button';
+import usePathMove from '../../hooks/usePathMove';
+import { addPriceComma } from '../../utils/addPriceComma';
 
 const CarModal = () => {
-  const cartData = useSelector((state) => { return state.cart.cartItem })
+  const move = usePathMove()
+  const cartData = useSelector((state) => { return state.cart.cartItem }) //cart api가져오기
   const dispatch = useDispatch()
 
   return <>
@@ -19,7 +22,7 @@ const CarModal = () => {
               장바구니가 비었습니다.
             </div> :
             cartData.map((d) => {
-              const formattedPrice = (d.productPrice * d.count).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+              const formattedPrice = addPriceComma(d.productPrice * d.count)
               return (
                 <div key={d.id} className={styles['cart-container__insideBg']}>
                   <IoMdClose onClick={() => dispatch(removeCart(d))} className={styles['cart-container__insideBg--icon']}></IoMdClose>
@@ -51,7 +54,7 @@ const CarModal = () => {
         }
 
         {
-          cartData.length > 0 ? <Button className="cart-pay-btn" title={"결제하기"}></Button> : ''
+          cartData.length > 0 ? <Button className="cart-pay-btn" title={"결제하기"} onClick={() => move('/payments/all')}></Button> : ''
         }
 
 

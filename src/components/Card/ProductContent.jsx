@@ -1,7 +1,8 @@
 import styles from '../../styles/css/components/Card/ProductContent.module.css'
+import { addPriceComma } from '../../utils/addPriceComma';
 
 const ProductContent = (props) => {
-  const formattedPrice = (props.data.productPrice).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  const formattedPrice = addPriceComma(props.data.productPrice)
 
   return <>
     {

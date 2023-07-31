@@ -1,12 +1,12 @@
 import Product from '../../components/Product/Product';
 
-const FeedProduct = () => {
+const SnackProduct = () => {
 
   return <>
     <div>
-      <Product title="FOOD" />
+      <Product title="SNACK" />
     </div>
   </>
 };
 
-export default FeedProduct;
+export default SnackProduct;

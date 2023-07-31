@@ -7,33 +7,50 @@ import { useState } from 'react';
 import TemporaryHeader from '../Header/TemporaryHeader';
 import Title from '../../common/Title/Title'
 import { useEffect } from 'react';
+import useGetProductData from '../../hooks/useGetProductData';
 
 const Product = (props) => {
   const [click, checkClick] = UseClickHook(false)
-  const [selectedValue, setSelectedValue] = useState('베스트');
+  const [selectedValue, setSelectedValue] = useState('추천순');
   const [title, setTitle] = useState('')
 
-  //test need
+  const [data, getData] = useGetProductData('products', `${props.title}`)
+
   useEffect(() => {
-    switch (props.data[0].categories) {
-      case SNACK:
+    switch (props.title) {
+      case 'SNACK':
         setTitle('간식')
-      case BITA:
+        break;
+      case 'BITA':
         setTitle("건강보조제")
-      case FOOD:
+        break;
+      case 'FOOD':
         setTitle('사료')
     }
-  })
+  }, [title])
+
+  useEffect(() => {
+    switch (selectedValue) {
+      case '추천순':
+        getData('products', `${props.title}`)
+        break;
+      case '베스트':
+        getData('products/best', `${props.title}`)
+        break;
+      case '최신순':
+        getData('products/new', `${props.title}`)
+    }
+  }, [selectedValue])
 
 
   return <>
     <TemporaryHeader></TemporaryHeader>
     {
-      props.data && <div className={styles.base}>
+      data && <div className={styles.base}>
         <div>
           <Title className="product-title" title={title}></Title>
           <div className={styles.filterBox}>
-            <span>{props.data.length}개</span>
+            <span>{data.length}개</span>
             <div className={styles.filterBox__filter} onClick={checkClick}>
               <span>{selectedValue}</span>
               {click ? <MdArrowDropUp /> : <MdArrowDropDown />}
@@ -45,7 +62,7 @@ const Product = (props) => {
         {click && <div className={styles.selectDrop__cont}>
           <ProductFilter selectedValue={selectedValue} setSelectedValue={setSelectedValue} checkClick={checkClick}></ProductFilter>
         </div>}
-        <ProductItem data={props.data} className='container-4columns'></ProductItem>
+        <ProductItem data={data} className='container-4columns'></ProductItem>
       </div>
     }
 

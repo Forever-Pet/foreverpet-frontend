@@ -8,15 +8,12 @@ import { useSelector } from 'react-redux';
 import BagModal from '../../common/Modal/BagModal';
 import usePathMove from '../../hooks/usePathMove';
 
-
-
 const ProductItem = (props) => {
   const move = usePathMove()
   const cartData = useSelector((state) => { return state.cart.cartItem })
 
   const [IsWishlist, handleWishlist] = UsehandleWishBag()
   const { ckBag } = UseCartHook()
-
 
   //아이콘 체크 여부, 데이터 들어 있으면 색상 변경, 아니면 빈 아이콘
   const iconCk = (id) => {

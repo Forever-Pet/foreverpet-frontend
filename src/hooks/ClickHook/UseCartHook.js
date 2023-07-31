@@ -2,11 +2,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { openModal } from "../../store/Slice/ModalSlice";
 
 export const UseCartHook = () => {
-  const cartData = useSelector((state) => { return state.cart.cartItem })
+  const cartData = useSelector((state) => { return state.cart.cartItem }) //서버에서 카트 api가져오기
   const dispatch = useDispatch()
 
   const ckBag = (data) => {
-    const i = cartData.find((a) => { return a.id == data.id })
+    const i = cartData.find((a) => { return a.id == data.id }) //서버에서 있는 상품인지 확인하기
     if (i == undefined) { //데이터 없으면 열어서 데이터 담음
       dispatch(openModal({
         data: data
