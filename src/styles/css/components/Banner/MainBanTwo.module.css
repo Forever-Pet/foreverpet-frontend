@@ -129,13 +129,14 @@
     position: relative;
     max-width: 1200px;
     width: 100%;
-    height: 300px;
+    height: 530px;
     margin: 0 auto;
   }
   
   .bantwo_eve {
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
   } 
   
   .bantwo_pro {
@@ -148,8 +149,8 @@
   }
   
   .bantwo_img_1 {
-    width: 299px;
-    height: 195px;
+    width: 200px;
+    height: 180px;
     border-radius: 19px;
   }
   
@@ -158,8 +159,8 @@
     flex-direction: column;
     align-items: end;
     justify-content: center;
-    width: 300px;
-    height: 195px;
+    width: 275px;
+    height: 180px;
     margin-left: -57px;
     background-color: whitesmoke;
     border-radius: 19px;
@@ -174,11 +175,11 @@
   }
   
   .info2 {
-    font-size: 24px;
+    font-size: 22px;
   }
   
   .info3 {
-    font-size: 26px;
+    font-size: 22px;
     font-weight: 700;
   }
 }
