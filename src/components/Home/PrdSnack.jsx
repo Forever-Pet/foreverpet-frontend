@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 // Compoennts
 import Snack from "../Navigation/Category/Snack";
 import Image from "../../common/Img/Image";
+import ProductItem from "../Card/ProductItem";
 
 //css
 import styles from "../../styles/css/components/Category/SnackSlide.module.css";
@@ -12,18 +13,16 @@ import styles from "../../styles/css/components/Category/SnackSlide.module.css";
 import { BsCart } from "react-icons/bs";
 import { VscHeart } from "react-icons/vsc";
 
-
 //메인 홈 - 스낵 베너
 const PrdSnack = (props) => {
-
   return (
       <div className={styles.snack_Slide}>
         <div className={styles.snack_Slide_hea}>
           <h2>영양 만점 간식 추천</h2>
         </div>
-  
         <div className={styles.snack_Slide_prd}>
-          {Snack.map((props, index) => {
+          <ProductItem data={Snack} className='container'/>
+          {/* {Snack.map((props, index) => {
             return (
               <Link className={styles.product_link} key={index}>
                 <div className={styles.product_img}>
@@ -46,7 +45,7 @@ const PrdSnack = (props) => {
                 </div>
               </Link>
             );
-          })}
+          })} */}
         </div>
    
       </div>

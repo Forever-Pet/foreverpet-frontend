@@ -75,15 +75,6 @@
   color: black;
 }
 
-/*nav_list 이미지 */
-.nav_list_img  {
-  width: 35px;
-  display: flex;
-  flex-direction: column;
-  padding-bottom: 10px;
-  padding-top: 5px;
-}
-
 .navbar_box {
   float: right;
   display: flex;
@@ -185,15 +176,6 @@
   top: 6px;
   text-decoration: none;
   color: black;
-}
-
-/*nav_list 이미지 */
-.nav_list_img  {
-  width: 35px;
-  display: flex;
-  flex-direction: column;
-  padding-bottom: 10px;
-  padding-top: 5px;
 }
 
 .navbar_box {
@@ -302,15 +284,6 @@
   color: black;
 }
 
-/*nav_list 이미지 */
-.nav_list_img  {
-  width: 35px;
-  display: flex;
-  flex-direction: column;
-  padding-bottom: 10px;
-  padding-top: 5px;
-}
-
 .navbar_box {
   float: right;
   display: flex;
@@ -414,15 +387,6 @@ display: none;
   top: 6px;
   text-decoration: none;
   color: black;
-}
-
-/*nav_list 이미지 */
-.nav_list_img  {
-  width: 35px;
-  display: flex;
-  flex-direction: column;
-  padding-bottom: 10px;
-  padding-top: 5px;
 }
 
 .navbar_box {

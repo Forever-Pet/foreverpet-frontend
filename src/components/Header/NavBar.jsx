@@ -39,7 +39,7 @@ const NavListArr = () => {
         return(
           <div key={index} className={styles.nav_list_item} onClick={() => selectNavHandler(index)}>
             <Link to={props.url} className={styles.listItem_name} onClick={()=>pathMove(props.url, getProducts(props.categories), true)}>{props.name}</Link>
-            <Image src={props.img} className={styles.nav_list_img}/>
+            <Image src={props.img} className='nav_list_img'/>
           </div>
         )
        })}

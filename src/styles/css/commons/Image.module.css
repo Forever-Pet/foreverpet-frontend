@@ -10,3 +10,12 @@
 .img-100 {
   width: 100%;
 }
+
+/*nav_list 이미지 */
+.nav_list_img  {
+  width: 35px;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 10px;
+  padding-top: 5px;
+}
