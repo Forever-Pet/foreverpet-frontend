@@ -11,6 +11,7 @@ import styles from '../../styles/css/components/Home/NewItem.module.css';
 //icon
 import { BsCart } from "react-icons/bs";
 import { VscHeart } from "react-icons/vsc";
+import ProductItem from '../Card/ProductItem';
 
 //메인 홈 - 신상품 아이템 
 const NewItem = () => {
@@ -20,7 +21,8 @@ const NewItem = () => {
         <h2>두근 두근 설레는 신상품</h2>
       </div>
       <div className={styles.product}>
-        {NewItemData.map((props,index) => {
+        <ProductItem data={NewItemData} className="container"/>
+        {/* {NewItemData.map((props,index) => {
           return (
             <Link className={styles.product_link}  key={index}>
                <div className={styles.product_img}>
@@ -44,8 +46,8 @@ const NewItem = () => {
                </div>
              </Link>
           )
-        })}
-      </div>
+        })}*/}
+      </div> 
     </div>
   );
 };

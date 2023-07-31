@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import Image from '../../common/Img/Image';
 
 // Compoennts
 import Input from '../../common/Input/Input';
