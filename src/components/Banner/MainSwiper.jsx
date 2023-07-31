@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+
+// Compoennts
 import imageData from '../../assets/data';
 import { Carousel } from 'react-responsive-carousel';
 

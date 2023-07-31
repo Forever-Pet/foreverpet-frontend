@@ -1,3 +1,5 @@
+
+// Compoennts
 import TopMenu from "./TopMenu";
 import NavBar from "./NavBar";
 import Title from "../../common/Title/Title";
@@ -9,7 +11,7 @@ import HeaderBan from "../Banner/HeaderBan";
 const Header = (props) => {
   return (
     <>
-     <HeaderBan/>
+    <HeaderBan/>
     <header className={styles.header}>
       <TopMenu />
       <div className={styles.header_logo}>

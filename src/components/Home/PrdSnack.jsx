@@ -1,11 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
+
+// Compoennts
 import Snack from "../Navigation/Category/Snack";
 import Image from "../../common/Img/Image";
 
 //css
 import styles from "../../styles/css/components/Category/SnackSlide.module.css";
-
 
 //icon
 import { BsCart } from "react-icons/bs";

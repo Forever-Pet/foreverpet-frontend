@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+
+// Compoennts
 import BestData from '../Card/BestData';
 import Image from '../../common/Img/Image';
 

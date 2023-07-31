@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+
+// Compoennts
 import NewItemData from '../Card/NewItemData';
 import Image from '../../common/Img/Image';
 
