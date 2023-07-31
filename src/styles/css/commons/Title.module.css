@@ -20,6 +20,14 @@
 
 }
 
+/*헤더 네임*/
+.header_logo_text {
+  font-family: 'Nanum Pen Script', cursive;
+  font-size: 47px;
+  margin: 0 auto;
+  color: #008e61;
+};
+
 .localUser-auth__header--title,
 .localUser-login__sns-title {
   font-weight: bold;

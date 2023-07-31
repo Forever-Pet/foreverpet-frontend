@@ -1,10 +1,10 @@
 import TopMenu from "./TopMenu";
 import NavBar from "./NavBar";
+import Title from "../../common/Title/Title";
 
 // CSS
 import styles from "../../styles/css/components/Header/Header.module.css";
 import HeaderBan from "../Banner/HeaderBan";
-
 
 const Header = (props) => {
   return (
@@ -13,7 +13,7 @@ const Header = (props) => {
     <header className={styles.header}>
       <TopMenu />
       <div className={styles.header_logo}>
-        <div className={styles.header_logo_text}>포에버펫</div>
+        <Title title='포에버펫' className='header_logo_text'/>
       </div>
       <NavBar />
     </header>
