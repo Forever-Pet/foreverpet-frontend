@@ -165,8 +165,8 @@
 @media screen and (max-width: 767px) {
   .newitem {
     position: relative;
-    max-width: 1200px;
-    height: 500px;
+    max-width: 600px;
+    height: 730px;
     width: 100%;
     margin: 0 auto;
 }
@@ -181,6 +181,7 @@
 .product {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
   
