@@ -6,7 +6,6 @@ import BestData from '../Card/BestData';
 import Image from '../../common/Img/Image';
 import ProductItem from '../Card/ProductItem';
 
-
 //css
 import styles from '../../styles/css/components/Home/BestItem.module.css';
 
@@ -22,7 +21,7 @@ const BestItem = (props) => {
         <h2>지금 핫한 이 상품 어때요?</h2>
       </div>
       <div className={styles.product}>
-        <ProductItem data={BestData} className='container'/>
+        <ProductItem data={BestData} className='container' />   
         {/* {BestData.map((props,index) => {
           return (
             <Link className={styles.product_link}  key={index}>
