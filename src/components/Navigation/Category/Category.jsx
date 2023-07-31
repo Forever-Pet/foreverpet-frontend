@@ -9,7 +9,7 @@ import styles from '../../../styles/css/components/Category/Category.module.css'
 const Category = () => {
   return (
     <div className={styles.category}>
-       <ul className={styles.category_ul}>
+       <div className={styles.category_ul}>
          {CartegoryItem.map((props,index) => {
           return (
             <Link to={props.url} className={styles.category_link}  key={index} >
@@ -20,7 +20,7 @@ const Category = () => {
             </Link>
           )
          })}
-       </ul>
+       </div>
     </div>
   );
 };
