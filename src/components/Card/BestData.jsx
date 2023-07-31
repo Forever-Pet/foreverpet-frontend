@@ -4,6 +4,7 @@ const BestData = [
   {
    id : 0, 
    img : 'img/bestitem1.jpg',
+   brand : '수파',
    productName : "수파 덴탈스틱 비건간식 100g (7종)",
    percent : "15" ,
    price : "10,000",
@@ -13,6 +14,7 @@ const BestData = [
   {
     id : 1, 
     img : 'img/bestitem3.jpg',
+    brand : '미티본',
     productName : "미티본 베지믹스",
     percent : "15" ,
     price : "25,000",
@@ -22,6 +24,7 @@ const BestData = [
    {
     id : 2, 
     img : 'img/bestitem2.jpg',
+    brand : '꼬떼야꼬떼',
     productName : "꼬떼야꼬떼 폼폼 쿨링탑",
     percent : "10" ,
     price : "20,800",
@@ -31,6 +34,7 @@ const BestData = [
    {
     id : 3, 
     img : 'img/bestitem2.jpg',
+    brand : '꼬떼야꼬떼',
     productName : "꼬떼야꼬떼 폼폼 쿨링탑",
     percent : "10" ,
     price : "20,800",
