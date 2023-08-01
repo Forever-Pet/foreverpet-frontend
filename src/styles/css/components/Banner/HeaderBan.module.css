@@ -1,7 +1,5 @@
 /* HeaderBan.module.css */
 
-/* pc */
-@media screen and (min-width:1024px)  {
    /* 상단 베너 */
  .banner {
   width: 100%;
@@ -9,16 +7,6 @@
   background-color: #008e61;
 } 
 
- /*베너 텍스트*/
- .banner_text{
-  text-align: center;
-  margin: 0 auto;
-  color: white;
-  padding-top: 10px;
-  font-size: 13px;
-  font-family: 'Noto Sans KR', sans-serif;
-}
-
 .icon {
   position: absolute;
   right: 19px;
@@ -27,64 +15,6 @@
   z-index: 10;
  color: white; 
 }
-}
 
-/*테블릿*/
-@media screen and (min-width:768px) and (max-width:1023px) {
-    /* 상단 베너 */
-    .banner {
-      width: 100%;
-     
-      height: 37px;
-      background-color: #008e61;
-    } 
 
- /*베너 텍스트*/
- .banner_text{
-  text-align: center;
-  margin: 0 auto;
-  color: white;
-  padding-top: 10px;
-  font-size: 13px;
-  font-family: 'Noto Sans KR', sans-serif;
-}
 
-.icon {
-  position: absolute;
-  right: 19px;
-  top: 10px;
-  cursor: pointer;
-  z-index: 10;
- color: white; 
-}
-}
-
-/*모바일*/
-@media screen and (max-width: 767px) {
-    /* 상단 베너 */
-  .banner {
-    width: 100%;
-    
-    height: 37px;
-    background-color: #008e61;
-  } 
-
- /*베너 텍스트*/
- .banner_text{
-  text-align: center;
-  margin: 0 auto;
-  color: white;
-  padding-top: 7px;
-  font-size: 10px;
-  font-family: 'Noto Sans KR', sans-serif;
-}
-
-.icon {
-  position: absolute;
-  right: 19px;
-  top: 10px;
-  cursor: pointer;
-  z-index: 10;
- color: white; 
-}
-}

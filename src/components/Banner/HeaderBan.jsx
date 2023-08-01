@@ -5,6 +5,7 @@ import styles from "../../styles/css/components/Banner/HeaderBan.module.css";
 
 //icon
 import { RxCross2 } from "react-icons/rx";
+import Title from "../../common/Title/Title";
 
 //헤더 상단 베너
 const HeaderBan = () => {
@@ -14,9 +15,7 @@ const HeaderBan = () => {
     <>
     {banner ? (
       <div className={styles.banner}>
-      <div className={styles.banner_text}>
-        포에버펫 회원가입하고 첫 구매 혜택과 쿠폰 받아가세요!
-      </div>   
+      <Title title='포에버펫 회원가입하고 첫 구매 혜택과 쿠폰 받아가세요!' className='banner_text' />
       <RxCross2 onClick={() => {setBanner(false);}} className={styles.icon} />
     </div>
     ) : null}
