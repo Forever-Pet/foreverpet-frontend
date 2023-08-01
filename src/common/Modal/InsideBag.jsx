@@ -19,7 +19,7 @@ const InsideBag = () => {
           <Button onClick={() => dispatch(secondModalClose())} className='bag-detail-btn' title={'취소'} />
           <Button onClick={() => {
             dispatch(secondModalClose())
-            dispatch(cartIsOpen(true)) //모달 redux쪽으로 옮기기(헤더쪽도)
+            dispatch(cartIsOpen(true))
           }} className='bag-inside-btn' title={'확인하기'} />
         </div>
 

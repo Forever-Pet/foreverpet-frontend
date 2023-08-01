@@ -31,6 +31,7 @@ const ProductItem = (props) => {
         {
           props.data &&
           props.data.map((d, i) => {
+
             return (
               <div key={d.id} className={styles.productItem} onClick={() =>
                 move('/product/detail/' + d.id)
@@ -58,7 +59,6 @@ const ProductItem = (props) => {
                 </div>
                 <ProductContent data={props.data[i]}></ProductContent>
               </div>
-
             )
           })
         }
