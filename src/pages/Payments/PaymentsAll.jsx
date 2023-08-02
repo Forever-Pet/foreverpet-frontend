@@ -1,21 +1,55 @@
 // React Hooks
-import { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useState } from "react";
 
 // CSS
 import styles from "../../styles/css/pages/Payments/Payments.module.css";
 
 // Components
 import Title from "../../common/Title/Title";
-import PaymentsAmountInfo from "../../components/Payments/PaymentsAmountInfo";
-import PaymentsProductOrderInfo from "../../components/Payments/PaymentsProductOrderInfo";
+import PaymentsAmountInfoAll from "../../components/Payments/PaymentsAmountInfoAll";
+import PaymentsOrderInfo from "../../components/Payments/PaymentsOrderInfo";
 import PaymentsOwnerInfo from "../../components/Payments/PaymentsOwnerInfo";
 import PaymentsDeliveryInfo from "../../components/Payments/PaymentsDeliveryInfo";
 import PaymentsType from "../../components/Payments/PaymentsType";
 import PaymentsFinal from "../../components/Payments/PaymentsFinal";
 
-const Payments = () => {
-  const { state } = useLocation();
+// Dummy data > 장바구니 데이터로 수정
+const dummyOrderListData = [
+  {
+    id: 1,
+    imageUrl:
+      "https://www.bohori.com/web/product/medium/202304/8c40e60df9ad25fdd15c40f72b779ede.jpg",
+    name: "채식 애견껌 스틱 150g (50개입)-복숭아 맛",
+    quantity: 3,
+    defaultAmount: 4500,
+  },
+  {
+    id: 2,
+    imageUrl:
+      "https://www.bohori.com/web/product/medium/202304/a5eaff3c46627bd4f906aecf541bf549.jpg",
+    name: "채식 애견껌 스틱형 120g (12개입)-과일 맛 (베이지색)",
+    quantity: 4,
+    defaultAmount: 4500,
+  },
+  {
+    id: 3,
+    imageUrl:
+      "https://www.bohori.com/web/product/medium/202304/a5eaff3c46627bd4f906aecf541bf549.jpg",
+    name: "아이디3번",
+    quantity: 4,
+    defaultAmount: 4500,
+  },
+  {
+    id: 4,
+    imageUrl:
+      "https://www.bohori.com/web/product/medium/202304/a5eaff3c46627bd4f906aecf541bf549.jpg",
+    name: "아이디4번",
+    quantity: 10,
+    defaultAmount: 4500,
+  },
+];
+
+const PaymentsAll = () => {
   const [paymentReinfo, setPaymentReInfo] = useState({
     ownerName: "",
     ownerTel: "",
@@ -23,22 +57,31 @@ const Payments = () => {
     deliveryName: "",
     deliveryMainAddress: "",
     deliverySubAddress: "",
+    deliveryZipcode: "",
     deliveryTel: "",
   });
   const [paymentsFinalAmount, setPaymentsFinalAmount] = useState(0);
-  const [paymentsProductDetailInfo, setPaymentsProductDetailInfo] =
-    useState(state);
 
   // 결제정보 (주문자, 배송지) 업데이트
   const updatePaymentInfo = (e) => {
-    const { name, value } = e.target;
-    setPaymentReInfo((prevInfo) => ({
-      ...prevInfo,
-      [name]: value,
-    }));
-  };
+    const { name, value, zonecode } = e.target;
 
-  useEffect(() => console.log(paymentsProductDetailInfo), []);
+    // deliveryZipcode를 업데이트하지 않는 경우도 처리
+    if (!zonecode) {
+      setPaymentReInfo((prevInfo) => ({
+        ...prevInfo,
+        [name]: value,
+      }));
+    }
+    // deliveryZipcode를 업데이트하는 경우
+    else {
+      setPaymentReInfo((prevInfo) => ({
+        ...prevInfo,
+        deliveryMainAddress: value,
+        deliveryZipcode: zonecode,
+      }));
+    }
+  };
 
   // 결제버튼 금액 확인
   const paymentsAmountBtn = (amount) => setPaymentsFinalAmount(amount);
@@ -61,9 +104,7 @@ const Payments = () => {
           <Title title="주문결제" />
         </div>
         <div className={styles["payments-info__list"]}>
-          <PaymentsProductOrderInfo
-            paymentsProductDetailInfo={paymentsProductDetailInfo}
-          />
+          <PaymentsOrderInfo dummyOrderListData={dummyOrderListData} />
         </div>
         <div className={styles["payments-info__list"]}>
           <PaymentsOwnerInfo
@@ -84,13 +125,13 @@ const Payments = () => {
           <PaymentsFinal
             paymentsFinalAmount={paymentsFinalAmount}
             paymentReinfo={paymentReinfo}
-            paymentsProductDetailInfo={paymentsProductDetailInfo}
+            dummyOrderListData={dummyOrderListData}
           />
         </div>
       </div>
       <div className={styles["payments-info-amount"]}>
-        <PaymentsAmountInfo
-          paymentsProductDetailInfo={paymentsProductDetailInfo}
+        <PaymentsAmountInfoAll
+          dummyOrderListData={dummyOrderListData}
           paymentsAmountBtn={paymentsAmountBtn}
         />
       </div>
@@ -98,4 +139,4 @@ const Payments = () => {
   );
 };
 
-export default Payments;
+export default PaymentsAll;

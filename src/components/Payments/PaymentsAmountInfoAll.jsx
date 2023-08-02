@@ -10,7 +10,7 @@ import { addPriceComma } from "../../utils/addPriceComma";
 // Compoennts
 import Title from "../../common/Title/Title";
 
-const PaymentsAmountInfo = (props) => {
+const PaymentsAmountInfoAll = (props) => {
   const [productAmountInfo, setProductAmountInfo] = useState(
     props.paymentsProductDetailInfo
   );
@@ -27,15 +27,14 @@ const PaymentsAmountInfo = (props) => {
     // 각각 가정한 배송료와 쿠폰 할인 값
     const deliveryAmount = 0;
     const couponDiscountAmount = 0;
-    // const productAmountt = productAmountInfo.reduce(
-    //   (total, item) => total + item.quantity * item.defaultAmount,
-    //   0
-    // );
+    const productAmount = productAmountInfo.reduce(
+      (total, item) => total + item.quantity * item.defaultAmount,
+      0
+    );
     // 결제 총금액
-    const totalAmount =
-      productAmountInfo.productPrice + deliveryAmount - couponDiscountAmount;
+    const totalAmount = productAmount + deliveryAmount - couponDiscountAmount;
     setProductAmount({
-      productAmount: productAmountInfo.productPrice,
+      productAmount: productAmount,
       productDeliveryAmount: deliveryAmount,
       productCouponAmount: couponDiscountAmount,
       productTotalAmount: totalAmount,
@@ -69,4 +68,4 @@ const PaymentsAmountInfo = (props) => {
   );
 };
 
-export default PaymentsAmountInfo;
+export default PaymentsAmountInfoAll;

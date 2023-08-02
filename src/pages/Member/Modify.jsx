@@ -4,6 +4,7 @@ import styles from "../../styles/css/pages/Member/Modify.module.css";
 // Components
 import ChangePassword from "../../components/ModifyMemberInfo/ChangePassword";
 import DeliveryRegister from "../../components/ModifyMemberInfo/DeliveryRegister";
+import Profile from "../../components/Profile/Profile";
 
 const Modify = () => {
   return (
@@ -21,7 +22,9 @@ const Modify = () => {
         헤더임
       </div>
       <div className={styles["modify-container"]}>
-        <div className={styles["modify-userInfo"]}>회원정보 카드</div>
+        <div className={styles["modify-userInfo"]}>
+          <Profile />
+        </div>
         <div className={styles["modify-userInfo__edit"]}>
           <ChangePassword />
         </div>

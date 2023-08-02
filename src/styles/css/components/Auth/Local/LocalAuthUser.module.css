@@ -82,6 +82,12 @@
   justify-content: end;
 }
 
+.localUser-join__error {
+  text-align: center;
+  margin-top: 25px;
+  color: red;
+}
+
 .localuser-join__mainAddress-btn,
 .localuser-join__getEmail-btn,
 .localuser-join__checkEmail-auth {
