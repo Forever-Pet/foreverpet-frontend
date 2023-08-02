@@ -9,8 +9,6 @@ const ProductDetail = () => {
   return (
     <div className={styles["product-detail__view-wrap"]}>
       <div className={styles["header"]}>헤더임</div>
-
-
       <div className={styles["product-detail__view-container"]}>
 
         <div className={styles["product-detail__view--information"]}>
