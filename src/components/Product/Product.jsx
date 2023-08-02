@@ -1,48 +1,66 @@
 import styles from '../../styles/css/components/Product/Product.module.css'
 import ProductItem from '../../components/Card/ProductItem'
 import { MdArrowDropDown, MdArrowDropUp } from "react-icons/md";
-import { UseClickHook } from '../../hooks/ClickHook/UseClickHook'
+import { UseClickHook } from '../../hooks/ClickHook/useClickHook'
 import ProductFilter from './ProductFilter';
 import { useState } from 'react';
-import { LiaShoppingBagSolid } from "react-icons/lia";
-import CartModal from '../../components/Cart/CartModal';
-import testImg from '../../assets/image 26.svg'
-import { useSelector } from 'react-redux';
 import TemporaryHeader from '../Header/TemporaryHeader';
+import Title from '../../common/Title/Title'
+import { useEffect } from 'react';
 
 const Product = (props) => {
   const [click, checkClick] = UseClickHook(false)
-  const [selectedValue, setSelectedValue] = useState('베스트');
-  const data = [
-    { id: 0, productName: '껌', img: testImg, brand: '브랜드임', price: 4500 },
-    { id: 1, productName: '사료', img: testImg, brand: '사료 브랜드임', price: 5000 }
-  ]
+  const [selectedValue, setSelectedValue] = useState('추천순');
+  const [list, setList] = useState([])
 
-  const cartData = useSelector((state) => { return state.cart.cartItem })
+
+  useEffect(() => {
+    if (props.data) {
+      const id = props.data.map((d) => d.id)
+      setList(id)
+    }
+  }, [props.data])
+
+
+  useEffect(() => {
+    switch (selectedValue) {
+      case '추천순':
+        props.getData('products', list)
+        break;
+      case '베스트':
+        props.getData('products/best', list)
+        break;
+      case '최신순':
+        props.getData('products/new', list)
+    }
+
+  }, [selectedValue])
+
 
   return <>
     <TemporaryHeader></TemporaryHeader>
-
-    <div className={styles.base}>
-      <div>
-        <h1>제품명</h1>
-        <div className={styles.filterBox}>
-          <span>상품 개수</span>
-          <div className={styles.filterBox__filter} onClick={checkClick}>
-            <span>{selectedValue}</span>
-            {click ? <MdArrowDropUp /> : <MdArrowDropDown />}
+    {
+      props.data &&
+      <div className={styles.base}>
+        <div>
+          <Title className="product-title" title={props.category}></Title>
+          <div className={styles.filterBox}>
+            <span>{props.data.length}개</span>
+            <div className={styles.filterBox__filter} onClick={checkClick}>
+              <span>{selectedValue}</span>
+              {click ? <MdArrowDropUp /> : <MdArrowDropDown />}
+            </div>
           </div>
+          <hr></hr>
         </div>
-        <hr></hr>
+
+        {click && <div className={styles.selectDrop__cont}>
+          <ProductFilter selectedValue={selectedValue} setSelectedValue={setSelectedValue} checkClick={checkClick}></ProductFilter>
+        </div>}
+        <ProductItem data={props.data} className='container-4columns'></ProductItem>
       </div>
 
-      {click && <div className={styles.selectDrop__cont}>
-        <ProductFilter selectedValue={selectedValue} setSelectedValue={setSelectedValue} checkClick={checkClick}></ProductFilter>
-      </div>}
-      <ProductItem data={data} className='container'></ProductItem>
-
-    </div>
-
+    }
 
 
 
