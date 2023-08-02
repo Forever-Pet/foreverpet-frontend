@@ -1,4 +1,6 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
+
+import axios from "axios";
 
 // Event Debounce
 import { debounce } from "lodash";
@@ -33,16 +35,19 @@ const LocalAuthUserJoin = () => {
     tel: "",
     mainAddress: "",
     subAddress: "",
+    zonecode: "",
   });
 
   // Debounce Func
   const debounceInputValueFunc = (e) => {
     const { name, value } = e.target;
+
     // Input Value Set
     setLocalAuthUserInput((prevInputValues) => ({
       ...prevInputValues,
       [name]: value,
     }));
+    console.log(localAuthUserInput);
     return setErrorMessage("");
   };
 
@@ -52,11 +57,14 @@ const LocalAuthUserJoin = () => {
   // DaumAddress 컴포넌트 활성화, 클릭한 주소정보 Get
   const userAddressInfoUpdate = (type, address) => {
     if (type === "modal") return setUserAddressInfo((prev) => !prev);
-    if (type === "address")
+    if (type === "address") {
+      const { value, zonecode } = address.target;
       return setLocalAuthUserInput((prev) => ({
         ...prev,
-        mainAddress: address,
+        mainAddress: value,
+        zonecode,
       }));
+    }
   };
 
   // Input의 주소검색 버튼 누를시 DaumAddress 컴포넌트 활성화
@@ -92,6 +100,34 @@ const LocalAuthUserJoin = () => {
       return setErrorMessage(MSG.JOIN.PASSWORD_FAIL);
     console.log("섭밋");
     // 회원정보 서버로 전송
+    registerLocalUserAuthCallback();
+  };
+
+  const registerLocalUserAuthCallback = async () => {
+    const { name, email, password, tel, mainAddress, subAddress, zonecode } =
+      localAuthUserInput;
+
+    const address = {
+      city: mainAddress,
+      street: subAddress,
+      zipcode: zonecode,
+    };
+
+    const bodyData = {
+      userNickName: name,
+      userEmail: email,
+      userPassword: password,
+      userPhone: tel,
+      userAddress: address,
+    };
+
+    const res = await axios.post(
+      "http://ec2-15-164-206-172.ap-northeast-2.compute.amazonaws.com/signup",
+      {
+        data: JSON.stringify(bodyData),
+      }
+    );
+    console.log(res);
   };
 
   // 로그인 경로로 이동함수
@@ -129,7 +165,9 @@ const LocalAuthUserJoin = () => {
           getUserMainAddressInfo={getUserMainAddressInfo}
           getInputValueInfo={getInputValueInfo}
         />
-        {errorMessage && <span>{errorMessage}</span>}
+        {errorMessage && (
+          <div className={styles["localUser-join__error"]}>{errorMessage}</div>
+        )}
         <div className={styles["localUser-join__footer"]}>
           <Button
             title="회원가입"

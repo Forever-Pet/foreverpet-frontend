@@ -15,6 +15,7 @@ const DaumAddress = (props) => {
       target: {
         name: "deliveryMainAddress",
         value: event.address,
+        zonecode: event.zonecode,
       },
     };
     props.userAddressInfoUpdate("modal");
