@@ -27,18 +27,20 @@ const NavListArr = () => {
   };
   
   //api호출 
-  const getProducts = async (myCategories) => {
-    const res = await axios.get('http://ec2-3-39-122-241.ap-northeast-2.compute.amazonaws.com/products');
-    return res.data.filter(item=>item.categories == myCategories);
-  }
-
-
+  // const getProducts = async (myCategories,myTitle) => {
+  //   const res = await axios.get('http://ec2-15-164-206-172.ap-northeast-2.compute.amazonaws.com/products');
+  //   return res.data.filter(item=>item.categories == myCategories);
+  //   console.log(data);
+  // }
+ 
   return ( 
      <div className={styles.nav_list}>
        {NavListData.map((props , index) => {
         return(
           <div key={index} className={styles.nav_list_item} onClick={() => selectNavHandler(index)}>
-            <Link to={props.url} className={styles.listItem_name} onClick={()=>pathMove(props.url, getProducts(props.categories), true)}>{props.name}</Link>
+             <div to={props.url} className={styles.listItem_name}
+              onClick={()=>pathMove(props.url, {"title": props.title}, true)}>{props.title}
+              </div>
             <Image src={props.img} className='nav_list_img'/>
           </div>
         )
