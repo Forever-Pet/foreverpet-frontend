@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import axios from "axios";
+
 // Event Debounce
 import { debounce } from "lodash";
 
@@ -45,6 +47,7 @@ const LocalAuthUserJoin = () => {
       ...prevInputValues,
       [name]: value,
     }));
+    console.log(localAuthUserInput);
     return setErrorMessage("");
   };
 
@@ -97,6 +100,34 @@ const LocalAuthUserJoin = () => {
       return setErrorMessage(MSG.JOIN.PASSWORD_FAIL);
     console.log("섭밋");
     // 회원정보 서버로 전송
+    registerLocalUserAuthCallback();
+  };
+
+  const registerLocalUserAuthCallback = async () => {
+    const { name, email, password, tel, mainAddress, subAddress, zonecode } =
+      localAuthUserInput;
+
+    const address = {
+      city: mainAddress,
+      street: subAddress,
+      zipcode: zonecode,
+    };
+
+    const bodyData = {
+      userNickName: name,
+      userEmail: email,
+      userPassword: password,
+      userPhone: tel,
+      userAddress: address,
+    };
+
+    const res = await axios.post(
+      "http://ec2-15-164-206-172.ap-northeast-2.compute.amazonaws.com/signup",
+      {
+        data: JSON.stringify(bodyData),
+      }
+    );
+    console.log(res);
   };
 
   // 로그인 경로로 이동함수
