@@ -11,19 +11,29 @@ import { useEffect } from 'react';
 const Product = (props) => {
   const [click, checkClick] = UseClickHook(false)
   const [selectedValue, setSelectedValue] = useState('추천순');
+  const [list, setList] = useState([])
+
+
+  useEffect(() => {
+    if (props.data) {
+      const id = props.data.map((d) => d.id)
+      setList(id)
+    }
+  }, [props.data])
 
 
   useEffect(() => {
     switch (selectedValue) {
       case '추천순':
-        props.getData('products', 'FOOD')
+        props.getData('products', list)
         break;
       case '베스트':
-        props.getData('products/best', `${props.category}`)
+        props.getData('products/best', list)
         break;
       case '최신순':
-        props.getData('products/new', `${props.category}`)
+        props.getData('products/new', list)
     }
+
   }, [selectedValue])
 
 
