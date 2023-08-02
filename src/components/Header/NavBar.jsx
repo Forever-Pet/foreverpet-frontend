@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import Image from '../../common/Img/Image';
 
 // Compoennts
-import Input from '../../common/Input/Input';
 import NavListData from '../Card/NavListArr';
 import NavList from '../Card/NavList';
 import usePathMove from '../../hooks/usePathMove';
+import SearchInput from './SearchInput';
 
 //css 
 import styles from '../../styles/css/pages/NavBar.module.css';
@@ -16,6 +16,7 @@ import styles from '../../styles/css/pages/NavBar.module.css';
 import { RxTextAlignJustify } from "react-icons/rx";
 import { BiUser ,BiBasket } from "react-icons/bi";
 import { GoSearch} from "react-icons/go";
+
 
 
 //햄버거 버튼 메뉴 리스트
@@ -50,14 +51,20 @@ const NavListArr = () => {
   )
 }
 
+//검색창
+
+
 //네비바 햄버거 버튼 옆 메뉴 
 const NavBar = () => {
   const [list, setList] =useState(false);
   const [currentNav , setNav] = useState(0);
+ 
 
   const NavHandler = (index) => {
     setNav(index);
   }
+
+
 
   return (
     <div className={styles.nav}>
@@ -75,10 +82,11 @@ const NavBar = () => {
        })}
       </nav>
     <div className={styles.navbar_box}>
-      <div className={styles.navbar_box_input}>
-        <Input type="text" placeholder="우리 댕냥 알러지 없는 사료" className="searchInput" />
-         <GoSearch className={styles.icon1}/>
-      </div>
+      <SearchInput/>
+      {/* <div className={styles.navbar_box_input}>
+        <Input ref={} type="text" placeholder="우리 댕냥 알러지 없는 사료" className="searchInput" />
+         <button><GoSearch className={styles.icon1}/></button>
+      </div> */}
       <div>
         <Link to="/member/modify" className={styles.navbar_box_icon}>
           <BiUser/>
