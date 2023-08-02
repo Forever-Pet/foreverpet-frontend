@@ -12,12 +12,8 @@ const useGetProductData = (params, obj, search = false) => {
         .then((result) => result.data)
         .then((result) => {
           if (typeof (obj) == 'string') {
-            if (search) { //임시
-              setData(result)
-            } else {
-              const found = result.filter(e => e.categories === obj)
-              setData(found)
-            }
+            const found = result.filter(e => e.categories === obj)
+            setData(found)
           }
           else {
             const found = result.filter(e => obj.includes(e.id))
