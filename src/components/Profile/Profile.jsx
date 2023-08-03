@@ -1,6 +1,6 @@
 import styles from "../../styles/css/components/Profile/Profile.module.css";
 import { AiOutlineRight, AiOutlineUser } from "react-icons/ai";
-import TemporaryHeader from "../Header/TemporaryHeader";
+
 
 const Profile = (props) => {
   const userData = [
