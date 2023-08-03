@@ -35,13 +35,21 @@ const BestItem = (props) => {
     data();
   },[]);
 
+
   return (
     <div className={styles.bestitem}>
       <div className={styles.header_text}>
         <h2>지금 핫한 이 상품 어때요?</h2>
       </div>
       <div className={styles.product}>
-        <ProductItem data={BestData} className='container'></ProductItem>
+          {best && 
+           best.map((props,index) => {
+            return (
+              <ProductItem key={index}></ProductItem>
+            )})
+           }
+
+        {/* <ProductItem data={BestData} className='container-4columns'></ProductItem> */}
         {/* {BestData.map((props,index)=> {
           return(
             <div key={index}>

@@ -14,16 +14,16 @@ const BestData =[
     modifiedDate: "2023-08-02T12:26:15.381097"
   },
   {
-    id: 2,
-    productName: "고위드테일x포에버펫 슈퍼바이츠 70g",
-    productDescription: "고위드테일의 슈퍼바가 더 작아졌어요. 국내산 무항생제 오리 안심을 베이스로 만든 고단백 간식, 슈퍼바이츠는 외출 시에 간편하게 휴대하여 든든한 식사 대용으로 급여할 수 있어요. 약 1cm의 트릿으로 아이들의 노즈워크에 활용하거나, 훈련용 보상 간식으로 주기 알맞은 간식입니다. ",
-    categories: "SNACK",
-    productPrice: 89000,
-    numberOfSold: 0,
-    productImage: "https://wooof.co.kr/web/product/medium/202304/2993742da638d3724cf51eac79d59e71.png",
-    brandName: "고위드테일",
-    createdDate: "2023-08-02T12:26:15.549863",
-    modifiedDate: "2023-08-02T12:26:15.549863"
+   id: 24,
+   productName: "로얄캐닌 미니 라이트웨이트 케어 3kg 체중조절",
+   productDescription: "로얄 캐닌 미니 라이트 웨이트 케어는 로얄캐닌의 체중 조절 기능성 사료입니다. 고품질의 단백질로 인해 다이어트 중에도 근손실을 최소화할 수 있으며, 다량의 섬유질이 함유되어 적게 먹어도 포만감을 느낄 수 있도록 도움을 줍니다. 또한 오메가3 지방산을 첨가하여 체중 과다로 인한 관절 부담을 개선하는데 효과적이며, 낮은 지방 함량을 지녀 체중 조절에 적합합니다.",
+   categories: "FOOD",
+   productPrice: 53900,
+   numberOfSold: 0,
+   productImage: "https://img.dogpre.com/mobile/dogpre/product/79/78931_detail_01396836.png",
+   brandName: "로얄캐닌",
+   createdDate: "2023-08-02T12:26:15.747853",
+   modifiedDate: "2023-08-02T12:26:15.747853"
   },
   {
     id: 3,
@@ -37,7 +37,18 @@ const BestData =[
     createdDate: "2023-08-02T12:26:15.573538",
     modifiedDate: "2023-08-02T12:26:15.573538"
   },
-
+  {
+    id: 12,
+    productName: "후디스펫 장케어 유산균 산양유 60g",
+    productDescription: "반려동물이 좋아하는 고소하고 상큼한 밀크 요거트 맛으로 소화력이 좋습니다.",
+    categories: "BITA",
+    productPrice: 42900,
+    numberOfSold: 0,
+    productImage: "https://thumbnail6.coupangcdn.com/thumbnails/remote/492x492ex/image/retail/images/2517005899731778-8cd724b9-156c-4a03-a852-8777bc1e9556.jpg",
+    brandName: "foodis",
+    createdDate: "2023-08-02T12:26:15.645735",
+    modifiedDate: "2023-08-02T12:26:15.645735"
+  },
 
 
 
