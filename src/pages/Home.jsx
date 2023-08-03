@@ -20,7 +20,7 @@ const Home = () => {
     <Header/>
     <MainSwiper/>
     <Category categoryItem={CartegoryItem} />
-    <BestItem bestData={BestData}/>
+    <BestItem/>
     <MainBanTwo/>
     <NewItem/>
     <div className={styles.home_ban}>

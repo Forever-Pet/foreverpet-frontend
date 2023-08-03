@@ -1,20 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { useParams } from "react-router-dom";
+import axios from 'axios';
 
 // Compoennts
-import BestData from '../Card/BestData';
-import Image from '../../common/Img/Image';
 import ProductItem from '../Card/ProductItem';
 
 //css
 import styles from '../../styles/css/components/Home/BestItem.module.css';
 
-//icon
-import { BsCart } from "react-icons/bs";
-import { VscHeart } from "react-icons/vsc";
 
-import axios from 'axios';
 
 //메인 홈 - 베스트 아이템 
 const BestItem = (props) => {
@@ -26,22 +19,17 @@ const BestItem = (props) => {
     const data = async () => {
       try {
         const res = await axios.get(url);
-     
         const randomBestItem = [];
         while(true){
           if(randomBestItem.length==4){
             break;
           }
-
           const random = Math.floor(Math.random() * res.data.length);
-
           if(randomBestItem.filter(item => item.id===random + 1).length ===0){
             randomBestItem.push(res.data[random]);
           }
         }
-
-        console.log(randomBestItem);
-
+        // console.log(randomBestItem);
         setBest(randomBestItem);
       }catch(error) {
         console.log(error);
@@ -57,7 +45,7 @@ const BestItem = (props) => {
         <h2>지금 핫한 이 상품 어때요?</h2>
       </div>
       <div className={styles.product}>
-        <ProductItem data={best} className='container-4columns'></ProductItem>
+        <ProductItem data={best} className='container-4columns'/>
       </div>
     </div>
     

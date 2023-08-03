@@ -10,8 +10,8 @@ import HeaderBan from "../Banner/HeaderBan";
 
 const Header = (props) => {
   return (
-    <>
-    <HeaderBan/>
+    <div>
+      <HeaderBan/>
     <header className={styles.header}>
       <TopMenu />
       <div className={styles.header_logo}>
@@ -19,7 +19,7 @@ const Header = (props) => {
       </div>
       <NavBar />
     </header>
-    </>
+    </div>
    
   );
 };
