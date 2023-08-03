@@ -1,11 +1,12 @@
 import { useState } from "react";
+import Title from "../../common/Title/Title";
 
 //css
 import styles from "../../styles/css/components/Banner/HeaderBan.module.css";
 
 //icon
 import { RxCross2 } from "react-icons/rx";
-import Title from "../../common/Title/Title";
+
 
 //헤더 상단 베너
 const HeaderBan = () => {

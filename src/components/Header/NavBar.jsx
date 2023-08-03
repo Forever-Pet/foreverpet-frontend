@@ -1,6 +1,5 @@
 import React, { useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import axios from 'axios';
 import Image from '../../common/Img/Image';
 
 // Compoennts
@@ -15,9 +14,6 @@ import styles from '../../styles/css/pages/NavBar.module.css';
 //icon
 import { RxTextAlignJustify } from "react-icons/rx";
 import { BiUser ,BiBasket } from "react-icons/bi";
-import { GoSearch} from "react-icons/go";
-
-
 
 //햄버거 버튼 메뉴 리스트
 const NavListArr = () => { 
@@ -26,13 +22,6 @@ const NavListArr = () => {
   const selectNavHandler = (index) => {
     setTab(index);  
   };
-  
-  //api호출 
-//  const getProducts = async (myCategories,myTitle) => {
-//   const res = await axios.get('http://ec2-15-164-206-172.ap-northeast-2.compute.amazonaws.com/products');
-//  return res.data.filter(item=>item.categories == myCategories);
-//     //  console.log(data);
-//  }
  
   return ( 
      <div className={styles.nav_list}>
@@ -52,19 +41,13 @@ const NavListArr = () => {
 }
 
 //검색창
-
-
 //네비바 햄버거 버튼 옆 메뉴 
 const NavBar = () => {
   const [list, setList] =useState(false);
   const [currentNav , setNav] = useState(0);
- 
-
   const NavHandler = (index) => {
     setNav(index);
   }
-
-
 
   return (
     <div className={styles.nav}>
@@ -83,10 +66,6 @@ const NavBar = () => {
       </nav>
     <div className={styles.navbar_box}>
       <SearchInput/>
-      {/* <div className={styles.navbar_box_input}>
-        <Input ref={} type="text" placeholder="우리 댕냥 알러지 없는 사료" className="searchInput" />
-         <button><GoSearch className={styles.icon1}/></button>
-      </div> */}
       <div>
         <Link to="/member/modify" className={styles.navbar_box_icon}>
           <BiUser/>
@@ -101,5 +80,4 @@ const NavBar = () => {
     </div>
   );
 };
-
 export default NavBar;

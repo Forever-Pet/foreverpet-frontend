@@ -7,6 +7,7 @@
 @media screen and (min-width:1024px)  {
   /*navbar 메뉴*/
 .nav {
+  height: 50px;
   padding-top: 3px;
 }
 .nav_menu {
@@ -111,6 +112,7 @@
 /*테블릿*/
 @media screen and (min-width:768px) and (max-width:1023px) {
   .nav {
+    height: 50px;
     padding-top: 3px;
   }
   .nav_menu {
@@ -214,6 +216,7 @@
 /*모바일*/
 @media screen and (max-width: 767px) {
   .nav {
+    height: 50px;
     padding-top: 3px;
   }
    /*nav 메뉴*/
