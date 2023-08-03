@@ -26,8 +26,23 @@ const BestItem = (props) => {
     const data = async () => {
       try {
         const res = await axios.get(url);
-        console.log(res);
-        setBest(res.data);
+     
+        const randomBestItem = [];
+        while(true){
+          if(randomBestItem.length==4){
+            break;
+          }
+
+          const random = Math.floor(Math.random() * res.data.length);
+
+          if(randomBestItem.filter(item => item.id===random + 1).length ===0){
+            randomBestItem.push(res.data[random]);
+          }
+        }
+
+        console.log(randomBestItem);
+
+        setBest(randomBestItem);
       }catch(error) {
         console.log(error);
       }
@@ -42,50 +57,7 @@ const BestItem = (props) => {
         <h2>지금 핫한 이 상품 어때요?</h2>
       </div>
       <div className={styles.product}>
-          {best && 
-           best.map((props,index) => {
-            return (
-              <ProductItem key={index}></ProductItem>
-            )})
-           }
-
-        {/* <ProductItem data={BestData} className='container-4columns'></ProductItem> */}
-        {/* {BestData.map((props,index)=> {
-          return(
-            <div key={index}>
-            <div>{props.brandName}</div>
-            <div>{props.categories}</div>
-            <div>{props.productImage}</div>
-            <div>{props.productPrice}</div>
-            </div>
-          )
-        })} */}
-     
-        {/* {BestData.map((props,index) => {
-          return (
-            <Link className={styles.product_link}  key={index}>
-               <div className={styles.product_img}>
-                <Image src={props.img}/>
-               </div>
-               <div className={styles.productinfo}>
-                 <p>{props.title}</p>
-               </div>
-               <div className={styles.productinfo_1}>
-                 <p>{props.percent}%</p>
-                 <p className={styles.productinfo_1_2}>{props.price}원</p>
-               </div>
-               <div className={styles.productinfo_2}>
-                  <p>{props.best}</p>
-                  <p className={styles.productinfo_2_2}>{props.sale}</p>
-                 
-                  <div className={styles.productinfo_icon}>
-                  <BsCart className={styles.productinfo_icon1}/>
-                  <VscHeart/>
-                  </div>
-               </div>
-             </Link>
-          )
-        })} */}
+        <ProductItem data={best} className='container-4columns'></ProductItem>
       </div>
     </div>
     

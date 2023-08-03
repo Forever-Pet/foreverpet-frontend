@@ -22,31 +22,6 @@ const NewItem = () => {
       </div>
       <div className={styles.product}>
         <ProductItem data={NewItemData} className="container"/>
-        {/* {NewItemData.map((props,index) => {
-          return (
-            <Link className={styles.product_link}  key={index}>
-               <div className={styles.product_img}>
-                <Image src={props.img}/>
-               </div>
-               <div className={styles.productinfo}>
-                 <p>{props.title}</p>
-               </div>
-               <div className={styles.productinfo_1}>
-                 <p>{props.percent}%</p>
-                 <p className={styles.productinfo_1_2}>{props.price}원</p>
-               </div>
-               <div className={styles.productinfo_2}>
-                  <p>{props.new}</p>
-                  <p className={styles.productinfo_2_2}>{props.sale}</p>
-                 
-                  <div className={styles.productinfo_icon}>
-                  <BsCart className={styles.productinfo_icon1}/>
-                  <VscHeart/>
-                  </div>
-               </div>
-             </Link>
-          )
-        })}*/}
       </div> 
     </div>
   );
