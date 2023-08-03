@@ -1,0 +1,33 @@
+/*MainSlides.module.css*/
+
+/* pc */
+@media screen and (min-width:1024px)  {
+  .slides {
+    position: relative;
+    top: 10px;
+    max-width: 1200px;
+    margin: 0 auto;
+   
+}
+}
+
+/*테블릿*/
+@media screen and (min-width:768px) and (max-width:1023px) {
+  .slides {
+    position: relative;
+    top: 10px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+}
+
+/*모바일*/
+@media screen and (max-width: 768px) {
+  .slides {
+    position: relative;
+    top: 10px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
+

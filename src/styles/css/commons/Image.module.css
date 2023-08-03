@@ -10,3 +10,21 @@
 .img-100 {
   width: 100%;
 }
+
+/*nav_list 이미지 */
+.nav_list_img  {
+  width: 35px;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 10px;
+  padding-top: 5px;
+}
+
+/*메인홈- 카테고리 이미지*/
+.category_img {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto;
+  text-align: center;
+  border-radius: 50%;
+}

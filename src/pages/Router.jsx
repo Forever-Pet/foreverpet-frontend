@@ -8,6 +8,7 @@ import Join from "./User/Join";
 import KakaoCallback from "../components/Auth/Kakao/KakaoCallback";
 import ProductList from "./Product/ProductList";
 
+import SearchInput from '../components/Header/SearchInput';
 import ProductDetail from "./Product/ProductDetail";
 import Payments from "./Payments/Payments";
 import PaymentsAll from "./Payments/PaymentsAll";
@@ -30,6 +31,7 @@ const Router = () => {
 
           <Route path="/product/detail/:id" element={<ProductDetail />} />
           <Route path="/payments" element={<Payments />} />
+          <Route path="Header/searchInput" element={<SearchInput/>}/>
           <Route path="/payments/all" element={<PaymentsAll />} />
           <Route path="/member/modify/password" element={<Modify />} />
           <Route path="/member/modify/delivery" element={<Modify />} />

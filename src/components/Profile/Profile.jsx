@@ -1,6 +1,7 @@
 import styles from "../../styles/css/components/Profile/Profile.module.css";
 import { AiOutlineRight, AiOutlineUser } from "react-icons/ai";
 
+
 const Profile = (props) => {
   const userData = [
     { id: 0, grade: "silver", point: "1000", cupon: "2", userName: "가나다" },
