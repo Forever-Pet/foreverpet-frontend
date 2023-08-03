@@ -5,6 +5,7 @@
 
 /* pc */
 @media screen and (min-width:1024px)  {
+
   .bestitem {
     position: relative;
     max-width: 1200px;

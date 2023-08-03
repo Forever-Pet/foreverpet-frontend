@@ -28,11 +28,11 @@ const NavListArr = () => {
   };
   
   //api호출 
-  // const getProducts = async (myCategories,myTitle) => {
-  //   const res = await axios.get('http://ec2-15-164-206-172.ap-northeast-2.compute.amazonaws.com/products');
-  //   return res.data.filter(item=>item.categories == myCategories);
-  //   console.log(data);
-  // }
+//  const getProducts = async (myCategories,myTitle) => {
+//   const res = await axios.get('http://ec2-15-164-206-172.ap-northeast-2.compute.amazonaws.com/products');
+//  return res.data.filter(item=>item.categories == myCategories);
+//     //  console.log(data);
+//  }
  
   return ( 
      <div className={styles.nav_list}>

@@ -6,9 +6,9 @@ import Home from "./Home";
 import Login from "./User/Login";
 import Join from "./User/Join";
 import KakaoCallback from "../components/Auth/Kakao/KakaoCallback";
-import ProductList from "./Product/ProductList";
+// import ProductList from "./Product/ProductList";
 
-import FeedProduct from "./Product/FeedProduct";
+// import FeedProduct from "./Product/FeedProduct";
 import SearchInput from '../components/Header/SearchInput';
 import ProductDetail from "./Product/ProductDetail";
 import Payments from "./Payments/Payments";
@@ -28,7 +28,7 @@ const Router = () => {
           <Route path="/user/login" element={<Login />} />
           <Route path="/user/join" element={<Join />} />
           <Route path="/oauth/kakaoCallback" element={<KakaoCallback />} />
-          <Route path="/product/:category" element={<ProductList />} />
+          {/* <Route path="/product/:category" element={<ProductList />} /> */}
 
           <Route path="/product/detail/:id" element={<ProductDetail />} />
           <Route path="/payments" element={<Payments />} />

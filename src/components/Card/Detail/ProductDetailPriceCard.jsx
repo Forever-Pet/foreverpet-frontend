@@ -1,4 +1,4 @@
-import { CopyToClipboard } from "react-copy-to-clipboard";
+// import { CopyToClipboard } from "react-copy-to-clipboard";
 
 import usePathMove from "../../../hooks/usePathMove";
 
@@ -23,12 +23,12 @@ const ProductDetailPriceCard = (props) => {
         <li className={styles["product-detail__brandName"]}>
           <span>{props.productDetailData.brandName}</span>
           <div className={styles["product-detail__icon"]}>
-            <CopyToClipboard
+            {/* <CopyToClipboard
               text={window.location.href}
               onCopy={() => alert("링크 복사완료 !")}
             >
               <BsShare className={styles["product-detail__share"]} />
-            </CopyToClipboard>
+            </CopyToClipboard> */}
             <BsHeart className={styles["product-detail__heart"]} />
           </div>
         </li>

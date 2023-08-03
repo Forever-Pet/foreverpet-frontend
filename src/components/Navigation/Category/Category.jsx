@@ -7,6 +7,7 @@ import Image from '../../../common/Img/Image';
 
 //css
 import styles from '../../../styles/css/components/Category/Category.module.css';
+import usePathMove from '../../../hooks/usePathMove';
 
 //메인 캐러셀 하단 카테고리
 const Category = () => {
