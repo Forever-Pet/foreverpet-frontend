@@ -1,6 +1,9 @@
 import styles from "../../styles/css/components/Profile/Profile.module.css";
 import { AiOutlineRight, AiOutlineUser } from "react-icons/ai";
+<<<<<<< HEAD
 import TemporaryHeader from "../Header/TemporaryHeader";
+=======
+>>>>>>> 45e2c547c10e1fe2e0a510fafd87c237353d6f34
 
 const Profile = (props) => {
   const userData = [
@@ -76,7 +79,6 @@ const Profile = (props) => {
                 })}
               </div>
             </div>
-
             <div className={styles["setWidth-100"]}>{props.rightTitle}</div>
           </div>
         </div>
