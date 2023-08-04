@@ -2,8 +2,11 @@ import React, { useRef, useState } from 'react';
 import Input from '../../common/Input/Input';
 import Button from '../../common/Button/Button';
 import { debounce } from 'lodash';
-import { Link } from 'react-router-dom';
 import usePathMove from '../../hooks/usePathMove';
+
+import styles from '../../styles/css/components/Header/searchInput.module.css';
+
+import {GoSearch} from "react-icons/go";
 
 //헤더 검색창
 const SearchInput = () => {
@@ -21,7 +24,7 @@ const SearchInput = () => {
 
   const getInputValueInfo = debounce(userSearch, 300);
   return (
-    <form>
+    <form className={styles.search_wrap}>
       <Input
       type= "text"
       name = "productName"
@@ -32,9 +35,9 @@ const SearchInput = () => {
       onChange={getInputValueInfo}
       />
        
-      <Button type="button" className='search_button' onClick={()=>{
+      <GoSearch className={styles.search_button} onClick={()=>{
         if(search.length==0) return;
-        move("/product/search", {search}, true)}}></Button> 
+        move("/product/search", {search}, true)}}></GoSearch> 
     </form>
   );
 };
