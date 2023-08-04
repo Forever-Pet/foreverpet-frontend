@@ -1,16 +1,6 @@
-.header {
-  width: 100%;
-  height: 200px;
-  background-color: tomato;
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 25px;
-}
-
 .product-detail__view-wrap {
   width: 100%;
+  height: 300vh;
 }
 
 .product-detail__view-container {
@@ -19,24 +9,24 @@
 
 .product-detail__view--information {
   width: 400px;
-  position: absolute;
+  position: relative;
   left: calc(50% - 400px);
 }
 
 .product-detail__view--PriceCard {
   position: fixed;
   right: calc(50% - 500px);
+  z-index: 10000;
 }
 
 @media screen and (max-width: 1024px) {
   .product-detail__view--information {
-    width: 100vw;
-    position: absolute;
-    left: 0;
-    right: 0;
+    width: 90%;
+    position: static;
+    margin: 0 auto;
     display: flex;
     justify-content: center;
-    padding: 0 30px;
+    padding: 0 30px 400px 30px;
     box-sizing: border-box;
   }
   .product-detail__view--PriceCard {
@@ -46,5 +36,11 @@
     display: flex;
     justify-content: center;
     width: 100%;
+    z-index: 10;
   }
+}
+
+.product-detail__footer {
+  width: 100%;
+  position: absolute;
 }
