@@ -1,24 +1,27 @@
 import axios from "axios"
-import { useEffect, useState } from "react"
+import { useState } from "react"
 
-const useGetProductData = (params, obj, search = false) => {
+const useGetProductData = (search = false) => {
   const [data, setData] = useState(null)
 
   const getData = (params, obj) => {
     if (search) {
-      //임시
+      /*여기에 통신 코드 짜주세요 밑에 코드는 건들이지 말아주세요 */
+
+
+      if (params == 'products/best') { //best는 오름차순
+        const newArr = obj.sort((a, b) => a - b)
+        filterData(params, newArr)
+      } else if (params == 'products/new') { //new는 내림차순
+        const newArr = obj.sort((a, b) => b - a)
+        filterData(params, newArr)
+      }
     } else {
       axios.get('http://ec2-15-164-206-172.ap-northeast-2.compute.amazonaws.com/' + params)
         .then((result) => result.data)
         .then((result) => {
-          if (typeof (obj) == 'string') {
-            const found = result.filter(e => e.categories === obj)
-            setData(found)
-          }
-          else {
-            const found = result.filter(e => obj.includes(e.id))
-            setData(found)
-          }
+          const found = result.filter(e => e.categories === obj)
+          setData(found)
         })
         .catch(() => {
           console.log('실패')
@@ -26,9 +29,15 @@ const useGetProductData = (params, obj, search = false) => {
     }
   }
 
-  useEffect(() => {
-    getData(params, obj)
-  }, [])
+  const filterData = (params, list) => {
+    axios.get('http://ec2-15-164-206-172.ap-northeast-2.compute.amazonaws.com/' + params)
+      .then((result) => result.data)
+      .then((result) => {
+        const found = result.filter(e => list.includes(e.id))
+        setData(found)
+      })
+  }
+
 
 
   return [data, getData]
