@@ -4,15 +4,16 @@ import { MdArrowDropDown, MdArrowDropUp } from "react-icons/md";
 import { UseClickHook } from '../../hooks/ClickHook/useClickHook'
 import ProductFilter from './ProductFilter';
 import { useState } from 'react';
-import TemporaryHeader from '../Header/TemporaryHeader';
+import Header from '../Header/Header';
 import Title from '../../common/Title/Title'
 import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 
 const Product = (props) => {
   const [click, checkClick] = UseClickHook(false)
   const [selectedValue, setSelectedValue] = useState('추천순');
   const [list, setList] = useState([])
-
+  const location = useLocation()
 
   useEffect(() => {
     if (props.data) {
@@ -25,25 +26,25 @@ const Product = (props) => {
   useEffect(() => {
     switch (selectedValue) {
       case '추천순':
-        props.getData('products', list)
+        props.getData('products', props.category || list)
         break;
       case '베스트':
-        props.getData('products/best', list)
+        props.getData('products/best', props.category || list)
         break;
       case '최신순':
-        props.getData('products/new', list)
+        props.getData('products/new', props.category || list)
     }
 
-  }, [selectedValue])
+  }, [selectedValue, location])
 
 
   return <>
-    <TemporaryHeader></TemporaryHeader>
+    <Header></Header>
     {
       props.data &&
       <div className={styles.base}>
         <div>
-          <Title className="product-title" title={props.category}></Title>
+          <Title className="product-title" title={props.title}></Title>
           <div className={styles.filterBox}>
             <span>{props.data.length}개</span>
             <div className={styles.filterBox__filter} onClick={checkClick}>
