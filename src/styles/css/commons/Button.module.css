@@ -102,3 +102,12 @@
   align-items: center;
   color: #2c2c2c;
 }
+
+
+/*검색버튼*/
+.search_button {
+  position: absolute;
+  width: 30px;
+  height: 34px;
+  cursor: pointer;
+}

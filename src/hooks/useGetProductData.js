@@ -1,13 +1,18 @@
 import axios from "axios"
 import { useState } from "react"
 
-const useGetProductData = (search = false) => {
+const useGetProductData = (search = false, searchName) => {
   const [data, setData] = useState(null)
 
   const getData = (params, obj) => {
     if (search) {
       /*여기에 통신 코드 짜주세요 밑에 코드는 건들이지 말아주세요 */
-
+      axios.get('http://ec2-15-164-206-172.ap-northeast-2.compute.amazonaws.com/products/search?search='+searchName)
+      .then((result) => result.data)
+      .then((result) => setData(result))
+      .catch(() => {
+        console.log('실패')
+      })
 
       if (params == 'products/best') { //best는 오름차순
         const newArr = obj.sort((a, b) => a - b)

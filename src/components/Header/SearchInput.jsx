@@ -1,26 +1,25 @@
 import React, { useRef, useState } from 'react';
 import Input from '../../common/Input/Input';
 import Button from '../../common/Button/Button';
+import { debounce } from 'lodash';
+import { Link } from 'react-router-dom';
+import usePathMove from '../../hooks/usePathMove';
 
 //헤더 검색창
 const SearchInput = () => {
-
   const inputRef = useRef(null);
-    const focusHandler = () => {
-    	inputRef.current.foucus();
-    };
+  const move = usePathMove();
 
   const [search , setSearch] = useState({name: ""});
-  const { name} = Input;
+  const {name} = Input;
   const userSearch = (e) => {
     const {name,value} = e.target;
    
-    setSearch({...search,[name]:value});
+    setSearch(e.target.value);
     console.log(e.target.value);
   };
-  // const onReset = () => {
-  //   setSearch("");
-  // }
+
+  const getInputValueInfo = debounce(userSearch, 300);
   return (
     <form>
       <Input
@@ -30,10 +29,12 @@ const SearchInput = () => {
       className="searchInput"
       ref={inputRef} 
       value={name}
-      onChange={userSearch}
-      /> 
-      
-      <Button type="button" onClick={focusHandler}>focus</Button> 
+      onChange={getInputValueInfo}
+      />
+       
+      <Button type="button" className='search_button' onClick={()=>{
+        if(search.length==0) return;
+        move("/product/search", {search}, true)}}></Button> 
     </form>
   );
 };

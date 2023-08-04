@@ -15,6 +15,7 @@ import PaymentsAll from "./Payments/PaymentsAll";
 import Modify from "./Member/Modify";
 import OrderHistory from "./Member/OrderHistory";
 import PageNotFound from "./PageNotFound/PageNotFound";
+import SearchList from "../components/Header/SearchList";
 
 const Router = () => {
   const [isInLogged, setisInLogged] = useState(true);
@@ -28,10 +29,10 @@ const Router = () => {
           <Route path="/user/join" element={<Join />} />
           <Route path="/oauth/kakaoCallback" element={<KakaoCallback />} />
           <Route path="/product/:category" element={<ProductList />} />
-
+          <Route path="/product/search" element={<SearchList/>} />
           <Route path="/product/detail/:id" element={<ProductDetail />} />
           <Route path="/payments" element={<Payments />} />
-          <Route path="Header/searchInput" element={<SearchInput />} />
+          {/* <Route path="Header/searchInput" element={<SearchInput />} /> */}
           <Route path="/payments/all" element={<PaymentsAll />} />
           <Route path="/member/modify/password" element={<Modify />} />
           <Route path="/member/modify/delivery" element={<Modify />} />
