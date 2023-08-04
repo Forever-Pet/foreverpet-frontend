@@ -1,11 +1,11 @@
-/* NewItem.module.css */
+/*BestItem.module.css*/
 
 /*font*/
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Noto+Sans+KR&display=swap');
 
 /* pc */
 @media screen and (min-width:1024px)  {
-  .newitem {
+  .snack_Slide {
     position: relative;
     max-width: 1200px;
     height: 500px;
@@ -13,22 +13,24 @@
     margin: 0 auto;
 }
 
-.header_text {
+.snack_Slide_hea {
   font-size: 18px;
   font-weight: bold;
   text-align: center;
   color: #333;
 }
 
-.product {
+.snack_Slide_prd{
   display: flex;
   justify-content: center;
 }
+
+
 }
 
 /*테블릿*/
 @media screen and (min-width:768px) and (max-width:1023px) {
-  .newitem {
+  .snack_Slide {
     position: relative;
     max-width: 1200px;
     height: 500px;
@@ -36,24 +38,24 @@
     margin: 0 auto;
 }
 
-.header_text {
+.snack_Slide_hea {
   font-size: 18px;
   font-weight: bold;
   text-align: center;
   color: #333;
 }
 
-.product {
+.snack_Slide_prd{
   display: flex;
   justify-content: center;
 }
-
+  
 
 }
 
 /*모바일*/
 @media screen and (max-width: 767px) {
-  .newitem {
+  .snack_Slide {
     position: relative;
     max-width: 600px;
     height: 800px;
@@ -61,16 +63,19 @@
     margin: 0 auto;
 }
 
-.header_text {
+.snack_Slide_hea {
   font-size: 18px;
   font-weight: bold;
   text-align: center;
   color: #333;
 }
 
-.product {
+.snack_Slide_prd{
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
 }
+  
+
 }
+

@@ -5,7 +5,7 @@ import axios from 'axios';
 import ProductItem from "../Card/ProductItem";
 
 //css
-import styles from "../../styles/css/components/Category/SnackSlide.module.css";
+import styles from "../../styles/css/components/Category/Snack.module.css";
 
 //메인 홈 - 스낵 베너
 const PrdSnack = (props) => {
