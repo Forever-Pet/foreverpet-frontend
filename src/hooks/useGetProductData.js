@@ -21,6 +21,7 @@ const useGetProductData = (search = false, searchName = "") => {
         const newArr = obj.sort((a, b) => b - a)
         filterData(params, newArr)
       }
+
     } else {
       axios.get('http://ec2-15-164-206-172.ap-northeast-2.compute.amazonaws.com/' + params)
         .then((result) => result.data)
