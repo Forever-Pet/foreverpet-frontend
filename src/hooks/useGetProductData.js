@@ -1,19 +1,20 @@
 import axios from "axios"
 import { useState } from "react"
 
-const useGetProductData = (search = false) => {
+const useGetProductData = (search = false, searchName = "") => {
   const [data, setData] = useState(null)
-
+  
   const getData = (params, obj) => {
     if (search) {
-      if (obj.length !== 0) { //찾는 문자가 들어왔을 때 통신하도록 통신
+      /*여기에 통신 코드 짜주세요 밑에 코드는 건들이지 말아주세요 */
+      axios.get('http://ec2-15-164-206-172.ap-northeast-2.compute.amazonaws.com/products/search?search='+searchName)
+      .then((result) => result.data)
+      .then((result) => setData(result))
+      .catch(() => {
+        console.log('실패')
+      })
 
-        /**통신 코드 짜는 곳 */
-
-
-      }
-      //필터 관련 코드
-      if (params == 'products/best' || data !== null) { //베스트나 최신순으로 갔을 때 설정된 값들을 추천순일때 원래대로 복귀 시킴
+      if (params == 'products/best') { //best는 오름차순
         const newArr = obj.sort((a, b) => a - b)
         filterData(params, newArr)
       } else if (params == 'products/new') { //new는 내림차순
