@@ -5,6 +5,7 @@ import Input from '../../common/Input/Input';
 import { debounce } from 'lodash';
 import usePathMove from '../../hooks/usePathMove';
 
+//css
 import styles from '../../styles/css/components/Header/searchInput.module.css';
 
 //icon
@@ -16,11 +17,9 @@ const SearchInput = () => {
   const move = usePathMove();
 
   const [search , setSearch] = useState("");
-  // const {name} = Input;
+
   const userSearch = (e) => {
-    console.log("inputRef.current.value::",inputRef.current.value)
     setSearch(inputRef.current.value);
-    // console.log(e.target.value);
   };
 
   const getInputValueInfo = debounce(userSearch, 300);

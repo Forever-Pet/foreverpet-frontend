@@ -1,9 +1,9 @@
 import axios from "axios"
 import { useState } from "react"
 
-const useGetProductData = (search = false, searchName) => {
+const useGetProductData = (search = false, searchName = "") => {
   const [data, setData] = useState(null)
-
+  
   const getData = (params, obj) => {
     if (search) {
       /*여기에 통신 코드 짜주세요 밑에 코드는 건들이지 말아주세요 */

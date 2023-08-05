@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import Product from '../Product/Product';
-import { useLocation, useParams } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import useGetProductData from '../../hooks/useGetProductData';
 
 const SearchList = () => {
