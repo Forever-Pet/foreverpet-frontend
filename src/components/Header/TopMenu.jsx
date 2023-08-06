@@ -7,8 +7,7 @@ import TopMenuArr from '../Card/TopMenuArr';
 import styles from '../../styles/css/pages/TopMenu.module.css';
 import { Link } from 'react-router-dom';
 
-
-//헤더 상단
+//헤더 - 회원가입,로그인,주문내역 
 const TopMenu = () => {
   const [currentTab , setTab] = useState(0);
 
@@ -18,13 +17,13 @@ const TopMenu = () => {
   
   return (
     <div>
-      <nav className={styles.top_menu}>
+      <div className={styles.top_menu}>
           {TopMenuArr.map((props , index) => {
             return(
               <Link to={props.url} key={index} className={styles.top_menu_prd} onClick={() => selectTopHandler(index)}> {props.name}</Link>
             )
           })}
-      </nav>
+      </div>
     </div>
   );
 };
