@@ -18,14 +18,15 @@ const BestItem = (props) => {
     const data = async () => {
       try {
         const res = await axios.get(url);
+        //debugger;
         const randomBestItem = [];
         while(true){
           if(randomBestItem.length==4){
             break;
           }
-          const random = Math.floor(Math.random() * res.data.length);
-          if(randomBestItem.filter(item => item.id===random + 1).length ===0){
-            randomBestItem.push(res.data[random]);
+          const random = Math.floor(Math.random() * res.data.length) + 1;
+          if(randomBestItem.filter(item => item.id===random).length ===0){
+            randomBestItem.push(res.data[random - 1]);
           }
         }
         // console.log(randomBestItem);

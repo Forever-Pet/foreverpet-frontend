@@ -14,14 +14,17 @@ const NewItem = () => {
     const data = async () => {
    try {
         const res = await axios.get(url);
+        res.data.sort((a,b)=>a.id -b.id);
         const randomNewItem = [];
         while(true){
           if(randomNewItem.length==4){
             break;
           }
-          const random = Math.floor(Math.random() * res.data.length);
-          if(randomNewItem.filter(item => item.id===random + 1).length ===0){
-            randomNewItem.push(res.data[random]);
+          const random = Math.floor(Math.random() * res.data.length) + 1;
+          if(randomNewItem.filter(item => item.id===random ).length ===0){
+           console.log(" new random::", random)
+           console.log(" new random::", randomNewItem)
+            randomNewItem.push(res.data[random -1]);
           }
         }
         // console.log(randomBestItem);
