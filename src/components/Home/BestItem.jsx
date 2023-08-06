@@ -40,7 +40,7 @@ const BestItem = (props) => {
 
   return (
     <div className={styles.bestitem}>
-      <div className={styles.bestitem_header-text}>
+      <div className={styles.bestitem_header__text}>
         <h2>지금 핫한 이 상품 어때요?</h2>
       </div>
       <div className={styles.bestitem_product}>

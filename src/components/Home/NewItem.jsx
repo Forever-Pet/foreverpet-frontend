@@ -22,8 +22,6 @@ const NewItem = () => {
           }
           const random = Math.floor(Math.random() * res.data.length) + 1;
           if(randomNewItem.filter(item => item.id===random ).length ===0){
-           console.log(" new random::", random)
-           console.log(" new random::", randomNewItem)
             randomNewItem.push(res.data[random -1]);
           }
         }
@@ -37,10 +35,10 @@ const NewItem = () => {
   },[]);
   return (
     <div className={styles.newitem}>
-      <div className={styles.header_text}>
+      <div className={styles.newitem_header__text}>
         <h2>두근 두근 설레는 신상품</h2>
       </div>
-      <div className={styles.product}>
+      <div className={styles.newitem__product}>
         <ProductItem data={newItem} className='container-4columns'/>
       </div> 
     </div>

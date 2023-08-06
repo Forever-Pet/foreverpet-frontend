@@ -13,14 +13,14 @@
     margin: 0 auto;
 }
 
-.header_text {
+.newitem_header__text {
   font-size: 18px;
   font-weight: bold;
   text-align: center;
   color: #333;
 }
 
-.product {
+.newitem__product {
   display: flex;
   justify-content: center;
 }
@@ -36,14 +36,14 @@
     margin: 0 auto;
 }
 
-.header_text {
+.newitem_header__text {
   font-size: 18px;
   font-weight: bold;
   text-align: center;
   color: #333;
 }
 
-.product {
+.newitem__product {
   display: flex;
   justify-content: center;
 }
@@ -61,14 +61,14 @@
     margin: 0 auto;
 }
 
-.header_text {
+.newitem_header__text {
   font-size: 18px;
   font-weight: bold;
   text-align: center;
   color: #333;
 }
 
-.product {
+.newitem__product {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
