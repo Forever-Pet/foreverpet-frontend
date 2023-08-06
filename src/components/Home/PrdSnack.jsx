@@ -13,10 +13,11 @@ const PrdSnack = (props) => {
   // const {id} = useParams();
 
   useEffect(() => {
-    const url = `http://ec2-15-164-206-172.ap-northeast-2.compute.amazonaws.com/products`;
+    const url = `http://ec2-15-164-206-172.ap-northeast-2.compute.amazonaws.com/products/categories?categories=SNACK`;
     const data = async () => {
       try {
         const res = await axios.get(url);
+        console.log(res);
         const randomSnackItem = [];
         while(true){
           if(randomSnackItem.length==4){
