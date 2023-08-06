@@ -8,7 +8,6 @@ import ProductItem from '../Card/ProductItem';
 import styles from '../../styles/css/components/Home/BestItem.module.css';
 
 
-
 //메인 홈 - 베스트 아이템 
 const BestItem = (props) => {
   const [best, setBest] = useState([]);

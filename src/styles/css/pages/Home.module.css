@@ -1,5 +1,6 @@
 /*Home.module.css*/
 
+/*pc*/
 @media screen and (min-width:1024px)  {
   .home {
     padding-top: 80px;
@@ -25,6 +26,7 @@
   }
 }
 
+/*테블릿*/
 @media screen and (min-width:768px) and (max-width:1023px) {
   .home {
     padding-top: 80px;
@@ -44,12 +46,13 @@
   }
 
   .home_ban_img {
-    width: 500px;
-    height: 280px;
+    width: 400px;
+    height: 239px;
     margin: 0 10px;
   }
 }
 
+/*모바일*/
 @media screen and (max-width: 767px) {
   .home {
     padding-top: 80px;
@@ -62,15 +65,17 @@
   .home_ban {
     position: relative;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    height: 350px;
+    height: 540px;
     max-width: 1200px;
     margin: 0 auto;
+    padding-bottom: 52px;
   }
 
   .home_ban_img {
-    width: 500px;
-    height: 280px;
+    width: 350px;
+    height: 230px;
     margin: 0 10px;
   }
 } 
