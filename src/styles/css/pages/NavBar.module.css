@@ -6,7 +6,7 @@
 /* pc */
 @media screen and (min-width:1024px)  {
   /*navbar 메뉴*/
-.nav {
+.nav{
   height: 50px;
   padding-top: 3px;
 }
@@ -43,7 +43,7 @@
 }
 
 /*nav 서브 리스트 */
-.nav_list {
+.product__list {
   position: absolute;
   top: 42px;
   width: 174px;
@@ -54,7 +54,7 @@
   background-color: #fff;
 }
 
-.nav_list_item {
+.product__list_item {
   color: black;
   font-size: 14px;
   margin-top: 3px;
@@ -62,13 +62,13 @@
   transition: transform .5s; /* 시간 설정 */
 }
 
-.nav_list_item:hover {
+.product__list_item:hover {
   color: #666666;
   transform: scale(1.1);   /* 이미지 확대 */
     transition: transform .5s;  /* 시간 설정 */
 }
 
-.listItem_name {
+.product__list_item_name{
   position: absolute;
   left: 46px;
   top: 6px;
@@ -147,7 +147,7 @@
   }
   
   /*nav 서브 리스트 */
-.nav_list {
+.product__list{
   position: absolute;
   top: 42px;
   width: 174px;
@@ -158,7 +158,7 @@
   background-color: #fff;
 }
 
-.nav_list_item {
+.product__list_item {
   color: black;
   font-size: 14px;
   margin-top: 3px;
@@ -166,13 +166,13 @@
   transition: transform .5s; /* 시간 설정 */
 }
 
-.nav_list_item:hover {
+.product__list_item:hover {
   color: #666666;
   transform: scale(1.1);   /* 이미지 확대 */
     transition: transform .5s;  /* 시간 설정 */
 }
 
-.listItem_name {
+.product__list_item_name {
   position: absolute;
   left: 46px;
   top: 6px;
@@ -254,7 +254,7 @@
 }
 
 /*nav 서브 리스트 */
-.nav_list {
+.product__list {
   position: absolute;
   top: 42px;
   width: 174px;
@@ -265,7 +265,7 @@
   background-color: #fff;
 }
 
-.nav_list_item {
+.product__list_item {
   color: black;
   font-size: 14px;
   margin-top: 3px;
@@ -273,7 +273,7 @@
   transition: transform .5s; /* 시간 설정 */
 }
 
-.nav_list_item:hover {
+.product__list_item:hover {
   color: #666666;
   transform: scale(1.1);   /* 이미지 확대 */
     transition: transform .5s;  /* 시간 설정 */
@@ -359,7 +359,7 @@ display: none;
 }
 
 /*nav 서브 리스트 */
-.nav_list {
+.product__list  {
   position: absolute;
   top: 42px;
   width: 174px;
@@ -370,7 +370,7 @@ display: none;
   background-color: #fff;
 }
 
-.nav_list_item {
+.product__list_item {
   color: black;
   font-size: 14px;
   margin-top: 3px;
@@ -378,13 +378,13 @@ display: none;
   transition: transform .5s; /* 시간 설정 */
 }
 
-.nav_list_item:hover {
+.product__list_item:hover {
   color: #666666;
   transform: scale(1.1);   /* 이미지 확대 */
     transition: transform .5s;  /* 시간 설정 */
 }
 
-.listItem_name {
+.product__list_item_name{
   position: absolute;
   left: 46px;
   top: 6px;

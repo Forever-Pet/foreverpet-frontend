@@ -24,14 +24,14 @@ const NavListArr = () => {
   };
  
   return ( 
-     <div className={styles.nav_list}>
+     <div className={styles.product__list}>
        {NavListData.map((props , index) => {
         return(
-          <div key={index} className={styles.nav_list_item} onClick={() => selectNavHandler(index)}>
-             <div to={props.url} className={styles.listItem_name}
+          <div key={index} className={styles.product__list_item} onClick={() => selectNavHandler(index)}>
+             <div to={props.url} className={styles.product__list_item_name}
               onClick={()=>pathMove(props.url, {"title": props.title}, true)}>{props.title}
               </div>
-            <Image src={props.img} className='nav_list_img'/>
+            <Image src={props.img} className='product__list_img'/>
           </div>
         )
        })}
