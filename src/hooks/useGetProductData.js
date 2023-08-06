@@ -9,8 +9,6 @@ const useGetProductData = (search = false) => {
       if (obj.length !== 0) { //찾는 문자가 들어왔을 때 통신하도록 통신
 
         /**통신 코드 짜는 곳 */
-
-
       }
       //필터 관련 코드
       if (params == 'products/best' || data !== null) { //베스트나 최신순으로 갔을 때 설정된 값들을 추천순일때 원래대로 복귀 시킴
