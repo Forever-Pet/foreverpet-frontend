@@ -7,7 +7,6 @@ import ProductItem from '../Card/ProductItem';
 //css
 import styles from '../../styles/css/components/Home/BestItem.module.css';
 
-
 //메인 홈 - 베스트 아이템 
 const BestItem = (props) => {
   const [best, setBest] = useState([]);
@@ -29,7 +28,7 @@ const BestItem = (props) => {
             randomBestItem.push(res.data[random - 1]);
           }
         }
-        // console.log(randomBestItem);
+        
         setBest(randomBestItem);
       }catch(error) {
         console.log(error);
@@ -41,10 +40,10 @@ const BestItem = (props) => {
 
   return (
     <div className={styles.bestitem}>
-      <div className={styles.header_text}>
+      <div className={styles.bestitem_header-text}>
         <h2>지금 핫한 이 상품 어때요?</h2>
       </div>
-      <div className={styles.product}>
+      <div className={styles.bestitem_product}>
         <ProductItem data={best} className='container-4columns'/>
       </div>
     </div>

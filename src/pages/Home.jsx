@@ -8,6 +8,7 @@ import CartegoryItem from '../components/Card/CartegoryItem';
 import MainBanTwo from '../components/Banner/MainBanTwo';
 import NewItem from '../components/Home/NewItem';
 import PrdSnack from '../components/Home/PrdSnack';
+import Image from '../common/Img/Image';
 
 //css
 import styles from '../styles/css/pages/Home.module.css';
@@ -22,11 +23,10 @@ const Home = () => {
     <MainBanTwo/>
     <NewItem/>
     <div className={styles.home_ban}>
-      <img src='img/eveban1.jpg' alt='' className={styles.home_ban_img}/>
-      <img src='img/eveban2.jpg' alt='' className={styles.home_ban_img}/>
+      <img src='img/eveban1.jpg' className={styles.home_ban_img}/>
+      <img src='img/eveban2.jpg' className={styles.home_ban_img}/>
     </div>
     <PrdSnack/>
-    {/* <SubSlider carouselData={CarouselData}/> */}
     <Footer/>
   </div>
   );
