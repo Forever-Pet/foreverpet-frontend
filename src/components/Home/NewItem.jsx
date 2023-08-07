@@ -9,11 +9,11 @@ import styles from '../../styles/css/components/Home/NewItem.module.css';
 const NewItem = () => {
   const url = "/products/new";
   const [random, getRandom ] = useProductRandom(url);
-  
+
   useEffect(() => {
     getRandom();
   },[]);
-
+ 
   return (
     <div className={styles.newitem}>
       <div className={styles.newitem_header__text}>
