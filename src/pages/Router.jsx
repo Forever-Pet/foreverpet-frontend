@@ -15,6 +15,7 @@ import PaymentsAll from "./Payments/PaymentsAll";
 import Modify from "./Member/Modify";
 import OrderHistory from "./Member/OrderHistory";
 import PageNotFound from "./PageNotFound/PageNotFound";
+import SearchList from "../components/Header/SearchList";
 
 const Router = () => {
   const [isInLogged, setisInLogged] = useState(true);
@@ -23,25 +24,19 @@ const Router = () => {
     <>
       {isInLogged ? (
         <Routes>
-          // 루트
           <Route path="/" element={<Home />} />
-          // 검색
-          <Route path="Header/searchInput" element={<SearchInput />} />
-          // 인증인가, oauth
           <Route path="/user/login" element={<Login />} />
           <Route path="/user/join" element={<Join />} />
           <Route path="/oauth/kakaoCallback" element={<KakaoCallback />} />
-          // 상품 페이지 및 상세정보
           <Route path="/product/:category" element={<ProductList />} />
+          <Route path="/product/search" element={<SearchList />} />
           <Route path="/product/detail/:id" element={<ProductDetail />} />
-          // 결제
           <Route path="/payments" element={<Payments />} />
+          {/* <Route path="Header/searchInput" element={<SearchInput />} /> */}
           <Route path="/payments/all" element={<PaymentsAll />} />
-          // 회원정보 및 modify
           <Route path="/member/modify/password" element={<Modify />} />
           <Route path="/member/modify/delivery" element={<Modify />} />
           <Route path="/member/orderhistory" element={<OrderHistory />} />
-          // Not Url
           <Route path="/*" element={<PageNotFound />} />
         </Routes>
       ) : (

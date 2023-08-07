@@ -1,40 +1,43 @@
 import React, { useRef, useState } from 'react';
+
+//components
 import Input from '../../common/Input/Input';
-import Button from '../../common/Button/Button';
+import { debounce } from 'lodash';
+import usePathMove from '../../hooks/usePathMove';
+
+//css
+import styles from '../../styles/css/components/Header/searchInput.module.css';
+
+//icon
+import {GoSearch} from "react-icons/go";
 
 //헤더 검색창
 const SearchInput = () => {
-
   const inputRef = useRef(null);
-    const focusHandler = () => {
-    	inputRef.current.foucus();
-    };
+  const move = usePathMove();
 
-  const [search , setSearch] = useState({name: ""});
-  const { name} = Input;
+  const [search , setSearch] = useState("");
+
   const userSearch = (e) => {
-    const {name,value} = e.target;
-   
-    setSearch({...search,[name]:value});
-    console.log(e.target.value);
+    setSearch(inputRef.current.value);
   };
-  // const onReset = () => {
-  //   setSearch("");
-  // }
+
+  const getInputValueInfo = debounce(userSearch, 300);
   return (
-    <form>
+    <div className={styles.search_wrap}>
       <Input
       type= "text"
       name = "productName"
       placeholder="우리 댕냥 알러지 없는 사료" 
       className="searchInput"
       ref={inputRef} 
-      value={name}
-      onChange={userSearch}
-      /> 
-      
-      <Button type="button" onClick={focusHandler}>focus</Button> 
-    </form>
+      onChange={getInputValueInfo}
+      />
+    
+      <GoSearch className={styles.search_button} onClick={()=>{
+        if(search.length==0) return;
+        move("/product/search", {search}, true)}}></GoSearch> 
+    </div>
   );
 };
 

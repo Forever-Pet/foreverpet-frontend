@@ -1,53 +1,48 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
 // Compoennts
-import Snack from "../Navigation/Category/Snack";
-import Image from "../../common/Img/Image";
 import ProductItem from "../Card/ProductItem";
 
 //css
-import styles from "../../styles/css/components/Category/SnackSlide.module.css";
-
-//icon
-import { BsCart } from "react-icons/bs";
-import { VscHeart } from "react-icons/vsc";
+import styles from "../../styles/css/components/Category/Snack.module.css";
 
 //메인 홈 - 스낵 베너
 const PrdSnack = (props) => {
+   const [snack, setSnack] = useState([]);
+  // const {id} = useParams();
+
+  useEffect(() => {
+    const url = `http://ec2-15-164-206-172.ap-northeast-2.compute.amazonaws.com/products`;
+    const data = async () => {
+      try {
+        const res = await axios.get(url);
+        const randomSnackItem = [];
+        while(true){
+          if(randomSnackItem.length==4){
+            break;
+          }
+          const random = Math.floor(Math.random() * res.data.length);
+          if(randomSnackItem.filter(item => item.id===random + 1).length ===0){
+            randomSnackItem.push(res.data[random]);
+          }
+        }
+        // console.log(randomBestItem);
+         setSnack(randomSnackItem);
+      }catch(error) {
+        console.log(error);
+      }
+    }
+    data();
+  },[]);
   return (
       <div className={styles.snack_Slide}>
         <div className={styles.snack_Slide_hea}>
           <h2>영양 만점 간식 추천</h2>
         </div>
         <div className={styles.snack_Slide_prd}>
-          <ProductItem data={Snack} className='container'/>
-          {/* {Snack.map((props, index) => {
-            return (
-              <Link className={styles.product_link} key={index}>
-                <div className={styles.product_img}>
-                  <Image src={props.img} />
-                </div>
-                <div className={styles.productinfo}>
-                  <p>{props.name}</p>
-                </div>
-                <div className={styles.productinfo_1}>
-                <p>{props.percent}%</p>
-                  <p className={styles.productinfo_1_2}>{props.price}</p>
-                </div>
-                <div className={styles.productinfo_2}>
-                  <p>{props.best}</p>
-                  <p className={styles.productinfo_2_2}>{props.sale}</p>
-                  <div className={styles.productinfo_icon}>
-                    <BsCart className={styles.productinfo_icon1} />
-                    <VscHeart />
-                  </div>
-                </div>
-              </Link>
-            );
-          })} */}
+          <ProductItem data={snack} className='container-4columns'/>
         </div>
-   
       </div>
   );
 };

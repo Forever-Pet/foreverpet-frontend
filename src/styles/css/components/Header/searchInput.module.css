@@ -1,0 +1,13 @@
+
+.search_wrap {
+  margin-right: 26px;
+}
+
+/*검색버튼*/
+.search_button {
+  position: absolute;
+  width: 30px;
+  height: 28px;
+  cursor: pointer;
+  color:#008e61;;
+}

@@ -5,9 +5,8 @@
   /*검색창*/
 .searchInput {
   width: 200px;
-  height: 30px;
+  height: 26px;
   font-size: 11px;
-  border-radius: 10px;
   border: 1px solid #008e61;
  }
 
@@ -18,9 +17,8 @@
   /*검색창*/
   .searchInput {
     width: 200px;
-    height: 30px;
+    height: 26px;
     font-size: 11px;
-    border-radius: 10px;
     border: 1px solid #008e61;
    }
 }
@@ -30,9 +28,8 @@
   /*검색창*/
   .searchInput {
     width: 200px;
-    height: 30px;
+    height: 26px;
     font-size: 11px;
-    border-radius: 10px;
     border: 1px solid #008e61;
    }
 }
