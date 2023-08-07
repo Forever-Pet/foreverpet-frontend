@@ -76,7 +76,7 @@
   color: black;
 }
 
-.navbar_box {
+.content_module {
   float: right;
   display: flex;
   justify-content: center;
@@ -84,11 +84,7 @@
   margin-top: 5px;
   }
 
-  .navbar_box_input {
-     position: relative;
-  }
-
-  .navbar_box_icon {
+  .content_module__service {
     margin-left:19px;
     text-decoration: none;
     color: #666666;
@@ -96,16 +92,6 @@
     font-size: 25px;
     font-family: 'Noto Sans KR', sans-serif;
    }
-  
-   /*검색 아이콘*/
-  .icon1 {
-    position: absolute;
-    top: 3px;
-    right: 16px;
-    font-size: 25px;
-    color: #008e61;
-    cursor: pointer;
-  }
 
 }
 
@@ -180,7 +166,7 @@
   color: black;
 }
 
-.navbar_box {
+.content_module {
   float: right;
   display: flex;
   justify-content: center;
@@ -188,29 +174,14 @@
   margin-top: 5px;
   }
 
-  .navbar_box_input {
-    position: relative;
- }
-
- .navbar_box_icon {
+ .content_module__service {
    margin-left:19px;
    text-decoration: none;
    color: #666666;
    cursor: pointer;
    font-size: 25px;
    font-family: 'Noto Sans KR', sans-serif;
-  }
- 
-  /*검색 아이콘*/
- .icon1 {
-   position: absolute;
-   top: 3px;
-   right: 16px;
-   font-size: 25px;
-   color: #008e61;
-   cursor: pointer;
  }
-
 }
 
 /*모바일*/
@@ -287,7 +258,7 @@
   color: black;
 }
 
-.navbar_box {
+.content_module {
   float: right;
   display: flex;
   justify-content: center;
@@ -295,11 +266,7 @@
   margin-top: 5px;
   }
 
-  .navbar_box_input {
-    position: relative;
- }
-
- .navbar_box_icon {
+ .content_module__service {
    margin-left:19px;
    text-decoration: none;
    color: #666666;
@@ -307,16 +274,7 @@
    font-size: 25px;
    font-family: 'Noto Sans KR', sans-serif;
   }
- 
-  /*검색 아이콘*/
- .icon1 {
-   position: absolute;
-   top: 3px;
-   right: 16px;
-   font-size: 25px;
-   color: #008e61;
-   cursor: pointer;
- }
+
 }
 
 /* 아이폰 SE  */
@@ -392,7 +350,7 @@ display: none;
   color: black;
 }
 
-.navbar_box {
+.content_module {
   float: right;
   display: flex;
   justify-content: center;
@@ -400,11 +358,7 @@ display: none;
   margin-top: 5px;
   }
 
-  .navbar_box_input {
-    position: relative;
- }
-
- .navbar_box_icon {
+ .content_module__service {
    margin-left:19px;
    text-decoration: none;
    color: #666666;
@@ -412,14 +366,4 @@ display: none;
    font-size: 25px;
    font-family: 'Noto Sans KR', sans-serif;
   }
- 
-  /*검색 아이콘*/
- .icon1 {
-   position: absolute;
-   top: 3px;
-   right: 16px;
-   font-size: 25px;
-   color: #008e61;
-   cursor: pointer;
- }
 }

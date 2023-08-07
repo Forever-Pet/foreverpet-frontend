@@ -64,15 +64,15 @@ const NavBar = () => {
         )
        })}
       </nav>
-    <div className={styles.navbar_box}>
+    <div className={styles.content_module}>
       <SearchInput/>
       <div>
-        <Link to="/member/modify" className={styles.navbar_box_icon}>
+        <Link to="/member/modify" className={styles.content_module__service}>
           <BiUser/>
         </Link>
       </div>
       <div>
-        <Link to="/member/order" className={styles.navbar_box_icon}>
+        <Link to="/member/order" className={styles.content_module__service}>
           <BiBasket/> 
         </Link>
       </div>
