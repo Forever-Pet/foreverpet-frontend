@@ -89,8 +89,8 @@ div {
 }
 
 @media screen and (max-width: 1100px) {
-  .flex-box__title {
-    width: 60%;
+  .flex-box__top {
+    display: block;
   }
 }
 
@@ -98,7 +98,10 @@ div {
   .flex-box__top {
     display: block;
   }
-
+  .container {
+    width: 93%;
+    margin: 10px auto;
+  }
   .flex-box__title {
     margin-bottom: 30px;
   }
