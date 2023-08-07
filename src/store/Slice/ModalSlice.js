@@ -11,7 +11,8 @@ const ModalSlice = createSlice({
       rightBtn: "",
       content: "",
       data: "",
-    }
+    },
+    cartOpen: false
   },
   reducers: {
     openModal(state, action) {
@@ -34,10 +35,17 @@ const ModalSlice = createSlice({
 
     secondModalClose(state) {
       state.modalState.secondOpen = false
-    }
+    },
 
+    cartIsOpen(state, action) {
+      if (action.payload) {
+        state.cartOpen = true
+      } else {
+        state.cartOpen = !state.cartOpen
+      }
+    }
   }
 })
 
-export const { openModal, closeModal, secondModalOpen, secondModalClose } = ModalSlice.actions
+export const { openModal, closeModal, secondModalOpen, secondModalClose, cartIsOpen } = ModalSlice.actions
 export default ModalSlice

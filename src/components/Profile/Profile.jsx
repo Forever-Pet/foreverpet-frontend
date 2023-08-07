@@ -3,13 +3,18 @@ import { AiOutlineRight, AiOutlineUser } from "react-icons/ai";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import Title from "../../common/Title/Title";
+import usePathMove from "../../hooks/usePathMove";
 
 
 const Profile = (props) => {
+  const move = usePathMove()
   const userData = [
     { id: 0, grade: "silver", point: "1000", cupon: "2", userName: "가나다" },
   ];
-  const buttonData = ["배송지 등록", "비밀번호 변경", "회원탈퇴"];
+  const buttonData = [
+    { title: "배송지 등록", url: 'delivery' },
+    { title: "비밀번호 변경", url: 'password' },
+    { title: "회원탈퇴", url: '' }];
 
   return (
     <>
@@ -68,9 +73,10 @@ const Profile = (props) => {
                     <div
                       key={i}
                       className={`${styles["flex-box"]} ${styles["setCursor"]}`}
+                      onClick={() => move(`/member/modify/${d.url}`)}
                     >
                       <div className={styles["button-box"]}>
-                        <p className={styles["button-box__text"]}>{d}</p>
+                        <p className={styles["button-box__text"]}>{d.title}</p>
                       </div>
                       <div className={styles["button-box__iconDiv"]}>
                         <AiOutlineRight
