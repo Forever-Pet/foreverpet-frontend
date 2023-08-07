@@ -1,5 +1,8 @@
 import styles from "../../styles/css/components/Profile/Profile.module.css";
 import { AiOutlineRight, AiOutlineUser } from "react-icons/ai";
+import Header from "../Header/Header";
+import Footer from "../Footer/Footer";
+import Title from "../../common/Title/Title";
 
 
 const Profile = (props) => {
@@ -10,11 +13,14 @@ const Profile = (props) => {
 
   return (
     <>
-      <div className={styles["container"]} style={{ maxWidth: "1300px" }}>
+      <Header></Header>
+      <div className={styles["container"]} style={{ maxWidth: "1200px" }}>
         <div className={styles["setWidth-100"]}>
           <div className={styles["flex-box__top"]}>
             <div className={styles["flex-box__top__profilePadding"]}>
-              <h2>마이페이지</h2>
+
+              <Title title={'마이페이지'} className={'profile_mypage'}></Title>
+
               <div className={styles["leftTitle__user-box"]}>
                 <div className={styles["leftTitle__user-box__padding"]}>
                   <div className={styles["flex-box"]}>
@@ -80,6 +86,7 @@ const Profile = (props) => {
           </div>
         </div>
       </div>
+      <Footer></Footer>
     </>
   );
 };
