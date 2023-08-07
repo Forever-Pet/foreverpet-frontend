@@ -1,4 +1,4 @@
-import React,{useEffect} from 'react';
+import React, {useEffect} from 'react';
 
 // Compoennts
 import ProductItem from "../Card/ProductItem";

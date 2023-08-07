@@ -8,7 +8,6 @@ const useProductRandom = (url) => {
       try {
         const baseUrl = "http://ec2-15-164-206-172.ap-northeast-2.compute.amazonaws.com";
         const res = await axios.get(baseUrl+url);
-        console.log(res);
         const randomSnackItem = [];
         while(true){
           if(randomSnackItem.length==4){
