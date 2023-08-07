@@ -50,15 +50,15 @@ const NavBar = () => {
   }
 
   return (
-    <div className={styles.nav}>
-      <nav className={styles.nav_menu}>
-      <div className={`${styles.nav_menu_pro} ${styles.nav_menu1}`} onClick = {() => {setList(!list)}} >
-         <RxTextAlignJustify className={styles.nav_menu_icon}/>
+    <div className={styles.service_item}>
+      <nav className={styles.service_item__column}>
+      <div className={`${styles.service_item__product} ${styles.service_item__product1}`} onClick = {() => {setList(!list)}} >
+         <RxTextAlignJustify className={styles.service_item__icon}/>
          {list && <NavListArr/>}
       </div>
       {NavList.map((tap , index) => {
         return(
-          <div key={index} className={styles.nav_menu_pro} onClick={() => NavHandler(index)} >
+          <div key={index} className={styles.service_item__product} onClick={() => NavHandler(index)} >
             {tap.name}
           </div>
         )

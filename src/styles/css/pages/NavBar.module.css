@@ -5,12 +5,12 @@
 
 /* pc */
 @media screen and (min-width:1024px)  {
-  /*navbar 메뉴*/
-.nav{
+/*navbar 메뉴*/
+.service_item {
   height: 50px;
   padding-top: 3px;
 }
-.nav_menu {
+.service_item__column {
   position: relative;
   float: left;
   display: flex;
@@ -20,7 +20,7 @@
   margin-left: -31px;
 }
 
-.nav_menu_pro {
+.service_item__product {
  margin-left:34px;
  text-decoration: none;
  color: #666666;
@@ -29,14 +29,14 @@
  font-family: 'Noto Sans KR', sans-serif;
 }
 
-.nav_menu1 {
+.service_item__product1 {
   display: flex;
   color: #008e61;
   font-weight: 600;
 }
 
 /*햄버거버튼 css*/
-.nav_menu_icon {
+.service_item__icon {
   font-size: 25px;
   padding-right: 5px;
  
@@ -111,11 +111,11 @@
 
 /*테블릿*/
 @media screen and (min-width:768px) and (max-width:1023px) {
-  .nav {
+  .service_item {
     height: 50px;
     padding-top: 3px;
   }
-  .nav_menu {
+  .service_item__column {
     position: relative;
     float: left;
     display: flex;
@@ -125,7 +125,7 @@
     margin-left: -31px;
   }
   
-  .nav_menu_pro {
+  .service_item__product {
     margin-left:34px;
    text-decoration: none;
    color: #666666;
@@ -134,14 +134,14 @@
    font-family: 'Noto Sans KR', sans-serif;
   }
   
-  .nav_menu1 {
+  .service_item__product1 {
     color: #008e61;
     font-weight: 600;
     display: flex;
   }
   
   /*햄버거버튼 css*/
-  .nav_menu_icon {
+  .service_item__icon {
     font-size: 25px;
     padding-right: 5px;
   }
@@ -215,12 +215,12 @@
 
 /*모바일*/
 @media screen and (max-width: 767px) {
-  .nav {
+  .service_item{
     height: 50px;
     padding-top: 3px;
   }
    /*nav 메뉴*/
- .nav_menu {
+ .service_item__column {
    position: relative;
    float: left;
    display: flex;
@@ -230,7 +230,7 @@
    margin-left: -24px;
  }
 
-.nav_menu_pro {
+.service_item__product {
  display: none;
  margin-left: 50px;
  text-decoration: none;
@@ -240,14 +240,14 @@
  font-family: 'Noto Sans KR', sans-serif;
 }
 
-.nav_menu1 {
+.service_item__product1 {
   display: flex;
   color: #008e61;
   font-weight: 600;
 }
 
 /*햄버거버튼 css*/
-.nav_menu_icon {
+.service_item__icon{
   font-size: 25px;
   padding-right: 5px;
  
@@ -321,11 +321,11 @@
 
 /* 아이폰 SE  */
 @media screen and (max-width : 576px) {
-  .nav {
+  .service_item {
     padding-top: 3px;
   }
    /*nav 메뉴*/
-  .nav_menu {
+  .service_item__column {
    position: relative;
    float: left;
    display: flex;
@@ -335,7 +335,7 @@
    margin-left: -24px;
  }
 
-.nav_menu_pro {
+.service_item__product {
 display: none;
  margin-left:34px;
  text-decoration: none;
@@ -345,14 +345,14 @@ display: none;
  font-family: 'Noto Sans KR', sans-serif;
 }
 
-.nav_menu1 {
+.service_item__product1{
   display: flex;
   color: #008e61;
   font-weight: 600;
 }
 
 /*햄버거버튼 css*/
-.nav_menu_pro {
+.service_item__icon {
   font-size: 25px;
   padding-right: 5px;
  
