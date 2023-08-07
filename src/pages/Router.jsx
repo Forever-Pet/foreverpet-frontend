@@ -12,7 +12,8 @@ import SearchInput from "../components/Header/SearchInput";
 import ProductDetail from "./Product/ProductDetail";
 import Payments from "./Payments/Payments";
 import PaymentsAll from "./Payments/PaymentsAll";
-import Modify from "./Member/Modify";
+import ModifyDeliveryRegister from "./Member/ModifyDeliveryRegister";
+import ModifyPassword from "./Member/ModifyPassword";
 import OrderHistory from "./Member/OrderHistory";
 import PageNotFound from "./PageNotFound/PageNotFound";
 import SearchList from "../components/Header/SearchList";
@@ -40,8 +41,11 @@ const Router = () => {
           <Route path="/payments" element={<Payments />} />
           <Route path="/payments/all" element={<PaymentsAll />} />
           // 회원정보수정, Modify
-          <Route path="/member/modify/password" element={<Modify />} />
-          <Route path="/member/modify/delivery" element={<Modify />} />
+          <Route path="/member/modify/password" element={<ModifyPassword />} />
+          <Route
+            path="/member/modify/delivery"
+            element={<ModifyDeliveryRegister />}
+          />
           <Route path="/member/orderhistory" element={<OrderHistory />} />
           // Not Url
           <Route path="/*" element={<PageNotFound />} />

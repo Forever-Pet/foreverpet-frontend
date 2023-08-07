@@ -1,18 +1,20 @@
 .modify-container {
-  padding-top: 205px;
+  padding-top: 30px;
 }
 
 .modify-container {
   display: flex;
   justify-content: center;
-  min-width: 1000px;
+  max-width: 1024px;
+  min-width: 790px;
   gap: 50px;
   overflow: auto;
+  margin: 0 auto;
 }
 
 @media screen and (max-width: 768px) {
   .modify-container {
-    min-width: 0;
+    min-width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
