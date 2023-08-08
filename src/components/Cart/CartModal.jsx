@@ -9,7 +9,7 @@ import { addPriceComma } from '../../utils/addPriceComma';
 
 const CarModal = () => {
   const move = usePathMove()
-  const cartData = useSelector((state) => { return state.cart.cartItem }) //cart api가져오기
+  const cartData = useSelector((state) => { return state.cart.cartItem })
   const dispatch = useDispatch()
 
   return <>

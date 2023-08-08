@@ -1,24 +1,24 @@
 /* Tiile.module.css */
 
-@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Noto+Sans+KR&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Noto+Sans+KR&display=swap");
 
 /*베너 텍스트*/
-.banner_text{
+.banner_text {
   text-align: center;
   margin: 0 auto;
   color: white;
   padding-top: 10px;
   font-size: 13px;
-  font-family: 'Noto Sans KR', sans-serif;
+  font-family: "Noto Sans KR", sans-serif;
 }
 
 /*헤더 네임*/
 .header_logo_text {
-  font-family: 'Nanum Pen Script', cursive;
+  font-family: "Nanum Pen Script", cursive;
   font-size: 47px;
   margin: 0 auto;
   color: #008e61;
-};
+}
 
 .localUser-auth__header--title,
 .localUser-login__sns-title {
@@ -38,5 +38,10 @@
 
 .mypage-title {
   font-size: 30px;
+  font-weight: 600;
+}
+
+.profile_mypage {
+  font-size: 25px;
   font-weight: 600;
 }

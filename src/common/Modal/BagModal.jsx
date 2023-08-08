@@ -39,8 +39,8 @@ const BagModal = () => {
             className='bag-detail-btn'
             title={modalState.leftBtn || '자세히 보기'} />
           <Button onClick={() => {
-            //장바구니에 담음
-            dispatch(putIn(modalState.data)) //장바구니 api로 post 이미있는 아이템이면 수량 증가, 아니라면 그냥 카트에 넣기
+            console.log(modalState.data)
+            dispatch(putIn(modalState.data))
             dispatch(secondModalOpen())
           }
           } className='bag-inside-btn' title={modalState.rightBtn || '장바구니 담기'} />
