@@ -12,7 +12,6 @@ const usePathMove = () => {
       navigate(location);
     }
   };
-
   return pathMove;
 };
 

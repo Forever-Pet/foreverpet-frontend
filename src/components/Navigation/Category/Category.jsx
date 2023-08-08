@@ -25,7 +25,7 @@ const Category = () => {
         {CartegoryItem.map((props, index) => {
           return (
 
-            <div className={styles.category_item} style={{ cursor: 'pointer' }} onClick={() => move(props.url, { "title": props.title }, true)}>
+            <div key={index} className={styles.category_item} style={{ cursor: 'pointer' }} onClick={() => move(props.url, { "title": props.title }, true)}>
               <Image src={props.img} className='category_img' />
               <div>{props.title}</div>
             </div>

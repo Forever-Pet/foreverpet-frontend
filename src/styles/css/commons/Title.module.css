@@ -1,6 +1,10 @@
 /* Tiile.module.css */
-
-@import url("https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Noto+Sans+KR&display=swap");
+/*font*/
+@font-face {
+  font-family: 'Nanum Pen Script';
+  src: url('../../font/NanumPenScript-Regular.woff') format('woff');
+  font-display: swap;
+}
 
 /*베너 텍스트*/
 .banner_text {
@@ -9,16 +13,18 @@
   color: white;
   padding-top: 10px;
   font-size: 13px;
-  font-family: "Noto Sans KR", sans-serif;
+  font-family: 'Noto Sans KR';
 }
 
-/*헤더 네임*/
-.header_logo_text {
-  font-family: "Nanum Pen Script", cursive;
+/*로고*/
+.logo_text {
+  font-family: 'Nanum Pen Script';
   font-size: 47px;
   margin: 0 auto;
   color: #008e61;
-}
+  cursor: pointer;
+};
+
 
 .localUser-auth__header--title,
 .localUser-login__sns-title {

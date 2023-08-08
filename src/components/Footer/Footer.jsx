@@ -7,7 +7,7 @@ const Footer = (props) => {
   return (//<footer className={classes[props.className || ""]}> 
   <footer className={styles.footer}>
     <div className={styles.footer_logo}>
-     <Title title='포에버펫'/>
+     <Title title='포에버펫' className='logo_text'/>
     </div>
       <div className={styles.footer_contents}>
         <div>포에버펫 소개</div>

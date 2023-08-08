@@ -1,7 +1,5 @@
 /*TopMenu.module.css*/
 
-@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Noto+Sans+KR&display=swap');
-
 /* pc */
 @media screen and (min-width:1024px)  {
 .top_menu {
@@ -17,7 +15,6 @@
  color: #666666;
  cursor: pointer;
  font-size: 13px;
- font-family: 'Noto Sans KR', sans-serif;
 }
 .top_menu_prd:hover {
    color: #000;
@@ -38,7 +35,6 @@
    color: #666666;
    cursor: pointer;
    font-size: 13px;
-   font-family: 'Noto Sans KR', sans-serif;
   }
   
   .top_menu_prd:hover {
@@ -60,7 +56,6 @@
    color: #666666;
    cursor: pointer;
    font-size: 10px;
-   font-family: 'Noto Sans KR', sans-serif;
   }
   
   .top_menu_prd:hover {
