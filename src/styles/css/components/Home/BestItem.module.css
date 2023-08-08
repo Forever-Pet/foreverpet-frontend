@@ -1,12 +1,5 @@
 /*BestItem.module.css*/
 
-/*font*/
-@font-face {
-  font-family: 'Noto Sans KR';
-  src: url('../../font/NotoSansKR-Regular.woff') format('woff');
-  font-display: swap;
-}
-
 /* pc */
 @media screen and (min-width:1024px)  {
   .bestitem {

@@ -18,7 +18,7 @@ const Header = () => {
       <header className={styles.header}>
         <TopMenu />
         <div className={styles.header_logo}>
-          <Title title="포에버펫" className="header_logo_text" />
+          <Title title="포에버펫" className="logo_text" />
         </div>
         <NavBar />
       </header>
