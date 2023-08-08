@@ -1,6 +1,9 @@
 import React, {useState } from "react";
 import { Link } from "react-router-dom";
 import Image from "../../common/Img/Image";
+import CartModal from '../../components/Cart/CartModal';
+import { useDispatch, useSelector } from "react-redux";
+import { cartIsOpen } from "../../store/Slice/ModalSlice";
 
 // Compoennts
 import NavListData from "../Card/NavListArr";
@@ -56,9 +59,14 @@ const NavBar = () => {
     setNav(index);
   };
 
-  return (
+  const cartData = useSelector((state) => { return state.cart.cartItem })
+  const cartOpen = useSelector((state) => { return state.modal.cartOpen })
+
+  const dispatch = useDispatch()
+
+  return <>
     <div className={styles.service_item}>
-      <nav className={styles.service_item__column}>
+      <div className={styles.service_item__column}>
         <div
           className={`${styles.service_item__product} ${styles.service_item__product1}`}
           onClick={() => {setList(!list);}}>
@@ -76,7 +84,7 @@ const NavBar = () => {
             </div>
           );
         })}
-      </nav>
+      </div>
       <div className={styles.content_module}>
         <SearchInput />
         <div>
@@ -85,12 +93,18 @@ const NavBar = () => {
           </Link>
         </div>
         <div>
-          <Link to="/member/order" className={styles.content_module__service}>
+          <div className={styles.content_module__service} onClick={() => dispatch(cartIsOpen())}>
             <BiBasket />
-          </Link>
+            {
+            cartData.length > 0 ? <div className={styles['alert-count']}>{cartData.length}</div> : ''
+            }
+          </div>
         </div>
       </div>
     </div>
-  );
+     {
+      cartOpen ? <CartModal /> : ''
+    }
+ </>
 };
 export default NavBar;

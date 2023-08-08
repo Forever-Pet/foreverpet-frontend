@@ -1,12 +1,20 @@
 /*NavBar.module.css*/
 
-/*font*/
-@font-face {
-  font-family: 'Noto Sans KR';
-  src: url('../../font/NotoSansKR-Regular.woff') format('woff');
-  font-display: swap;
+.alert-count {
+  width: 17px;
+  height: 17px;
+  background: #ff0000;
+  position: absolute;
+  color: white;
+  right: 0;
+  top: 0;
+  border-radius: 50%;
+  font-size: 15px;
+  font-weight: 600;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
 /* pc */
 @media screen and (min-width:1024px)  {
 /*navbar 메뉴*/

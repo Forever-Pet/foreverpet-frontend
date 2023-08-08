@@ -1,7 +1,7 @@
 /*Header.module.css*/
 
 /* pc */
-@media screen and (min-width:1024px)  {
+@media screen and (min-width: 1024px) {
   .header {
     z-index: 30;
     position: relative; /*픽스로 고정*/
@@ -10,7 +10,7 @@
     max-width: 1200px;
     background-color: #fff;
   }
-  
+
   .header_logo {
     display: flex;
     height: 110px;
@@ -20,14 +20,12 @@
     padding-top: 15px;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 2px solid #918D8C;
+    border-bottom: 2px solid #918d8c;
   }
-  
- 
-} 
+}
 
 /*테블릿*/
-@media screen and (min-width:768px) and (max-width:1023px) {
+@media screen and (min-width: 768px) and (max-width: 1023px) {
   .header {
     z-index: 30;
     position: relative; /*픽스로 고정*/
@@ -36,7 +34,7 @@
     max-width: 1200px;
     background-color: #fff;
   }
-  
+
   .header_logo {
     display: flex;
     height: 110px;
@@ -46,58 +44,50 @@
     padding-top: 15px;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 2px solid #918D8C;
+    border-bottom: 2px solid #918d8c;
   }
-  
- 
-  
-} 
+}
 
 /*모바일*/
 @media screen and (max-width: 787px) {
   .header {
-  position: relative;
-  z-index: 30;
-  width: 100%;
-  height: 150px;
-  background-color: #fff;
-}
-.header_logo {
-  display: flex;
-  height: 94px;
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding-top: 13px;
-  align-items: center;
-  justify-content: space-between;
-  border-bottom: 2px solid #918D8C;
-}
-
-
+    position: relative;
+    z-index: 30;
+    width: 100%;
+    height: 150px;
+    background-color: #fff;
+  }
+  .header_logo {
+    display: flex;
+    height: 94px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 13px;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid #918d8c;
+  }
 }
 
 /* 아이폰 SE  */
-@media screen and (max-width : 576px) {
-    .header {
-  position: relative;
-  z-index: 30;
-  width: 100%;
-  height: 150px;
-  background-color: #fff;
+@media screen and (max-width: 576px) {
+  .header {
+    position: relative;
+    z-index: 30;
+    width: 100%;
+    height: 150px;
+    background-color: #fff;
+  }
+  .header_logo {
+    display: flex;
+    height: 94px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 13px;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid #918d8c;
+  }
 }
-.header_logo {
-  display: flex;
-  height: 94px;
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding-top: 13px;
-  align-items: center;
-  justify-content: space-between;
-  border-bottom: 2px solid #918D8C;
-}
-
-
-}
-

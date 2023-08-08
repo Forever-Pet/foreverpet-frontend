@@ -1,20 +1,31 @@
 import styles from "../../styles/css/components/Profile/Profile.module.css";
 import { AiOutlineRight, AiOutlineUser } from "react-icons/ai";
+import Header from "../Header/Header";
+import Footer from "../Footer/Footer";
+import Title from "../../common/Title/Title";
+import usePathMove from "../../hooks/usePathMove";
 
 
 const Profile = (props) => {
+  const move = usePathMove()
   const userData = [
     { id: 0, grade: "silver", point: "1000", cupon: "2", userName: "가나다" },
   ];
-  const buttonData = ["배송지 등록", "비밀번호 변경", "회원탈퇴"];
+  const buttonData = [
+    { title: "배송지 등록", url: 'delivery' },
+    { title: "비밀번호 변경", url: 'password' },
+    { title: "회원탈퇴", url: '' }];
 
   return (
     <>
-      <div className={styles["container"]} style={{ maxWidth: "1300px" }}>
+      <Header></Header>
+      <div className={styles["container"]} style={{ maxWidth: "1200px" }}>
         <div className={styles["setWidth-100"]}>
           <div className={styles["flex-box__top"]}>
             <div className={styles["flex-box__top__profilePadding"]}>
-              <h2>마이페이지</h2>
+
+              <Title title={'마이페이지'} className={'profile_mypage'}></Title>
+
               <div className={styles["leftTitle__user-box"]}>
                 <div className={styles["leftTitle__user-box__padding"]}>
                   <div className={styles["flex-box"]}>
@@ -62,9 +73,10 @@ const Profile = (props) => {
                     <div
                       key={i}
                       className={`${styles["flex-box"]} ${styles["setCursor"]}`}
+                      onClick={() => move(`/member/modify/${d.url}`)}
                     >
                       <div className={styles["button-box"]}>
-                        <p className={styles["button-box__text"]}>{d}</p>
+                        <p className={styles["button-box__text"]}>{d.title}</p>
                       </div>
                       <div className={styles["button-box__iconDiv"]}>
                         <AiOutlineRight
@@ -80,6 +92,7 @@ const Profile = (props) => {
           </div>
         </div>
       </div>
+      <Footer></Footer>
     </>
   );
 };

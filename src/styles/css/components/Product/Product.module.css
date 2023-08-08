@@ -16,9 +16,9 @@ div {
 
 .base {
   width: 90%;
-  margin: 0px auto 0px auto;
+  margin: 50px auto;
   position: relative;
-  max-width: 1280px;
+  max-width: 1200px;
 }
 
 .filterBox {
@@ -34,7 +34,7 @@ div {
 
 .selectDrop__cont {
   position: absolute;
-  top: 25px;
+  top: 100px;
   right: 0;
   width: 250px;
   z-index: 10;

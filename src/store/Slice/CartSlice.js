@@ -4,7 +4,6 @@ const CartSlice = createSlice({
   name: "CartSlice",
   initialState: {
     cartItem: [],
-    cartOpen: false,
   },
   reducers: {
 
@@ -41,16 +40,10 @@ const CartSlice = createSlice({
       }
     },
 
-    cartIsOpen(state, action) {
-      if (action.payload) {
-        state.cartOpen = true
-      } else {
-        state.cartOpen = !state.cartOpen
-      }
-    }
+
 
   }
 })
 
-export const { putIn, removeCart, increase, decrease, cartIsOpen } = CartSlice.actions
+export const { putIn, removeCart, increase, decrease } = CartSlice.actions
 export default CartSlice

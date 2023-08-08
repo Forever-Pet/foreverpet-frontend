@@ -3,7 +3,7 @@ import DefaultModal from './DefaultModal';
 import Button from '../Button/Button'
 import { useDispatch, useSelector } from 'react-redux';
 import { secondModalClose } from '../../store/Slice/ModalSlice';
-import { cartIsOpen } from '../../store/Slice/CartSlice';
+import { cartIsOpen } from '../../store/Slice/ModalSlice';
 const InsideBag = () => {
   const modalState = useSelector((state) => { return state.modal.modalState })
   const dispatch = useDispatch()
