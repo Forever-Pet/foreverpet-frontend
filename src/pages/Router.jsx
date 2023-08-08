@@ -52,7 +52,10 @@ const Router = () => {
         </Routes>
       ) : (
         <Routes>
-          <Route />
+          // 인증인가, oauth
+          <Route path="/user/login" element={<Login />} />
+          <Route path="/user/join" element={<Join />} />
+          <Route path="/oauth/kakaoCallback" element={<KakaoCallback />} />
         </Routes>
       )}
     </>
