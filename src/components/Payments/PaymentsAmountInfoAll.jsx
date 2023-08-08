@@ -1,6 +1,9 @@
 // React Hooks
 import { useEffect, useState } from "react";
 
+// Redux
+import { useSelector } from "react-redux";
+
 // CSS
 import styles from "../../styles/css/components/Payments/PaymentsAmountInfo.module.css";
 
@@ -11,10 +14,6 @@ import { addPriceComma } from "../../utils/addPriceComma";
 import Title from "../../common/Title/Title";
 
 const PaymentsAmountInfoAll = (props) => {
-  const [productAmountInfo, setProductAmountInfo] = useState(
-    props.paymentsProductDetailInfo
-  );
-
   const [productAmount, setProductAmount] = useState({
     productAmount: 0,
     productDeliveryAmount: 0,
@@ -22,13 +21,14 @@ const PaymentsAmountInfoAll = (props) => {
     productTotalAmount: 0,
   });
 
+  const cartData = useSelector((state) => state.cart.cartItem);
+
   useEffect(() => {
-    console.log(productAmountInfo);
     // 각각 가정한 배송료와 쿠폰 할인 값
     const deliveryAmount = 0;
     const couponDiscountAmount = 0;
-    const productAmount = productAmountInfo.reduce(
-      (total, item) => total + item.quantity * item.defaultAmount,
+    const productAmount = cartData.reduce(
+      (total, item) => total + item.count * item.productPrice,
       0
     );
     // 결제 총금액
@@ -41,7 +41,7 @@ const PaymentsAmountInfoAll = (props) => {
     });
     // 결제금액 상향식 통신으로 전송
     props.paymentsAmountBtn(totalAmount);
-  }, []);
+  }, [cartData]);
 
   return (
     <div className={styles["payment-amount__info"]}>
