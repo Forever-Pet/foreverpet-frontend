@@ -1,6 +1,16 @@
 /*Footer.module.css*/
 
-@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Noto+Sans+KR&display=swap');
+/*font*/
+@font-face {
+  font-family: 'Nanum Pen Script';
+  src: url('../../font/NanumPenScript-Regular.woff') format('woff');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Noto Sans KR';
+  src: url('../../font/NotoSansKR-Regular.woff') format('woff');
+  font-display: swap;
+}
 
 .footer {
   z-index: 20;

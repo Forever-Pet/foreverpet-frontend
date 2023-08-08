@@ -8,12 +8,12 @@ import CartegoryItem from '../components/Card/CartegoryItem';
 import MainBanTwo from '../components/Banner/MainBanTwo';
 import NewItem from '../components/Home/NewItem';
 import PrdSnack from '../components/Home/PrdSnack';
-import Image from '../common/Img/Image';
 
 //css
 import styles from '../styles/css/pages/Home.module.css';
 
 const Home = () => {
+ 
   return (
   <div>
     <Header/>
