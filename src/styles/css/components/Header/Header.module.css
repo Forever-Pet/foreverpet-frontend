@@ -1,8 +1,5 @@
 /*Header.module.css*/
 
-/*font*/
-@import url("https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Noto+Sans+KR&display=swap");
-
 /* pc */
 @media screen and (min-width: 1024px) {
   .header {

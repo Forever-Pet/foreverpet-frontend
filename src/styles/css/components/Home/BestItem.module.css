@@ -1,8 +1,5 @@
 /*BestItem.module.css*/
 
-/*font*/
-@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Noto+Sans+KR&display=swap');
-
 /* pc */
 @media screen and (min-width:1024px)  {
   .bestitem {
@@ -13,14 +10,14 @@
     margin: 0 auto;
 }
 
-.header_text {
+.bestitem_header__text {
   font-size: 18px;
   font-weight: bold;
   text-align: center;
   color: #333;
 }
 
-.product {
+.bestitem_product {
   display: flex;
   justify-content: center;
 }
@@ -36,14 +33,14 @@
     margin: 0 auto;
 }
 
-.header_text {
+.bestitem_header__text {
   font-size: 18px;
   font-weight: bold;
   text-align: center;
   color: #333;
 }
 
-.product {
+.bestitem_product {
   display: flex;
   justify-content: center;
 }
@@ -59,14 +56,14 @@
     margin: 0 auto;
 }
 
-.header_text {
+.bestitem_header__text {
   font-size: 18px;
   font-weight: bold;
   text-align: center;
   color: #333;
 }
 
-.product {
+.bestitem_product {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;

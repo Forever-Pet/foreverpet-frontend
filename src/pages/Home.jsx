@@ -13,6 +13,7 @@ import PrdSnack from '../components/Home/PrdSnack';
 import styles from '../styles/css/pages/Home.module.css';
 
 const Home = () => {
+ 
   return (
   <div>
     <Header/>
@@ -22,11 +23,10 @@ const Home = () => {
     <MainBanTwo/>
     <NewItem/>
     <div className={styles.home_ban}>
-      <img src='img/eveban1.jpg' alt='' className={styles.home_ban_img}/>
-      <img src='img/eveban2.jpg' alt='' className={styles.home_ban_img}/>
+      <img src='img/eveban1.jpg' className={styles.home_ban_img}/>
+      <img src='img/eveban2.jpg' className={styles.home_ban_img}/>
     </div>
     <PrdSnack/>
-    {/* <SubSlider carouselData={CarouselData}/> */}
     <Footer/>
   </div>
   );

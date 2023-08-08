@@ -2,14 +2,14 @@ import { useState } from "react";
 import Title from "../../common/Title/Title";
 
 //css
-import styles from "../../styles/css/components/Banner/HeaderBan.module.css";
+import styles from "../../styles/css/components/Banner/HeaderBanner.module.css";
 
 //icon
 import { RxCross2 } from "react-icons/rx";
 
 
 //헤더 상단 베너
-const HeaderBan = () => {
+const HeaderBanner = () => {
   const [banner, setBanner] = useState(true);
 
   return (
@@ -24,4 +24,4 @@ const HeaderBan = () => {
   );
 };
 
-export default HeaderBan;
+export default HeaderBanner;
