@@ -5,6 +5,8 @@ import { useState } from "react";
 import styles from "../../styles/css/pages/Payments/Payments.module.css";
 
 // Components
+import Header from "../../components/Header/Header";
+import Footer from "../../components/Footer/Footer";
 import Title from "../../common/Title/Title";
 import PaymentsAmountInfoAll from "../../components/Payments/PaymentsAmountInfoAll";
 import PaymentsOrderInfo from "../../components/Payments/PaymentsOrderInfo";
@@ -88,17 +90,7 @@ const PaymentsAll = () => {
 
   return (
     <div className={styles["payments-wrap"]}>
-      <div
-        style={{
-          width: "100%",
-          height: "202px",
-          position: "fixed",
-          backgroundColor: "teal",
-          zIndex: "20",
-        }}
-      >
-        헤더임
-      </div>
+      <Header />
       <div className={styles["payments-info"]}>
         <div className={styles["payments-text"]}>
           <Title title="주문결제" />
@@ -134,6 +126,9 @@ const PaymentsAll = () => {
           dummyOrderListData={dummyOrderListData}
           paymentsAmountBtn={paymentsAmountBtn}
         />
+      </div>
+      <div className={styles["payments-info-footer"]}>
+        <Footer />
       </div>
     </div>
   );
