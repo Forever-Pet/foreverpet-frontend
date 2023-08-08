@@ -1,5 +1,5 @@
 // React Hooks
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 
 // CSS
 import styles from "../../styles/css/components/Payments/PaymentsFinal.module.css";
@@ -25,8 +25,6 @@ const PaymentsFinal = (props) => {
       ownerTel,
       deliveryName,
       deliveryMainAddress,
-      deliverySubAddress,
-      deliveryZipcode,
       deliveryTel,
     } = props.paymentReinfo;
 
@@ -43,30 +41,16 @@ const PaymentsFinal = (props) => {
     if (!paymentInputAgree.paymentAgree || !paymentInputAgree.privacyAgree)
       return alert("필수란에 동의를 체크해 주세요.");
 
-    const productsName = props.dummyOrderListData[0].name;
-    const productLength = props.dummyOrderListData.length;
-    const slice = productsName.slice(0, 10);
-
-    const sliceProductsName = `${slice}... 외 ${productLength - 1}개`;
-    const defualtProductsName = `${productsName} 외 ${productLength - 1} 개`;
+    const productsName = props.paymentsProductDetailInfo.productName;
+    const defaultProductsName = `${productsName} 1 개`;
 
     // 결제 API 전송
-    if (productsName.length > 7) {
-      return impPayment(sliceProductsName);
-    } else {
-      return impPayment(defualtProductsName);
-    }
+    impPayment(defaultProductsName);
   };
 
   const impPayment = (productsName) => {
-    const {
-      ownerName,
-      ownerTel,
-      ownerEmail,
-      deliveryMainAddress,
-      deliverySubAddress,
-      deliveryZipcode,
-    } = props.paymentReinfo;
+    const { ownerName, ownerTel, ownerEmail, deliveryMainAddress } =
+      props.paymentReinfo;
 
     const { IMP } = window;
     IMP.init("imp32173444");
@@ -75,14 +59,13 @@ const PaymentsFinal = (props) => {
     const regEX = /[a-zA-Z0-9]/g;
     const filterUUID = uuid.match(regEX).join("");
     const date = new Date().getTime();
-    const orderName = filterUUID + String(date);
+    const uuidName = filterUUID + String(date);
 
-    // address; [city : abc.value , street : add.value , zipcode : acc.value]
     // 결제 데이터
     const impPaymentData = {
       pg: "kakaopay", // PG사
       pay_method: "card", // 결제수단
-      merchant_uid: orderName, // 주문번호
+      merchant_uid: uuidName, // 주문번호
       amount: props.paymentsFinalAmount, // 결제금액
       name: productsName, // 주문명
       buyer_name: ownerName, // 구매자 이름
@@ -101,11 +84,47 @@ const PaymentsFinal = (props) => {
 
     if (success) {
       alert("결제 성공");
-      console.log(success);
-      console.log(merchant_uid);
+      postPaymentsProductInfo();
     } else {
       alert(`결제 실패: ${error_msg}`);
     }
+  };
+
+  // 백엔드 서버로 결제정보 전송
+  const postPaymentsProductInfo = async () => {
+    const { deliveryMainAddress, deliverySubAddress, deliveryZipcode } =
+      props.paymentReinfo;
+
+    // const { id } = props.paymentsProductDetailInfo;
+    const uuid = uuidv4();
+    const regEX = /[a-zA-Z0-9]/g;
+    const filterUUID = uuid.match(regEX).join("");
+    const date = new Date().getTime();
+    const uuidName = filterUUID + String(date);
+
+    const orderRequest = [props.paymentsProductDetailInfo].map((data) => ({
+      orderProductId: data.id,
+      orderProductAmount: 1,
+    }));
+
+    const bodyData = {
+      paymentInfoRequest: {
+        paymentName: uuidName,
+        paymentGateway: "kakaoPay",
+        paymentMethod: "kakaoPay",
+      },
+      orderInfoRequest: {
+        address: {
+          city: deliveryMainAddress,
+          street: deliverySubAddress,
+          zipcode: deliveryZipcode,
+        },
+      },
+      // 유저 넘버 수정 예정
+      userNo: 1,
+      orderProductRequest: [orderRequest],
+    };
+    console.log(bodyData);
   };
 
   // 체크박스 활성 여부

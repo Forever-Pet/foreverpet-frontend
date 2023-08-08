@@ -6,7 +6,7 @@ import { addPriceComma } from "../../../utils/addPriceComma";
 
 // Components
 import Image from "../../../common/Img/Image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const ProductOrderList = (props) => {
   const [productOrder, setProductOrder] = useState([
@@ -22,7 +22,7 @@ const ProductOrderList = (props) => {
     <ul>
       <li className={styles["order-list__item"]}>
         <Image
-          src={props.paymentsProductDetailInfo.productImage}
+          src={productOrder[0].productImage}
           className="order-list__image"
           alt=""
         />

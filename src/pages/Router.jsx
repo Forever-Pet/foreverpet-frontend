@@ -23,7 +23,7 @@ const Router = () => {
 
   return (
     <>
-      {isInLogged ? (
+      {isInLogged && (
         <Routes>
           // 루트
           <Route path="/" element={<Home />} />
@@ -49,13 +49,6 @@ const Router = () => {
           <Route path="/member/orderhistory" element={<OrderHistory />} />
           // Not Url
           <Route path="/*" element={<PageNotFound />} />
-        </Routes>
-      ) : (
-        <Routes>
-          // 인증인가, oauth
-          <Route path="/user/login" element={<Login />} />
-          <Route path="/user/join" element={<Join />} />
-          <Route path="/oauth/kakaoCallback" element={<KakaoCallback />} />
         </Routes>
       )}
     </>
