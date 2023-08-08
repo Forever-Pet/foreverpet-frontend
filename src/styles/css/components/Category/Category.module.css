@@ -80,12 +80,12 @@
     max-width:1200px;
     height: 200px;
     margin: 0 auto;
+    font-size: 12px;
 }
 
 .category_ul {
   display: flex;
   line-height: 23px;
-  margin-left: -34px;
 }
 
   
