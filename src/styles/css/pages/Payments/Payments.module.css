@@ -1,10 +1,9 @@
 .payments-wrap {
-  position: relative;
   width: 100%;
 }
 .payments-info,
 .payments-info-amount {
-  padding: 230px 20px 50px 20px;
+  padding: 50px 20px 50px 20px;
 }
 
 .payments-info {
@@ -12,6 +11,7 @@
   position: absolute;
   left: calc(50% - 460px);
   font-size: 13px;
+  padding-bottom: 100px;
 }
 
 .payments-info__list {
@@ -27,6 +27,12 @@
   font-size: 28px;
   font-weight: bold;
   padding-bottom: 30px;
+}
+
+.payments-info-footer {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
 }
 
 @media screen and (max-width: 930px) {

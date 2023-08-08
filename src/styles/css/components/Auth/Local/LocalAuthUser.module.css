@@ -5,24 +5,15 @@
 }
 
 .localUser-auth__header--closeBtn {
-  width: 100%;
-  max-width: 80%;
+  width: 70%;
+  max-width: 800px;
+  margin: 0 auto;
   text-align: end;
-}
-
-@media screen and (min-width: 900px) {
-  .localUser-auth__header--closeBtn {
-    width: 100%;
-    max-width: 75%;
-    text-align: end;
-  }
 }
 
 .localUser-auth__header--btn {
   cursor: pointer;
   font-size: 20px;
-  position: relative;
-  left: 50px;
 }
 
 .localUser-join__form {
@@ -41,7 +32,8 @@
 }
 
 .localUser-join__itemList {
-  max-width: 600px;
+  width: 70%;
+  max-width: 800px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;

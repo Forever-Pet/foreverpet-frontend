@@ -1,5 +1,8 @@
 // React Hooks
-import { useEffect, useState } from "react";
+import { useState } from "react";
+
+// Redux
+import { useSelector } from "react-redux";
 
 // CSS
 import styles from "../../styles/css/components/Payments/PaymentsFinal.module.css";
@@ -12,11 +15,13 @@ import Input from "../../common/Input/Input";
 
 import { v4 as uuidv4 } from "uuid";
 
-const PaymentsFinal = (props) => {
+const PaymentsFinalAll = (props) => {
   const [paymentInputAgree, setPaymentInputAgree] = useState({
     paymentAgree: false,
     privacyAgree: false,
   });
+
+  const cartData = useSelector((state) => state.cart.cartItem);
 
   // 결제버튼
   const orderPayment = () => {
@@ -41,8 +46,9 @@ const PaymentsFinal = (props) => {
     if (!paymentInputAgree.paymentAgree || !paymentInputAgree.privacyAgree)
       return alert("필수란에 동의를 체크해 주세요.");
 
-    const productsName = props.paymentsProductDetailInfo.productName;
-    const defaultProductsName = `${productsName} 1 개`;
+    const productsName = cartData[0].productName;
+    const productLength = cartData.length;
+    const defaultProductsName = `${productsName} 외 ${productLength - 1} 개`;
 
     // 결제 API 전송
     impPayment(defaultProductsName);
@@ -102,9 +108,9 @@ const PaymentsFinal = (props) => {
     const date = new Date().getTime();
     const uuidName = filterUUID + String(date);
 
-    const orderRequest = [props.paymentsProductDetailInfo].map((data) => ({
+    const orderRequest = cartData.map((data) => ({
       orderProductId: data.id,
-      orderProductAmount: 1,
+      orderProductAmount: data.count,
     }));
 
     const bodyData = {
@@ -172,4 +178,4 @@ const PaymentsFinal = (props) => {
   );
 };
 
-export default PaymentsFinal;
+export default PaymentsFinalAll;

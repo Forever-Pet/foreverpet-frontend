@@ -1,11 +1,13 @@
 // React Hooks
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useLocation } from "react-router-dom";
 
 // CSS
 import styles from "../../styles/css/pages/Payments/Payments.module.css";
 
 // Components
+import Header from "../../components/Header/Header";
+import Footer from "../../components/Footer/Footer";
 import Title from "../../common/Title/Title";
 import PaymentsAmountInfo from "../../components/Payments/PaymentsAmountInfo";
 import PaymentsProductOrderInfo from "../../components/Payments/PaymentsProductOrderInfo";
@@ -38,24 +40,12 @@ const Payments = () => {
     }));
   };
 
-  useEffect(() => console.log(paymentsProductDetailInfo), []);
-
   // 결제버튼 금액 확인
   const paymentsAmountBtn = (amount) => setPaymentsFinalAmount(amount);
 
   return (
     <div className={styles["payments-wrap"]}>
-      <div
-        style={{
-          width: "100%",
-          height: "202px",
-          position: "fixed",
-          backgroundColor: "teal",
-          zIndex: "20",
-        }}
-      >
-        헤더임
-      </div>
+      <Header />
       <div className={styles["payments-info"]}>
         <div className={styles["payments-text"]}>
           <Title title="주문결제" />
@@ -93,6 +83,9 @@ const Payments = () => {
           paymentsProductDetailInfo={paymentsProductDetailInfo}
           paymentsAmountBtn={paymentsAmountBtn}
         />
+      </div>
+      <div className={styles["payments-info-footer"]}>
+        <Footer />
       </div>
     </div>
   );

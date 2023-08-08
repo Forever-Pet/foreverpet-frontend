@@ -1,14 +1,19 @@
+// CSS
 import styles from "../../styles/css/pages/User/Login.module.css";
 
+// Components
 import LocalAuthUserJoin from "../../components/Auth/Local/LocalAuthUserJoin";
+import Header from "../../components/Header/Header";
+import Footer from "../../components/Footer/Footer";
 
 const Join = () => {
   return (
     <>
-      <div className={styles["header_test"]}>헤더임</div>
+      <Header />
       <div className={styles["login-wrap"]}>
         <LocalAuthUserJoin />
       </div>
+      <Footer />
     </>
   );
 };
