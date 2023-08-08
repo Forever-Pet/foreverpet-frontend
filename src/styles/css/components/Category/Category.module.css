@@ -56,12 +56,6 @@
    
   }
   
-  .category_link {
-    text-decoration: none;
-    color: #666666;
-    font-size: 14px;
-    margin: 0 auto;
-  }
 }
 
 /*모바일*/
@@ -70,32 +64,21 @@
     position: relative;
     top: 25px;
     max-width:1200px;
-    height: 200px;
+    height: 240px;
     margin: 0 auto;
     font-size: 12px;
 }
 
 .category_ul {
-  display: flex;
-  line-height: 23px;
+  grid-template-columns: repeat(2, 100px 1fr);
+  display: grid;
 }
-
-  
   .category_item {
     text-align: center;
     margin: 0 auto;
-    width: 53px;
     padding-bottom: 10px;
     list-style-type : none;
     
   }
-  
-  .category_link {
-    text-decoration: none;
-    color: #666666;
-    font-size: 12px;
-    margin: 0 auto;
-  }
-  
 
 }
