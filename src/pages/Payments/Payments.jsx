@@ -1,5 +1,5 @@
 // React Hooks
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useLocation } from "react-router-dom";
 
 // CSS
@@ -39,8 +39,6 @@ const Payments = () => {
       [name]: value,
     }));
   };
-
-  useEffect(() => console.log(paymentsProductDetailInfo), []);
 
   // 결제버튼 금액 확인
   const paymentsAmountBtn = (amount) => setPaymentsFinalAmount(amount);

@@ -6,7 +6,7 @@ import { addPriceComma } from "../../../utils/addPriceComma";
 
 // Components
 import Image from "../../../common/Img/Image";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const ProductOrderList = (props) => {
   const [productOrder, setProductOrder] = useState([
