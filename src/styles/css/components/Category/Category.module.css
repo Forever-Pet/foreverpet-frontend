@@ -44,7 +44,6 @@
   .category_ul {
     display: flex;
     line-height: 23px;
-    margin-left: -34px;
     /* gap: 10px 5px; */
   }
   
