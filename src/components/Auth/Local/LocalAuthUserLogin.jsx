@@ -34,6 +34,12 @@ const LocalAuthUserLogin = () => {
     password: "",
   });
 
+  useEffect(() => {
+    if (responsive !== null) {
+      dispatch(addToken(responsive));
+      pathMove("/");
+    }
+  }, [responsive]);
   // // Debounce Func
   const debounceInputValueFunc = (e) => {
     const { name, value } = e.target;
@@ -60,7 +66,7 @@ const LocalAuthUserLogin = () => {
 
     // 비동기 코드 수정 예정
     authSignUp("login", bodyData); // authSignUp 함수 호출
-    dispatch(addToken(responsive.data.accessToken));
+    dispatch(addToken(responsive));
   };
 
   // 회원가입 경로로 이동함수
