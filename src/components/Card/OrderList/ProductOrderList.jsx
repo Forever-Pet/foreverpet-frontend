@@ -22,7 +22,7 @@ const ProductOrderList = (props) => {
     <ul>
       <li className={styles["order-list__item"]}>
         <Image
-          src={props.paymentsProductDetailInfo.productImage}
+          src={productOrder[0].productImage}
           className="order-list__image"
           alt=""
         />
