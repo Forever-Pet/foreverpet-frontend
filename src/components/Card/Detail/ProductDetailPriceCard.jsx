@@ -1,6 +1,8 @@
 import { CopyToClipboard } from "react-copy-to-clipboard";
 
+// Custom Hook
 import usePathMove from "../../../hooks/usePathMove";
+import { UseCartHook } from "../../../hooks/ClickHook/UseCartHook";
 
 // CSS
 import styles from "../../../styles/css/components/Card/Detail/ProductDetailPriceCard.module.css";
@@ -11,12 +13,18 @@ import { BsHeart, BsFillHeartFill, BsShare } from "react-icons/bs";
 // Components
 import Button from "../../../common/Button/Button";
 import { addPriceComma } from "../../../utils/addPriceComma";
-import { useEffect } from "react";
+import BagModal from "../../../common/Modal/BagModal";
 
 const ProductDetailPriceCard = (props) => {
+  const { ckBag } = UseCartHook();
   const pathMove = usePathMove();
   const productItemPayment = () =>
     pathMove("/payments", props.productDetailData, true);
+
+  const addCartData = () => {
+    const { productDetailData } = props;
+    ckBag(productDetailData);
+  };
   return (
     <div className={styles["product-detail__wrap"]}>
       <ul className={styles["product-detail"]}>
@@ -41,7 +49,11 @@ const ProductDetailPriceCard = (props) => {
         </li>
       </ul>
       <div className={styles["product-detail__btn"]}>
-        <Button title="장바구니" className="product-detail__btn--cart" />
+        <Button
+          title="장바구니"
+          className="product-detail__btn--cart"
+          onClick={addCartData}
+        />
         <Button
           title="바로구매"
           className="product-detail__btn--payment"

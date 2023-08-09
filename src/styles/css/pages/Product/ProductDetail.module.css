@@ -1,3 +1,8 @@
+.product-detail__view-cartModal {
+  position: absolute;
+  z-index: 40;
+}
+
 .product-detail__view-wrap {
   width: 100%;
 }
