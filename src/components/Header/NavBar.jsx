@@ -40,9 +40,10 @@ const NavListArr = () => {
               className={styles.product__list_item_name}
               onClick={() => pathMove(props.url, { title: props.title }, true)}
             >
+            <Image src={props.img} className="product__list_img" />
               {props.title}
             </div>
-            <Image src={props.img} className="product__list_img" />
+           
           </div>
         );
       })}
