@@ -51,18 +51,18 @@
     font-size: 25px;
     padding-right: 5px;
   }
+/*nav 서브 리스트 */
+.product__list {
+  position: absolute;
+  top: 39px;
+  width: 174px;
+  height: 375px;
+  line-height: 35px;
+  padding-left: 10px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+}
 
-  /*nav 서브 리스트 */
-  .product__list {
-    position: absolute;
-    top: 42px;
-    width: 174px;
-    height: 375px;
-    line-height: 35px;
-    padding-left: 10px;
-    border: 1px solid #ddd;
-    background-color: #fff;
-  }
 
   .product__list_item {
     color: black;
@@ -140,17 +140,19 @@
     padding-right: 5px;
   }
 
+  
   /*nav 서브 리스트 */
-  .product__list {
-    position: absolute;
-    top: 42px;
-    width: 174px;
-    height: 375px;
-    line-height: 35px;
-    padding-left: 10px;
-    border: 1px solid #ddd;
-    background-color: #fff;
-  }
+.product__list{
+  position: absolute;
+  top: 39px;
+  width: 174px;
+  height: 375px;
+  line-height: 35px;
+  padding-left: 10px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+}
+
 
   .product__list_item {
     color: black;
@@ -224,16 +226,11 @@
     font-weight: 600;
   }
 
-  /*햄버거버튼 css*/
-  .service_item__icon {
-    font-size: 25px;
-    padding-right: 5px;
-  }
 
   /*nav 서브 리스트 */
-  .product__list {
+  .product__list{
     position: absolute;
-    top: 42px;
+    top: 33px;
     width: 174px;
     height: 375px;
     line-height: 35px;
@@ -241,27 +238,33 @@
     border: 1px solid #ddd;
     background-color: #fff;
   }
-
-  .product__list_item {
-    color: black;
-    font-size: 14px;
-    margin-top: 3px;
-    transform: scale(1); /* 이미지 확대 */
-    transition: transform 0.5s; /* 시간 설정 */
-  }
-
-  .product__list_item:hover {
-    color: #666666;
-    transform: scale(1.1); /* 이미지 확대 */
-    transition: transform 0.5s; /* 시간 설정 */
-  }
-
-  .listItem_name {
-    position: absolute;
-    left: 46px;
-    top: 6px;
-    text-decoration: none;
-    color: black;
+  
+  
+    .product__list_item {
+      color: black;
+      font-size: 14px;
+      margin-top: 3px;
+      transform: scale(1); /* 이미지 확대 */
+      transition: transform 0.5s; /* 시간 설정 */
+    }
+  
+    .product__list_item:hover {
+      color: #666666;
+      transform: scale(1.1); /* 이미지 확대 */
+      transition: transform 0.5s; /* 시간 설정 */
+    }
+  
+    .product__list_item_name {
+      position: absolute;
+      left: 46px;
+      top: 6px;
+      text-decoration: none;
+      color: black;
+    }
+      /*햄버거버튼 css*/
+  .service_item__icon {
+    font-size: 25px;
+    padding-right: 5px;
   }
 
   .content_module {
@@ -313,23 +316,25 @@
     font-weight: 600;
   }
 
+
+/*nav 서브 리스트 */
+.product__list  {
+  position: absolute;
+  top: 33px;
+  width: 174px;
+  height: 375px;
+  line-height: 35px;
+  padding-left: 10px;
+  border: 1px solid #ddd;
+  background-color: #fff;
+}
+
   /*햄버거버튼 css*/
   .service_item__icon {
     font-size: 25px;
     padding-right: 5px;
   }
 
-  /*nav 서브 리스트 */
-  .product__list {
-    position: absolute;
-    top: 42px;
-    width: 174px;
-    height: 375px;
-    line-height: 35px;
-    padding-left: 10px;
-    border: 1px solid #ddd;
-    background-color: #fff;
-  }
 
   .product__list_item {
     color: black;
