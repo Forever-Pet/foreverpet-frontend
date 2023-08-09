@@ -230,7 +230,7 @@
   /*nav 서브 리스트 */
   .product__list{
     position: absolute;
-    top: 39px;
+    top: 33px;
     width: 174px;
     height: 375px;
     line-height: 35px;
@@ -320,7 +320,7 @@
 /*nav 서브 리스트 */
 .product__list  {
   position: absolute;
-  top: 39px;
+  top: 33px;
   width: 174px;
   height: 375px;
   line-height: 35px;
