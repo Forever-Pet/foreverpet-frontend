@@ -43,9 +43,9 @@ const ProductDetail = () => {
         <div className={styles["product-detail__view--PriceCard"]}>
           <ProductDetailPriceCard productDetailData={productDetailData} />
         </div>
-        <div className={styles["product-detail__footer"]}>
-          <Footer />
-        </div>
+      </div>
+      <div className={styles["product-detail__footer"]}>
+        <Footer />
       </div>
     </div>
   );

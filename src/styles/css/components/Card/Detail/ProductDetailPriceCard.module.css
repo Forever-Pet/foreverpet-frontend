@@ -1,6 +1,6 @@
 @media (max-width: 1024px) {
   .product-detail__wrap {
-    width: 70%;
+    width: 0%;
   }
   .product-detail__btn {
     display: flex;
@@ -9,7 +9,7 @@
 }
 
 .product-detail__wrap {
-  min-width: 400px;
+  width: 400px;
   background-color: white;
   padding: 1px 30px 30px 30px;
   border-radius: 7px;
