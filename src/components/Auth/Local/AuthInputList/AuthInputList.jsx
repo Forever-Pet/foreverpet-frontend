@@ -42,7 +42,7 @@ const AuthInputList = (props) => {
           중복확인
         </div>
       </li>
-      <li className={styles["localUser-join__itemList"]} id={props.emailAuth}>
+      {/* <li className={styles["localUser-join__itemList"]} id={props.emailAuth}>
         <Input
           type="text"
           placeholder="승인번호를 입력해주세요"
@@ -57,7 +57,7 @@ const AuthInputList = (props) => {
         >
           승인번호 확인
         </div>
-      </li>
+      </li> */}
       <li className={styles["localUser-join__itemList"]}>
         <label>
           비밀번호 <span>*</span>

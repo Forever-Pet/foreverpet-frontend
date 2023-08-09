@@ -8,6 +8,7 @@ import { useParams } from "react-router-dom";
 import styles from "../../styles/css/pages/Product/ProductDetail.module.css";
 
 // Components
+import BagModal from "../../common/Modal/BagModal";
 import ProductDetailInformation from "../../components/Product/ProductDetailInformation";
 import ProductDetailPriceCard from "../../components/Card/Detail/ProductDetailPriceCard";
 import Header from "../../components/Header/Header";
@@ -34,6 +35,9 @@ const ProductDetail = () => {
 
   return (
     <div className={styles["product-detail__view-wrap"]}>
+      <div className={styles["product-detail__view-cartModal"]}>
+        <BagModal />
+      </div>
       <Header />
       <div className={styles["product-detail__view-container"]}>
         <div className={styles["product-detail__view--information"]}>
@@ -43,9 +47,9 @@ const ProductDetail = () => {
         <div className={styles["product-detail__view--PriceCard"]}>
           <ProductDetailPriceCard productDetailData={productDetailData} />
         </div>
-        <div className={styles["product-detail__footer"]}>
-          <Footer />
-        </div>
+      </div>
+      <div className={styles["product-detail__footer"]}>
+        <Footer />
       </div>
     </div>
   );

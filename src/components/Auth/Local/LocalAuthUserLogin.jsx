@@ -2,11 +2,18 @@ import { useState } from "react";
 
 import { debounce } from "lodash";
 
+import axios from "axios";
+
+//Redux
+import { useDispatch } from "react-redux";
+import { addToken, removeToken } from "../../../store/Slice/localAuthSlice";
+
 // CSS
 import styles from "../../../styles/css/components/Auth/Local/LocalAuthUser.module.css";
 
 // Hooks
 import usePathMove from "../../../hooks/usePathMove";
+import useLocalAuthSignUp from "../../../hooks/useLocalAuthSignUp";
 
 // Components
 import LocalAuthUserHeader from "./HeaderTitle/LocalAuthUserHeader";
@@ -16,15 +23,23 @@ import Title from "../../../common/Title/Title";
 import KakaoAuthUserAccount from "../Kakao/KakaoAuthUserAccount";
 import NaverAuthUserAccount from "../Naver/NaverAuthUserAccount";
 import GoogleAuthUserAccount from "../Google/GoogleAuthUserAccount";
+import { useEffect } from "react";
 
 const LocalAuthUserLogin = () => {
   const pathMove = usePathMove();
-
+  const dispatch = useDispatch();
+  const [responsive, authSignUp] = useLocalAuthSignUp();
   const [authUserLoginInput, setAuthUserLoginInput] = useState({
     email: "",
     password: "",
   });
 
+  useEffect(() => {
+    if (responsive !== null) {
+      dispatch(addToken(responsive));
+      pathMove("/");
+    }
+  }, [responsive]);
   // // Debounce Func
   const debounceInputValueFunc = (e) => {
     const { name, value } = e.target;
@@ -40,12 +55,18 @@ const LocalAuthUserLogin = () => {
   const getInputValueInfo = debounce(debounceInputValueFunc, 300);
 
   // 로그인 정보 전송
-  const sendLoginUserInfomation = (e) => {
+  const sendLoginUserInfomation = async (e) => {
     const { email, password } = authUserLoginInput;
     e.preventDefault();
-    console.log(email.trim().length);
-    console.log("로그인 성공");
-    // 로그인 정보 백엔드로 API 통신
+
+    const bodyData = {
+      userEmail: email,
+      userPassword: password,
+    };
+
+    // 비동기 코드 수정 예정
+    authSignUp("login", bodyData); // authSignUp 함수 호출
+    dispatch(addToken(responsive));
   };
 
   // 회원가입 경로로 이동함수

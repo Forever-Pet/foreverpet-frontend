@@ -25,11 +25,11 @@ const LocalAuthUserJoin = () => {
   const [userAddressInfo, setUserAddressInfo] = useState(false);
   const [enableEmailAuth, setEnableEmailAuth] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
-  const [successEmailAuthCode, setSuccessEmailAuthCode] = useState(false);
+  // const [successEmailAuthCode, setSuccessEmailAuthCode] = useState(false);
   const [localAuthUserInput, setLocalAuthUserInput] = useState({
     name: "",
     email: "",
-    emailAuth: "",
+    // emailAuth: "",
     password: "",
     password2: "",
     tel: "",
@@ -71,19 +71,22 @@ const LocalAuthUserJoin = () => {
   const getUserMainAddressInfo = () => setUserAddressInfo((prev) => !prev);
 
   // 입력한 이메일 서버중복검증 확인
-  const checkEmailAuth = () => {
-    const isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(localAuthUserInput.email); // 정규 표현식을 사용하여 이메일 형식 검사
-    if (isValid) return setEnableEmailAuth((prev) => !prev);
-    // 현재 누군가가 이메일을 사용중이라면 EMAIL_ONLY_USED
-    setErrorMessage(MSG.JOIN.EMAIL_FAIL);
-  };
-
-  // 이메일 인증 통과
-  const getAuthEmailCode = () => {
-    if (localAuthUserInput.emailAuth.length === 0)
-      return setErrorMessage(MSG.JOIN.EMAIL_AUTH_VALUE);
-    // 만약 인증번호가 불일치 하다면 EMAIL_AUTH_WRONG
-    setSuccessEmailAuthCode(true);
+  const checkEmailAuth = async () => {
+    const { email } = localAuthUserInput;
+    const isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email); // 정규 표현식을 사용하여 이메일 형식 검사
+    // if (isValid) return setEnableEmailAuth((prev) => !prev);
+    if (!isValid) return alert("이메일을 입력 해주세요");
+    const API_URL =
+      "http://ec2-15-164-206-172.ap-northeast-2.compute.amazonaws.com/emailCheck";
+    const data = {
+      userEmail: email,
+    };
+    const res = await axios.post(API_URL, data);
+    if (!res.data) {
+      // 현재 누군가가 이메일을 사용중이라면 EMAIL_ONLY_USED
+      return setErrorMessage(MSG.JOIN.EMAIL_ONLY_USED);
+    }
+    return alert("해당 이메일 사용 가능합니다.");
   };
 
   // 회원가입 정보전송
@@ -91,9 +94,8 @@ const LocalAuthUserJoin = () => {
     e.preventDefault();
     if (localAuthUserInput.name.length === 0)
       return setErrorMessage(MSG.JOIN.NAME_FAIL);
-    if (!successEmailAuthCode) return setErrorMessage(MSG.JOIN.EMAIL_AUTH_FAIL);
-    if (localAuthUserInput.emailAuth.length === 0)
-      return setErrorMessage(MSG.JOIN.EMAIL_AUTH_VALUE);
+    if (localAuthUserInput.email.length === 0)
+      return setErrorMessage(MSG.JOIN.EMAIL_FAIL);
     if (localAuthUserInput.password !== localAuthUserInput.password2)
       return setErrorMessage(MSG.JOIN.PASSWORD_FAIL);
     if (localAuthUserInput.tel.length < 8)
@@ -123,10 +125,12 @@ const LocalAuthUserJoin = () => {
 
     const res = await axios.post(
       "http://ec2-15-164-206-172.ap-northeast-2.compute.amazonaws.com/signup",
-      {
-        data: JSON.stringify(bodyData),
-      }
+      bodyData
     );
+    if (res.data) {
+      alert("회원가입이 완료 되었습니다.");
+      pathMove("/");
+    }
     console.log(res);
   };
 
@@ -136,11 +140,19 @@ const LocalAuthUserJoin = () => {
   const SHOW = styles[""];
   const HIDE = styles["localUser-join__itemList-hidden"];
 
-  // 이메일 중복확인 후 인증 동적 활성화 렌더링
-  const emailAuth = enableEmailAuth ? SHOW : HIDE;
-
   // 메인주소 입력시, 서브주소 입력 활성화
   const subEmailStye = localAuthUserInput.mainAddress.length > 1 ? SHOW : HIDE;
+
+  // 이메일 중복확인 후 인증 동적 활성화 렌더링 (인증기능 추가 예정)
+  // const emailAuth = enableEmailAuth ? SHOW : HIDE;
+
+  // 이메일 인증 통과 (승인번호 기능 추가 예정)
+  // const getAuthEmailCode = () => {
+  //   if (localAuthUserInput.emailAuth.length === 0)
+  //     return setErrorMessage(MSG.JOIN.EMAIL_AUTH_VALUE);
+  //   // 만약 인증번호가 불일치 하다면 EMAIL_AUTH_WRONG
+  //   setSuccessEmailAuthCode(true);
+  // };
 
   return (
     <>
@@ -157,10 +169,8 @@ const LocalAuthUserJoin = () => {
         onSubmit={registerLocalUserAuth}
       >
         <AuthInputList
-          emailAuth={emailAuth}
           subEmailStye={subEmailStye}
           localAuthUserInput={localAuthUserInput}
-          getAuthEmailCode={getAuthEmailCode}
           checkEmailAuth={checkEmailAuth}
           getUserMainAddressInfo={getUserMainAddressInfo}
           getInputValueInfo={getInputValueInfo}

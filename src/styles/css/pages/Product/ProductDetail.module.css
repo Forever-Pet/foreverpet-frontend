@@ -1,3 +1,8 @@
+.product-detail__view-cartModal {
+  position: absolute;
+  z-index: 40;
+}
+
 .product-detail__view-wrap {
   width: 100%;
 }
@@ -22,7 +27,7 @@
 
 @media screen and (max-width: 1024px) {
   .product-detail__view--information {
-    width: 90%;
+    max-width: 90%;
     position: static;
     margin: 0 auto;
     display: flex;
@@ -30,13 +35,13 @@
     box-sizing: border-box;
   }
   .product-detail__view--PriceCard {
+    width: 90%;
     position: static;
-    bottom: 0;
-    left: 0;
     display: flex;
     justify-content: center;
-    width: 100%;
-    z-index: 10;
+    align-items: center;
+    margin: 0 auto;
+    z-index: 20;
   }
 }
 

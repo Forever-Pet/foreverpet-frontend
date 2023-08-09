@@ -1,5 +1,9 @@
 .product-detail__information-img {
+  width: 100%;
   margin-top: 100px;
+  min-width: 200px;
+  max-width: 400px;
+  max-height: 400px;
 }
 
 .order-list__image {
@@ -12,7 +16,7 @@
 }
 
 /*nav_list 이미지 */
-.product__list_img  {
+.product__list_img {
   width: 35px;
   display: flex;
   flex-direction: column;
@@ -28,6 +32,3 @@
   text-align: center;
   border-radius: 50%;
 }
-
-
-
