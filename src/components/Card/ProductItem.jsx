@@ -1,8 +1,8 @@
 import styles from '../../styles/css/components/Card/ProductItem.module.css'
 import Image from '../../common/Img/Image'
 import { BsHeart, BsFillHeartFill, BsHandbag, BsHandbagFill } from "react-icons/bs";
-import { UsehandleWishBag } from '../../hooks/ClickHook/usehandleWishBag'
-import { UseCartHook } from '../../hooks/ClickHook/useCartHook'
+import { usehandleWishBag } from '../../hooks/ClickHook/usehandleWishBag'
+import { useCartHook } from '../../hooks/ClickHook/useCartHook'
 import ProductContent from './ProductContent'
 import { useDispatch } from 'react-redux';
 import BagModal from '../../common/Modal/BagModal';
@@ -14,8 +14,8 @@ const ProductItem = (props) => {
 
   const dispatch = useDispatch()
 
-  const [iconCk] = UsehandleWishBag()
-  const { ckBag } = UseCartHook()
+  const [iconCk] = usehandleWishBag()
+  const { ckBag } = useCartHook()
 
 
   return (

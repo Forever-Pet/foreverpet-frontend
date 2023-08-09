@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { openModal } from "../../store/Slice/ModalSlice";
 
-export const UseCartHook = () => {
+export const useCartHook = () => {
   const cartData = useSelector((state) => { return state.cart.cartItem })
   const dispatch = useDispatch()
 

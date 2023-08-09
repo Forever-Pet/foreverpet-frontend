@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 
-export const UsehandleWishBag = () => {
+export const usehandleWishBag = () => {
 
   const cartData = useSelector((state) => { return state.cart.cartItem })
   const wishData = useSelector((state) => { return state.wish.wishItem })

@@ -2,7 +2,7 @@ import { CopyToClipboard } from "react-copy-to-clipboard";
 
 // Custom Hook
 import usePathMove from "../../../hooks/usePathMove";
-import { UseCartHook } from "../../../hooks/ClickHook/UseCartHook";
+import { useCartHook } from "../../../hooks/ClickHook/useCartHook";
 
 // CSS
 import styles from "../../../styles/css/components/Card/Detail/ProductDetailPriceCard.module.css";
@@ -16,7 +16,7 @@ import { addPriceComma } from "../../../utils/addPriceComma";
 import BagModal from "../../../common/Modal/BagModal";
 
 const ProductDetailPriceCard = (props) => {
-  const { ckBag } = UseCartHook();
+  const { ckBag } = useCartHook();
   const pathMove = usePathMove();
   const productItemPayment = () =>
     pathMove("/payments", props.productDetailData, true);
