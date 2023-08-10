@@ -3,6 +3,8 @@
 import Title from "../../common/Title/Title";
 import styles from "../../styles/css/components/Footer/Footer.module.css"
 
+
+
 const Footer = (props) => {
   return (//<footer className={classes[props.className || ""]}> 
   <footer className={styles.footer}>
