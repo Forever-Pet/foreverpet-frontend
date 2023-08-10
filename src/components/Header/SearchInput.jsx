@@ -20,16 +20,20 @@ const SearchInput = () => {
   const userSearch = (e) => {
     setSearch(inputRef.current.value);
   };
-   //엔터 두번해야 이동함
+
+  const handleOnClick = () => {
+    move("/product/search", {search}, true)
+  }
+
   const handleOnkeyPress = e => {
     if(e.key === 'Enter') {
-      move("/product/search", {search}, true)
+      handleOnClick()
     }
   };
 
   const getInputValueInfo = debounce(userSearch, 300);
   return (
-    <div className={styles.search_wrap} onKeyDown={handleOnkeyPress}>
+    <div className={styles.search_wrap} onKeyDown={handleOnkeyPress} >
       <Input
       type= "text"
       name = "productName"
@@ -39,7 +43,7 @@ const SearchInput = () => {
       onChange={getInputValueInfo}
       />
     
-      <GoSearch className={styles.search_button} onClick={handleOnkeyPress}></GoSearch> 
+      <GoSearch className={styles.search_button} onClick={handleOnClick}></GoSearch> 
     </div>
   );
 };
