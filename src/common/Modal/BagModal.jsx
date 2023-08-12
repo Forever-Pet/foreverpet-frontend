@@ -39,7 +39,6 @@ const BagModal = () => {
             className='bag-detail-btn'
             title={modalState.leftBtn || '자세히 보기'} />
           <Button onClick={() => {
-            console.log(modalState.data)
             dispatch(putIn(modalState.data))
             dispatch(secondModalOpen())
           }

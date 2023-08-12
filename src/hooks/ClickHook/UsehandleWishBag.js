@@ -1,9 +1,13 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { useCartHook } from "./useCartHook";
 
-export const usehandleWishBag = () => {
+export const useHandleWishBag = () => {
 
   const cartData = useSelector((state) => { return state.cart.cartItem })
   const wishData = useSelector((state) => { return state.wish.wishItem })
+  const auth = useSelector((state) => { return state.auth.token })
+  const { ckBag } = useCartHook()
+  const dispatch = useDispatch()
 
   const iconCk = (id, d) => {
     if (d == 'cart') {
@@ -21,8 +25,20 @@ export const usehandleWishBag = () => {
         return true
       }
     }
-
   }
 
-  return [iconCk]
+  const isLogin = (data, wish = false) => {
+    if (auth == 'null') {
+      alert('로그인이 필요합니다.')
+    } else {
+      if (wish) {
+        dispatch(wishPutIn(data))
+      } else {
+        ckBag(data)
+      }
+    }
+  }
+
+
+  return [iconCk, isLogin]
 }
