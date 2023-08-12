@@ -5,7 +5,7 @@
   .category {
     position: relative;
     top: 25px;
-    width: 1200px;
+    max-width: 1200px;
     height: 200px;
     margin: 0 auto;
   }
