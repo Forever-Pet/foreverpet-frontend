@@ -1,4 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
+import { wishPutIn } from "../../store/Slice/wishSlice";
 import { useCartHook } from "./useCartHook";
 
 export const useHandleWishBag = () => {
@@ -28,7 +29,7 @@ export const useHandleWishBag = () => {
   }
 
   const isLogin = (data, wish = false) => {
-    if (auth == 'null') {
+    if (auth == null || auth == "") {
       alert('로그인이 필요합니다.')
     } else {
       if (wish) {
