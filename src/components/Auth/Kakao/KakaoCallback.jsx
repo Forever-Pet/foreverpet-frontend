@@ -23,10 +23,15 @@ const KakaoCallback = () => {
           }
         );
         const { access_token } = res.data;
+        const body = {
+          authorizationCode: access_token,
+        };
+        console.log(body);
         const serverRes = await axios.post(
           "http://ec2-15-164-206-172.ap-northeast-2.compute.amazonaws.com/user/kakao",
-          { authorizationCode: access_token }
+          body
         );
+        console.log(body);
         console.log(access_token);
       } catch (error) {
         console.log(error);
