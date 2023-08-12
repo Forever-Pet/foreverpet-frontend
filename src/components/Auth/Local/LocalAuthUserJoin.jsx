@@ -91,15 +91,13 @@ const LocalAuthUserJoin = () => {
 
   // 회원가입 정보전송
   const registerLocalUserAuth = (e) => {
+    const { name, email, tel, password, password2 } = localAuthUserInput;
     e.preventDefault();
-    if (localAuthUserInput.name.length === 0)
-      return setErrorMessage(MSG.JOIN.NAME_FAIL);
-    if (localAuthUserInput.email.length === 0)
-      return setErrorMessage(MSG.JOIN.EMAIL_FAIL);
-    if (localAuthUserInput.password !== localAuthUserInput.password2)
-      return setErrorMessage(MSG.JOIN.PASSWORD_FAIL);
-    if (localAuthUserInput.tel.length < 8)
-      return setErrorMessage(MSG.JOIN.PASSWORD_FAIL);
+
+    if (name.length === 0) return setErrorMessage(MSG.JOIN.NAME_FAIL);
+    if (email.length === 0) return setErrorMessage(MSG.JOIN.EMAIL_FAIL);
+    if (tel.length < 8) return setErrorMessage(MSG.JOIN.TEL_FAIL);
+    if (password !== password2) return setErrorMessage(MSG.JOIN.PASSWORD_FAIL);
     console.log("섭밋");
     // 회원정보 서버로 전송
     registerLocalUserAuthCallback();
