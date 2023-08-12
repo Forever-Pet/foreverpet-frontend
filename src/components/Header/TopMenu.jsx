@@ -7,22 +7,27 @@ import { Link } from 'react-router-dom';
 import { removeToken } from '../../store/Slice/localAuthSlice';
 
 //헤더 - 회원가입,로그인,주문내역 
-const TopMenu = () => {
-  const [currentTab , setTab] = useState(0);
+const TopMenu = () => { 
   const [isLogin, setIsLogin] = useState(false);
   const dispatch = useDispatch();
 
-   const selectTopHandler = (index, menuName) => {
-     setTab(index);
-      if(menuName === "로그아웃"){
-       dispatch(removeToken());
-      }
-    };
+  const selectTopHandler = (menu) => {
+    if(menu === '로그아웃') {
+      dispatch(removeToken());
+      setIsLogin(false);
+     }
+  };
+
+  
 
    useEffect(()=>{
-      setIsLogin(sessionStorage.getItem("auth"));
-
-   }, []);
+    const token = sessionStorage.getItem("auth");
+    if(token != null){
+      setIsLogin(true);
+    }else{
+      setIsLogin(false);
+    }
+   },[isLogin]);
 
    const logoutTopMenu = [
     {id: 0 ,name: '회원가입' , url: '/user/join'},
@@ -41,7 +46,7 @@ if(isLogin){
       <div className={styles.top_menu}>
           {loginTopMenu.map((d) => {
             return(
-              <Link to={d.url} key={d.id} className={styles.top_menu_prd} onClick={() => selectTopHandler(index, d.name)}> {d.name}</Link>
+              <Link to={d.url} key={d.id} className={styles.top_menu_prd} onClick={ () => {selectTopHandler(d.name)}}>{d.name}</Link>
             )
           })}
       </div>
@@ -53,7 +58,7 @@ if(isLogin){
       <div className={styles.top_menu}>
           {logoutTopMenu.map((d) => {
             return(
-              <Link to={d.url} key={d.id} className={styles.top_menu_prd} onClick={() => selectTopHandler(index)}> {d.name}</Link>
+              <Link to={d.url} key={d.id} className={styles.top_menu_prd} onClick={ () => {selectTopHandler(d.name)}}>{d.name}</Link>
             )
           })}
       </div>
