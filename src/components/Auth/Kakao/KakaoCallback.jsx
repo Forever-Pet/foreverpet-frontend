@@ -23,19 +23,11 @@ const KakaoCallback = () => {
           }
         );
         const { access_token } = res.data;
-        const TOEKN_HEADERS_CONTENT_TYPE = {
-          Authorization: `Bearer ${access_token}`,
-          "Content-type": "application/x-www-form-urlencoded;charset=utf-8",
-        };
-
-        const res_axios = await axios.post(
-          KAKAO_USER_INFO_URL,
-          {},
-          {
-            headers: TOEKN_HEADERS_CONTENT_TYPE,
-          }
+        const serverRes = await axios.post(
+          "http://ec2-15-164-206-172.ap-northeast-2.compute.amazonaws.com/user/kakao",
+          { authorizationCode: access_token }
         );
-        console.log(res_axios);
+        console.log(access_token);
       } catch (error) {
         console.log(error);
       }
