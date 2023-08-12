@@ -18,8 +18,6 @@ const TopMenu = () => {
      }
   };
 
-  
-
    useEffect(()=>{
     const token = sessionStorage.getItem("auth");
     if(token != null){
@@ -35,7 +33,7 @@ const TopMenu = () => {
   ];
 
   const loginTopMenu = [
-    {id: 0 ,name: '로그아웃' , url: '/user/login'},
+    {id: 0 ,name: '로그아웃' , url: '/'},
     {id: 1 ,name: '주문내역' , url: '/member/order'}
   ];
 
