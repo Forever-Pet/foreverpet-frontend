@@ -63,9 +63,8 @@ const LocalAuthUserLogin = () => {
       userEmail: email,
       userPassword: password,
     };
-
     // 비동기 코드 수정 예정
-    authSignUp("login", bodyData); // authSignUp 함수 호출
+    authSignUp("user/login", bodyData); // authSignUp 함수 호출
     dispatch(addToken(responsive));
   };
 
