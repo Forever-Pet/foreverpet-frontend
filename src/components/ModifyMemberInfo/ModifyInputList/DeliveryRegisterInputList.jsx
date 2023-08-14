@@ -3,7 +3,6 @@ import styles from "../../../styles/css/components/ModifyMemberInfo/ModifyInputL
 
 // Components
 import Input from "../../../common/Input/Input";
-import PaymentsInputHeader from "../../Payments/PaymentsInputHeader/PaymentsInputHeader";
 
 const DeliveryRegisterInputList = (props) => {
   return (
