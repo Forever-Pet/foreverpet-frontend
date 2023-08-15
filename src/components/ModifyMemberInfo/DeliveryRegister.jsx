@@ -30,7 +30,6 @@ const DeliveryRegister = () => {
       ...prevInput,
       [name]: value,
     }));
-    console.log(deliveryUserInfo);
   };
 
   // DaumAddress 컴포넌트 활성화, 클릭한 주소정보 Get

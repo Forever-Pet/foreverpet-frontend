@@ -48,7 +48,6 @@ const LocalAuthUserLogin = () => {
       ...prevLoginInput,
       [name]: value,
     }));
-    console.log(authUserLoginInput);
   };
 
   // Debounce Set

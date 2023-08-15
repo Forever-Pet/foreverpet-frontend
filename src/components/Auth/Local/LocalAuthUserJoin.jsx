@@ -47,7 +47,6 @@ const LocalAuthUserJoin = () => {
       ...prevInputValues,
       [name]: value,
     }));
-    console.log(localAuthUserInput);
     return setErrorMessage("");
   };
 
@@ -98,7 +97,6 @@ const LocalAuthUserJoin = () => {
     if (email.length === 0) return setErrorMessage(MSG.JOIN.EMAIL_FAIL);
     if (tel.length < 8) return setErrorMessage(MSG.JOIN.TEL_FAIL);
     if (password !== password2) return setErrorMessage(MSG.JOIN.PASSWORD_FAIL);
-    console.log("섭밋");
     // 회원정보 서버로 전송
     registerLocalUserAuthCallback();
   };
@@ -129,7 +127,6 @@ const LocalAuthUserJoin = () => {
       alert("회원가입이 완료 되었습니다.");
       pathMove("/");
     }
-    console.log(res);
   };
 
   // 로그인 경로로 이동함수

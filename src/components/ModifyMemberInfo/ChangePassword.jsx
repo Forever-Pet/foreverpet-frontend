@@ -54,7 +54,6 @@ const ChangePassword = () => {
       bodyData,
       { headers: { Authorization: `bearer ${userId}` } }
     );
-    console.log(res.data.msg);
     if (res.data.msg === "패스워드가 변경 성공") {
       alert("비밀번혹 변경 되었습니다.");
     } else {
