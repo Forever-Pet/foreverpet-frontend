@@ -9,6 +9,8 @@ import PaymentsInputHeader from "../Payments/PaymentsInputHeader/PaymentsInputHe
 import PasswordInputList from "./ModifyInputList/PasswordInputList";
 import ModifyButton from "./ModifyButton/ModifyButton";
 
+import axios from "axios";
+
 const ChangePassword = () => {
   const [userPassword, setUserPassword] = useState({
     currentPassword: "",
@@ -23,7 +25,6 @@ const ChangePassword = () => {
       ...prevPassword,
       [name]: value,
     }));
-    console.log(userPassword);
   };
 
   // modify 정보변경 검증 함수
@@ -35,12 +36,30 @@ const ChangePassword = () => {
       return alert("신규 비밀번호는 최소 10~20자 이내로 입력해 주세요");
     if (newPassword !== newPassword2)
       return alert("신규비밀번호가 서로 동일하지 않습니다.");
-    sendPasswordInfoChangeCallback();
+    sendPasswordInfoChangeCallback(currentPassword, newPassword);
   };
 
-  const sendPasswordInfoChangeCallback = () => {
-    // 서버로 api 통신 요청후 현재의 비밀번호가 다를 경우 return
-    console.log("비번 변경 완료");
+  const sendPasswordInfoChangeCallback = async (
+    currentPassword,
+    newPassword
+  ) => {
+    const bodyData = {
+      userOriginPassword: currentPassword,
+      userNewPassword: newPassword,
+    };
+
+    const userId = sessionStorage.getItem("auth");
+    const res = await axios.post(
+      "http://ec2-15-164-206-172.ap-northeast-2.compute.amazonaws.com/user/password",
+      bodyData,
+      { headers: { Authorization: `bearer ${userId}` } }
+    );
+    console.log(res.data.msg);
+    if (res.data.msg === "패스워드가 변경 성공") {
+      alert("비밀번혹 변경 되었습니다.");
+    } else {
+      alert("기존 비밀번호가 올바르지 않습니다.");
+    }
   };
 
   return (
