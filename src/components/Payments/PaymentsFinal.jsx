@@ -1,8 +1,13 @@
 // React Hooks
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 // CSS
 import styles from "../../styles/css/components/Payments/PaymentsFinal.module.css";
+
+// Custom Hooks
+import usePathMove from "../../hooks/usePathMove";
+
+import axios from "axios";
 
 // Utils
 import { addPriceComma } from "../../utils/addPriceComma";
@@ -13,6 +18,7 @@ import Input from "../../common/Input/Input";
 import { v4 as uuidv4 } from "uuid";
 
 const PaymentsFinal = (props) => {
+  const pathMove = usePathMove();
   const [paymentInputAgree, setPaymentInputAgree] = useState({
     paymentAgree: false,
     privacyAgree: false,
@@ -92,8 +98,13 @@ const PaymentsFinal = (props) => {
 
   // 백엔드 서버로 결제정보 전송
   const postPaymentsProductInfo = async () => {
-    const { deliveryMainAddress, deliverySubAddress, deliveryZipcode } =
-      props.paymentReinfo;
+    const {
+      deliveryMainAddress,
+      deliverySubAddress,
+      ownerTel,
+      deliveryTel,
+      deliveryZipcode,
+    } = props.paymentReinfo;
 
     // const { id } = props.paymentsProductDetailInfo;
     const uuid = uuidv4();
@@ -104,27 +115,34 @@ const PaymentsFinal = (props) => {
 
     const orderRequest = [props.paymentsProductDetailInfo].map((data) => ({
       orderProductId: data.id,
-      orderProductAmount: 1,
+      orderProductAmount: data.productPrice,
     }));
 
+    const userId = sessionStorage.getItem("auth");
+
     const bodyData = {
-      paymentInfoRequest: {
+      paymentRequest: {
         paymentName: uuidName,
         paymentGateway: "kakaoPay",
         paymentMethod: "kakaoPay",
       },
-      orderInfoRequest: {
-        address: {
-          city: deliveryMainAddress,
-          street: deliverySubAddress,
-          zipcode: deliveryZipcode,
-        },
+
+      address: {
+        city: deliveryMainAddress,
+        street: deliverySubAddress,
+        zipcode: deliveryZipcode,
       },
+      customerPhoneNumber: ownerTel,
+      receiverPhoneNumber: deliveryTel,
       // 유저 넘버 수정 예정
-      userNo: 1,
-      orderProductRequest: [orderRequest],
+      orderProductListRequest: orderRequest,
     };
-    console.log(bodyData);
+
+    const res = await axios.post(
+      "http://ec2-15-164-206-172.ap-northeast-2.compute.amazonaws.com/order",
+      bodyData,
+      { headers: { Authorization: `bearer ${userId}` } }
+    );
   };
 
   // 체크박스 활성 여부
