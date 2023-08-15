@@ -1,13 +1,21 @@
 
 .search_wrap {
-  margin-right: 26px;
+  margin-right: 25px;
+}
+
+
+/* 아이폰 SE  */
+@media screen and (max-width: 576px) {
+  .search_wrap {
+    margin-right: 23px;
+  }
 }
 
 /*검색버튼*/
 .search_button {
   position: absolute;
-  width: 30px;
-  height: 28px;
+  width: 27px;
+  height: 25px;
   cursor: pointer;
   color:#008e61;;
 }
