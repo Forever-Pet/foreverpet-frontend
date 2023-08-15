@@ -143,6 +143,8 @@ const PaymentsFinal = (props) => {
       bodyData,
       { headers: { Authorization: `bearer ${userId}` } }
     );
+
+    pathMove("/");
   };
 
   // 체크박스 활성 여부

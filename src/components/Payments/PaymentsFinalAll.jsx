@@ -1,6 +1,9 @@
 // React Hooks
 import { useState } from "react";
 
+// Custom Hooks
+import usePathMove from "../../hooks/usePathMove";
+
 // Redux
 import { useSelector } from "react-redux";
 
@@ -19,6 +22,7 @@ import axios from "axios";
 import { v4 as uuidv4 } from "uuid";
 
 const PaymentsFinalAll = (props) => {
+  const pathMove = usePathMove();
   const [paymentInputAgree, setPaymentInputAgree] = useState({
     paymentAgree: false,
     privacyAgree: false,
@@ -144,6 +148,8 @@ const PaymentsFinalAll = (props) => {
       bodyData,
       { headers: { Authorization: `bearer ${userId}` } }
     );
+
+    pathMove("/");
   };
 
   // 체크박스 활성 여부
