@@ -10,11 +10,14 @@ import DeliveryRegisterInputList from "./ModifyInputList/DeliveryRegisterInputLi
 import DaumAddress from "../Auth/Address/DaumAddress";
 import ModifyButton from "./ModifyButton/ModifyButton";
 
+import axios from "axios";
+
 const DeliveryRegister = () => {
   const [deliveryUserInfo, setDeliveryUserInfo] = useState({
     deliveryName: "",
     deliveryMainAddress: "",
     deliverySubAddress: "",
+    deliveryZipcode: "",
     deliveryTel: "",
   });
 
@@ -34,10 +37,11 @@ const DeliveryRegister = () => {
   const userAddressInfoUpdate = (type, address) => {
     if (type === "modal") return setUserAddressInfo((prev) => !prev);
     if (type === "address") {
-      const { value } = address.target;
+      const { value, zonecode } = address.target;
       setDeliveryUserInfo((prevInput) => ({
         ...prevInput,
         deliveryMainAddress: value,
+        deliveryZipcode: zonecode,
       }));
     }
   };
@@ -59,9 +63,31 @@ const DeliveryRegister = () => {
   };
 
   // API 콜백
-  const sendDeliveryRegisterInfoChangeCallback = () => {
-    // 해당 정보를 서버로 POST 요청
-    console.log("배송지 변경 완료");
+  const sendDeliveryRegisterInfoChangeCallback = async () => {
+    const { deliveryMainAddress, deliverySubAddress, deliveryZipcode } =
+      deliveryUserInfo;
+
+    const userId = sessionStorage.getItem("auth");
+
+    const bodyData = {
+      userAddress: {
+        city: deliveryMainAddress,
+        street: deliverySubAddress,
+        zipcode: deliveryZipcode,
+      },
+    };
+
+    const res = await axios.post(
+      "http://ec2-15-164-206-172.ap-northeast-2.compute.amazonaws.com/user/address",
+      bodyData,
+      {
+        headers: {
+          Authorization: `Bearer ${userId}`,
+        },
+      }
+    );
+
+    if (res.data === true) return alert("배송지 정보가 변경되었습니다.");
   };
 
   return (
