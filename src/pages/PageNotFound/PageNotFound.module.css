@@ -1,0 +1,14 @@
+.no_page,
+.no_page--container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.no_page {
+  width: 100%;
+  height: 100vh;
+}
+
+.no_page--container {
+  flex-direction: column;
+}

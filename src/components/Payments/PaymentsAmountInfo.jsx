@@ -23,7 +23,6 @@ const PaymentsAmountInfo = (props) => {
   });
 
   useEffect(() => {
-    console.log(productAmountInfo);
     // 각각 가정한 배송료와 쿠폰 할인 값
     const deliveryAmount = 0;
     const couponDiscountAmount = 0;

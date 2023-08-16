@@ -1,8 +1,6 @@
-
 .search_wrap {
   margin-right: 25px;
 }
-
 
 /* 아이폰 SE  */
 @media screen and (max-width: 576px) {
@@ -17,5 +15,5 @@
   width: 27px;
   height: 25px;
   cursor: pointer;
-  color:#008e61;;
+  color: #008e61;
 }

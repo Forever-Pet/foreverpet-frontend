@@ -97,7 +97,7 @@ const NavBar = () => {
           <SearchInput />
           <div>
             <Link
-              to="/member/modify"
+              to="/member/orderhistory"
               className={styles.content_module__service}
             >
               <BiUser />

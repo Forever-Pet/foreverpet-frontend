@@ -34,7 +34,7 @@ const TopMenu = () => {
 
   const loginTopMenu = [
     { id: 0, name: "로그아웃", url: "/" },
-    { id: 1, name: "주문내역", url: "/member/order" },
+    { id: 1, name: "주문내역", url: "/member/modify/delivery" },
   ];
 
   if (isLogin) {
