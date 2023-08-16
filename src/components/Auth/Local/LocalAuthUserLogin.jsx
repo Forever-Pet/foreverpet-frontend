@@ -1,17 +1,16 @@
-import { useState } from "react";
+// React Hook
+import { useState, useEffect } from "react";
 
-import { debounce } from "lodash";
+// Custom Hooks
+import usePathMove from "../../../hooks/usePathMove";
+import useLocalAuthSignUp from "../../../hooks/useLocalAuthSignUp";
 
 //Redux
 import { useDispatch } from "react-redux";
-import { addToken, removeToken } from "../../../store/Slice/localAuthSlice";
+import { addToken } from "../../../store/Slice/localAuthSlice";
 
 // CSS
 import styles from "../../../styles/css/components/Auth/Local/LocalAuthUser.module.css";
-
-// Hooks
-import usePathMove from "../../../hooks/usePathMove";
-import useLocalAuthSignUp from "../../../hooks/useLocalAuthSignUp";
 
 // Components
 import LocalAuthUserHeader from "./HeaderTitle/LocalAuthUserHeader";
@@ -21,7 +20,6 @@ import Title from "../../../common/Title/Title";
 import KakaoAuthUserAccount from "../Kakao/KakaoAuthUserAccount";
 import NaverAuthUserAccount from "../Naver/NaverAuthUserAccount";
 import GoogleAuthUserAccount from "../Google/GoogleAuthUserAccount";
-import { useEffect } from "react";
 
 const LocalAuthUserLogin = () => {
   const pathMove = usePathMove();
@@ -31,6 +29,7 @@ const LocalAuthUserLogin = () => {
     email: "",
     password: "",
   });
+  const [saveUserid, setSaveUserId] = useState(false);
 
   useEffect(() => {
     if (responsive !== null) {
@@ -38,19 +37,26 @@ const LocalAuthUserLogin = () => {
       pathMove("/");
     }
   }, [responsive]);
-  // // Debounce Func
-  const debounceInputValueFunc = (e) => {
+
+  useEffect(() => {
+    const saveUserId = localStorage.getItem("saveid");
+    if (saveUserId !== null) {
+      setAuthUserLoginInput((prev) => ({
+        ...prev,
+        email: JSON.parse(saveUserId),
+      }));
+      setSaveUserId(true);
+    }
+  }, []);
+
+  const getInputValueInfo = (e) => {
     const { name, value } = e.target;
     // Input Value Set
     setAuthUserLoginInput((prevLoginInput) => ({
       ...prevLoginInput,
       [name]: value,
     }));
-    console.log(authUserLoginInput);
   };
-
-  // Debounce Set
-  const getInputValueInfo = debounce(debounceInputValueFunc, 300);
 
   // 로그인 정보 전송
   const sendLoginUserInfomation = async (e) => {
@@ -61,10 +67,18 @@ const LocalAuthUserLogin = () => {
       userEmail: email,
       userPassword: password,
     };
+
     // 비동기 코드 수정 예정
     authSignUp("user/login", bodyData); // authSignUp 함수 호출
     dispatch(addToken(responsive));
+    if (saveUserid === true)
+      return localStorage.setItem(
+        "saveid",
+        JSON.stringify(authUserLoginInput.email)
+      );
   };
+
+  const saveUserAuthId = () => setSaveUserId((prev) => !prev);
 
   // 회원가입 경로로 이동함수
   const joinPathMoveBtn = () => pathMove("/user/join");
@@ -82,6 +96,7 @@ const LocalAuthUserLogin = () => {
           className="localUser-login__email"
           name="email"
           onChange={getInputValueInfo}
+          value={authUserLoginInput.email}
         />
         <Input
           type="password"
@@ -91,8 +106,11 @@ const LocalAuthUserLogin = () => {
           onChange={getInputValueInfo}
         />
         <div className={styles["localUser-login__bottom-section"]}>
-          <div className={styles["localUser-login__save-account"]}>
-            <Input type="checkbox" id="save-acocunt" />
+          <div
+            className={styles["localUser-login__save-account"]}
+            onClick={saveUserAuthId}
+          >
+            <Input type="checkbox" />
             <label htmlFor="save-acocunt">아이디 저장</label>
           </div>
           <div className={styles["localUser-login__recovery-section"]}>
