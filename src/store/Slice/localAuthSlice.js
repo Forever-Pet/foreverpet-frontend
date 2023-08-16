@@ -11,6 +11,8 @@ const localAuthSlice = createSlice({
     removeToken(state, action) {
       state.token = "";
       sessionStorage.removeItem("auth");
+      const kakaoUser = sessionStorage.getItem("kakao");
+      if (kakaoUser !== null) return sessionStorage.removeItem("kakao");
     },
   },
 });
