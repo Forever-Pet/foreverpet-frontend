@@ -6,7 +6,8 @@ const localAuthSlice = createSlice({
   reducers: {
     addToken(state, action) {
       state.token = action.payload;
-      sessionStorage.setItem("auth", action.payload);
+      if (action.payload !== null || undefined)
+        return sessionStorage.setItem("auth", action.payload);
     },
     removeToken(state, action) {
       state.token = "";
