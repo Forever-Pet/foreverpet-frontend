@@ -4,12 +4,9 @@ import NavBar from "./NavBar";
 import Title from "../../common/Title/Title";
 import HeaderBanner from "../Banner/HeaderBanner";
 
-
 // CSS
 import styles from "../../styles/css/components/Header/Header.module.css";
 import usePathMove from "../../hooks/usePathMove";
-
-
 
 const Header = () => {
   const pathMove = usePathMove();
