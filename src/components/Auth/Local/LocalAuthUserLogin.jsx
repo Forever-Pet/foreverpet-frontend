@@ -63,6 +63,9 @@ const LocalAuthUserLogin = () => {
     const { email, password } = authUserLoginInput;
     e.preventDefault();
 
+    if (email.trim().length === 0) return alert("이메일을 입력 해주세요");
+    if (password.trim().length === 0) return alert("비밀번호를 입력 해주세요");
+
     const bodyData = {
       userEmail: email,
       userPassword: password,
