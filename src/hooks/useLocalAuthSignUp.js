@@ -8,7 +8,8 @@ const useLocalAuthSignUp = () => {
     const API_URL = `http://ec2-15-164-206-172.ap-northeast-2.compute.amazonaws.com/${url}`;
     try {
       const res = await axios.post(API_URL, bodyData);
-      setResponsive(res.data.accessToken);
+      if (res.data.accessToken !== null)
+        return setResponsive(res.data.accessToken);
     } catch (error) {
       console.log(error);
     }
