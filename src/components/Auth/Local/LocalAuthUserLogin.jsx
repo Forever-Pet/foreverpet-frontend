@@ -2,8 +2,6 @@ import { useState } from "react";
 
 import { debounce } from "lodash";
 
-import axios from "axios";
-
 //Redux
 import { useDispatch } from "react-redux";
 import { addToken, removeToken } from "../../../store/Slice/localAuthSlice";
