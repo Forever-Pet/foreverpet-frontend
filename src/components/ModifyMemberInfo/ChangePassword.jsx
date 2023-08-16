@@ -4,6 +4,9 @@ import { useState } from "react";
 // CSS
 import styles from "../../styles/css/components/ModifyMemberInfo/ModifyMember.module.css";
 
+// Redux
+import { useSelector } from "react-redux";
+
 // Components
 import PaymentsInputHeader from "../Payments/PaymentsInputHeader/PaymentsInputHeader";
 import PasswordInputList from "./ModifyInputList/PasswordInputList";
@@ -27,6 +30,8 @@ const ChangePassword = () => {
     }));
   };
 
+  const userId = useSelector((state) => state.auth.token);
+
   // modify 정보변경 검증 함수
   const passwordInfoChangeUpdate = () => {
     const { currentPassword, newPassword, newPassword2 } = userPassword;
@@ -48,7 +53,6 @@ const ChangePassword = () => {
       userNewPassword: newPassword,
     };
 
-    const userId = sessionStorage.getItem("auth");
     const res = await axios.post(
       "http://ec2-15-164-206-172.ap-northeast-2.compute.amazonaws.com/user/password",
       bodyData,

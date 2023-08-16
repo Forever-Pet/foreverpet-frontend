@@ -1,6 +1,9 @@
 // React Hooks
 import { useState } from "react";
 
+// Redux
+import { useSelector } from "react-redux";
+
 // CSS
 import styles from "../../styles/css/components/ModifyMemberInfo/ModifyMember.module.css";
 
@@ -22,6 +25,8 @@ const DeliveryRegister = () => {
   });
 
   const [userAddressInfo, setUserAddressInfo] = useState(false);
+
+  const userId = useSelector((state) => state.auth.token);
 
   // 배송지 등록 정보 Get
   const deliveryUserInfoUpdate = (e) => {
@@ -65,8 +70,6 @@ const DeliveryRegister = () => {
   const sendDeliveryRegisterInfoChangeCallback = async () => {
     const { deliveryMainAddress, deliverySubAddress, deliveryZipcode } =
       deliveryUserInfo;
-
-    const userId = sessionStorage.getItem("auth");
 
     const bodyData = {
       userAddress: {

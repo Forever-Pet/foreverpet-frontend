@@ -29,6 +29,7 @@ const PaymentsFinalAll = (props) => {
   });
 
   const cartData = useSelector((state) => state.cart.cartItem);
+  const userId = useSelector((state) => state.auth.token);
 
   // 결제버튼
   const orderPayment = () => {
@@ -123,8 +124,6 @@ const PaymentsFinalAll = (props) => {
       orderProductId: data.id,
       orderProductAmount: data.productPrice,
     }));
-
-    const userId = sessionStorage.getItem("auth");
 
     const bodyData = {
       paymentRequest: {

@@ -37,10 +37,6 @@
   margin-bottom: 20px;
 }
 
-/* .delivery-register__input--address,
-.delivery-register__input, */
-/* .modify-password__current,
-.modify-password_new, */
 .delivery-input__name,
 .delivery-input__mainAddress,
 .delivery-input__subAddress,
@@ -166,7 +162,8 @@
   cursor: auto;
 }
 
-input[type="checkbox"] {
+input[type="checkbox"],
+.save-acocunt[type="checkbox"] {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -176,7 +173,8 @@ input[type="checkbox"] {
   cursor: pointer;
 }
 
-input[type="checkbox"]::after {
+input[type="checkbox"]::after,
+.save-acocunt[type="checkbox"]::after {
   border: solid #fff;
   border-width: 0 2px 2px 0;
   content: "";
@@ -188,9 +186,13 @@ input[type="checkbox"]::after {
   transform: rotate(45deg);
   width: 15%;
 }
-input[type="checkbox"]:checked {
+
+input[type="checkbox"]:checked,
+.save-acocunt[type="checkbox"]:checked {
   background: #505bf0;
 }
-input[type="checkbox"]:checked::after {
+
+input[type="checkbox"]:checked::after,
+.save-acocunt[type="checkbox"]:checked::after {
   display: block;
 }
