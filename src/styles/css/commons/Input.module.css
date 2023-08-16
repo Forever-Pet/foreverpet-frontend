@@ -33,6 +33,17 @@
   }
 }
 
+/* 아이폰 SE  */
+@media screen and (max-width: 576px) {
+ /*검색창*/
+ .searchInput {
+  width: 126px;
+  height: 26px;
+  font-size: 11px;
+  border: 1px solid #008e61;
+ }
+}
+
 .localUser-login__email {
   margin-bottom: 20px;
 }
