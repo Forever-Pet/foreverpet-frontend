@@ -1,26 +1,26 @@
-// CSS
-import styles from "../../styles/css/pages/Member/Modify.module.css";
+// React Hooks
+import { useEffect } from "react";
+
+// Custom Hooks
+import usePathMove from "../../hooks/usePathMove";
 
 // Components
 import ChangePassword from "../../components/ModifyMemberInfo/ChangePassword";
 import Profile from "../../components/Profile/Profile";
-import Header from "../../components/Header/Header";
-import Footer from "../../components/Footer/Footer";
 
 const ModifyPassword = () => {
+  const pathMove = usePathMove();
+  useEffect(() => {
+    const getKakaoUser = sessionStorage.getItem("kakao");
+    if (getKakaoUser !== null) {
+      pathMove("/");
+    }
+  }, []);
+
   return (
-    <div>
-      <Header />
-      <div className={styles["modify-container"]}>
-        <div className={styles["modify-userInfo"]}>
-          <Profile />
-        </div>
-        <div className={styles["modify-userInfo__edit"]}>
-          <ChangePassword />
-        </div>
-      </div>
-      <Footer />
-    </div>
+    <>
+      <Profile rightTitle={<ChangePassword />} />
+    </>
   );
 };
 

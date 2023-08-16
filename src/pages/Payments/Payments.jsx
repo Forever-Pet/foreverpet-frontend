@@ -26,6 +26,7 @@ const Payments = () => {
     deliveryMainAddress: "",
     deliverySubAddress: "",
     deliveryTel: "",
+    deliveryZipcode: "",
   });
   const [paymentsFinalAmount, setPaymentsFinalAmount] = useState(0);
   const [paymentsProductDetailInfo, setPaymentsProductDetailInfo] =
@@ -33,13 +34,24 @@ const Payments = () => {
 
   // 결제정보 (주문자, 배송지) 업데이트
   const updatePaymentInfo = (e) => {
-    const { name, value } = e.target;
-    setPaymentReInfo((prevInfo) => ({
-      ...prevInfo,
-      [name]: value,
-    }));
-  };
+    const { name, value, zonecode } = e.target;
 
+    // deliveryZipcode를 업데이트하지 않는 경우도 처리
+    if (!zonecode) {
+      setPaymentReInfo((prevInfo) => ({
+        ...prevInfo,
+        [name]: value,
+      }));
+    }
+    // deliveryZipcode를 업데이트하는 경우
+    else {
+      setPaymentReInfo((prevInfo) => ({
+        ...prevInfo,
+        deliveryMainAddress: value,
+        deliveryZipcode: zonecode,
+      }));
+    }
+  };
   // 결제버튼 금액 확인
   const paymentsAmountBtn = (amount) => setPaymentsFinalAmount(amount);
 

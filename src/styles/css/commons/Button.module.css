@@ -91,8 +91,8 @@
 .cart-btn-count {
   border-radius: 50%;
   background: white;
-  border: 1px solid #B9B9B9;
-  padding : 10px;
+  border: 1px solid #b9b9b9;
+  padding: 10px;
   width: 30px;
   height: 30px;
   font-size: 30px;
@@ -103,4 +103,14 @@
   color: #2c2c2c;
 }
 
-
+.no_page--btn {
+  width: 100%;
+  height: 50px;
+  border: none;
+  border-radius: 3px;
+  color: white;
+  font-weight: bold;
+  background-color: tomato;
+  margin-top: 30px;
+  cursor: pointer;
+}

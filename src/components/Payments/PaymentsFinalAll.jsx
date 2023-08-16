@@ -1,6 +1,9 @@
 // React Hooks
 import { useState } from "react";
 
+// Custom Hooks
+import usePathMove from "../../hooks/usePathMove";
+
 // Redux
 import { useSelector } from "react-redux";
 
@@ -13,15 +16,20 @@ import { addPriceComma } from "../../utils/addPriceComma";
 // Components
 import Input from "../../common/Input/Input";
 
+import axios from "axios";
+
+// uuid
 import { v4 as uuidv4 } from "uuid";
 
 const PaymentsFinalAll = (props) => {
+  const pathMove = usePathMove();
   const [paymentInputAgree, setPaymentInputAgree] = useState({
     paymentAgree: false,
     privacyAgree: false,
   });
 
   const cartData = useSelector((state) => state.cart.cartItem);
+  const userId = useSelector((state) => state.auth.token);
 
   // 결제버튼
   const orderPayment = () => {
@@ -98,10 +106,14 @@ const PaymentsFinalAll = (props) => {
 
   // 백엔드 서버로 결제정보 전송
   const postPaymentsProductInfo = async () => {
-    const { deliveryMainAddress, deliverySubAddress, deliveryZipcode } =
-      props.paymentReinfo;
+    const {
+      deliveryMainAddress,
+      deliverySubAddress,
+      ownerTel,
+      deliveryTel,
+      deliveryZipcode,
+    } = props.paymentReinfo;
 
-    // const { id } = props.paymentsProductDetailInfo;
     const uuid = uuidv4();
     const regEX = /[a-zA-Z0-9]/g;
     const filterUUID = uuid.match(regEX).join("");
@@ -110,27 +122,33 @@ const PaymentsFinalAll = (props) => {
 
     const orderRequest = cartData.map((data) => ({
       orderProductId: data.id,
-      orderProductAmount: data.count,
+      orderProductAmount: data.productPrice,
     }));
 
     const bodyData = {
-      paymentInfoRequest: {
+      paymentRequest: {
         paymentName: uuidName,
         paymentGateway: "kakaoPay",
         paymentMethod: "kakaoPay",
       },
-      orderInfoRequest: {
-        address: {
-          city: deliveryMainAddress,
-          street: deliverySubAddress,
-          zipcode: deliveryZipcode,
-        },
+
+      address: {
+        city: deliveryMainAddress,
+        street: deliverySubAddress,
+        zipcode: deliveryZipcode,
       },
-      // 유저 넘버 수정 예정
-      userNo: 1,
-      orderProductRequest: [orderRequest],
+      customerPhoneNumber: ownerTel,
+      receiverPhoneNumber: deliveryTel,
+      orderProductListRequest: orderRequest,
     };
-    console.log(bodyData);
+
+    const res = await axios.post(
+      "http://ec2-15-164-206-172.ap-northeast-2.compute.amazonaws.com/order",
+      bodyData,
+      { headers: { Authorization: `bearer ${userId}` } }
+    );
+
+    pathMove("/");
   };
 
   // 체크박스 활성 여부
