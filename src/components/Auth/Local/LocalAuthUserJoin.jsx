@@ -24,6 +24,7 @@ const LocalAuthUserJoin = () => {
   const pathMove = usePathMove();
   const [userAddressInfo, setUserAddressInfo] = useState(false);
   const [enableEmailAuth, setEnableEmailAuth] = useState(false);
+  const [emailOverlap, setEmailOverap] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   // const [successEmailAuthCode, setSuccessEmailAuthCode] = useState(false);
   const [localAuthUserInput, setLocalAuthUserInput] = useState({
@@ -84,8 +85,10 @@ const LocalAuthUserJoin = () => {
     const res = await axios.post(API_URL, data);
     if (!res.data) {
       // 현재 누군가가 이메일을 사용중이라면 EMAIL_ONLY_USED
+      alert(MSG.JOIN.EMAIL_ONLY_USED);
       return setErrorMessage(MSG.JOIN.EMAIL_ONLY_USED);
     }
+    setEmailOverap(true);
     return alert("해당 이메일 사용 가능합니다.");
   };
 
@@ -98,7 +101,8 @@ const LocalAuthUserJoin = () => {
     if (email.length === 0) return setErrorMessage(MSG.JOIN.EMAIL_FAIL);
     if (tel.length < 8) return setErrorMessage(MSG.JOIN.TEL_FAIL);
     if (password !== password2) return setErrorMessage(MSG.JOIN.PASSWORD_FAIL);
-    console.log("섭밋");
+    if (emailOverlap === false) return alert("이메일 중복 검증을 눌러주세요");
+
     // 회원정보 서버로 전송
     registerLocalUserAuthCallback();
   };
