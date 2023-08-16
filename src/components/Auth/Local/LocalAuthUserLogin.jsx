@@ -132,8 +132,8 @@ const LocalAuthUserLogin = () => {
         />
         <div className={styles["localUser-login_sns"]}>
           <KakaoAuthUserAccount />
-          <NaverAuthUserAccount />
-          <GoogleAuthUserAccount />
+          {/* <NaverAuthUserAccount />
+          <GoogleAuthUserAccount /> */}
         </div>
       </div>
     </>
