@@ -20,7 +20,7 @@ const TopMenu = () => {
 
   useEffect(() => {
     const token = sessionStorage.getItem("auth");
-    if (token != null) {
+    if (token != "undefined" && token) {
       setIsLogin(true);
     } else {
       setIsLogin(false);
