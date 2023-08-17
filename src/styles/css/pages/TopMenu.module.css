@@ -10,7 +10,8 @@
 
   .top_menu_prd {
     max-width: 1195px;
-    margin-left: 25px;
+    margin-left: 14px;
+    margin-right: 14px;
     text-decoration: none;
     color: #666666;
     cursor: pointer;
@@ -30,7 +31,8 @@
   }
 
   .top_menu_prd {
-    margin-left: 25px;
+    margin-left: 14px;
+    margin-right: 14px;
     text-decoration: none;
     color: #666666;
     cursor: pointer;
@@ -52,10 +54,11 @@
 
   .top_menu_prd {
     margin-left: 13px;
+    margin-right: 13px;
     text-decoration: none;
     color: #666666;
     cursor: pointer;
-    font-size: 10px;
+    font-size: 12px;
   }
 
   .top_menu_prd:hover {
