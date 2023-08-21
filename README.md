@@ -12,8 +12,12 @@
   <img width="300" alt="foreverpet_image" src="https://github.com/EUN-HA-CHOI/ForeverPet/assets/97012561/f548fdcb-ee2b-426c-a4f0-a0e9f4ba633f"/>
 </p>
 <p align="center">
-  <img src="https://img.shields.io/badge/react-v17.0.2-9cf?logo=react" alt="react" />
- 
+<img src="https://img.shields.io/badge/React-FFFFFF?style=flat&logo=React&logoColor=61DAFB"/>
+<img src="https://img.shields.io/badge/CSS Modules-ffffff?style=flat&logo=CSS Modules&logoColor=000000"/>
+<img src="https://img.shields.io/badge/Axios-ffffff?style=flat&logo=Axios&logoColor=5A29E4"/>
+<img src="https://img.shields.io/badge/Redux-ffffff?style=flat&logo=Redux&logoColor=764ABC"/>
+<img src="https://img.shields.io/badge/Lodash-ffffff?style=flat&logo=Lodash&logoColor=3492FF"/>
+<img src="https://img.shields.io/badge/Vite-ffffff?style=flat&logo=Vite&logoColor=646CFF"/>
 </p>
 
 **💡 반려 동물 친환경 & 비건 서비스 쇼핑몰**
@@ -28,7 +32,9 @@
 <summary><b>로그인(카카오 소셜 로그인)</b></summary>
 <div markdown="1">
   
-![로그인(카카오 소셜 로그인)](영상)
+![포에버-로그인](https://github.com/EUN-HA-CHOI/ForeverPet/assets/97012561/c533a151-4d78-4997-8079-3f4f24ebd61f)
+
+(소셜 로그인)
 
 - 포에버펫 사이트에 접속하면 헤더 오른쪽 상단에 로그인 버튼을 눌러 소셜 로그인 , 일반 로그인을 할 수 있습니다.
 
@@ -40,7 +46,7 @@
 <summary><b>회원가입</b></summary>
 <div markdown="1">
   
-![회원가입](영상)
+![포에버-회원가입](https://github.com/EUN-HA-CHOI/ForeverPet/assets/97012561/5e1b6240-92ef-47a3-995f-9e9c0d1025e1)
 
 - 포에벗 사이트에 접속 하여 회원가입을 클릭하면 사용자 정보와 아이디 중복 확인을 통해 회원가입을 할 수 있습니다.
 </div>
@@ -50,7 +56,7 @@
 <summary><b>메인(로그인,로그아웃)</b></summary>
 <div markdown="1">
   
-![메인(로그인o)](영상)
+![포에버-인증상태 화면](https://github.com/EUN-HA-CHOI/ForeverPet/assets/97012561/8094d3f4-99c4-4b7e-9d1f-073e985669f7)
 
 - 로그인 또는 회원가입을 하면 헤더 상단의 인증(로그인,로그아웃) 상태가 변동 됩니다.
 
@@ -60,8 +66,8 @@
 <details>
 <summary><b>상품 추천</b></summary>
 <div markdown="1">
-
-![상품 추천](영상)
+  
+![포에버-상품추천](https://github.com/EUN-HA-CHOI/ForeverPet/assets/97012561/fcf8def7-3fc4-41eb-8332-a2ccc339630b)
 
 - 메인 홈 화면에서 베스트 , 신상품 , 간식 상품들의 API 를 랜덤 호출하여 확인 할 수 있습니다.
 </div>
@@ -70,8 +76,8 @@
 <details>
 <summary><b>상품 상세 페이지</b></summary>
 <div markdown="1">
-
-![상품 상세 페이지](영상)
+  
+![포에버- 상품상세](https://github.com/EUN-HA-CHOI/ForeverPet/assets/97012561/e9034c60-45bd-4300-b71e-5db03608940e)
 
 - 해당 상품 카드를 클릭하면 상품 상세 페이지로 이동하여 상품 상세 정보를 확인 할 수 있고, 장바구니 & 구매를 할 수 있습니다.
 </div>
@@ -80,8 +86,8 @@
 <details>
 <summary><b>전체 상품 페이지</b></summary>
 <div markdown="1">
-
-![전체 상품 페이지](영상)
+  
+![포에버-상품전체](https://github.com/EUN-HA-CHOI/ForeverPet/assets/97012561/c7e204b5-a432-4dde-9d9e-0056245c3f7d)
 
 - 햄버거 버튼 또는 메인 홈 카테고리에서 사료 , 간식 , 건강식품을 클릭하면 해당 상품들이 있는 페이지로 이동합니다.
 </div>
@@ -90,8 +96,8 @@
 <details>
 <summary><b>장바구니</b></summary>
 <div markdown="1">
-
-![장바구니](영상)
+  
+![포에버 - 장바구니](https://github.com/EUN-HA-CHOI/ForeverPet/assets/97012561/91958746-6022-47bd-b046-5f5b7a1e1bc9)
 
 - 상품 카드에서 장바구니 아이콘을 클릭하면 장바구니에 담은 후 확인 할 수 있고, 헤더 부분에 장바구니 아이콘에 수량을 확인 할 수 있습니다.
 
@@ -104,8 +110,10 @@
 <details>
 <summary><b>결제 페이지</b></summary>
 <div markdown="1">
+  
+![포에버-결제_1](https://github.com/EUN-HA-CHOI/ForeverPet/assets/97012561/13e559c8-c09d-4951-85fb-24e7a7721903)
 
-![결제 페이지](영상)
+![포에버-결제_2](https://github.com/EUN-HA-CHOI/ForeverPet/assets/97012561/5a2c9de1-3ac5-47d6-a56e-b4f28df3cdb4)
 
 - 상품의 상세 페이지에서 사용자의 정보를 입력 한 후 결제수단인 카카오페이로 주문이 가능합니다.
 
@@ -117,9 +125,9 @@
 <summary><b>키워드 검색</b></summary>
 <div markdown="1">
 
-![키워드 검색](영상)
+![포에버-검색](https://github.com/EUN-HA-CHOI/ForeverPet/assets/97012561/9678f4dd-23a9-4b91-b038-2dd274e170fe)
 
-- 사료 , 간식 , 건강식품의 상품들의 키워드로 검색이 가능합니다.
+- 사료, 간식, 건강식품 상품들의 키워드로 검색이 가능합니다.
 
 - debounce 를 사용하여 불필요한 함수 호출을 방지 하였습니다.
 </div>
@@ -138,15 +146,6 @@
 - </div>
   </details>
 
-<details>
-<summary><b>전체보기</b></summary>
-<div markdown="1">
-
-![전체보기](영상)
-
-</div>
-</details>
-
 <br/>
 
 ## ⚡️ Skills
@@ -155,7 +154,6 @@
 
 ### Front-end
 
-<details>
 <summary>✅ 역할</summary>
 
 <div markdown="1"> 
@@ -166,9 +164,10 @@
 
 - 엘라 : 마이페이지 (주문내역 , 찜리스트) , 장바구니 페이지 , 상품 페이지 기능 담당
 </div>
-</details>     
+  
 
 
+ <summary>✅ 기술스택</summary>    
 <p>
   <img src="https://user-images.githubusercontent.com/52682603/138834243-fb74d81e-e90d-4c6a-8793-05df588f59ab.png" alt="react" width=15%>
   <img src="https://github.com/EUN-HA-CHOI/ForeverPet/assets/97012561/91059825-cef7-4b70-9a48-50e9d93c7b40" alt="CSS MODULE" width=15%>
@@ -196,11 +195,13 @@
   <img src="https://user-images.githubusercontent.com/52682603/138834271-9004826c-7b4e-418a-95ea-57d1c05f6e8a.png" alt="aws_ec2" width=15%>
 </p>
 
-- **AWS EC2**를 사용해 서버를 구축했어요.
+- **AWS EC2**를 사용해 서버를 구축했습니다.
 
 ---
 
 ## ⚡️ Convention
+
+<details>
 
 ### **React**
 
@@ -232,6 +233,8 @@
 
 - Prettier
 - Using Tab Space Sizing : 2
+
+</details>
 
 ---
 
