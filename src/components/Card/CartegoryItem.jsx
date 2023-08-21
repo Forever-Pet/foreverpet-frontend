@@ -4,7 +4,6 @@ const CartegoryItem = [
     title: "포에버365",
     img: "img/img-1-1.jpeg",
     url: "category/event",
-    categories: "",
   },
   {
     title: "사료",
