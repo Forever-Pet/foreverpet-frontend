@@ -33,7 +33,7 @@ const SearchInput = () => {
 
   const getInputValueInfo = debounce(userSearch, 300);
   return (
-    <div className={styles.search_wrap} onKeyDown={handleOnkeyPress}>
+    <div className={styles.search_wrap}>
       <Input
         type="text"
         name="productName"
@@ -41,6 +41,7 @@ const SearchInput = () => {
         className="searchInput"
         ref={inputRef}
         onChange={getInputValueInfo}
+        onKeyDown={handleOnkeyPress}
       />
 
       <GoSearch
