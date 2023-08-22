@@ -1,5 +1,8 @@
 /* MainBanTwo.module.css */
 
+/* font */
+@import url("../../../font/font.module.css");
+
 /* pc */
 @media screen and (min-width: 1024px) {
   .bantwo {
