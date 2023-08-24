@@ -6,14 +6,15 @@ const localAuthSlice = createSlice({
   reducers: {
     addToken(state, action) {
       state.token = action.payload;
-      if (action.payload !== null || undefined)
+      if (action.payload !== null || action.payload !== undefined)
         return sessionStorage.setItem("auth", action.payload);
     },
     removeToken(state, action) {
       state.token = "";
       sessionStorage.removeItem("auth");
       const kakaoUser = sessionStorage.getItem("kakao");
-      if (kakaoUser !== null) return sessionStorage.removeItem("kakao");
+      if (kakaoUser !== null || kakaoUser !== undefined)
+        return sessionStorage.removeItem("kakao");
     },
   },
 });
