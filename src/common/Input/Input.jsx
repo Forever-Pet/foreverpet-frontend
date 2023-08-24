@@ -14,6 +14,7 @@ const Input = forwardRef((props, ref) => {
       minLength={props.minLength}
       maxLength={props.maxLength}
       onChange={props.onChange}
+      onKeyDown={props.onKeyDown}
       required={props.required ? props.required : false}
       disabled={props.disabled ? props.disabled : false}
       ref={ref}

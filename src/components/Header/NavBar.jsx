@@ -1,7 +1,7 @@
-import React, {useState } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Image from "../../common/Img/Image";
-import CartModal from '../../components/Cart/CartModal';
+import CartModal from "../../components/Cart/CartModal";
 import { useDispatch, useSelector } from "react-redux";
 import { cartIsOpen } from "../../store/Slice/ModalSlice";
 
@@ -40,10 +40,9 @@ const NavListArr = () => {
               className={styles.product__list_item_name}
               onClick={() => pathMove(props.url, { title: props.title }, true)}
             >
-            <Image src={props.img} className="product__list_img" />
+              <Image src={props.img} className="product__list_img" />
               {props.title}
             </div>
-           
           </div>
         );
       })}
@@ -60,52 +59,67 @@ const NavBar = () => {
     setNav(index);
   };
 
-  const cartData = useSelector((state) => { return state.cart.cartItem })
-  const cartOpen = useSelector((state) => { return state.modal.cartOpen })
+  const cartData = useSelector((state) => {
+    return state.cart.cartItem;
+  });
+  const cartOpen = useSelector((state) => {
+    return state.modal.cartOpen;
+  });
 
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
-  return <>
-    <div className={styles.service_item}>
-      <div className={styles.service_item__column}>
-        <div
-          className={`${styles.service_item__product} ${styles.service_item__product1}`}
-          onClick={() => {setList(!list);}}>
-          <RxTextAlignJustify className={styles.service_item__icon} />
-          {list && <NavListArr />}
+  return (
+    <>
+      <div className={styles.service_item}>
+        <div className={styles.service_item__column}>
+          <div
+            className={`${styles.service_item__product} ${styles.service_item__product1}`}
+            onClick={() => {
+              setList(!list);
+            }}
+          >
+            <RxTextAlignJustify className={styles.service_item__icon} />
+            {list && <NavListArr />}
+          </div>
+          {NavList.map((tap, index) => {
+            return (
+              <div
+                key={index}
+                className={styles.service_item__product}
+                onClick={() => NavHandler(index)}
+              >
+                {tap.name}
+              </div>
+            );
+          })}
         </div>
-        {NavList.map((tap, index) => {
-          return (
-            <div
-              key={index}
-              className={styles.service_item__product}
-              onClick={() => NavHandler(index)}
+        <div className={styles.content_module}>
+          <SearchInput />
+          <div>
+            <Link
+              to="/member/orderhistory"
+              className={styles.content_module__service}
             >
-              {tap.name}
+              <BiUser />
+            </Link>
+          </div>
+          <div>
+            <div
+              className={styles.content_module__service}
+              onClick={() => dispatch(cartIsOpen())}
+            >
+              <BiBasket />
+              {cartData.length > 0 ? (
+                <div className={styles["alert-count"]}>{cartData.length}</div>
+              ) : (
+                ""
+              )}
             </div>
-          );
-        })}
-      </div>
-      <div className={styles.content_module}>
-        <SearchInput />
-        <div>
-          <Link to="/member/modify" className={styles.content_module__service}>
-            <BiUser />
-          </Link>
-        </div>
-        <div>
-          <div className={styles.content_module__service} onClick={() => dispatch(cartIsOpen())}>
-            <BiBasket />
-            {
-            cartData.length > 0 ? <div className={styles['alert-count']}>{cartData.length}</div> : ''
-            }
           </div>
         </div>
       </div>
-    </div>
-     {
-      cartOpen ? <CartModal /> : ''
-    }
- </>
+      {cartOpen ? <CartModal /> : ""}
+    </>
+  );
 };
 export default NavBar;
