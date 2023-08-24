@@ -1,13 +1,13 @@
 /*Home.module.css*/
 
 /*pc*/
-@media screen and (min-width:1024px)  {
+@media screen and (min-width: 1024px) {
   .home {
     padding-top: 80px;
   }
-  
+
   .main {
-   min-height: calc(100vh - 180px);
+    min-height: calc(100vh - 180px);
   }
 
   .home_ban {
@@ -27,11 +27,11 @@
 }
 
 /*테블릿*/
-@media screen and (min-width:768px) and (max-width:1023px) {
+@media screen and (min-width: 768px) and (max-width: 1023px) {
   .home {
     padding-top: 80px;
   }
-  
+
   .main {
     min-height: calc(100vh - 180px);
   }
@@ -57,7 +57,7 @@
   .home {
     padding-top: 80px;
   }
-  
+
   .main {
     min-height: calc(100vh - 180px);
   }
@@ -78,4 +78,4 @@
     height: 230px;
     margin: 0 10px;
   }
-} 
+}

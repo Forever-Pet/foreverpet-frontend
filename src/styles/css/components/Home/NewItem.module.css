@@ -1,51 +1,49 @@
 /* NewItem.module.css */
 
 /* pc */
-@media screen and (min-width:1024px)  {
+@media screen and (min-width: 1024px) {
   .newitem {
     position: relative;
     max-width: 1200px;
     height: 500px;
     width: 100%;
     margin: 0 auto;
-}
+  }
 
-.newitem_header__text {
-  font-size: 18px;
-  font-weight: bold;
-  text-align: center;
-  color: #333;
-}
+  .newitem_header__text {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    color: #333;
+  }
 
-.newitem__product {
-  display: flex;
-  justify-content: center;
-}
+  .newitem__product {
+    display: flex;
+    justify-content: center;
+  }
 }
 
 /*테블릿*/
-@media screen and (min-width:768px) and (max-width:1023px) {
+@media screen and (min-width: 768px) and (max-width: 1023px) {
   .newitem {
     position: relative;
     max-width: 1200px;
     height: 500px;
     width: 100%;
     margin: 0 auto;
-}
+  }
 
-.newitem_header__text {
-  font-size: 18px;
-  font-weight: bold;
-  text-align: center;
-  color: #333;
-}
+  .newitem_header__text {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    color: #333;
+  }
 
-.newitem__product {
-  display: flex;
-  justify-content: center;
-}
-
-
+  .newitem__product {
+    display: flex;
+    justify-content: center;
+  }
 }
 
 /*모바일*/
@@ -56,18 +54,18 @@
     height: 800px;
     width: 100%;
     margin: 0 auto;
-}
+  }
 
-.newitem_header__text {
-  font-size: 18px;
-  font-weight: bold;
-  text-align: center;
-  color: #333;
-}
+  .newitem_header__text {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    color: #333;
+  }
 
-.newitem__product {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-}
+  .newitem__product {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
 }
