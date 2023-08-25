@@ -4,6 +4,9 @@ import { CopyToClipboard } from "react-copy-to-clipboard";
 import usePathMove from "../../../hooks/usePathMove";
 import { useCartHook } from "../../../hooks/ClickHook/useCartHook";
 
+// Redux
+import { useSelector } from "react-redux/es/hooks/useSelector";
+
 // CSS
 import styles from "../../../styles/css/components/Card/Detail/ProductDetailPriceCard.module.css";
 
@@ -12,14 +15,20 @@ import { BsHeart, BsFillHeartFill, BsShare } from "react-icons/bs";
 
 // Components
 import Button from "../../../common/Button/Button";
+
+// Util
 import { addPriceComma } from "../../../utils/addPriceComma";
-import BagModal from "../../../common/Modal/BagModal";
 
 const ProductDetailPriceCard = (props) => {
   const { ckBag } = useCartHook();
   const pathMove = usePathMove();
-  const productItemPayment = () =>
+  const userAuth = useSelector((state) => state.auth.token);
+  const productItemPayment = () => {
+    if (userAuth === null || undefined || "") {
+      return pathMove("/user/login");
+    }
     pathMove("/payments", props.productDetailData, true);
+  };
 
   const addCartData = () => {
     const { productDetailData } = props;

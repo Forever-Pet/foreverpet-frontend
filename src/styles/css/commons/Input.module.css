@@ -1,26 +1,25 @@
 /*Input.module.css*/
 
 /* pc */
-@media screen and (min-width:1024px)  {
-  /*검색창*/
-.searchInput {
-  width: 200px;
-  height: 26px;
-  font-size: 11px;
-  border: 1px solid #008e61;
- }
-
-}
-
-/*테블릿*/
-@media screen and (min-width:768px) and (max-width:1023px) {
+@media screen and (min-width: 1024px) {
   /*검색창*/
   .searchInput {
     width: 200px;
     height: 26px;
     font-size: 11px;
     border: 1px solid #008e61;
-   }
+  }
+}
+
+/*테블릿*/
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  /*검색창*/
+  .searchInput {
+    width: 200px;
+    height: 26px;
+    font-size: 11px;
+    border: 1px solid #008e61;
+  }
 }
 
 /*모바일*/
@@ -31,17 +30,24 @@
     height: 26px;
     font-size: 11px;
     border: 1px solid #008e61;
-   }
+  }
+}
+
+/* 아이폰 SE  */
+@media screen and (max-width: 576px) {
+ /*검색창*/
+ .searchInput {
+  width: 126px;
+  height: 26px;
+  font-size: 11px;
+  border: 1px solid #008e61;
+ }
 }
 
 .localUser-login__email {
   margin-bottom: 20px;
 }
 
-.delivery-register__input--address,
-.delivery-register__input,
-.modify-password__current,
-.modify-password_new,
 .delivery-input__name,
 .delivery-input__mainAddress,
 .delivery-input__subAddress,
@@ -167,7 +173,8 @@
   cursor: auto;
 }
 
-input[type="checkbox"] {
+input[type="checkbox"],
+.save-acocunt[type="checkbox"] {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -177,7 +184,8 @@ input[type="checkbox"] {
   cursor: pointer;
 }
 
-input[type="checkbox"]::after {
+input[type="checkbox"]::after,
+.save-acocunt[type="checkbox"]::after {
   border: solid #fff;
   border-width: 0 2px 2px 0;
   content: "";
@@ -189,9 +197,13 @@ input[type="checkbox"]::after {
   transform: rotate(45deg);
   width: 15%;
 }
-input[type="checkbox"]:checked {
+
+input[type="checkbox"]:checked,
+.save-acocunt[type="checkbox"]:checked {
   background: #505bf0;
 }
-input[type="checkbox"]:checked::after {
+
+input[type="checkbox"]:checked::after,
+.save-acocunt[type="checkbox"]:checked::after {
   display: block;
 }

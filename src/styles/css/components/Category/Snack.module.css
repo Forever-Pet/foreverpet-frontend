@@ -1,53 +1,48 @@
 /*BestItem.module.css*/
-
 /* pc */
-@media screen and (min-width:1024px)  {
+@media screen and (min-width: 1024px) {
   .snack_Slide {
     position: relative;
     max-width: 1200px;
     height: 500px;
     width: 100%;
     margin: 0 auto;
-}
+  }
 
-.snack_Slide_hea {
-  font-size: 18px;
-  font-weight: bold;
-  text-align: center;
-  color: #333;
-}
+  .snack_Slide_hea {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    color: #333;
+  }
 
-.snack_Slide_prd{
-  display: flex;
-  justify-content: center;
-}
-
-
+  .snack_Slide_prd {
+    display: flex;
+    justify-content: center;
+  }
 }
 
 /*테블릿*/
-@media screen and (min-width:768px) and (max-width:1023px) {
+@media screen and (min-width: 768px) and (max-width: 1023px) {
   .snack_Slide {
     position: relative;
     max-width: 1200px;
     height: 500px;
     width: 100%;
     margin: 0 auto;
-}
+  }
 
-.snack_Slide_hea {
-  font-size: 18px;
-  font-weight: bold;
-  text-align: center;
-  color: #333;
-}
+  .snack_Slide_hea {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    color: #333;
+  }
 
-.snack_Slide_prd{
-  display: flex;
-  justify-content: center;
-}
-  
-
+  .snack_Slide_prd {
+    display: flex;
+    justify-content: center;
+  }
 }
 
 /*모바일*/
@@ -58,21 +53,18 @@
     height: 800px;
     width: 100%;
     margin: 0 auto;
-}
+  }
 
-.snack_Slide_hea {
-  font-size: 18px;
-  font-weight: bold;
-  text-align: center;
-  color: #333;
-}
+  .snack_Slide_hea {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    color: #333;
+  }
 
-.snack_Slide_prd{
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  .snack_Slide_prd {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
 }
-  
-
-}
-
