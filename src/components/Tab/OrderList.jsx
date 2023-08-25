@@ -14,10 +14,10 @@ const OrderList = () => {
         <table className={styles['cart-table']}>
           <thead></thead>
           <tbody>
-            {
-              data.map((d) => {
+            {data &&
+              data.map((d, i) => {
                 return (
-                  <tr key={d.id}>
+                  <tr key={i}>
                     <td>
                       <Image src={testImg} className="img-100" />
                     </td>
