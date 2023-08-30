@@ -5,16 +5,32 @@ import Footer from "../Footer/Footer";
 import Title from "../../common/Title/Title";
 import usePathMove from "../../hooks/usePathMove";
 import { useGetMemberData } from "../../hooks/useGetMemberData";
+import { useState } from "react";
+import { useSelector } from "react-redux";
+import { useEffect } from "react";
 
 const Profile = (props) => {
   const move = usePathMove();
-  const { data: userData } = useGetMemberData("", "fetch");
+  const auth = useSelector((state) => { return state.auth.token })
+  const { data: userData, fetchData } = useGetMemberData();
 
   const buttonData = [
     { title: "배송지 등록", url: "delivery" },
     { title: "비밀번호 변경", url: "password" },
     { title: "회원탈퇴", url: "" },
   ];
+
+
+   useEffect(() => {
+     if(auth) {
+      fetchData('user')
+     } else {
+       alert('로그인이 필요합니다.')
+     }
+   }, [auth])
+
+
+
 
   return (
     <>

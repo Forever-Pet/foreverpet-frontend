@@ -4,11 +4,14 @@ import Button from "../Button/Button";
 import { useDispatch, useSelector } from "react-redux";
 import { secondModalClose } from "../../store/Slice/ModalSlice";
 import { cartIsOpen } from "../../store/Slice/ModalSlice";
+import { useCartDataHook } from "../../hooks/useCartDataHook";
 const InsideBag = () => {
   const modalState = useSelector((state) => {
     return state.modal.modalState;
   });
   const dispatch = useDispatch();
+  const {data, CartData} = useCartDataHook();
+  
 
   return (
     <>
@@ -28,6 +31,7 @@ const InsideBag = () => {
               onClick={() => {
                 dispatch(secondModalClose());
                 dispatch(cartIsOpen(true));
+                CartData()
               }}
               className="bag-inside-btn"
               title={"확인하기"}

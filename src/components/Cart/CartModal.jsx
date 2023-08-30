@@ -1,38 +1,28 @@
 import styles from "../../styles/css/components/Cart/CartModal.module.css";
 import { IoMdClose } from "react-icons/io";
 import Image from "../../common/Img/Image";
-import { useDispatch, useSelector } from "react-redux";
-import { removeCart, increase, decrease } from "../../store/Slice/CartSlice";
 import Button from "../../common/Button/Button";
 import usePathMove from "../../hooks/usePathMove";
 import { addPriceComma } from "../../utils/addPriceComma";
-import { useGetMemberData } from "../../hooks/useGetMemberData";
-import { useEffect } from "react";
-import { useState } from "react";
+import { useCartDataHook } from "../../hooks/useCartDataHook";
+import { useDispatch, useSelector } from "react-redux";
+import { removeCart } from "../../store/Slice/CartSlice";
 
 const CarModal = () => {
   const move = usePathMove();
-  // const cartData = useSelector((state) => {
-  //   return state.cart.cartItem;
-  // });
-  //유저 카트 가져오기
-  const [cartItems, setCartItems] = useState([]);
-  const { data: cartData } = useGetMemberData("", "cart");
+  const dispatch = useDispatch()
 
-  useEffect(() => {
-    if (cartData !== null) {
-      setCartItems(cartData);
-    }
-  }, [cartData, cartItems]);
+  const { data:cartItems,DeleteData,handleCount, CartData } = useCartDataHook();
+  const auth = useSelector((state) => { return state.auth.token })
+  const modalState = useSelector((state) => {
+    return state.modal.modalState;
+  });
 
-  const handleDeleteItem = (itemId) => {
-    setCartItems((prevItems) => prevItems.filter((item) => item.id !== itemId));
-  };
-  const dispatch = useDispatch();
+  const cartData = useSelector((state) => { return state.cart.cartItem })
 
   return (
     <>
-      {cartData !== null && (
+      {cartItems && auth && (
         <>
           <div className={styles["container"]}>
             <div className={styles["cart-container"]}>
@@ -42,15 +32,19 @@ const CarModal = () => {
                   장바구니가 비었습니다.
                 </div>
               ) : (
+                cartItems && cartItems.length > 0 &&
                 cartItems.map((d) => {
-                  const formattedPrice = addPriceComma(d.productPrice * 1);
+                  const formattedPrice = addPriceComma(d.productPrice * d.quantity);
                   return (
                     <div
                       key={d.id}
                       className={styles["cart-container__insideBg"]}
                     >
                       <IoMdClose
-                        onClick={() => handleDeleteItem(d.id)}
+                        onClick={() => {
+                        DeleteData(d.id)
+                        dispatch(removeCart(d))
+                        }}
                         className={styles["cart-container__insideBg--icon"]}
                       ></IoMdClose>
                       <div
@@ -90,15 +84,17 @@ const CarModal = () => {
                           <Button
                             className="cart-btn-count"
                             onClick={() => {
-                              dispatch(decrease(d));
+                              if(d.quantity > 1) {     
+                                handleCount(d.id, 'decrease')
+                              } 
                             }}
                             title="-"
                           ></Button>
-                          <span>{d.count}</span>
+                          <span>{d.quantity}</span>
                           <Button
                             className="cart-btn-count"
                             onClick={() => {
-                              dispatch(increase(d));
+                              handleCount(d.id, 'increase')
                             }}
                             title="+"
                           ></Button>
@@ -113,7 +109,7 @@ const CarModal = () => {
                 })
               )}
 
-              {cartItems.length > 0 ? (
+              {cartItems && cartItems.length > 0 ? (
                 <Button
                   className="cart-pay-btn"
                   title={"결제하기"}
@@ -129,5 +125,7 @@ const CarModal = () => {
     </>
   );
 };
+
+
 
 export default CarModal;

@@ -1,12 +1,16 @@
+import { useWishHook } from "../../hooks/useWishHook";
 import ProductItem from "../Card/ProductItem";
 
-const WishList = (props) => {
+const WishList = () => {
+
+const {data} = useWishHook()
+
   return (
     <>
-      {props.data && (
+      {data && (
         <div>
           <ProductItem
-            data={props.data}
+            data={data}
             className="container-4columns"
           ></ProductItem>
         </div>

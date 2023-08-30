@@ -9,7 +9,8 @@ import { putIn } from "../../store/Slice/CartSlice";
 import { closeModal, secondModalOpen } from "../../store/Slice/ModalSlice";
 import InsideBag from "./InsideBag";
 import usePathMove from "../../hooks/usePathMove";
-import { useGetMemberData } from "../../hooks/useGetMemberData";
+import { useCartDataHook } from "../../hooks/useCartDataHook";
+import { cartIsOpen } from "../../store/Slice/ModalSlice";
 
 const BagModal = () => {
   const modalState = useSelector((state) => {
@@ -17,7 +18,12 @@ const BagModal = () => {
   });
   const dispatch = useDispatch();
   const move = usePathMove();
-  const { postData } = useGetMemberData();
+  const { data, handleCount, postCart} = useCartDataHook();
+  const cartOpen = useSelector((state) => {
+    return state.modal.cartOpen;
+  });
+
+
 
   return (
     <>
@@ -58,9 +64,17 @@ const BagModal = () => {
             />
             <Button
               onClick={() => {
-                // dispatch(putIn(modalState.data))
-                postData(`user/cart/${modalState.data.id}`);
                 dispatch(secondModalOpen());
+                dispatch(putIn(modalState.data))
+                if(cartOpen) {
+                  dispatch(cartIsOpen(false))
+                }
+                if(modalState.rightBtn) { //중복인 경우
+                  const found = data.find(d => d.productName === modalState.data.productName)
+                  handleCount(found.id, 'increase')
+                } else {
+                  postCart(modalState.data.id)
+                }
               }}
               className="bag-inside-btn"
               title={modalState.rightBtn || "장바구니 담기"}

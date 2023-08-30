@@ -6,8 +6,8 @@ export const useGetMemberData = (path = '', method = '') => {
   const [data, setData] = useState(null)
   const auth = useSelector((state) => { return state.auth.token })
 
-  const fetchData = () => {
-    axios.get('http://ec2-15-164-206-172.ap-northeast-2.compute.amazonaws.com/user', {
+  const fetchData = (path) => {
+    axios.get(`http://ec2-15-164-206-172.ap-northeast-2.compute.amazonaws.com/${path}`, {
       headers: {
         Authorization: `Bearer ${auth}`
       }
@@ -16,42 +16,39 @@ export const useGetMemberData = (path = '', method = '') => {
       .catch((error) => console.log('데이터 가져오기 에러'))
   }
 
-  const postData = (routing = '') => {
-    axios.post(`http://ec2-15-164-206-172.ap-northeast-2.compute.amazonaws.com/${path || routing}`, {}, {
+  const postData = async (routing = '') => {
+    await axios.post(`http://ec2-15-164-206-172.ap-northeast-2.compute.amazonaws.com/${path || routing}`, {}, {
       headers: {
         Authorization: auth
       }
     })
       .then((res) => {
-        if (typeof (res.data) == 'boolean') {
-          setData(res.data)
-          console.log('상품담김')
-        } else {
-          if (res.data.length !== 0) {
-            setData(res.data)
-          }
-        }
+
+        setData(res.data)
+
       })
       .catch((error) => console.log('post에러'))
   }
 
-  const CartData = () => {
-    axios.post(`http://ec2-15-164-206-172.ap-northeast-2.compute.amazonaws.com/user/cart`, {}, {
+  const DeleteWish = async (id) => {
+    await axios.delete(`http://ec2-15-164-206-172.ap-northeast-2.compute.amazonaws.com/user/wish/${id}`, {
       headers: {
         Authorization: auth
       }
-    }).then((res) => setData(res.data))
+    })
+    postData('user/wish')
+      .catch((error) => console.log('post에러'))
   }
 
+
+
   useEffect(() => {
-    if (method == 'post') {
-      postData()
-    } else if (method == 'fetch') {
-      fetchData()
-    } else if (method == 'cart') {
-      CartData()
-    }
+    // if (method == 'post') {
+    //   postData()
+    // } else if (method == 'fetch') {
+    //   fetchData()
+    // }
   }, [])
 
-  return { data, postData, fetchData, CartData }
+  return { data, postData, fetchData, DeleteWish }
 }

@@ -1,15 +1,17 @@
 import { useDispatch, useSelector } from "react-redux";
 import { openModal } from "../../store/Slice/ModalSlice";
+import { useCartDataHook } from "../useCartDataHook";
 import { useGetMemberData } from "../useGetMemberData";
+import { cartIsOpen } from "../../store/Slice/ModalSlice";
 
 export const useCartHook = () => {
   const cartData = useSelector((state) => { return state.cart.cartItem })
   const dispatch = useDispatch()
-  const { data: cart } = useGetMemberData('user/cart', 'post')
+  // const { data: cart, CartData } = useCartDataHook()
 
   const ckBag = (data) => {
-    if (cart !== null) {
-      const i = cart.find((a) => { return a.id == data.id }) //있는 상품인지 확인하기
+    if (cartData !== null) {
+      const i = cartData.find((a) => { return a.productName == data.productName }) //있는 상품인지 확인하기
       if (i == undefined) { //데이터 없으면 열어서 데이터 담음
         dispatch(openModal({
           data: data

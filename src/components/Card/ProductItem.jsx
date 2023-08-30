@@ -11,10 +11,14 @@ import ProductContent from "./ProductContent";
 import { useDispatch } from "react-redux";
 import BagModal from "../../common/Modal/BagModal";
 import usePathMove from "../../hooks/usePathMove";
+import { cartIsOpen } from "../../store/Slice/ModalSlice";
+import { useState } from "react";
 
 const ProductItem = (props) => {
   const move = usePathMove();
   const [iconCk, isLogin] = useHandleWishBag();
+  const dispatch = useDispatch()
+  
 
   return (
     <>
@@ -33,6 +37,8 @@ const ProductItem = (props) => {
                     onClick={(e) => {
                       e.stopPropagation();
                       isLogin(d.id, true);
+                    
+                    
                     }}
                     className={`${styles.productItem__img__button} ${styles.productItem__img__button__heart}`}
                   >
