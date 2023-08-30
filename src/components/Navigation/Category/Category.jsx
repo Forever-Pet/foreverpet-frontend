@@ -31,7 +31,7 @@ const Category = () => {
               style={{ cursor: "pointer" }}
               onClick={() => move(props.url, { title: props.title }, true)}
             >
-              <Image src={props.img} className="category_img" />
+              <Image src={props.img} alt={props.alt} className="category_img" />
               <div>{props.title}</div>
             </div>
           );
