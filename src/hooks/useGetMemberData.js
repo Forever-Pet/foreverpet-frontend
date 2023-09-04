@@ -43,11 +43,11 @@ export const useGetMemberData = (path = '', method = '') => {
 
 
   useEffect(() => {
-    // if (method == 'post') {
-    //   postData()
-    // } else if (method == 'fetch') {
-    //   fetchData()
-    // }
+    if (method == 'post') {
+      postData()
+    } else if (method == 'fetch') {
+      fetchData()
+    }
   }, [])
 
   return { data, postData, fetchData, DeleteWish }

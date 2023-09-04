@@ -1,9 +1,10 @@
-import { useWishHook } from "../../hooks/useWishHook";
+import { useGetMemberData } from "../../hooks/useGetMemberData";
+
 import ProductItem from "../Card/ProductItem";
 
 const WishList = () => {
+  const {data} = useGetMemberData('user/wish', 'post')
 
-const {data} = useWishHook()
 
   return (
     <>

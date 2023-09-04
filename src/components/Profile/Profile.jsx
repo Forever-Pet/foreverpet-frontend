@@ -5,7 +5,6 @@ import Footer from "../Footer/Footer";
 import Title from "../../common/Title/Title";
 import usePathMove from "../../hooks/usePathMove";
 import { useGetMemberData } from "../../hooks/useGetMemberData";
-import { useState } from "react";
 import { useSelector } from "react-redux";
 import { useEffect } from "react";
 

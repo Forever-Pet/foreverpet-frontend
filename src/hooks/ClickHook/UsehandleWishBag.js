@@ -1,8 +1,5 @@
-import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { putIn } from "../../store/Slice/CartSlice";
 import { wishPutIn } from "../../store/Slice/wishSlice";
-import { useCartDataHook } from "../useCartDataHook";
 import { useGetMemberData } from "../useGetMemberData";
 import { useCartHook } from "./useCartHook";
 
@@ -15,7 +12,7 @@ export const useHandleWishBag = () => {
   const { ckBag } = useCartHook()
   const dispatch = useDispatch()
 
-  const { data: wishItem, DeleteWish, postData } = useGetMemberData()
+  const { DeleteWish, postData } = useGetMemberData()
 
 
 

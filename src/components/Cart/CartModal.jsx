@@ -12,13 +12,8 @@ const CarModal = () => {
   const move = usePathMove();
   const dispatch = useDispatch()
 
-  const { data:cartItems,DeleteData,handleCount, CartData } = useCartDataHook();
+  const { data:cartItems,DeleteData,handleCount } = useCartDataHook();
   const auth = useSelector((state) => { return state.auth.token })
-  const modalState = useSelector((state) => {
-    return state.modal.modalState;
-  });
-
-  const cartData = useSelector((state) => { return state.cart.cartItem })
 
   return (
     <>
