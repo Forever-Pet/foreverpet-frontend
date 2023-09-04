@@ -22,8 +22,16 @@ const Home = () => {
       <MainBanTwo />
       <NewItem />
       <div className={styles.home_ban}>
-        <img src="img/eveban1.jpg" className={styles.home_ban_img} />
-        <img src="img/eveban2.jpg" className={styles.home_ban_img} />
+        <img
+          src="img/eveban1.jpg"
+          alt="메인 베너 이미지"
+          className={styles.home_ban_img}
+        />
+        <img
+          src="img/eveban2.jpg"
+          alt="메인 베너 이미지"
+          className={styles.home_ban_img}
+        />
       </div>
       <PrdSnack />
       <Footer />
