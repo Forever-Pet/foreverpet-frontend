@@ -2,7 +2,7 @@ import { CopyToClipboard } from "react-copy-to-clipboard";
 
 // Custom Hook
 import usePathMove from "../../../hooks/usePathMove";
-import { UseCartHook } from "../../../hooks/ClickHook/UseCartHook";
+import { useCartHook } from "../../../hooks/ClickHook/useCartHook";
 
 // Redux
 import { useSelector } from "react-redux/es/hooks/useSelector";
@@ -20,7 +20,7 @@ import Button from "../../../common/Button/Button";
 import { addPriceComma } from "../../../utils/addPriceComma";
 
 const ProductDetailPriceCard = (props) => {
-  const { ckBag } = UseCartHook();
+  const { ckBag } = useCartHook();
   const pathMove = usePathMove();
   const userAuth = useSelector((state) => state.auth.token);
   const productItemPayment = () => {

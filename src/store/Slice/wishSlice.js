@@ -8,13 +8,14 @@ const wishSlice = createSlice({
   reducers: {
 
     wishPutIn(state, action) {
-      const i = state.wishItem.findIndex((a) => { return a.id === action.payload.id })
+      const i = state.wishItem.findIndex((a) => { return a === action.payload })
       if (i === -1) { //중복아니면
         state.wishItem = [...state.wishItem, action.payload]
       } else { //이미 들어 있는 아이템 한번 더 클릭하면 위시리스트에서 빼기
         state.wishItem.splice(i, 1)
       }
-    }
+    },
+
   }
 })
 

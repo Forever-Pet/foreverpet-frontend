@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export const UseClickHook = (initialValue) => {
+export const useClickHook = (initialValue) => {
   const [click, setClick] = useState(initialValue)
 
   const handleClick = () => {
