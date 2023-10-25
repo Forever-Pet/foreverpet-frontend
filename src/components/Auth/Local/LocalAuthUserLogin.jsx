@@ -18,8 +18,6 @@ import Input from "../../../common/Input/Input";
 import Button from "../../../common/Button/Button";
 import Title from "../../../common/Title/Title";
 import KakaoAuthUserAccount from "../Kakao/KakaoAuthUserAccount";
-import NaverAuthUserAccount from "../Naver/NaverAuthUserAccount";
-import GoogleAuthUserAccount from "../Google/GoogleAuthUserAccount";
 
 const LocalAuthUserLogin = () => {
   const pathMove = usePathMove();
@@ -135,8 +133,6 @@ const LocalAuthUserLogin = () => {
         />
         <div className={styles["localUser-login_sns"]}>
           <KakaoAuthUserAccount />
-          {/* <NaverAuthUserAccount />
-          <GoogleAuthUserAccount /> */}
         </div>
       </div>
     </>
