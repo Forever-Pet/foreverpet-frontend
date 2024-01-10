@@ -122,7 +122,7 @@ const PaymentsFinalAll = (props) => {
 
     const orderRequest = cartData.map((data) => ({
       orderProductId: data.id,
-      orderProductAmount: data.productPrice,
+      orderProductAmount: data.count,
     }));
 
     const bodyData = {

@@ -115,7 +115,7 @@ const PaymentsFinal = (props) => {
 
     const orderRequest = [props.paymentsProductDetailInfo].map((data) => ({
       orderProductId: data.id,
-      orderProductAmount: data.productPrice,
+      orderProductAmount: 1,
     }));
 
     const userId = sessionStorage.getItem("auth");
@@ -137,6 +137,8 @@ const PaymentsFinal = (props) => {
       // 유저 넘버 수정 예정
       orderProductListRequest: orderRequest,
     };
+
+    console.log(bodyData);
 
     const res = await axios.post(
       "http://ec2-15-164-206-172.ap-northeast-2.compute.amazonaws.com/order",
