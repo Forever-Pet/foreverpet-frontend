@@ -10,10 +10,12 @@ import { removeCart } from "../../store/Slice/CartSlice";
 
 const CarModal = () => {
   const move = usePathMove();
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
-  const { data:cartItems,DeleteData,handleCount } = useCartDataHook();
-  const auth = useSelector((state) => { return state.auth.token })
+  const { data: cartItems, DeleteData, handleCount } = useCartDataHook();
+  const auth = useSelector((state) => {
+    return state.auth.token;
+  });
 
   return (
     <>
@@ -27,9 +29,12 @@ const CarModal = () => {
                   장바구니가 비었습니다.
                 </div>
               ) : (
-                cartItems && cartItems.length > 0 &&
+                cartItems &&
+                cartItems.length > 0 &&
                 cartItems.map((d) => {
-                  const formattedPrice = addPriceComma(d.productPrice * d.quantity);
+                  const formattedPrice = addPriceComma(
+                    d.productPrice * d.quantity
+                  );
                   return (
                     <div
                       key={d.id}
@@ -37,8 +42,8 @@ const CarModal = () => {
                     >
                       <IoMdClose
                         onClick={() => {
-                        DeleteData(d.id)
-                        dispatch(removeCart(d))
+                          DeleteData(d.id);
+                          dispatch(removeCart(d));
                         }}
                         className={styles["cart-container__insideBg--icon"]}
                       ></IoMdClose>
@@ -79,9 +84,9 @@ const CarModal = () => {
                           <Button
                             className="cart-btn-count"
                             onClick={() => {
-                              if(d.quantity > 1) {     
-                                handleCount(d.id, 'decrease')
-                              } 
+                              if (d.quantity > 1) {
+                                handleCount(d.id, "decrease");
+                              }
                             }}
                             title="-"
                           ></Button>
@@ -89,7 +94,7 @@ const CarModal = () => {
                           <Button
                             className="cart-btn-count"
                             onClick={() => {
-                              handleCount(d.id, 'increase')
+                              handleCount(d.id, "increase");
                             }}
                             title="+"
                           ></Button>
@@ -120,7 +125,5 @@ const CarModal = () => {
     </>
   );
 };
-
-
 
 export default CarModal;

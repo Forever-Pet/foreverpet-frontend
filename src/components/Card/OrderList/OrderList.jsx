@@ -9,7 +9,6 @@ import { addPriceComma } from "../../../utils/addPriceComma";
 
 // Components
 import Image from "../../../common/Img/Image";
-import { useEffect } from "react";
 
 const OrderList = (props) => {
   // 일정 글자수 이상일 경우 자르기
