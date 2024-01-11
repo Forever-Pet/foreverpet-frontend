@@ -5,7 +5,7 @@ const useLocalAuthSignUp = () => {
   const [responsive, setResponsive] = useState(null);
 
   const authSignUp = async (url, bodyData) => {
-    const API_URL = `http://ec2-15-164-206-172.ap-northeast-2.compute.amazonaws.com/${url}`;
+    const API_URL = `${import.meta.env.VITE_API_BASE_URL}/${url}`;
     try {
       const res = await axios.post(API_URL, bodyData);
       if (res.data.accessToken !== null)

@@ -17,9 +17,8 @@ import Footer from "../../components/Footer/Footer";
 const ProductDetail = () => {
   const [productDetailData, setProductDetailData] = useState([]);
   const { id } = useParams();
-
   useEffect(() => {
-    const API_URL = `http://ec2-15-164-206-172.ap-northeast-2.compute.amazonaws.com/products/${id}`;
+    const API_URL = `${import.meta.env.VITE_API_BASE_URL}/products/${id}`;
     const ProductIdServerData = async () => {
       try {
         const res = await axios.get(API_URL);

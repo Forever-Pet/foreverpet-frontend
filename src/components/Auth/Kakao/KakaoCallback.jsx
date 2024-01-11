@@ -18,7 +18,7 @@ const KakaoCallback = () => {
         };
         console.log(body);
         const serverRes = await axios.post(
-          "http://ec2-15-164-206-172.ap-northeast-2.compute.amazonaws.com/user/kakao",
+          `${import.meta.env.VITE_API_BASE_URL}/user/kakao`,
           body
         );
         console.log(serverRes);

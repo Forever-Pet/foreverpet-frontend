@@ -15,7 +15,7 @@ const Category = () => {
   //api호출
   const getCategory = async (myCategories) => {
     const res = await axios.get(
-      "http://ec2-15-164-206-172.ap-northeast-2.compute.amazonaws.com/products"
+      `${import.meta.env.VITE_API_BASE_URL}/products`
     );
     return res.data.filter((item) => item.categories == myCategories);
   };

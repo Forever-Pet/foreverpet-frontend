@@ -6,8 +6,7 @@ const useProductRandom = (url) => {
 
   const getRandom = async () => {
     try {
-      const baseUrl =
-        "http://ec2-15-164-206-172.ap-northeast-2.compute.amazonaws.com";
+      const baseUrl = `${import.meta.env.VITE_API_BASE_URL}`;
       const res = await axios.get(baseUrl + url);
       res.data.sort((a, b) => a.id - b.id);
       const randomSnackItem = [];

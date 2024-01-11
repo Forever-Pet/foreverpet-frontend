@@ -76,8 +76,7 @@ const LocalAuthUserJoin = () => {
     const isValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email); // 정규 표현식을 사용하여 이메일 형식 검사
     // if (isValid) return setEnableEmailAuth((prev) => !prev);
     if (!isValid) return alert("이메일을 입력 해주세요");
-    const API_URL =
-      "http://ec2-15-164-206-172.ap-northeast-2.compute.amazonaws.com/user/emailCheck";
+    const API_URL = `${import.meta.env.VITE_API_BASE_URL}/user/emailCheck`;
     const data = {
       userEmail: email,
     };
@@ -125,7 +124,7 @@ const LocalAuthUserJoin = () => {
     };
 
     const res = await axios.post(
-      "http://ec2-15-164-206-172.ap-northeast-2.compute.amazonaws.com/user/signup",
+      `${import.meta.env.VITE_API_BASE_URL}/user/signup`,
       bodyData
     );
     if (res.data) {
