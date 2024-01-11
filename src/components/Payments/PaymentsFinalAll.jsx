@@ -143,7 +143,7 @@ const PaymentsFinalAll = (props) => {
     };
 
     const res = await axios.post(
-      "http://ec2-15-164-206-172.ap-northeast-2.compute.amazonaws.com/order",
+      `${import.meta.env.VITE_API_BASE_URL}/order`,
       bodyData,
       { headers: { Authorization: `bearer ${userId}` } }
     );

@@ -80,7 +80,7 @@ const DeliveryRegister = () => {
     };
 
     const res = await axios.post(
-      "http://ec2-15-164-206-172.ap-northeast-2.compute.amazonaws.com/user/address",
+      `${import.meta.env.VITE_API_BASE_URL}/user/address`,
       bodyData,
       {
         headers: {

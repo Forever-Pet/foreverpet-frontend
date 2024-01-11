@@ -54,7 +54,7 @@ const ChangePassword = () => {
     };
 
     const res = await axios.post(
-      "http://ec2-15-164-206-172.ap-northeast-2.compute.amazonaws.com/user/password",
+      `${import.meta.env.VITE_API_BASE_URL}/user/password`,
       bodyData,
       { headers: { Authorization: `bearer ${userId}` } }
     );
