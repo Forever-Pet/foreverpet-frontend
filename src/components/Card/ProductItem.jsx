@@ -8,7 +8,6 @@ import {
 } from "react-icons/bs";
 import { useHandleWishBag } from "../../hooks/ClickHook/useHandleWishBag";
 import ProductContent from "./ProductContent";
-import { useDispatch } from "react-redux";
 import BagModal from "../../common/Modal/BagModal";
 import usePathMove from "../../hooks/usePathMove";
 
@@ -33,8 +32,6 @@ const ProductItem = (props) => {
                     onClick={(e) => {
                       e.stopPropagation();
                       isLogin(d.id, true);
-                    
-                    
                     }}
                     className={`${styles.productItem__img__button} ${styles.productItem__img__button__heart}`}
                   >
