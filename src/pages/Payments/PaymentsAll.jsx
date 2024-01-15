@@ -1,5 +1,5 @@
 // React Hooks
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 // CSS
 import styles from "../../styles/css/pages/Payments/Payments.module.css";
