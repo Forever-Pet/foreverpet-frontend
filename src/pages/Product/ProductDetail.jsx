@@ -22,7 +22,6 @@ const ProductDetail = () => {
     const ProductIdServerData = async () => {
       try {
         const res = await axios.get(API_URL);
-        // console.log(data)
         setProductDetailData(res.data);
       } catch (error) {
         console.log(error);

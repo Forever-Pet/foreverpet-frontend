@@ -8,7 +8,6 @@ import Join from "./User/Join";
 import KakaoCallback from "../components/Auth/Kakao/KakaoCallback";
 import ProductList from "./Product/ProductList";
 
-import SearchInput from "../components/Header/SearchInput";
 import ProductDetail from "./Product/ProductDetail";
 import Payments from "./Payments/Payments";
 import PaymentsAll from "./Payments/PaymentsAll";
@@ -29,7 +28,6 @@ const Router = () => {
           <Route path="/" element={<Home />} />
           // 검색
           <Route path="/product/search" element={<SearchList />} />
-          {/* <Route path="Header/searchInput" element={<SearchInput />} /> */}
           // 인증인가, oauth
           <Route path="/user/login" element={<Login />} />
           <Route path="/user/join" element={<Join />} />
