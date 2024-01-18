@@ -8,7 +8,7 @@ import useProductRandom from "../../hooks/useProductRandom";
 import styles from "../../styles/css/components/Category/Snack.module.css";
 
 //메인 홈 - 스낵 베너
-const PrdSnack = (props) => {
+const PrdSnack = () => {
   const url = "/products/categories?categories=SNACK";
   const [random, getRandom] = useProductRandom(url);
 

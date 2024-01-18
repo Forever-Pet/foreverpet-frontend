@@ -2,9 +2,8 @@
 import Title from "../../common/Title/Title";
 import styles from "../../styles/css/components/Footer/Footer.module.css";
 
-const Footer = (props) => {
+const Footer = () => {
   return (
-    //<footer className={classes[props.className || ""]}>
     <footer className={styles.footer}>
       <div className={styles.footer_logo}>
         <Title title="포에버펫" className="logo_text" />
@@ -21,7 +20,6 @@ const Footer = (props) => {
         COPYRIGHT © 2023 포에버펫 . ALL RIGHTS RESERVED.
       </div>
     </footer>
-    //</footer>;
   );
 };
 
