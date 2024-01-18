@@ -1,6 +1,3 @@
-// React Hooks
-import { useState } from "react";
-
 // Components
 import PaymentsInputHeader from "./PaymentsInputHeader/PaymentsInputHeader";
 import OwnerInputList from "./PaymentsInputList/OwnerInputList";
