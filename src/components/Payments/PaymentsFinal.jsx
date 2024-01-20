@@ -106,7 +106,6 @@ const PaymentsFinal = (props) => {
       deliveryZipcode,
     } = props.paymentReinfo;
 
-    // const { id } = props.paymentsProductDetailInfo;
     const uuid = uuidv4();
     const regEX = /[a-zA-Z0-9]/g;
     const filterUUID = uuid.match(regEX).join("");
