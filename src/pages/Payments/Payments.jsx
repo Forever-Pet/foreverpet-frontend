@@ -29,8 +29,7 @@ const Payments = () => {
     deliveryZipcode: "",
   });
   const [paymentsFinalAmount, setPaymentsFinalAmount] = useState(0);
-  const [paymentsProductDetailInfo, setPaymentsProductDetailInfo] =
-    useState(state);
+  const [paymentsProductDetailInfo] = useState(state);
 
   // 결제정보 (주문자, 배송지) 업데이트
   const updatePaymentInfo = (e) => {

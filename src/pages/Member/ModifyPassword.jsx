@@ -17,11 +17,7 @@ const ModifyPassword = () => {
     }
   }, []);
 
-  return (
-    <>
-      <Profile rightTitle={<ChangePassword />} />
-    </>
-  );
+  return <Profile rightTitle={<ChangePassword />} />;
 };
 
 export default ModifyPassword;
