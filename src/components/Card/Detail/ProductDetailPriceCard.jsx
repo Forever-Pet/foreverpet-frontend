@@ -11,7 +11,7 @@ import { useSelector } from "react-redux/es/hooks/useSelector";
 import styles from "../../../styles/css/components/Card/Detail/ProductDetailPriceCard.module.css";
 
 // Icons
-import { BsHeart, BsFillHeartFill, BsShare } from "react-icons/bs";
+import { BsHeart, BsShare } from "react-icons/bs";
 
 // Components
 import Button from "../../../common/Button/Button";
