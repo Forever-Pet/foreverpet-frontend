@@ -6,12 +6,10 @@ import { addPriceComma } from "../../../utils/addPriceComma";
 
 // Components
 import Image from "../../../common/Img/Image";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const ProductOrderList = (props) => {
-  const [productOrder, setProductOrder] = useState([
-    props.paymentsProductDetailInfo,
-  ]);
+  const [productOrder] = useState([props.paymentsProductDetailInfo]);
   // 일정 글자수 이상일 경우 자르기
   const productNameSlice = (name) => {
     const result = name.slice(0, 35);

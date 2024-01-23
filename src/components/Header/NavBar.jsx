@@ -17,8 +17,6 @@ import styles from "../../styles/css/pages/NavBar.module.css";
 //icon
 import { RxTextAlignJustify } from "react-icons/rx";
 import { BiUser, BiBasket } from "react-icons/bi";
-import { useCartDataHook } from "../../hooks/useCartDataHook";
-import { useEffect } from "react";
 
 //햄버거 버튼 메뉴 리스트
 const NavListArr = () => {
@@ -64,9 +62,13 @@ const NavBar = () => {
   const NavHandler = (index) => {
     setNav(index);
   };
-  const cartData = useSelector((state) => { return state.cart.cartItem })
-  const auth = useSelector((state) => { return state.auth.token })
-  
+  const cartData = useSelector((state) => {
+    return state.cart.cartItem;
+  });
+  const auth = useSelector((state) => {
+    return state.auth.token;
+  });
+
   const cartOpen = useSelector((state) => {
     return state.modal.cartOpen;
   });
@@ -111,21 +113,18 @@ const NavBar = () => {
             <div
               className={styles.content_module__service}
               onClick={() => {
-                dispatch(cartIsOpen())
+                dispatch(cartIsOpen());
               }}
             >
               <BiBasket />
-              {cartData && cartData.length > 0 && auth &&
+              {cartData && cartData.length > 0 && auth && (
                 <div className={styles["alert-count"]}>{cartData.length}</div>
-           }
+              )}
             </div>
           </div>
         </div>
       </div>
-      {cartOpen == true ? 
-
-      <CartModal /> : ""}
-  
+      {cartOpen == true ? <CartModal /> : ""}
     </>
   );
 };
