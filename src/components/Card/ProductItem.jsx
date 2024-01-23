@@ -6,7 +6,7 @@ import {
   BsHandbag,
   BsHandbagFill,
 } from "react-icons/bs";
-import { useHandleWishBag } from "../../hooks/ClickHook/useHandleWishBag";
+import { useHandleWishBag } from "../../hooks/ClickHook/usehandleWishBag";
 import ProductContent from "./ProductContent";
 import BagModal from "../../common/Modal/BagModal";
 import usePathMove from "../../hooks/usePathMove";
