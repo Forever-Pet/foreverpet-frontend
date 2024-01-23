@@ -3,66 +3,68 @@ import { wishPutIn } from "../../store/Slice/wishSlice";
 import { useGetMemberData } from "../useGetMemberData";
 import { useCartHook } from "./useCartHook";
 
-
 export const useHandleWishBag = () => {
+  const cartData = useSelector((state) => {
+    return state.cart.cartItem;
+  });
+  const wishData = useSelector((state) => {
+    return state.wish.wishItem;
+  });
+  const auth = useSelector((state) => {
+    return state.auth.token;
+  });
+  const { ckBag } = useCartHook();
+  const dispatch = useDispatch();
 
-  const cartData = useSelector((state) => { return state.cart.cartItem })
-  const wishData = useSelector((state) => { return state.wish.wishItem })
-  const auth = useSelector((state) => { return state.auth.token })
-  const { ckBag } = useCartHook()
-  const dispatch = useDispatch()
-
-  const { DeleteWish, postData } = useGetMemberData()
-
-
+  const { DeleteWish, postData } = useGetMemberData();
 
   const iconCk = (id, d) => {
-
-    if (d == 'cart') {
+    if (d == "cart") {
       if (cartData !== null) {
-        const i = cartData.findIndex((a) => { return a.id == id })
+        const i = cartData.findIndex((a) => {
+          return a.id == id;
+        });
 
         if (i == -1) {
-          return false
+          return false;
         } else {
-          return true
+          return true;
         }
       }
-
-    } else if (d == 'wish') {
+    } else if (d == "wish") {
       if (wishData !== null) {
-        const i = wishData.findIndex((a) => { return a == id })
+        const i = wishData.findIndex((a) => {
+          return a == id;
+        });
         if (i == -1) {
-          return false
+          return false;
         } else {
-          return true
+          return true;
         }
       }
-
     }
-  }
+  };
 
   const isLogin = (data, wish = false) => {
     if (auth == null || auth == "") {
-      alert('로그인이 필요합니다.')
+      alert("로그인이 필요합니다.");
     } else {
       if (wish) {
-        const i = wishData.findIndex((a) => { return a === data })
+        const i = wishData.findIndex((a) => {
+          return a === data;
+        });
         if (i == -1) {
-          postData(`user/wish/${data}`)
-          dispatch(wishPutIn(data))
-
+          postData(`user/wish/${data}`);
+          dispatch(wishPutIn(data));
         } else {
-          DeleteWish(data)
-          dispatch(wishPutIn(data))
+          DeleteWish(data);
+          dispatch(wishPutIn(data));
         }
-
       } else {
-        ckBag(data)
+        ckBag(data);
       }
     }
-  }
+  };
 
-
-  return [iconCk, isLogin]
-}
+  return [iconCk, isLogin];
+};
